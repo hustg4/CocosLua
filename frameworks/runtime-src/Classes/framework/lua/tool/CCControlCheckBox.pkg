@@ -1,0 +1,13 @@
+
+
+class CCControlCheckBox: public CCControl
+{
+
+    bool isChecked();
+    
+	void setChecked(bool val);
+    
+	static CCControlCheckBox* create(const char* checkedIcon, const char* uncheckedIcon, std::string settingKey);
+    
+};
+

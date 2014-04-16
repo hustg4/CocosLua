@@ -1,0 +1,54 @@
+
+
+typedef enum  {
+	kCCDragableItemStateWaiting,
+	kCCDragableItemStateTrackingTouch
+} tCCDragableItemState;
+
+enum {
+	//* priority used by the CCDragableItem for the event handler
+    //* use the same value as CCMenu
+	kCCDragableItemHandlerPriority = -128,
+};
+
+
+class CCDragableItemDelegate
+{
+    virtual void onDragBegan(CCDragableItem *item) = 0;
+    virtual void onDragging(CCDragableItem *item, float x, float y) = 0 ;
+    virtual void onDragEnded(CCDragableItem *item ,float x, float y) = 0;
+    virtual void onClicked(CCDragableItem *item) = 0;
+};
+
+/** @brief CCDragableItem base class
+ *
+ *  Inspire from CCMenuItemSprite
+ */
+class CCDragableItem : public CCNode,public CCTouchDelegate
+{
+    /** the image used when the item is not selected */
+    void setNormalImage(CCNode* m_pNormalImage);
+    CCNode* getNormalImage();
+
+    /** the image used when the item is selected */
+    void setMovedImage(CCNode* m_pMovedImage);
+    CCNode* getMovedImage();
+    
+    void setMovedImageParent(CCNode* parent);
+    void setDragRectInset(float dx,float dy);
+    
+    static CCDragableItem * create(CCNode* normalSprite);
+    
+    virtual bool isEnabled();
+    virtual void setEnabled(bool value);
+
+    CCDragableItemDelegate* getDelegate();
+    void setDelegate(CCDragableItemDelegate* pDelegate);
+    
+    /**
+     * 设置、获取事件委托（脚本）
+     */
+    void setScriptDelegate(CCObject* scriptDelegate);
+    CCObject* getScriptDelegate();
+};
+

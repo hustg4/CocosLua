@@ -1,0 +1,13 @@
+
+
+class SimpleRectNode : public CCNode{
+
+    static SimpleRectNode * create(const CCRect &rect, float borderWidth);
+
+    void setBorderWidth(float m_borderWidth);
+    float getBorderWidth();
+    
+    void setColor(const ccColor3B &color);
+    void setRect(const CCRect &rect);
+
+};

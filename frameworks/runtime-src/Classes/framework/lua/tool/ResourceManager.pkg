@@ -1,0 +1,123 @@
+
+enum ResourceManagerErrorType {
+    kResourceManagerErrorTypeVersionIsLatest = 0,           //版本已是最新
+    kResourceManagerErrorTypeNoSuchModule = 1,              //模块不存在
+    kResourceManagerErrorTypeDownloadFailure = 2,           //下载失败
+    kResourceManagerErrorTypeVersionUpdateFailure = 3,      //版本更新失败（下载成功，但是解压缩错误）
+};
+
+/**
+ ******************ResourceManager******************
+ * 资源管理器
+ */
+class ResourceManager :public CCObject, public HttpDownloaderDelegate{
+    
+    
+    static ResourceManager* sharedResourceManager();
+    
+    
+    /**
+     * 设置、获取资源更新事件委托
+     */
+    void setDelegate(ResourceUpdateDelegate* delegate);
+    ResourceUpdateDelegate* getDelegate();
+    
+    /**
+     * 设置、获取资源更新事件委托（脚本）
+     */
+    void setScriptDelegate(CCObject* scriptDelegate);
+    CCObject* getScriptDelegate();
+    
+    /**
+     * 程序版本
+     */
+    void setProgramVersion(float programVersion){ this->programVersion = programVersion; }
+    
+    float getProgramVersion(){ return this->programVersion; }
+    
+    /**
+     * 程序包中资源的版本
+     */
+    void setBundleResourceVersion(float bundleResourceVersion){ this->bundleResourceVersion = bundleResourceVersion; }
+    
+    float getBundleResourceVersion(){ return this->bundleResourceVersion; }
+    
+    /**
+     * 开发模式设置
+     */
+    void setDevelopMode(bool developMode){ this->developMode = developMode; }
+    
+    bool isDevelopMode(){ return this->developMode; }
+    
+    /**
+     * 设置资源根地址
+     */
+    void setRootURL(const std::string& rootUrl);
+    
+    /**
+     * 获取资源根地址
+     */
+    const char* getRootURL();
+    
+    /**
+     * 版本是否更新
+     */
+    bool isVersionLatest();
+    
+    /**
+     * 获取版本
+     */
+    float getVersion();
+    
+    /**
+     * 更新SearchPath设置
+     */
+    void configSearchPath();
+    
+    /**
+     * 设置需要从bundle/apk中拷贝到用户下的文件列表
+     */
+    void setCopyFileList(CCArray* copyFileList);
+    
+    /**
+     * 检查版本号
+     * 异步接口，检查完毕后会回调delegate的versionCheckCompleted接口
+     */
+    void checkVersion();
+    
+    /*
+     * 更新版本
+     */
+    void updateVersion();
+    
+    /**
+     * 检查模块资源版本
+     * @return 需要更新的文件数量，如果是0表示模块不需要更新
+     */
+    int checkModule(const std::string& moduleName);
+    
+    /**
+     * 更新模块资源
+     */
+    void updateModule(const std::string& moduleName);
+    
+    
+    /**
+     * 获取主版本待更新文件总尺寸
+     */
+    int getVersionUpdateSize();
+    
+    /**
+     * 获取模块待更新文件的总尺寸
+     */
+    int getModuleUpdateSize(const std::string& moduleName);
+    
+    /**
+     *  将相关配置信息写入文件
+     *  当前版本只有 md5.global.txt
+     */
+    void flush();
+    
+};
+
+#endif /* defined(__The9Framework__ResourceManager__) */

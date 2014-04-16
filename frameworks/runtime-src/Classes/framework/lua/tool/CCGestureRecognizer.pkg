@@ -1,0 +1,31 @@
+
+
+class CCGestureRecognizerDelegate
+{
+
+    //general  Recognizer
+    virtual void onGestureRecognized(CCGestureRecognizer *g) = 0;
+    
+    //for long press Recognizer
+    virtual void onGestureEnded(CCGestureRecognizer *g) = 0;
+};
+
+class CCGestureRecognizer : public CCLayer
+{
+
+    
+    //setParent is called after the layer is added as a child
+    virtual void setParent(CCNode*p);
+    
+    //wxf: do not use selector , use delgate
+    //void setTarget(CCObject * tar, SEL_CallFuncO sel);
+    void setDelegate(CCGestureRecognizerDelegate* pDelegate);
+    CCGestureRecognizerDelegate* getDelegate();
+    
+    /**
+     * 设置、获取事件委托（脚本）
+     */
+    void setScriptDelegate(CCObject* scriptDelegate);
+    CCObject* getScriptDelegate();
+    
+};

@@ -1,0 +1,27 @@
+
+enum ScrollType {
+    ScrollTypeNone = 0,
+    ScrollTypeVertical = 1,
+    ScrollTypeHorizontal = 2
+};
+
+enum ScrollDirection {
+    ScrollDirectionUp = 1,
+    ScrollDirectionDown = 2,
+    ScrollDirectionLeft = 3,
+    ScrollDirectionRight = 4
+};
+
+class QZScroller : public CCLayer
+{
+
+    static QZScroller* create();
+    
+    void setScrollImages(CCArray* images, ScrollType scrollType, CCSize displaySize);
+    
+    void startScrolling(ScrollDirection direction, float speed);
+    
+    void stopScrolling();
+    
+    void update();
+};

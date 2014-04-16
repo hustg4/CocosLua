@@ -1,0 +1,11 @@
+
+
+class CCPageControl : public CCNode {
+
+    static CCPageControl* create(const char* fullDotFile, const char* emptyDotFile);
+    void setCurrentPage(int p);
+    void setNumberOfPages(int n);
+    void setHidesForSinglePage(bool h);
+
+};
+

@@ -1,0 +1,10 @@
+
+
+class ScriptCCBReader {
+    
+public:
+    
+    static CCNode* readCCB(const std::string& ccbFile,CCObject* scriptDelegate);
+    
+};
+

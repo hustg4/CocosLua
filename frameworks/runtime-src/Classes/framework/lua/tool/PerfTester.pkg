@@ -1,0 +1,8 @@
+class PerfTester
+{
+    static PerfTester* create();
+
+    void beginTest();
+    
+    double endTest();
+};

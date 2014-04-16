@@ -1,0 +1,10 @@
+
+class NetService : public CCObject {
+    
+    //发送消息
+    virtual void sendMessage(NetRequest* request) = 0;
+    
+    //执行命令
+    virtual void executeCommand(const std::string& command, CCObject* param) = 0;
+    
+};

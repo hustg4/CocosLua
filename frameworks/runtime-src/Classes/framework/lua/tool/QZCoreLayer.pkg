@@ -1,0 +1,21 @@
+
+class QZCoreLayer : public CCLayer
+{
+    
+    static QZCoreLayer* create();
+
+    //堆栈中加入新的层
+    void pushLayer(QZBaseLayer *layer, bool lock = true);
+    
+    //堆栈中从当前层返回上一层
+    void popLayer(bool lock = true);
+    
+    //设置堆栈中的第一个层
+    void setRootLayer(QZBaseLayer *layer);
+
+    //卸载所有的层
+    void unload();
+
+    //获取堆栈的深度
+    int getStackDepth();
+};

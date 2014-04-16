@@ -1,0 +1,22 @@
+
+class NetProtocol : public CCObject{
+    
+    //创建一个空的“网络协议”
+    static NetProtocol* create();
+    
+    //创建指定消息ID，网络服务ID，处理器的“网络协议”
+    static NetProtocol* create(const std::string& protocolID,const std::string& serviceID,NetHandler* handler);
+    
+    //设置和获取“网络协议”的消息ID
+    void setID(const std::string& protocolID);
+    const std::string& getID();
+    
+    //设置和获取“网络协议”的网络服务ID
+    void setServiceID(const std::string& serviceID);
+    const std::string& getServiceID();
+
+    //设置和获取“网络协议”的处理器
+    void setHandler(NetHandler* handler);
+    NetHandler* getHandler();
+    
+};

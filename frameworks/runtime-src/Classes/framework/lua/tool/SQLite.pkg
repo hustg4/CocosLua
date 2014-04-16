@@ -1,0 +1,118 @@
+
+
+/**
+ * 对sqlite数据库的封装
+ */
+class SQLite :public CCObject{
+    
+    /**
+     * 打开SQLite数据库
+     * @param dbFile db文件
+     */
+    static SQLite* openSQLite(const std::string& dbFile);
+    
+    /**
+     * 清除所有连接缓存
+     */
+    static void clearConnectionCache();
+    
+    /**
+     * 获取值类型
+     */
+    const char* getValueTypeName(CCObject* value);
+    
+    /**
+     * 创建表
+     * @param tableName 表名
+     * @param columnArray 列名数组
+     */
+    bool createTable(const std::string& tableName,CCArray* columnArray);
+    
+    /**
+     * 删除表
+     * @param tableName 表名
+     */
+    bool dropTable(const std::string& tableName);
+    
+    /**
+     * 插入数据
+     * @param tableName 表名
+     * @param keyValueDict 键值对
+     */
+    bool insertIntoTable(const std::string& tableName,CCDictionary* keyValueDict);
+    
+    /**
+     * 清空表
+     * @param tableName 表名
+     */
+    bool clearTable(const std::string& tableName);
+    
+    /**
+     * 删除符合多个条件的数据
+     * @param tableName 表名
+     * @param conditionDict 条件字典
+     */
+    bool deleteFromTable(const std::string& tableName,CCDictionary* conditionDict);
+    
+    /**
+     * 删除符合单个条件的数据
+     * @param tableName 表名
+     * @param columnName 条件column名
+     * @param columnValue 条件column值
+     */
+    bool deleteFromTable(const std::string& tableName,const std::string& columnName,const std::string& columnValue);
+    
+    /**
+     * 更新符合多个条件的数据
+     * @param tableName 表名
+     * @param keyValueDict 键值对
+     * @param conditionDict 条件字典
+     */
+    bool updateTable(const std::string& tableName,CCDictionary* keyValueDict,CCDictionary* conditionDict=NULL);
+    
+    /**
+     * 更新符合单个条件的数据
+     * @param tableName 表名
+     * @param keyValueDict 键值对
+     * @param columnName 条件column名
+     * @param columnValue 条件column值
+     */
+    bool updateTable(const std::string& tableName,CCDictionary* keyValueDict,const std::string& columnName,const std::string& columnValue);
+    
+    /**
+     * 查询符合多个条件的数据
+     * @param tableName 表名
+     * @param conditionDict 条件字典
+     */
+    CCArray* selectTable(const std::string& tableName,CCDictionary* conditionDict=NULL);
+    
+    /**
+     * 查询符合单个条件的数据
+     * @param tableName 表名
+     * @param columnName 条件column名
+     * @param columnValue 条件column值
+     */
+    CCArray* selectTable(const std::string& tableName,const std::string& columnName,const std::string& columnValue);
+
+    /**
+     * 查询符合单个条件的数据
+     * @param tableName 表名
+     * @param columnName 条件column名
+     * @param columnValueDict 条件column 所有可能的值
+     */
+    CCArray* selectTable(const std::string& tableName,const std::string& columnName,CCArray* columnValues);
+    
+    /**
+     * 根据sql查询表
+     * @param tableName 表名
+     * @param sql 查询语句
+     */
+    CCArray* selectTable(const std::string& tableName,const std::string& sql);
+    
+    /**
+     * 获取表中记录数量
+     * @param tableName 表名
+     */
+    int getRecordCount(const std::string& tableName);
+
+};

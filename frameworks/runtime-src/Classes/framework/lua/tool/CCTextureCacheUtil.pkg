@@ -1,0 +1,10 @@
+
+
+class CCTextureCacheUtil {
+    
+public:
+    
+    static void addImageAsync(const std::string& path, CCObject* scriptTarget,const std::string& scriptSelector);
+    
+};
+

@@ -1,0 +1,22 @@
+
+class NetRequest : public CCObject{
+    
+    //创建一个空的网络请求
+    static NetRequest* create();
+    
+    //根据指定的id和包体创建网络请求
+    static NetRequest* create(const std::string& protocolID,JSONObject* body);
+    
+    //设置和获取网络请求的id
+    void setProtocolID(const std::string& protocolID);
+    const std::string& getProtocolID();
+    
+    //设置和获取网络请求的包体
+    void setBody(JSONObject* body);
+    JSONObject* getBody();
+    
+    //设置和获取配置信息
+    void setConfigInfo(JSONObject* configInfo);
+    JSONObject* getConfigInfo();
+};
+

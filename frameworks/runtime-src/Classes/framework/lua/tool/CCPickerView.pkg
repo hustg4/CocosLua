@@ -1,0 +1,56 @@
+
+class CCPickerView : public CCLayer{
+
+    virtual void visit();
+    
+    static CCPickerView* create();
+
+    
+    int numberOfRowsInComponent(int component);
+    void reloadAllComponents();
+    void reloadComponent(int component);
+    CCSize rowSizeForComponent(int component);
+    int selectedRowInComponent(int component);
+    void selectRow(int row,int component, bool animated);
+    CCNode *nodeForRow(int row, int component);
+    void autoRepeatNodes(bool repeat);
+    void spin(int component, float speed, float easeRate, int repeat, int stopRow);
+    
+    
+    void setDelegate(CCPickerViewDelegate *newDelegate);
+    void setDataSource(CCPickerViewDataSource *newDataSource);
+    
+    /**
+     * script data source
+     */
+    void setScriptDelegate(CCObject *newDelegate);
+    /**
+     * script delegate
+     */
+    void setScriptDataSource(CCObject *newDataSource);
+    
+
+};
+
+class CCPickerViewDataSource {
+    virtual int numberOfComponentsInPickerView(CCPickerView *pickerView) = 0;
+    virtual int numberOfRows(CCPickerView *pickerView, int component) = 0;
+};
+
+
+class CCPickerViewDelegate {
+
+    virtual float rowHeightForComponent(CCPickerView *pickerView, int component) = 0;
+    virtual float widthForComponent(CCPickerView *pickerView, int component) = 0;
+    //virtual CCString *title(CCPickerView *pickerView, int row,int component) = 0;
+    virtual CCNode *node(CCPickerView *pickerView, int row,int component, CCNode *reusingNode) = 0;
+
+    virtual float spaceBetweenComponents(CCPickerView *pickerView) = 0;
+    virtual CCSize sizeOfPickerView(CCPickerView *pickerView) = 0;
+    virtual CCNode *overlayImage(CCPickerView *pickerView) = 0;
+    
+    virtual void didSelect(CCPickerView *pickerView, int row,int component) = 0;
+    virtual void onDoneSpinning(CCPickerView *pickerView, int component) = 0;
+};
+
+

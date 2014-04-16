@@ -1,0 +1,13 @@
+
+
+class ProgressLayerManager : public CCObject
+{
+
+    /** returns a shared instance of the manager */
+    static ProgressLayerManager* sharedManager(void);
+    
+    void showProgress();
+    void hideProgress();
+
+};
+

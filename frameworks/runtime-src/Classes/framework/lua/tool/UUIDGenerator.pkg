@@ -1,0 +1,7 @@
+
+
+class UUIDGenerator {
+
+    static const char* generate();
+    
+};

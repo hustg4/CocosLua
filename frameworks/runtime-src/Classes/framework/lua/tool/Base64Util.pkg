@@ -1,0 +1,7 @@
+
+class Base64Util {
+    
+    static const char* encode(const std::string& str);
+    
+    static const char* decode(const std::string& str);
+};
