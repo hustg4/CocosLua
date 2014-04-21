@@ -31,7 +31,7 @@ function clsLoginViewController:showView()
     --(2)标题
     local labelTitle = CCLabelTTF:create("Abc123!!?@登录场景" , "DFPYuanW7-GB", 32)
     --labelTitle:setStroke(ccc3(0,0,0),1)
-    labelTitle:setShadow(ccc3(0,0,0),1,-1)
+    --labelTitle:setShadow(ccc3(0,0,0),1,-1)
     --local labelTitle = CCLabelBMFont:create("文档接口的实现","font/hh.fnt")
     -- position the label on the center of the screen
     labelTitle:setColor(ccc3(255,0,0))

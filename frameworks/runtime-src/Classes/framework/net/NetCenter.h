@@ -23,7 +23,7 @@
  * 网络中心
  * 网络框架的核心，网络框架定位在业务逻辑层和网络服务层之间，向上提供注册协议、发送消息的接口，向下提供注册网络服务、分发消息的接口
  */
-class NetCenter {
+class NetCenter : public cocos2d::Ref{
     
 public:
     

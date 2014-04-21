@@ -139,7 +139,7 @@ void* LuaUtil::executePeertableFunction(Ref* userdata, const std::string &functi
 //    printf("executePeertableFunction [%s] start lua top:%d\n",functionName.c_str(),lua_gettop(m_state));
     
     /* stack: userdata */
-    tolua_pushusertype(m_state, userdata, "Ref");
+    tolua_pushusertype(m_state, userdata, "cc.Ref");
     
     //functionName入栈
     lua_pushstring(m_state, functionName.c_str());
@@ -182,7 +182,7 @@ bool LuaUtil::hasPeertable(void* userdata)
     bool flag = false;
     
     /* stack: userdata */
-    tolua_pushusertype(m_state, userdata, "Ref");
+    tolua_pushusertype(m_state, userdata, "cc.Ref");
     
     lua_getfenv(m_state, -1);
     if (lua_rawequal(m_state, -1, TOLUA_NOPEER)) {
@@ -207,10 +207,10 @@ bool LuaUtil::hasFunction(void *userdata, const std::string &functionName)
     LuaEngine* pEngine = LuaEngine::getInstance();
     lua_State* m_state=pEngine->getLuaStack()->getLuaState();
     
-//    printf("hasFunction [%s] start lua top:%d\n",functionName.c_str(),lua_gettop(m_state));
+    printf("hasFunction [%s] start lua top:%d\n",functionName.c_str(),lua_gettop(m_state));
     
     /* stack: userdata */
-    tolua_pushusertype(m_state, userdata, "Ref");
+    tolua_pushusertype(m_state, userdata, "cc.Ref");
     
     //获取peertable
     lua_getfenv(m_state, -1);
@@ -225,7 +225,7 @@ bool LuaUtil::hasFunction(void *userdata, const std::string &functionName)
 
     lua_pop(m_state, 3);
     
-//    printf("hasFunction [%s] end lua top:%d\n",functionName.c_str(),lua_gettop(m_state));
+    printf("hasFunction [%s] end lua top:%d\n",functionName.c_str(),lua_gettop(m_state));
     
     return flag;
 }

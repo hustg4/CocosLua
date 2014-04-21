@@ -7,6 +7,8 @@
 #include "HttpService.h"
 #include "SocketService.h"
 
+#include "lua_framework_auto.hpp"
+
 using namespace CocosDenshion;
 
 USING_NS_CC;
@@ -51,6 +53,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 	auto engine = LuaEngine::getInstance();
 	ScriptEngineManager::getInstance()->setScriptEngine(engine);
 //	engine->executeScriptFile("src/main.lua");
+    
+    register_all_framework(engine->getLuaStack()->getLuaState());
     
     // run main lua file
     engine->executeScriptFile("main.lua");
