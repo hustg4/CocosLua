@@ -1,9 +1,0 @@
-
-
-class ViewController : public CCObject{
-
-    static ViewController* create();
-    
-    GameScene* getScene();
-    
-};

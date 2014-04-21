@@ -38,8 +38,8 @@
 #include "utils/ResourceManager.h"
 #include "utils/NetStatus/NetStatusUtil.h"
 #include "utils/uuid/UUIDGenerator.h"
+#include "utils/LuaUtil.h"
 #include "notification/notification.h"
 
-#include "lua/LuaUtil.h"
 
 #endif

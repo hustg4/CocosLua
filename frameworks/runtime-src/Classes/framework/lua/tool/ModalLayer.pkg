@@ -1,7 +1,0 @@
-
-
-class ModalLayer : CCLayerColor{
-    
-    static ModalLayer* create();
-    
-};

@@ -70,6 +70,8 @@
 		AA3C4AA018F93A1500D65677 /* HttpService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3C4A9A18F93A1500D65677 /* HttpService.cpp */; };
 		AA3C4AA118F93A1500D65677 /* SocketService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3C4A9D18F93A1500D65677 /* SocketService.cpp */; };
 		AA3C4AA218F93A1500D65677 /* SocketService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3C4A9D18F93A1500D65677 /* SocketService.cpp */; };
+		AAFADAC61905425600636470 /* LuaUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFADAC41905425600636470 /* LuaUtil.cpp */; };
+		AAFADAC71905425600636470 /* LuaUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFADAC41905425600636470 /* LuaUtil.cpp */; };
 		AAFBD06E18F8F0950088FFA1 /* JSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFB018F8F0950088FFA1 /* JSONElement.cpp */; };
 		AAFBD06F18F8F0950088FFA1 /* JSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFB018F8F0950088FFA1 /* JSONElement.cpp */; };
 		AAFBD07018F8F0950088FFA1 /* JSONFormatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFB218F8F0950088FFA1 /* JSONFormatter.cpp */; };
@@ -110,102 +112,6 @@
 		AAFBD09318F8F0950088FFA1 /* JSONFormatTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFE618F8F0950088FFA1 /* JSONFormatTest.cpp */; };
 		AAFBD09418F8F0950088FFA1 /* JSONParserTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFE818F8F0950088FFA1 /* JSONParserTest.cpp */; };
 		AAFBD09518F8F0950088FFA1 /* JSONParserTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFE818F8F0950088FFA1 /* JSONParserTest.cpp */; };
-		AAFBD09618F8F0950088FFA1 /* LuaFramework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFEC18F8F0950088FFA1 /* LuaFramework.cpp */; };
-		AAFBD09718F8F0950088FFA1 /* LuaFramework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFEC18F8F0950088FFA1 /* LuaFramework.cpp */; };
-		AAFBD09818F8F0950088FFA1 /* LuaUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFEE18F8F0950088FFA1 /* LuaUtil.cpp */; };
-		AAFBD09918F8F0950088FFA1 /* LuaUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCFEE18F8F0950088FFA1 /* LuaUtil.cpp */; };
-		AAFBD09A18F8F0950088FFA1 /* Base64Util.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF118F8F0950088FFA1 /* Base64Util.pkg */; };
-		AAFBD09B18F8F0950088FFA1 /* Base64Util.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF118F8F0950088FFA1 /* Base64Util.pkg */; };
-		AAFBD09C18F8F0950088FFA1 /* basic.lua in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF218F8F0950088FFA1 /* basic.lua */; };
-		AAFBD09D18F8F0950088FFA1 /* basic.lua in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF218F8F0950088FFA1 /* basic.lua */; };
-		AAFBD09E18F8F0950088FFA1 /* CCControlCheckBox.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF318F8F0950088FFA1 /* CCControlCheckBox.pkg */; };
-		AAFBD09F18F8F0950088FFA1 /* CCControlCheckBox.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF318F8F0950088FFA1 /* CCControlCheckBox.pkg */; };
-		AAFBD0A018F8F0950088FFA1 /* CCDragableItem.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF418F8F0950088FFA1 /* CCDragableItem.pkg */; };
-		AAFBD0A118F8F0950088FFA1 /* CCDragableItem.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF418F8F0950088FFA1 /* CCDragableItem.pkg */; };
-		AAFBD0A218F8F0950088FFA1 /* CCGestureRecognizer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF518F8F0950088FFA1 /* CCGestureRecognizer.pkg */; };
-		AAFBD0A318F8F0950088FFA1 /* CCGestureRecognizer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF518F8F0950088FFA1 /* CCGestureRecognizer.pkg */; };
-		AAFBD0A418F8F0950088FFA1 /* CCHTMLLabelTTF.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF618F8F0950088FFA1 /* CCHTMLLabelTTF.pkg */; };
-		AAFBD0A518F8F0950088FFA1 /* CCHTMLLabelTTF.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF618F8F0950088FFA1 /* CCHTMLLabelTTF.pkg */; };
-		AAFBD0A618F8F0950088FFA1 /* CCLongPressGestureRecognizer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF718F8F0950088FFA1 /* CCLongPressGestureRecognizer.pkg */; };
-		AAFBD0A718F8F0950088FFA1 /* CCLongPressGestureRecognizer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF718F8F0950088FFA1 /* CCLongPressGestureRecognizer.pkg */; };
-		AAFBD0A818F8F0950088FFA1 /* CCPageControl.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF818F8F0950088FFA1 /* CCPageControl.pkg */; };
-		AAFBD0A918F8F0950088FFA1 /* CCPageControl.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF818F8F0950088FFA1 /* CCPageControl.pkg */; };
-		AAFBD0AA18F8F0950088FFA1 /* CCPickerView.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF918F8F0950088FFA1 /* CCPickerView.pkg */; };
-		AAFBD0AB18F8F0950088FFA1 /* CCPickerView.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFF918F8F0950088FFA1 /* CCPickerView.pkg */; };
-		AAFBD0AC18F8F0950088FFA1 /* CCRadioMenu.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFA18F8F0950088FFA1 /* CCRadioMenu.pkg */; };
-		AAFBD0AD18F8F0950088FFA1 /* CCRadioMenu.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFA18F8F0950088FFA1 /* CCRadioMenu.pkg */; };
-		AAFBD0AE18F8F0950088FFA1 /* CCTextureCacheUtil.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFB18F8F0950088FFA1 /* CCTextureCacheUtil.pkg */; };
-		AAFBD0AF18F8F0950088FFA1 /* CCTextureCacheUtil.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFB18F8F0950088FFA1 /* CCTextureCacheUtil.pkg */; };
-		AAFBD0B018F8F0950088FFA1 /* Cocos2dOmissive.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFC18F8F0950088FFA1 /* Cocos2dOmissive.pkg */; };
-		AAFBD0B118F8F0950088FFA1 /* Cocos2dOmissive.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFC18F8F0950088FFA1 /* Cocos2dOmissive.pkg */; };
-		AAFBD0B218F8F0950088FFA1 /* complie_script.sh in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFD18F8F0950088FFA1 /* complie_script.sh */; };
-		AAFBD0B318F8F0950088FFA1 /* complie_script.sh in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFD18F8F0950088FFA1 /* complie_script.sh */; };
-		AAFBD0B418F8F0950088FFA1 /* DBDecryptUtil.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFE18F8F0950088FFA1 /* DBDecryptUtil.pkg */; };
-		AAFBD0B518F8F0950088FFA1 /* DBDecryptUtil.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFE18F8F0950088FFA1 /* DBDecryptUtil.pkg */; };
-		AAFBD0B618F8F0950088FFA1 /* FileDecryptUtil.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFF18F8F0950088FFA1 /* FileDecryptUtil.pkg */; };
-		AAFBD0B718F8F0950088FFA1 /* FileDecryptUtil.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBCFFF18F8F0950088FFA1 /* FileDecryptUtil.pkg */; };
-		AAFBD0B818F8F0950088FFA1 /* GameScene.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00018F8F0950088FFA1 /* GameScene.pkg */; };
-		AAFBD0B918F8F0950088FFA1 /* GameScene.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00018F8F0950088FFA1 /* GameScene.pkg */; };
-		AAFBD0BA18F8F0950088FFA1 /* gl.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00118F8F0950088FFA1 /* gl.pkg */; };
-		AAFBD0BB18F8F0950088FFA1 /* gl.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00118F8F0950088FFA1 /* gl.pkg */; };
-		AAFBD0BC18F8F0950088FFA1 /* JSONElement.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00218F8F0950088FFA1 /* JSONElement.pkg */; };
-		AAFBD0BD18F8F0950088FFA1 /* JSONElement.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00218F8F0950088FFA1 /* JSONElement.pkg */; };
-		AAFBD0BE18F8F0950088FFA1 /* LuaFramework.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00318F8F0950088FFA1 /* LuaFramework.pkg */; };
-		AAFBD0BF18F8F0950088FFA1 /* LuaFramework.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00318F8F0950088FFA1 /* LuaFramework.pkg */; };
-		AAFBD0C018F8F0950088FFA1 /* MaskLayer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00418F8F0950088FFA1 /* MaskLayer.pkg */; };
-		AAFBD0C118F8F0950088FFA1 /* MaskLayer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00418F8F0950088FFA1 /* MaskLayer.pkg */; };
-		AAFBD0C218F8F0950088FFA1 /* ModalLayer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00518F8F0950088FFA1 /* ModalLayer.pkg */; };
-		AAFBD0C318F8F0950088FFA1 /* ModalLayer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00518F8F0950088FFA1 /* ModalLayer.pkg */; };
-		AAFBD0C418F8F0950088FFA1 /* NetCenter.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00618F8F0950088FFA1 /* NetCenter.pkg */; };
-		AAFBD0C518F8F0950088FFA1 /* NetCenter.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00618F8F0950088FFA1 /* NetCenter.pkg */; };
-		AAFBD0C618F8F0950088FFA1 /* NetFilter.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00718F8F0950088FFA1 /* NetFilter.pkg */; };
-		AAFBD0C718F8F0950088FFA1 /* NetFilter.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00718F8F0950088FFA1 /* NetFilter.pkg */; };
-		AAFBD0C818F8F0950088FFA1 /* NetHandler.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00818F8F0950088FFA1 /* NetHandler.pkg */; };
-		AAFBD0C918F8F0950088FFA1 /* NetHandler.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00818F8F0950088FFA1 /* NetHandler.pkg */; };
-		AAFBD0CA18F8F0950088FFA1 /* NetProtocol.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00918F8F0950088FFA1 /* NetProtocol.pkg */; };
-		AAFBD0CB18F8F0950088FFA1 /* NetProtocol.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00918F8F0950088FFA1 /* NetProtocol.pkg */; };
-		AAFBD0CC18F8F0950088FFA1 /* NetRequest.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00A18F8F0950088FFA1 /* NetRequest.pkg */; };
-		AAFBD0CD18F8F0950088FFA1 /* NetRequest.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00A18F8F0950088FFA1 /* NetRequest.pkg */; };
-		AAFBD0CE18F8F0950088FFA1 /* NetResponse.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00B18F8F0950088FFA1 /* NetResponse.pkg */; };
-		AAFBD0CF18F8F0950088FFA1 /* NetResponse.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00B18F8F0950088FFA1 /* NetResponse.pkg */; };
-		AAFBD0D018F8F0950088FFA1 /* NetService.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00C18F8F0950088FFA1 /* NetService.pkg */; };
-		AAFBD0D118F8F0950088FFA1 /* NetService.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00C18F8F0950088FFA1 /* NetService.pkg */; };
-		AAFBD0D218F8F0950088FFA1 /* NetStatusUtil.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00D18F8F0950088FFA1 /* NetStatusUtil.pkg */; };
-		AAFBD0D318F8F0950088FFA1 /* NetStatusUtil.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00D18F8F0950088FFA1 /* NetStatusUtil.pkg */; };
-		AAFBD0D418F8F0950088FFA1 /* OverlyMenuItem.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00E18F8F0950088FFA1 /* OverlyMenuItem.pkg */; };
-		AAFBD0D518F8F0950088FFA1 /* OverlyMenuItem.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00E18F8F0950088FFA1 /* OverlyMenuItem.pkg */; };
-		AAFBD0D618F8F0950088FFA1 /* PerfTester.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00F18F8F0950088FFA1 /* PerfTester.pkg */; };
-		AAFBD0D718F8F0950088FFA1 /* PerfTester.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD00F18F8F0950088FFA1 /* PerfTester.pkg */; };
-		AAFBD0D818F8F0950088FFA1 /* ProgressLayerManager.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01018F8F0950088FFA1 /* ProgressLayerManager.pkg */; };
-		AAFBD0D918F8F0950088FFA1 /* ProgressLayerManager.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01018F8F0950088FFA1 /* ProgressLayerManager.pkg */; };
-		AAFBD0DA18F8F0950088FFA1 /* QZBaseLayer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01118F8F0950088FFA1 /* QZBaseLayer.pkg */; };
-		AAFBD0DB18F8F0950088FFA1 /* QZBaseLayer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01118F8F0950088FFA1 /* QZBaseLayer.pkg */; };
-		AAFBD0DC18F8F0950088FFA1 /* QZCoreLayer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01218F8F0950088FFA1 /* QZCoreLayer.pkg */; };
-		AAFBD0DD18F8F0950088FFA1 /* QZCoreLayer.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01218F8F0950088FFA1 /* QZCoreLayer.pkg */; };
-		AAFBD0DE18F8F0950088FFA1 /* QZScroller.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01318F8F0950088FFA1 /* QZScroller.pkg */; };
-		AAFBD0DF18F8F0950088FFA1 /* QZScroller.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01318F8F0950088FFA1 /* QZScroller.pkg */; };
-		AAFBD0E018F8F0950088FFA1 /* ResourceManager.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01418F8F0950088FFA1 /* ResourceManager.pkg */; };
-		AAFBD0E118F8F0950088FFA1 /* ResourceManager.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01418F8F0950088FFA1 /* ResourceManager.pkg */; };
-		AAFBD0E218F8F0950088FFA1 /* ScriptCCBReader.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01518F8F0950088FFA1 /* ScriptCCBReader.pkg */; };
-		AAFBD0E318F8F0950088FFA1 /* ScriptCCBReader.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01518F8F0950088FFA1 /* ScriptCCBReader.pkg */; };
-		AAFBD0E418F8F0950088FFA1 /* ScriptEditBoxDelegate.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01618F8F0950088FFA1 /* ScriptEditBoxDelegate.pkg */; };
-		AAFBD0E518F8F0950088FFA1 /* ScriptEditBoxDelegate.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01618F8F0950088FFA1 /* ScriptEditBoxDelegate.pkg */; };
-		AAFBD0E618F8F0950088FFA1 /* SimpleRectNode.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01718F8F0950088FFA1 /* SimpleRectNode.pkg */; };
-		AAFBD0E718F8F0950088FFA1 /* SimpleRectNode.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01718F8F0950088FFA1 /* SimpleRectNode.pkg */; };
-		AAFBD0E818F8F0950088FFA1 /* SQLite.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01818F8F0950088FFA1 /* SQLite.pkg */; };
-		AAFBD0E918F8F0950088FFA1 /* SQLite.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01818F8F0950088FFA1 /* SQLite.pkg */; };
-		AAFBD0EA18F8F0950088FFA1 /* the9framework.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01918F8F0950088FFA1 /* the9framework.pkg */; };
-		AAFBD0EB18F8F0950088FFA1 /* the9framework.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01918F8F0950088FFA1 /* the9framework.pkg */; };
-		AAFBD0EC18F8F0950088FFA1 /* tolua++ in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01A18F8F0950088FFA1 /* tolua++ */; };
-		AAFBD0ED18F8F0950088FFA1 /* tolua++ in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01A18F8F0950088FFA1 /* tolua++ */; };
-		AAFBD0EE18F8F0950088FFA1 /* UUIDGenerator.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01B18F8F0950088FFA1 /* UUIDGenerator.pkg */; };
-		AAFBD0EF18F8F0950088FFA1 /* UUIDGenerator.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01B18F8F0950088FFA1 /* UUIDGenerator.pkg */; };
-		AAFBD0F018F8F0950088FFA1 /* ViewController.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01C18F8F0950088FFA1 /* ViewController.pkg */; };
-		AAFBD0F118F8F0950088FFA1 /* ViewController.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01C18F8F0950088FFA1 /* ViewController.pkg */; };
-		AAFBD0F218F8F0950088FFA1 /* VisibleRect.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01D18F8F0950088FFA1 /* VisibleRect.pkg */; };
-		AAFBD0F318F8F0950088FFA1 /* VisibleRect.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01D18F8F0950088FFA1 /* VisibleRect.pkg */; };
-		AAFBD0F418F8F0950088FFA1 /* WebView.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01E18F8F0950088FFA1 /* WebView.pkg */; };
-		AAFBD0F518F8F0950088FFA1 /* WebView.pkg in Resources */ = {isa = PBXBuildFile; fileRef = AAFBD01E18F8F0950088FFA1 /* WebView.pkg */; };
 		AAFBD0F618F8F0950088FFA1 /* NetCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBD02018F8F0950088FFA1 /* NetCenter.cpp */; };
 		AAFBD0F718F8F0950088FFA1 /* NetCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBD02018F8F0950088FFA1 /* NetCenter.cpp */; };
 		AAFBD0F818F8F0950088FFA1 /* NetFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFBD02218F8F0950088FFA1 /* NetFilter.cpp */; };
@@ -533,6 +439,8 @@
 		AA3C4A9B18F93A1500D65677 /* HttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpService.h; sourceTree = "<group>"; };
 		AA3C4A9D18F93A1500D65677 /* SocketService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SocketService.cpp; sourceTree = "<group>"; };
 		AA3C4A9E18F93A1500D65677 /* SocketService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketService.h; sourceTree = "<group>"; };
+		AAFADAC41905425600636470 /* LuaUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaUtil.cpp; sourceTree = "<group>"; };
+		AAFADAC51905425600636470 /* LuaUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaUtil.h; sourceTree = "<group>"; };
 		AAFBCFB018F8F0950088FFA1 /* JSONElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONElement.cpp; sourceTree = "<group>"; };
 		AAFBCFB118F8F0950088FFA1 /* JSONElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONElement.h; sourceTree = "<group>"; };
 		AAFBCFB218F8F0950088FFA1 /* JSONFormatter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONFormatter.cpp; sourceTree = "<group>"; };
@@ -584,56 +492,6 @@
 		AAFBCFE718F8F0950088FFA1 /* JSONFormatTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONFormatTest.h; sourceTree = "<group>"; };
 		AAFBCFE818F8F0950088FFA1 /* JSONParserTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONParserTest.cpp; sourceTree = "<group>"; };
 		AAFBCFE918F8F0950088FFA1 /* JSONParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParserTest.h; sourceTree = "<group>"; };
-		AAFBCFEC18F8F0950088FFA1 /* LuaFramework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaFramework.cpp; sourceTree = "<group>"; };
-		AAFBCFED18F8F0950088FFA1 /* LuaFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaFramework.h; sourceTree = "<group>"; };
-		AAFBCFEE18F8F0950088FFA1 /* LuaUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaUtil.cpp; sourceTree = "<group>"; };
-		AAFBCFEF18F8F0950088FFA1 /* LuaUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaUtil.h; sourceTree = "<group>"; };
-		AAFBCFF118F8F0950088FFA1 /* Base64Util.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Base64Util.pkg; sourceTree = "<group>"; };
-		AAFBCFF218F8F0950088FFA1 /* basic.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = basic.lua; sourceTree = "<group>"; };
-		AAFBCFF318F8F0950088FFA1 /* CCControlCheckBox.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCControlCheckBox.pkg; sourceTree = "<group>"; };
-		AAFBCFF418F8F0950088FFA1 /* CCDragableItem.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCDragableItem.pkg; sourceTree = "<group>"; };
-		AAFBCFF518F8F0950088FFA1 /* CCGestureRecognizer.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCGestureRecognizer.pkg; sourceTree = "<group>"; };
-		AAFBCFF618F8F0950088FFA1 /* CCHTMLLabelTTF.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCHTMLLabelTTF.pkg; sourceTree = "<group>"; };
-		AAFBCFF718F8F0950088FFA1 /* CCLongPressGestureRecognizer.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCLongPressGestureRecognizer.pkg; sourceTree = "<group>"; };
-		AAFBCFF818F8F0950088FFA1 /* CCPageControl.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCPageControl.pkg; sourceTree = "<group>"; };
-		AAFBCFF918F8F0950088FFA1 /* CCPickerView.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCPickerView.pkg; sourceTree = "<group>"; };
-		AAFBCFFA18F8F0950088FFA1 /* CCRadioMenu.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCRadioMenu.pkg; sourceTree = "<group>"; };
-		AAFBCFFB18F8F0950088FFA1 /* CCTextureCacheUtil.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCTextureCacheUtil.pkg; sourceTree = "<group>"; };
-		AAFBCFFC18F8F0950088FFA1 /* Cocos2dOmissive.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cocos2dOmissive.pkg; sourceTree = "<group>"; };
-		AAFBCFFD18F8F0950088FFA1 /* complie_script.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = complie_script.sh; sourceTree = "<group>"; };
-		AAFBCFFE18F8F0950088FFA1 /* DBDecryptUtil.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DBDecryptUtil.pkg; sourceTree = "<group>"; };
-		AAFBCFFF18F8F0950088FFA1 /* FileDecryptUtil.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FileDecryptUtil.pkg; sourceTree = "<group>"; };
-		AAFBD00018F8F0950088FFA1 /* GameScene.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameScene.pkg; sourceTree = "<group>"; };
-		AAFBD00118F8F0950088FFA1 /* gl.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gl.pkg; sourceTree = "<group>"; };
-		AAFBD00218F8F0950088FFA1 /* JSONElement.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONElement.pkg; sourceTree = "<group>"; };
-		AAFBD00318F8F0950088FFA1 /* LuaFramework.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LuaFramework.pkg; sourceTree = "<group>"; };
-		AAFBD00418F8F0950088FFA1 /* MaskLayer.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MaskLayer.pkg; sourceTree = "<group>"; };
-		AAFBD00518F8F0950088FFA1 /* ModalLayer.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ModalLayer.pkg; sourceTree = "<group>"; };
-		AAFBD00618F8F0950088FFA1 /* NetCenter.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NetCenter.pkg; sourceTree = "<group>"; };
-		AAFBD00718F8F0950088FFA1 /* NetFilter.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NetFilter.pkg; sourceTree = "<group>"; };
-		AAFBD00818F8F0950088FFA1 /* NetHandler.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NetHandler.pkg; sourceTree = "<group>"; };
-		AAFBD00918F8F0950088FFA1 /* NetProtocol.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NetProtocol.pkg; sourceTree = "<group>"; };
-		AAFBD00A18F8F0950088FFA1 /* NetRequest.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NetRequest.pkg; sourceTree = "<group>"; };
-		AAFBD00B18F8F0950088FFA1 /* NetResponse.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NetResponse.pkg; sourceTree = "<group>"; };
-		AAFBD00C18F8F0950088FFA1 /* NetService.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NetService.pkg; sourceTree = "<group>"; };
-		AAFBD00D18F8F0950088FFA1 /* NetStatusUtil.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NetStatusUtil.pkg; sourceTree = "<group>"; };
-		AAFBD00E18F8F0950088FFA1 /* OverlyMenuItem.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OverlyMenuItem.pkg; sourceTree = "<group>"; };
-		AAFBD00F18F8F0950088FFA1 /* PerfTester.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PerfTester.pkg; sourceTree = "<group>"; };
-		AAFBD01018F8F0950088FFA1 /* ProgressLayerManager.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProgressLayerManager.pkg; sourceTree = "<group>"; };
-		AAFBD01118F8F0950088FFA1 /* QZBaseLayer.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QZBaseLayer.pkg; sourceTree = "<group>"; };
-		AAFBD01218F8F0950088FFA1 /* QZCoreLayer.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QZCoreLayer.pkg; sourceTree = "<group>"; };
-		AAFBD01318F8F0950088FFA1 /* QZScroller.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QZScroller.pkg; sourceTree = "<group>"; };
-		AAFBD01418F8F0950088FFA1 /* ResourceManager.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ResourceManager.pkg; sourceTree = "<group>"; };
-		AAFBD01518F8F0950088FFA1 /* ScriptCCBReader.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ScriptCCBReader.pkg; sourceTree = "<group>"; };
-		AAFBD01618F8F0950088FFA1 /* ScriptEditBoxDelegate.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ScriptEditBoxDelegate.pkg; sourceTree = "<group>"; };
-		AAFBD01718F8F0950088FFA1 /* SimpleRectNode.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleRectNode.pkg; sourceTree = "<group>"; };
-		AAFBD01818F8F0950088FFA1 /* SQLite.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SQLite.pkg; sourceTree = "<group>"; };
-		AAFBD01918F8F0950088FFA1 /* the9framework.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = the9framework.pkg; sourceTree = "<group>"; };
-		AAFBD01A18F8F0950088FFA1 /* tolua++ */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "tolua++"; sourceTree = "<group>"; };
-		AAFBD01B18F8F0950088FFA1 /* UUIDGenerator.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UUIDGenerator.pkg; sourceTree = "<group>"; };
-		AAFBD01C18F8F0950088FFA1 /* ViewController.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.pkg; sourceTree = "<group>"; };
-		AAFBD01D18F8F0950088FFA1 /* VisibleRect.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VisibleRect.pkg; sourceTree = "<group>"; };
-		AAFBD01E18F8F0950088FFA1 /* WebView.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebView.pkg; sourceTree = "<group>"; };
 		AAFBD02018F8F0950088FFA1 /* NetCenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetCenter.cpp; sourceTree = "<group>"; };
 		AAFBD02118F8F0950088FFA1 /* NetCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCenter.h; sourceTree = "<group>"; };
 		AAFBD02218F8F0950088FFA1 /* NetFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetFilter.cpp; sourceTree = "<group>"; };
@@ -935,7 +793,6 @@
 			isa = PBXGroup;
 			children = (
 				AAFBCFAF18F8F0950088FFA1 /* json */,
-				AAFBCFEA18F8F0950088FFA1 /* lua */,
 				AAFBD01F18F8F0950088FFA1 /* net */,
 				AAFBD03618F8F0950088FFA1 /* notification */,
 				AAFBD03818F8F0950088FFA1 /* scene */,
@@ -1060,79 +917,6 @@
 				AAFBCFE918F8F0950088FFA1 /* JSONParserTest.h */,
 			);
 			path = samples;
-			sourceTree = "<group>";
-		};
-		AAFBCFEA18F8F0950088FFA1 /* lua */ = {
-			isa = PBXGroup;
-			children = (
-				AAFBCFEB18F8F0950088FFA1 /* cocos2dxExtensions */,
-				AAFBCFEC18F8F0950088FFA1 /* LuaFramework.cpp */,
-				AAFBCFED18F8F0950088FFA1 /* LuaFramework.h */,
-				AAFBCFEE18F8F0950088FFA1 /* LuaUtil.cpp */,
-				AAFBCFEF18F8F0950088FFA1 /* LuaUtil.h */,
-				AAFBCFF018F8F0950088FFA1 /* tool */,
-			);
-			path = lua;
-			sourceTree = "<group>";
-		};
-		AAFBCFEB18F8F0950088FFA1 /* cocos2dxExtensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = cocos2dxExtensions;
-			sourceTree = "<group>";
-		};
-		AAFBCFF018F8F0950088FFA1 /* tool */ = {
-			isa = PBXGroup;
-			children = (
-				AAFBCFF118F8F0950088FFA1 /* Base64Util.pkg */,
-				AAFBCFF218F8F0950088FFA1 /* basic.lua */,
-				AAFBCFF318F8F0950088FFA1 /* CCControlCheckBox.pkg */,
-				AAFBCFF418F8F0950088FFA1 /* CCDragableItem.pkg */,
-				AAFBCFF518F8F0950088FFA1 /* CCGestureRecognizer.pkg */,
-				AAFBCFF618F8F0950088FFA1 /* CCHTMLLabelTTF.pkg */,
-				AAFBCFF718F8F0950088FFA1 /* CCLongPressGestureRecognizer.pkg */,
-				AAFBCFF818F8F0950088FFA1 /* CCPageControl.pkg */,
-				AAFBCFF918F8F0950088FFA1 /* CCPickerView.pkg */,
-				AAFBCFFA18F8F0950088FFA1 /* CCRadioMenu.pkg */,
-				AAFBCFFB18F8F0950088FFA1 /* CCTextureCacheUtil.pkg */,
-				AAFBCFFC18F8F0950088FFA1 /* Cocos2dOmissive.pkg */,
-				AAFBCFFD18F8F0950088FFA1 /* complie_script.sh */,
-				AAFBCFFE18F8F0950088FFA1 /* DBDecryptUtil.pkg */,
-				AAFBCFFF18F8F0950088FFA1 /* FileDecryptUtil.pkg */,
-				AAFBD00018F8F0950088FFA1 /* GameScene.pkg */,
-				AAFBD00118F8F0950088FFA1 /* gl.pkg */,
-				AAFBD00218F8F0950088FFA1 /* JSONElement.pkg */,
-				AAFBD00318F8F0950088FFA1 /* LuaFramework.pkg */,
-				AAFBD00418F8F0950088FFA1 /* MaskLayer.pkg */,
-				AAFBD00518F8F0950088FFA1 /* ModalLayer.pkg */,
-				AAFBD00618F8F0950088FFA1 /* NetCenter.pkg */,
-				AAFBD00718F8F0950088FFA1 /* NetFilter.pkg */,
-				AAFBD00818F8F0950088FFA1 /* NetHandler.pkg */,
-				AAFBD00918F8F0950088FFA1 /* NetProtocol.pkg */,
-				AAFBD00A18F8F0950088FFA1 /* NetRequest.pkg */,
-				AAFBD00B18F8F0950088FFA1 /* NetResponse.pkg */,
-				AAFBD00C18F8F0950088FFA1 /* NetService.pkg */,
-				AAFBD00D18F8F0950088FFA1 /* NetStatusUtil.pkg */,
-				AAFBD00E18F8F0950088FFA1 /* OverlyMenuItem.pkg */,
-				AAFBD00F18F8F0950088FFA1 /* PerfTester.pkg */,
-				AAFBD01018F8F0950088FFA1 /* ProgressLayerManager.pkg */,
-				AAFBD01118F8F0950088FFA1 /* QZBaseLayer.pkg */,
-				AAFBD01218F8F0950088FFA1 /* QZCoreLayer.pkg */,
-				AAFBD01318F8F0950088FFA1 /* QZScroller.pkg */,
-				AAFBD01418F8F0950088FFA1 /* ResourceManager.pkg */,
-				AAFBD01518F8F0950088FFA1 /* ScriptCCBReader.pkg */,
-				AAFBD01618F8F0950088FFA1 /* ScriptEditBoxDelegate.pkg */,
-				AAFBD01718F8F0950088FFA1 /* SimpleRectNode.pkg */,
-				AAFBD01818F8F0950088FFA1 /* SQLite.pkg */,
-				AAFBD01918F8F0950088FFA1 /* the9framework.pkg */,
-				AAFBD01A18F8F0950088FFA1 /* tolua++ */,
-				AAFBD01B18F8F0950088FFA1 /* UUIDGenerator.pkg */,
-				AAFBD01C18F8F0950088FFA1 /* ViewController.pkg */,
-				AAFBD01D18F8F0950088FFA1 /* VisibleRect.pkg */,
-				AAFBD01E18F8F0950088FFA1 /* WebView.pkg */,
-			);
-			path = tool;
 			sourceTree = "<group>";
 		};
 		AAFBD01F18F8F0950088FFA1 /* net */ = {
@@ -1270,6 +1054,8 @@
 		AAFBD04E18F8F0950088FFA1 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				AAFADAC41905425600636470 /* LuaUtil.cpp */,
+				AAFADAC51905425600636470 /* LuaUtil.h */,
 				AAFBD04F18F8F0950088FFA1 /* base64 */,
 				AAFBD05418F8F0950088FFA1 /* encrypt */,
 				AAFBD05D18F8F0950088FFA1 /* FileManager.cpp */,
@@ -1594,47 +1380,18 @@
 			files = (
 				C03781EE18BF656A00FE4F13 /* Opengl.lua in Resources */,
 				C03781F018BF656A00FE4F13 /* OpenglConstants.lua in Resources */,
-				AAFBD0ED18F8F0950088FFA1 /* tolua++ in Resources */,
 				C03781E418BF656A00FE4F13 /* extern.lua in Resources */,
-				AAFBD0A518F8F0950088FFA1 /* CCHTMLLabelTTF.pkg in Resources */,
-				AAFBD0A118F8F0950088FFA1 /* CCDragableItem.pkg in Resources */,
-				AAFBD0C918F8F0950088FFA1 /* NetHandler.pkg in Resources */,
-				AAFBD09D18F8F0950088FFA1 /* basic.lua in Resources */,
-				AAFBD0EB18F8F0950088FFA1 /* the9framework.pkg in Resources */,
 				AA2A390D18FE17E10053A4E5 /* script in Resources */,
-				AAFBD0EF18F8F0950088FFA1 /* UUIDGenerator.pkg in Resources */,
 				C03781E618BF656A00FE4F13 /* GuiConstants.lua in Resources */,
-				AAFBD0DD18F8F0950088FFA1 /* QZCoreLayer.pkg in Resources */,
-				AAFBD0DB18F8F0950088FFA1 /* QZBaseLayer.pkg in Resources */,
 				C03781D418BF656A00FE4F13 /* Cocos2d.lua in Resources */,
-				AAFBD0E318F8F0950088FFA1 /* ScriptCCBReader.pkg in Resources */,
-				AAFBD0AD18F8F0950088FFA1 /* CCRadioMenu.pkg in Resources */,
-				AAFBD0E918F8F0950088FFA1 /* SQLite.pkg in Resources */,
-				AAFBD0B918F8F0950088FFA1 /* GameScene.pkg in Resources */,
 				AAFBD09118F8F0950088FFA1 /* battle.json in Resources */,
-				AAFBD0A318F8F0950088FFA1 /* CCGestureRecognizer.pkg in Resources */,
-				AAFBD0AF18F8F0950088FFA1 /* CCTextureCacheUtil.pkg in Resources */,
 				C03781E218BF656A00FE4F13 /* DrawPrimitives.lua in Resources */,
 				C03781DA18BF656A00FE4F13 /* Deprecated.lua in Resources */,
-				AAFBD0A718F8F0950088FFA1 /* CCLongPressGestureRecognizer.pkg in Resources */,
-				AAFBD0B718F8F0950088FFA1 /* FileDecryptUtil.pkg in Resources */,
-				AAFBD0AB18F8F0950088FFA1 /* CCPickerView.pkg in Resources */,
 				C03781E018BF656A00FE4F13 /* DeprecatedOpenglEnum.lua in Resources */,
 				C03781EC18BF656A00FE4F13 /* luaoc.lua in Resources */,
-				AAFBD0B518F8F0950088FFA1 /* DBDecryptUtil.pkg in Resources */,
-				AAFBD0F318F8F0950088FFA1 /* VisibleRect.pkg in Resources */,
-				AAFBD0D718F8F0950088FFA1 /* PerfTester.pkg in Resources */,
 				5023817617EBBE3400990C9B /* Icon.icns in Resources */,
 				C03781D218BF656A00FE4F13 /* CCBReaderLoad.lua in Resources */,
-				AAFBD0B318F8F0950088FFA1 /* complie_script.sh in Resources */,
 				AA2A390118FE17E00053A4E5 /* data in Resources */,
-				AAFBD0CF18F8F0950088FFA1 /* NetResponse.pkg in Resources */,
-				AAFBD0CB18F8F0950088FFA1 /* NetProtocol.pkg in Resources */,
-				AAFBD0BB18F8F0950088FFA1 /* gl.pkg in Resources */,
-				AAFBD0BD18F8F0950088FFA1 /* JSONElement.pkg in Resources */,
-				AAFBD0CD18F8F0950088FFA1 /* NetRequest.pkg in Resources */,
-				AAFBD0A918F8F0950088FFA1 /* CCPageControl.pkg in Resources */,
-				AAFBD0C718F8F0950088FFA1 /* NetFilter.pkg in Resources */,
 				C03781D018BF656A00FE4F13 /* AudioEngine.lua in Resources */,
 				AA2A390718FE17E00053A4E5 /* images in Resources */,
 				AA2A390918FE17E00053A4E5 /* language in Resources */,
@@ -1642,30 +1399,13 @@
 				C03781D818BF656A00FE4F13 /* CocoStudio.lua in Resources */,
 				C03781DC18BF656A00FE4F13 /* DeprecatedClass.lua in Resources */,
 				C03781F218BF656A00FE4F13 /* StudioConstants.lua in Resources */,
-				AAFBD0DF18F8F0950088FFA1 /* QZScroller.pkg in Resources */,
 				AA2A390318FE17E00053A4E5 /* font in Resources */,
-				AAFBD0E718F8F0950088FFA1 /* SimpleRectNode.pkg in Resources */,
-				AAFBD09F18F8F0950088FFA1 /* CCControlCheckBox.pkg in Resources */,
-				AAFBD0C318F8F0950088FFA1 /* ModalLayer.pkg in Resources */,
 				C03781EA18BF656A00FE4F13 /* luaj.lua in Resources */,
-				AAFBD0BF18F8F0950088FFA1 /* LuaFramework.pkg in Resources */,
-				AAFBD0E118F8F0950088FFA1 /* ResourceManager.pkg in Resources */,
-				AAFBD0E518F8F0950088FFA1 /* ScriptEditBoxDelegate.pkg in Resources */,
-				AAFBD0C518F8F0950088FFA1 /* NetCenter.pkg in Resources */,
-				AAFBD0F518F8F0950088FFA1 /* WebView.pkg in Resources */,
-				AAFBD09B18F8F0950088FFA1 /* Base64Util.pkg in Resources */,
 				AA2A390518FE17E00053A4E5 /* framework in Resources */,
 				C03781DE18BF656A00FE4F13 /* DeprecatedEnum.lua in Resources */,
-				AAFBD0F118F8F0950088FFA1 /* ViewController.pkg in Resources */,
-				AAFBD0C118F8F0950088FFA1 /* MaskLayer.pkg in Resources */,
 				C03781E818BF656A00FE4F13 /* json.lua in Resources */,
 				AA2A390B18FE17E10053A4E5 /* module in Resources */,
-				AAFBD0D318F8F0950088FFA1 /* NetStatusUtil.pkg in Resources */,
 				C03781D618BF656A00FE4F13 /* Cocos2dConstants.lua in Resources */,
-				AAFBD0D118F8F0950088FFA1 /* NetService.pkg in Resources */,
-				AAFBD0B118F8F0950088FFA1 /* Cocos2dOmissive.pkg in Resources */,
-				AAFBD0D518F8F0950088FFA1 /* OverlyMenuItem.pkg in Resources */,
-				AAFBD0D918F8F0950088FFA1 /* ProgressLayerManager.pkg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1673,31 +1413,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAFBD0B618F8F0950088FFA1 /* FileDecryptUtil.pkg in Resources */,
 				15A8A4491834C64F00142BE0 /* Icon-114.png in Resources */,
 				C03781DB18BF656A00FE4F13 /* DeprecatedClass.lua in Resources */,
-				AAFBD0E418F8F0950088FFA1 /* ScriptEditBoxDelegate.pkg in Resources */,
-				AAFBD0B018F8F0950088FFA1 /* Cocos2dOmissive.pkg in Resources */,
 				5023811D17EBBCAC00990C9B /* Icon-120.png in Resources */,
-				AAFBD0B818F8F0950088FFA1 /* GameScene.pkg in Resources */,
-				AAFBD0A418F8F0950088FFA1 /* CCHTMLLabelTTF.pkg in Resources */,
-				AAFBD0A818F8F0950088FFA1 /* CCPageControl.pkg in Resources */,
 				5091733B17ECE17A00D62437 /* Icon-100.png in Resources */,
 				AA2A390618FE17E00053A4E5 /* images in Resources */,
-				AAFBD0D418F8F0950088FFA1 /* OverlyMenuItem.pkg in Resources */,
 				AA2A390A18FE17E00053A4E5 /* module in Resources */,
-				AAFBD0B218F8F0950088FFA1 /* complie_script.sh in Resources */,
 				C03781E918BF656A00FE4F13 /* luaj.lua in Resources */,
 				5023811B17EBBCAC00990C9B /* Default@2x.png in Resources */,
 				5091733617ECE17A00D62437 /* Icon-29.png in Resources */,
-				AAFBD0AA18F8F0950088FFA1 /* CCPickerView.pkg in Resources */,
-				AAFBD0C618F8F0950088FFA1 /* NetFilter.pkg in Resources */,
-				AAFBD0A018F8F0950088FFA1 /* CCDragableItem.pkg in Resources */,
 				C03781E718BF656A00FE4F13 /* json.lua in Resources */,
-				AAFBD0BE18F8F0950088FFA1 /* LuaFramework.pkg in Resources */,
-				AAFBD0EC18F8F0950088FFA1 /* tolua++ in Resources */,
-				AAFBD0CA18F8F0950088FFA1 /* NetProtocol.pkg in Resources */,
-				AAFBD0AC18F8F0950088FFA1 /* CCRadioMenu.pkg in Resources */,
 				5023811917EBBCAC00990C9B /* Default-568h@2x.png in Resources */,
 				C03781D318BF656A00FE4F13 /* Cocos2d.lua in Resources */,
 				AA2A38FE18FE17E00053A4E5 /* ccb in Resources */,
@@ -1705,63 +1430,32 @@
 				C03781ED18BF656A00FE4F13 /* Opengl.lua in Resources */,
 				C03781F118BF656A00FE4F13 /* StudioConstants.lua in Resources */,
 				5023811F17EBBCAC00990C9B /* Icon-152.png in Resources */,
-				AAFBD0D218F8F0950088FFA1 /* NetStatusUtil.pkg in Resources */,
-				AAFBD0DC18F8F0950088FFA1 /* QZCoreLayer.pkg in Resources */,
-				AAFBD0BA18F8F0950088FFA1 /* gl.pkg in Resources */,
-				AAFBD0EA18F8F0950088FFA1 /* the9framework.pkg in Resources */,
 				AA2A390418FE17E00053A4E5 /* framework in Resources */,
-				AAFBD0A618F8F0950088FFA1 /* CCLongPressGestureRecognizer.pkg in Resources */,
-				AAFBD0D018F8F0950088FFA1 /* NetService.pkg in Resources */,
-				AAFBD0E818F8F0950088FFA1 /* SQLite.pkg in Resources */,
-				AAFBD0F018F8F0950088FFA1 /* ViewController.pkg in Resources */,
-				AAFBD0C018F8F0950088FFA1 /* MaskLayer.pkg in Resources */,
 				AA2A390218FE17E00053A4E5 /* font in Resources */,
 				C03781D118BF656A00FE4F13 /* CCBReaderLoad.lua in Resources */,
 				5023812017EBBCAC00990C9B /* Icon-57.png in Resources */,
 				C03781CF18BF656A00FE4F13 /* AudioEngine.lua in Resources */,
 				C03781EF18BF656A00FE4F13 /* OpenglConstants.lua in Resources */,
 				AA2A390C18FE17E10053A4E5 /* script in Resources */,
-				AAFBD09E18F8F0950088FFA1 /* CCControlCheckBox.pkg in Resources */,
-				AAFBD0D818F8F0950088FFA1 /* ProgressLayerManager.pkg in Resources */,
-				AAFBD0D618F8F0950088FFA1 /* PerfTester.pkg in Resources */,
-				AAFBD09A18F8F0950088FFA1 /* Base64Util.pkg in Resources */,
 				AA2A390818FE17E00053A4E5 /* language in Resources */,
-				AAFBD0BC18F8F0950088FFA1 /* JSONElement.pkg in Resources */,
-				AAFBD0B418F8F0950088FFA1 /* DBDecryptUtil.pkg in Resources */,
 				C03781E518BF656A00FE4F13 /* GuiConstants.lua in Resources */,
 				5023812217EBBCAC00990C9B /* Icon-76.png in Resources */,
 				C03781DF18BF656A00FE4F13 /* DeprecatedOpenglEnum.lua in Resources */,
-				AAFBD0E218F8F0950088FFA1 /* ScriptCCBReader.pkg in Resources */,
 				5091733A17ECE17A00D62437 /* Icon-80.png in Resources */,
-				AAFBD0AE18F8F0950088FFA1 /* CCTextureCacheUtil.pkg in Resources */,
-				AAFBD0F218F8F0950088FFA1 /* VisibleRect.pkg in Resources */,
-				AAFBD09C18F8F0950088FFA1 /* basic.lua in Resources */,
-				AAFBD0E618F8F0950088FFA1 /* SimpleRectNode.pkg in Resources */,
 				5091733717ECE17A00D62437 /* Icon-40.png in Resources */,
-				AAFBD0CC18F8F0950088FFA1 /* NetRequest.pkg in Resources */,
-				AAFBD0A218F8F0950088FFA1 /* CCGestureRecognizer.pkg in Resources */,
-				AAFBD0C818F8F0950088FFA1 /* NetHandler.pkg in Resources */,
 				5023811E17EBBCAC00990C9B /* Icon-144.png in Resources */,
-				AAFBD0E018F8F0950088FFA1 /* ResourceManager.pkg in Resources */,
 				5023811A17EBBCAC00990C9B /* Default.png in Resources */,
 				AAFBD09018F8F0950088FFA1 /* battle.json in Resources */,
 				C03781E118BF656A00FE4F13 /* DrawPrimitives.lua in Resources */,
-				AAFBD0C418F8F0950088FFA1 /* NetCenter.pkg in Resources */,
-				AAFBD0CE18F8F0950088FFA1 /* NetResponse.pkg in Resources */,
 				C03781EB18BF656A00FE4F13 /* luaoc.lua in Resources */,
 				5091733817ECE17A00D62437 /* Icon-50.png in Resources */,
 				C03781D718BF656A00FE4F13 /* CocoStudio.lua in Resources */,
 				C03781D518BF656A00FE4F13 /* Cocos2dConstants.lua in Resources */,
 				AA2A390018FE17E00053A4E5 /* data in Resources */,
 				5023812117EBBCAC00990C9B /* Icon-72.png in Resources */,
-				AAFBD0C218F8F0950088FFA1 /* ModalLayer.pkg in Resources */,
 				C03781DD18BF656A00FE4F13 /* DeprecatedEnum.lua in Resources */,
 				C03781E318BF656A00FE4F13 /* extern.lua in Resources */,
-				AAFBD0F418F8F0950088FFA1 /* WebView.pkg in Resources */,
-				AAFBD0DA18F8F0950088FFA1 /* QZBaseLayer.pkg in Resources */,
 				C03781D918BF656A00FE4F13 /* Deprecated.lua in Resources */,
-				AAFBD0DE18F8F0950088FFA1 /* QZScroller.pkg in Resources */,
-				AAFBD0EE18F8F0950088FFA1 /* UUIDGenerator.pkg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1796,7 +1490,6 @@
 				C06E23C418CEF9740093C81A /* main.cpp in Sources */,
 				AAFBD0FF18F8F0950088FFA1 /* NetRequest.cpp in Sources */,
 				AAFBD08118F8F0950088FFA1 /* JSONNode.cpp in Sources */,
-				AAFBD09918F8F0950088FFA1 /* LuaUtil.cpp in Sources */,
 				AAFBD12518F8F0950088FFA1 /* NetStatusUtilIos.mm in Sources */,
 				AAFBD11718F8F0950088FFA1 /* Base64Util.cpp in Sources */,
 				AAFBD09318F8F0950088FFA1 /* JSONFormatTest.cpp in Sources */,
@@ -1807,13 +1500,13 @@
 				AAFBD07F18F8F0950088FFA1 /* JSONMemory.cpp in Sources */,
 				AAFBD11518F8F0950088FFA1 /* Base64.cpp in Sources */,
 				AAFBD06F18F8F0950088FFA1 /* JSONElement.cpp in Sources */,
-				AAFBD09718F8F0950088FFA1 /* LuaFramework.cpp in Sources */,
 				AAFBD07518F8F0950088FFA1 /* internalJSONNode.cpp in Sources */,
 				AAFBD11B18F8F0950088FFA1 /* des.cpp in Sources */,
 				AAFBD10918F8F0950088FFA1 /* Socket.cpp in Sources */,
 				AAFBD10118F8F0950088FFA1 /* NetResponse.cpp in Sources */,
 				AAFBD12918F8F0950088FFA1 /* RegexUtil.cpp in Sources */,
 				AAFBD10318F8F0950088FFA1 /* HttpDownloader.cpp in Sources */,
+				AAFADAC71905425600636470 /* LuaUtil.cpp in Sources */,
 				AAFBD11D18F8F0950088FFA1 /* DESUtil.cpp in Sources */,
 				5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */,
 				AAFBD10718F8F0950088FFA1 /* ODSocket.cpp in Sources */,
@@ -1833,7 +1526,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAFBD07818F8F0950088FFA1 /* JSONChildren.cpp in Sources */,
-				AAFBD09618F8F0950088FFA1 /* LuaFramework.cpp in Sources */,
 				AAFBD0F818F8F0950088FFA1 /* NetFilter.cpp in Sources */,
 				AAFBD08E18F8F0950088FFA1 /* libjson.cpp in Sources */,
 				AAFBD12618F8F0950088FFA1 /* Reachability.m in Sources */,
@@ -1855,6 +1547,7 @@
 				AAFBD10418F8F0950088FFA1 /* HttpForm.cpp in Sources */,
 				AA3C4A9F18F93A1500D65677 /* HttpService.cpp in Sources */,
 				AAFBD08818F8F0950088FFA1 /* JSONValidator.cpp in Sources */,
+				AAFADAC61905425600636470 /* LuaUtil.cpp in Sources */,
 				AAFBD07418F8F0950088FFA1 /* internalJSONNode.cpp in Sources */,
 				AAFBD11A18F8F0950088FFA1 /* des.cpp in Sources */,
 				AAFBD12818F8F0950088FFA1 /* RegexUtil.cpp in Sources */,
@@ -1875,7 +1568,6 @@
 				AAFBD0FE18F8F0950088FFA1 /* NetRequest.cpp in Sources */,
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				AAFBD11018F8F0950088FFA1 /* SQLite.cpp in Sources */,
-				AAFBD09818F8F0950088FFA1 /* LuaUtil.cpp in Sources */,
 				AAFBD12018F8F0950088FFA1 /* FileManager.cpp in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				AAFBD10818F8F0950088FFA1 /* Socket.cpp in Sources */,

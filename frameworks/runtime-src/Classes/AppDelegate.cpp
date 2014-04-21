@@ -4,7 +4,6 @@
 #include "cocos2d.h"
 
 #include "the9framework.h"
-#include "LuaFramework.h"
 #include "HttpService.h"
 #include "SocketService.h"
 
@@ -52,8 +51,6 @@ bool AppDelegate::applicationDidFinishLaunching()
 	auto engine = LuaEngine::getInstance();
 	ScriptEngineManager::getInstance()->setScriptEngine(engine);
 //	engine->executeScriptFile("src/main.lua");
-    
-    tolua_LuaFramework_open(engine->getLuaStack()->getLuaState());
     
     // run main lua file
     engine->executeScriptFile("main.lua");
