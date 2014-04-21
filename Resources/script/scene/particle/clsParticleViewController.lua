@@ -26,7 +26,7 @@ function clsParticleViewController:showView()
     self:getScene():addChild(self.layer)
     
     -- ask director the window size
-    local size = CCDirector:sharedDirector():getWinSize()
+    local size = CCDirector:getInstance():getWinSize()
     
     --(1)背景
     local spriteBg=CCSprite:create("images/Background_FullScreen_login.png")
@@ -35,17 +35,17 @@ function clsParticleViewController:showView()
     
     --[[
     --泡泡
-    local particle = CCParticleSystemQuad:create("particle/effect_stage_bubble.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_stage_bubble.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
     
     --树叶
-    local particle = CCParticleSystemQuad:create("particle/effect_stage_leaf.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_stage_leaf.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
     
     --火星
-    local particle = CCParticleSystemQuad:create("particle/effect_touch.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_touch.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
      
@@ -54,7 +54,7 @@ function clsParticleViewController:showView()
     --[[
     --技能
     for i=1,4 do
-        local particle = CCParticleSystemQuad:create("particle/effect_fire_10"..i..".plist")
+        local particle = cc.ParticleSystemQuad:create("particle/effect_fire_10"..i..".plist")
         particle:setPosition(i*100, size.height/2)
         self.layer:addChild(particle)
     end
@@ -62,7 +62,7 @@ function clsParticleViewController:showView()
     
     --[[
     --火花
-    local particle = CCParticleSystemQuad:create("particle/effect_monster_jump.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_monster_jump.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
     --]]
@@ -70,7 +70,7 @@ function clsParticleViewController:showView()
     --[[
     --受击
     for i=1,4 do
-        local particle = CCParticleSystemQuad:create("particle/effect_hurt10"..i..".plist")
+        local particle = cc.ParticleSystemQuad:create("particle/effect_hurt10"..i..".plist")
         particle:setPosition(i*100, size.height/2)
         self.layer:addChild(particle)
     end
@@ -78,54 +78,54 @@ function clsParticleViewController:showView()
     
     --[[
     --白光
-    local particle = CCParticleSystemQuad:create("particle/effect_pictext_select.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_pictext_select.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
     
     --彩光
-    local particle = CCParticleSystemQuad:create("particle/effect_guide_cloud.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_guide_cloud.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
     --]]
     
     --[[
     --小星星
-    local particle = CCParticleSystemQuad:create("particle/effect_arrowstar.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_arrowstar.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
     
     --云
-    local particle = CCParticleSystemQuad:create("particle/effect_cloud.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_cloud.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
      --]]
     
     --[[
     --星光
-    local particle = CCParticleSystemQuad:create("particle/effect_eggpool.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_eggpool.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
     
     --一闪
-    local particle = CCParticleSystemQuad:create("particle/effect_eggtrans.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_eggtrans.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
     --]]
     
     --[[
     --碎纸
-    local particle = CCParticleSystemQuad:create("particle/effect_firework_paper.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_firework_paper.plist")
     particle:setPosition(size.width/2, size.height/2)
     self.layer:addChild(particle)
     --]]
     
     --[[
-    local particle = CCParticleSystemQuad:create("particle/effect_fire_101.plist")
+    local particle = cc.ParticleSystemQuad:create("particle/effect_fire_101.plist")
     particle:setPosition(100, size.height/2)
     self.layer:addChild(particle)
     
-    local moveRight = CCMoveTo:create(1,ccp(400,size.height/2))
-    local moveLeft = CCMoveTo:create(1,ccp(100,size.height/2))
+    local moveRight = CCMoveTo:create(1,cc.p(400,size.height/2))
+    local moveLeft = CCMoveTo:create(1,cc.p(100,size.height/2))
     local seq = CCSequence:createWithTwoActions(moveRight, moveLeft)
     particle:runAction(CCRepeatForever:create(seq))
      --]]
@@ -147,14 +147,14 @@ function clsParticleViewController:showReviveAnimation()
         self.reviveLayer = nil
     end
     
-    local winSize = CCDirector:sharedDirector():getWinSize()
+    local winSize = CCDirector:getInstance():getWinSize()
     
     self.reviveLayer = CCLayer:create()
     self.layer:addChild(self.reviveLayer)
     
     --精灵
     local spriteHero = CCSprite:create("images/juren.png")
-    spriteHero:setPosition(ccp(winSize.width/2,winSize.height/2))
+    spriteHero:setPosition(cc.p(winSize.width/2,winSize.height/2))
     self.reviveLayer:addChild(spriteHero)
     
     local heroSize = spriteHero:getContentSize()
@@ -163,8 +163,8 @@ function clsParticleViewController:showReviveAnimation()
     for i=1,4 do
         
         local spriteLine = CCSprite:create("images/revive/2.png")
-        spriteLine:setAnchorPoint(ccp(0.5,0))
-        spriteLine:setPosition(ccp(heroSize.width/2,heroSize.height/2))
+        spriteLine:setAnchorPoint(cc.p(0.5,0))
+        spriteLine:setPosition(cc.p(heroSize.width/2,heroSize.height/2))
         spriteLine:setRotation(90*i)
         spriteHero:addChild(spriteLine)
         
@@ -176,12 +176,12 @@ function clsParticleViewController:showReviveAnimation()
     -- 光圈 和 十字星
     local ring = CCSprite:create("images/revive/1.png")
     ring:setOpacity(0)
-    ring:setPosition(ccp(heroSize.width/2,heroSize.height/2))
+    ring:setPosition(cc.p(heroSize.width/2,heroSize.height/2))
     spriteHero:addChild(ring)
     
     local star = CCSprite:create("images/revive/4.png")
     star:setOpacity(0)
-    star:setPosition(ccp(heroSize.width/2,heroSize.height/2))
+    star:setPosition(cc.p(heroSize.width/2,heroSize.height/2))
     spriteHero:addChild(star)
     
     local delay = CCDelayTime:create(0.2)
@@ -210,9 +210,9 @@ function clsParticleViewController:showReviveAnimation()
         for i=1,num do
             local index = math.ceil(math.random()*(#items))
             local spriteItem = CCSprite:create(items[index].path)
-            spriteItem:setAnchorPoint(ccp(0.5,0))
+            spriteItem:setAnchorPoint(cc.p(0.5,0))
             spriteItem:setOpacity(0)
-            spriteItem:setPosition(ccp((heroSize.width-itemTotalWidth)/2+math.random()*itemTotalWidth,heroSize.height/2 - 50))
+            spriteItem:setPosition(cc.p((heroSize.width-itemTotalWidth)/2+math.random()*itemTotalWidth,heroSize.height/2 - 50))
             spriteHero:addChild(spriteItem)
             
             local totalTime = 0.6
@@ -231,8 +231,8 @@ function clsParticleViewController:showReviveAnimation()
         end
         
         --小星星爆
-        local particle = CCParticleSystemQuad:create("particle/light.plist")
-        particle:setPosition(ccp(heroSize.width/2,heroSize.height/2 - 50))
+        local particle = cc.ParticleSystemQuad:create("particle/light.plist")
+        particle:setPosition(cc.p(heroSize.width/2,heroSize.height/2 - 50))
         particle:setAutoRemoveOnFinish(true)
         spriteHero:addChild(particle)
         
@@ -246,7 +246,7 @@ function clsParticleViewController:showReviveAnimation()
 end
 
 function clsParticleViewController:showStaBar()
-    local winSize = CCDirector:sharedDirector():getWinSize()
+    local winSize = CCDirector:getInstance():getWinSize()
     
     local endPercent = 100
     local animationTime = 1
@@ -255,7 +255,7 @@ function clsParticleViewController:showStaBar()
     local spriteBg = CCSprite:create("images/sta/sta_bar_background.png")
     local bgSize = spriteBg:getContentSize()
     
-    spriteBg:setPosition(ccp(winSize.width/2,winSize.height/2))
+    spriteBg:setPosition(cc.p(winSize.width/2,winSize.height/2))
     self.layer:addChild(spriteBg)
     
     
@@ -263,23 +263,23 @@ function clsParticleViewController:showStaBar()
     local progresBar = CCProgressTimer:create(CCSprite:create("images/sta/sta_bar.png"))
     local barSize = progresBar:getContentSize()
     
-    progresBar:setAnchorPoint(ccp(0,0))
-    progresBar:setPosition(ccp((bgSize.width-barSize.width)/2,(bgSize.height-barSize.height)/2))
+    progresBar:setAnchorPoint(cc.p(0,0))
+    progresBar:setPosition(cc.p((bgSize.width-barSize.width)/2,(bgSize.height-barSize.height)/2))
     progresBar:setType(kCCProgressTimerTypeBar)
-    progresBar:setMidpoint(ccp(0, 0))
-    progresBar:setBarChangeRate(ccp(1, 0))
+    progresBar:setMidpoint(cc.p(0, 0))
+    progresBar:setBarChangeRate(cc.p(1, 0))
     progresBar:setPercentage(0)
     spriteBg:addChild(progresBar)
     
-    local progresTo = CCProgressTo:create(animationTime,endPercent)
+    local progresTo = cc.ProgressTo:create(animationTime,endPercent)
     
     local function endParticleFunc()
         
         --小星星爆
         
-        local particle = CCParticleSystemQuad:create("particle/fireworks2.plist")
+        local particle = cc.ParticleSystemQuad:create("particle/fireworks2.plist")
         particle:setAutoRemoveOnFinish(true)
-        particle:setPosition(ccp(barSize.width,bgSize.height/2))
+        particle:setPosition(cc.p(barSize.width,bgSize.height/2))
         spriteBg:addChild(particle)
         
     end
@@ -290,12 +290,12 @@ function clsParticleViewController:showStaBar()
     
     --小星星（尾巴）
     local x = progresBar:getPercentage()/100*bgSize.width
-    local particleTail = CCParticleSystemQuad:create("particle/startail.plist")
+    local particleTail = cc.ParticleSystemQuad:create("particle/startail.plist")
     particleTail:setAutoRemoveOnFinish(true)
-    particleTail:setPosition(ccp(x,bgSize.height/2))
+    particleTail:setPosition(cc.p(x,bgSize.height/2))
     spriteBg:addChild(particleTail)
     
-    local moveTo = CCMoveTo:create(animationTime,ccp(endPercent/100*bgSize.width,bgSize.height/2))
+    local moveTo = CCMoveTo:create(animationTime,cc.p(endPercent/100*bgSize.width,bgSize.height/2))
     
     local function removeTail()
         particleTail:removeFromParentAndCleanup(true)

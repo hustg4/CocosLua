@@ -44,7 +44,7 @@ function clsDragViewController:movedImage(filename)
     else
         sprite = CCSprite:create("images/cat.png");
     end
-    sprite:setAnchorPoint(ccp(0,0))
+    sprite:setAnchorPoint(cc.p(0,0))
 
     sprite:runAction(CCRotateTo:create(0.1,0));
     local rotLeft = CCRotateBy:create(0.1, -4.0);
@@ -70,7 +70,7 @@ end
 function clsDragViewController:testRadioMenu()
     local pointArray = CCPointArray:create(4);
     for i = 1,4 do
-        local p = ccp(i * 40 , i * 40);
+        local p = cc.p(i * 40 , i * 40);
         pointArray:addControlPoint(p)
     end
     local radioMenu = CCRadioMenu:create(pointArray, "images/bird.png", "images/cat.png");
@@ -92,12 +92,12 @@ function clsDragViewController:addScrollView()
     
     scrollView:setContentSize(CCSizeMake(400 * self.scrollViewPageNum, 80));
     layer:setContentSize(scrollView:getContentSize());
-    scrollView:setPosition(ccp(50,100));
+    scrollView:setPosition(cc.p(50,100));
     
     for i = 1,#images do
         local filename = images[i]
         local sprite = CCSprite:create("images/"..filename);
-        sprite:setPosition(ccp(20 + (i - 1) * 400, 10));
+        sprite:setPosition(cc.p(20 + (i - 1) * 400, 10));
         scrollView:addChild(sprite,2)
     end
 
@@ -118,7 +118,7 @@ function clsDragViewController:testPageControl()
     local pageControl = CCPageControl:create("images/icon/ccpagecontrol_full_dot.png","images/icon/ccpagecontrol_empty_dot.png");
     pageControl:setHidesForSinglePage(true);
     pageControl:setNumberOfPages(self.scrollViewPageNum);
-    pageControl:setPosition(ccp(200 ,50));
+    pageControl:setPosition(cc.p(200 ,50));
     self.pageControl = pageControl
     
     self.layer:addChild(pageControl)
@@ -155,7 +155,7 @@ end
 
 function clsDragViewController:testDrag()
     --ask director the window size
-    local size = CCDirector:sharedDirector():getWinSize()
+    local size = CCDirector:getInstance():getWinSize()
     
     --(1)sprites
     local images = {"bird.png", "cat.png", "dog.png","turtle.png"};
@@ -189,7 +189,7 @@ function clsDragViewController:testPickerView()
     picker_view:setScriptDelegate(self)
     picker_view:selectRow(1,0,false)
     --self.picker_view = tolua.cast(self.picker_view,"CCNode")
-    picker_view:setPosition(ccp(273,150))
+    picker_view:setPosition(cc.p(273,150))
     
     self.layer:addChild(picker_view)
     print("!!!!!!!!!!!!!!!",picker_view)
@@ -199,14 +199,14 @@ function clsDragViewController:testCheckBox()
     local checkbox = CCControlCheckBox:create("images/icon/default_checkbox_checked.png","images/icon/default_checkbox_unchecked.png","setting")
     checkbox:addScriptDelegateForControlEvent(self,CCControlEventValueChanged)
     checkbox = tolua.cast(checkbox,"CCNode")
-    checkbox:setPosition(ccp(200,200))
+    checkbox:setPosition(cc.p(200,200))
     self.layer:addChild(checkbox)
 end
 
 function clsDragViewController:testLongPress()
     
     local s = CCSprite:create("images/cat.png")
-    s:setPosition(ccp(300,200))
+    s:setPosition(cc.p(300,200))
     self.layer:addChild(s)
     local lpRecognizer = CCLongPressGestureRecognizer:create()
     lpRecognizer:setScriptDelegate(self)

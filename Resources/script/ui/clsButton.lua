@@ -24,7 +24,7 @@ local TAG_ACTION_SCALE = 9988765         --点击时缩放action的tag
 
 function clsButton:create( normalImage, selectedImage, disabledImage, target, selector)
 	local button = clsButton:__create()
-	button:setAnchorPoint(ccp(0.5, 0.5))
+	button:setAnchorPoint(cc.p(0.5, 0.5))
     button:initWithNormalImage(normalImage, selectedImage, disabledImage, target, selector)
 
     return button
@@ -74,7 +74,7 @@ end
 function clsButton:setNormalImage( pImage )
 	if pImage ~= self.m_pNormalImage then 
 		if pImage then 
-			pImage:setAnchorPoint(ccp(0, 0))
+			pImage:setAnchorPoint(cc.p(0, 0))
 			self:addChild(pImage)
 		end
 
@@ -92,7 +92,7 @@ end
 function clsButton:setSelectedImage( pImage )
 	if pImage ~= self.m_pSelectedImage then 
 		if pImage then 
-			pImage:setAnchorPoint(ccp(0, 0))
+			pImage:setAnchorPoint(cc.p(0, 0))
 			self:addChild(pImage)
 		end
 
@@ -110,7 +110,7 @@ end
 function clsButton:setDisabledImage( pImage )
 	if pImage ~= self.m_pDisabledImage then 
 		if pImage then 
-			pImage:setAnchorPoint(ccp(0, 0))
+			pImage:setAnchorPoint(cc.p(0, 0))
 			self:addChild(pImage)
 		end
 
@@ -301,7 +301,7 @@ end
 
 --判断点击是否在范围内
 function clsButton:isTouched( x, y )
-	local originInScene = self:convertToWorldSpace(ccp(0, 0))
+	local originInScene = self:convertToWorldSpace(cc.p(0, 0))
 
 	if x - originInScene.x >= 0 and x - (originInScene.x + self:getContentSize().width) <= 0 and y - originInScene.y >= 0 and y - (originInScene.y + self:getContentSize().height) <= 0 then
 		return true

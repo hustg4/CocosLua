@@ -207,7 +207,7 @@ bool LuaUtil::hasFunction(void *userdata, const std::string &functionName)
     LuaEngine* pEngine = LuaEngine::getInstance();
     lua_State* m_state=pEngine->getLuaStack()->getLuaState();
     
-    printf("hasFunction [%s] start lua top:%d\n",functionName.c_str(),lua_gettop(m_state));
+//    printf("hasFunction [%s] start lua top:%d\n",functionName.c_str(),lua_gettop(m_state));
     
     /* stack: userdata */
     tolua_pushusertype(m_state, userdata, "cc.Ref");
@@ -225,7 +225,7 @@ bool LuaUtil::hasFunction(void *userdata, const std::string &functionName)
 
     lua_pop(m_state, 3);
     
-    printf("hasFunction [%s] end lua top:%d\n",functionName.c_str(),lua_gettop(m_state));
+//    printf("hasFunction [%s] end lua top:%d\n",functionName.c_str(),lua_gettop(m_state));
     
     return flag;
 }
@@ -261,25 +261,25 @@ void* LuaUtil::executeFunction(cocos2d::__Array *params, cocos2d::__Array *param
             //判断是否是基本类型
             if (strcmp(paramType, "CCBool") == 0) {
                 
-                bool boolValue = ((CCBool*)param)->getValue();
+                bool boolValue = ((__Bool*)param)->getValue();
                 lua_pushboolean(m_state, boolValue);
                 
-            }else if (strcmp(paramType, "__Integer") == 0){
+            }else if (strcmp(paramType, "CCInteger") == 0){
                 
                 int intValue = ((__Integer*)param)->getValue();
                 lua_pushnumber(m_state, intValue);
                 
             }else if (strcmp(paramType, "CCFloat") == 0){
                 
-                float floatValue = ((CCFloat*)param)->getValue();
+                float floatValue = ((__Double*)param)->getValue();
                 lua_pushnumber(m_state, floatValue);
                 
             }else if (strcmp(paramType, "CCDouble") == 0){
                 
-                double doubleValue = ((CCDouble*)param)->getValue();
+                double doubleValue = ((__Double*)param)->getValue();
                 lua_pushnumber(m_state, doubleValue);
                 
-            }else if (strcmp(paramType, "__String") == 0){
+            }else if (strcmp(paramType, "CCString") == 0){
                 
                 const char* strValue = ((__String*)param)->getCString();
                 lua_pushstring(m_state, strValue);

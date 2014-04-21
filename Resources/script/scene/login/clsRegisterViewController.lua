@@ -15,7 +15,7 @@ end
 function clsRegisterViewController:showView()
     self.layer=CCLayer:create()
     -- ask director the window size
-    local size = CCDirector:sharedDirector():getWinSize();
+    local size = CCDirector:getInstance():getWinSize();
     --(1)背景
     local spriteBg=CCSprite:create("images/Background_FullScreen_login.png");
     spriteBg:setPosition(size.width/2, size.height/2);

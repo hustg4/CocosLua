@@ -180,7 +180,7 @@ function LayoutNode(node)
      print("anchor:"..anchor.." x:"..x.." y:"..y.." w:"..nodeSize.width.." h:"..nodeSize.height)
      print("---------------------------------------")
      --]]
-    node:setPosition(ccp(x,y))
+    node:setPosition(cc.p(x,y))
     
 end
 
@@ -203,11 +203,11 @@ function ReplaceScene(sceneClass,paramDict)
     end
     
     local scene = sceneClass["create"](sceneClass,paramDict)
-    local currentScene = CCDirector:sharedDirector():getRunningScene()
+    local currentScene = CCDirector:getInstance():getRunningScene()
     if currentScene == nil then
-        CCDirector:sharedDirector():runWithScene(scene)
+        CCDirector:getInstance():runWithScene(scene)
         else
-        CCDirector:sharedDirector():replaceScene(scene)
+        CCDirector:getInstance():replaceScene(scene)
     end
 end
 
@@ -311,10 +311,10 @@ function CreateMaskSprite(maskSprite,textureSprite)
     local rt = CCRenderTexture:create(maskSize.width,maskSize.height)
     
     local mContentSize = maskSprite:getContentSize()
-    maskSprite:setPosition(ccp(mContentSize.width/2,mContentSize.height/2))
+    maskSprite:setPosition(cc.p(mContentSize.width/2,mContentSize.height/2))
     
     local tContentSize = textureSprite:getContentSize()
-    textureSprite:setPosition(ccp(tContentSize.width/2,tContentSize.height/2))
+    textureSprite:setPosition(cc.p(tContentSize.width/2,tContentSize.height/2))
     
     maskSprite:setBlendFunc(GL_ONE,GL_ZERO)
     maskSprite:setFlipY(true)

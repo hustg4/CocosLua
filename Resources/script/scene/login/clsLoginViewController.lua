@@ -20,7 +20,7 @@ end
 function clsLoginViewController:showView()
     
     --ask director the window size
-    local size = CCDirector:sharedDirector():getWinSize()
+    local size = CCDirector:getInstance():getWinSize()
     self.layer = CCLayer:create()
 
     --(1)背景
@@ -30,18 +30,18 @@ function clsLoginViewController:showView()
     
     --(2)标题
     local labelTitle = CCLabelTTF:create("Abc123!!?@登录场景" , "DFPYuanW7-GB", 32)
-    --labelTitle:setStroke(ccc3(0,0,0),1)
-    --labelTitle:setShadow(ccc3(0,0,0),1,-1)
+    --labelTitle:setStroke(cc.c3b(0,0,0),1)
+    --labelTitle:setShadow(cc.c3b(0,0,0),1,-1)
     --local labelTitle = CCLabelBMFont:create("文档接口的实现","font/hh.fnt")
     -- position the label on the center of the screen
-    labelTitle:setColor(ccc3(255,0,0))
-    labelTitle:setPosition(ccp(size.width/2,size.height/2+50))
+    labelTitle:setColor(cc.c3b(255,0,0))
+    labelTitle:setPosition(cc.p(size.width/2,size.height/2+50))
     -- add the label as a child to this layer
     self.layer:addChild(labelTitle)
     
     --[[
     local labelHTML = CCHTMLLabelTTF:create("<font face='Arial-BoldMT' size=22 color='#FFFFFF'>皮糙肉厚：</font><font face='Arial-BoldMT' size=22 color='#FFCE00'>不大于200伤害的攻击对其无效</font>","Arial-BoldMT",22)
-    labelHTML:setPosition(ccp(size.width/2,size.height/2-50))
+    labelHTML:setPosition(cc.p(size.width/2,size.height/2-50))
     self.layer:addChild(labelHTML)
     --]]
     
@@ -97,14 +97,14 @@ function clsLoginViewController:showView()
     button:setEnabled(false)
     button:setZOrder(0)
     button:setScaleOnTouch(true)
-    button:setPosition(ccp(200,200))
+    button:setPosition(cc.p(200,200))
     self.layer:addChild(button)
     
     local button = clsButton:create("images/long_button_blue.png")
     button:setEnabled(false)
     button:setZOrder(1)
     button:setScaleOnTouch(true)
-    button:setPosition(ccp(220,200))
+    button:setPosition(cc.p(220,200))
     self.layer:addChild(button)
     --]]
     
@@ -120,13 +120,13 @@ function clsLoginViewController:onTouch(eventType,x,y)
             self.webView = nil
         else
             
-            local size = CCDirector:sharedDirector():getWinSize()
+            local size = CCDirector:getInstance():getWinSize()
             local w = 320
             local h = 240
             
             local spriteBg = CCSprite:create("images/blue.png")
-            spriteBg:setAnchorPoint(ccp(0,0))
-            spriteBg:setPosition(ccp(50,50))
+            spriteBg:setAnchorPoint(cc.p(0,0))
+            spriteBg:setPosition(cc.p(50,50))
             self.layer:addChild(spriteBg)
             
             local spriteSize = spriteBg:getContentSize()
@@ -171,7 +171,7 @@ end
 
 function clsLoginViewController:menuCallbackModal(tag,sender)
     
-    local size = CCDirector:sharedDirector():getWinSize()
+    local size = CCDirector:getInstance():getWinSize()
     self.modalLayer = ModalLayer:create()
     
     self.layer:addChild(self.modalLayer)
@@ -219,7 +219,7 @@ function clsLoginViewController:tableCellAtIndex(tableView,index)
         cell = CCTableViewCell:create()
         local sprite = CCSprite:create("images/icon/effect_gantanhao_up.png")
         sprite:setAnchorPoint(CCPoint:new(0,0))
-        sprite:setPosition(ccp(0,0))
+        sprite:setPosition(cc.p(0,0))
         cell:addChild(sprite)
         
     end
