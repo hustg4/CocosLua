@@ -1100,20 +1100,20 @@
 		AAFBD04E18F8F0950088FFA1 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				AAFADAC41905425600636470 /* LuaUtil.cpp */,
-				AAFADAC51905425600636470 /* LuaUtil.h */,
 				AAFBD04F18F8F0950088FFA1 /* base64 */,
 				AAFBD05418F8F0950088FFA1 /* encrypt */,
+				AAFBD06118F8F0950088FFA1 /* NetStatus */,
+				AAFBD06B18F8F0950088FFA1 /* uuid */,
+				AAFADAC41905425600636470 /* LuaUtil.cpp */,
+				AAFADAC51905425600636470 /* LuaUtil.h */,
 				AAFBD05D18F8F0950088FFA1 /* FileManager.cpp */,
 				AAFBD05E18F8F0950088FFA1 /* FileManager.h */,
 				AAFBD05F18F8F0950088FFA1 /* md5.cpp */,
 				AAFBD06018F8F0950088FFA1 /* md5.h */,
-				AAFBD06118F8F0950088FFA1 /* NetStatus */,
 				AAFBD06718F8F0950088FFA1 /* RegexUtil.cpp */,
 				AAFBD06818F8F0950088FFA1 /* RegexUtil.h */,
 				AAFBD06918F8F0950088FFA1 /* ResourceManager.cpp */,
 				AAFBD06A18F8F0950088FFA1 /* ResourceManager.h */,
-				AAFBD06B18F8F0950088FFA1 /* uuid */,
 			);
 			path = utils;
 			sourceTree = "<group>";

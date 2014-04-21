@@ -1,6 +1,7 @@
 
 --------------------------------
 -- @module NetCenter
+-- @extend Ref
 
 --------------------------------
 -- @function [parent=#NetCenter] addNetService 
