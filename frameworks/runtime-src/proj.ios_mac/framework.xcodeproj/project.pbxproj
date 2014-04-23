@@ -51,10 +51,10 @@
 		50D7C96E17EBBEE6005D0B91 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96D17EBBEE6005D0B91 /* AppKit.framework */; };
 		50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96F17EBBEEC005D0B91 /* IOKit.framework */; };
 		AA1C55DF1907E5E7001F3F83 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55DE1907E5E7001F3F83 /* SystemConfiguration.framework */; };
-		AA1C55E61907E713001F3F83 /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1C55E31907E713001F3F83 /* NetStatusUtilIos.mm */; };
-		AA1C55E71907E713001F3F83 /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1C55E31907E713001F3F83 /* NetStatusUtilIos.mm */; };
-		AA1C55E81907E713001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C55E51907E713001F3F83 /* Reachability.m */; };
-		AA1C55E91907E713001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C55E51907E713001F3F83 /* Reachability.m */; };
+		AA1C56621907EE1E001F3F83 /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1C565F1907EE1E001F3F83 /* NetStatusUtilIos.mm */; };
+		AA1C56631907EE1E001F3F83 /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1C565F1907EE1E001F3F83 /* NetStatusUtilIos.mm */; };
+		AA1C56641907EE1E001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C56611907EE1E001F3F83 /* Reachability.m */; };
+		AA1C56651907EE1E001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C56611907EE1E001F3F83 /* Reachability.m */; };
 		AA2A38FE18FE17E00053A4E5 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F618FE17E00053A4E5 /* ccb */; };
 		AA2A38FF18FE17E00053A4E5 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F618FE17E00053A4E5 /* ccb */; };
 		AA2A390018FE17E00053A4E5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F718FE17E00053A4E5 /* data */; };
@@ -462,9 +462,9 @@
 		50D7C96D17EBBEE6005D0B91 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		50D7C96F17EBBEEC005D0B91 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		AA1C55DE1907E5E7001F3F83 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		AA1C55E31907E713001F3F83 /* NetStatusUtilIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetStatusUtilIos.mm; sourceTree = "<group>"; };
-		AA1C55E41907E713001F3F83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		AA1C55E51907E713001F3F83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		AA1C565F1907EE1E001F3F83 /* NetStatusUtilIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetStatusUtilIos.mm; sourceTree = "<group>"; };
+		AA1C56601907EE1E001F3F83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		AA1C56611907EE1E001F3F83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AA2A38F618FE17E00053A4E5 /* ccb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccb; sourceTree = "<group>"; };
 		AA2A38F718FE17E00053A4E5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		AA2A38F818FE17E00053A4E5 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
@@ -786,9 +786,9 @@
 		AA1C55E21907E713001F3F83 /* ios_mac */ = {
 			isa = PBXGroup;
 			children = (
-				AA1C55E31907E713001F3F83 /* NetStatusUtilIos.mm */,
-				AA1C55E41907E713001F3F83 /* Reachability.h */,
-				AA1C55E51907E713001F3F83 /* Reachability.m */,
+				AA1C565F1907EE1E001F3F83 /* NetStatusUtilIos.mm */,
+				AA1C56601907EE1E001F3F83 /* Reachability.h */,
+				AA1C56611907EE1E001F3F83 /* Reachability.m */,
 			);
 			path = ios_mac;
 			sourceTree = "<group>";
@@ -1587,7 +1587,7 @@
 				AAB0D3E61907E2C100E1788C /* JSONElement.cpp in Sources */,
 				AAB0D43C1907E2C100E1788C /* HttpDownloader.cpp in Sources */,
 				AAB0D44C1907E2C100E1788C /* SQLiteTest.cpp in Sources */,
-				AA1C55E71907E713001F3F83 /* NetStatusUtilIos.mm in Sources */,
+				AA1C56631907EE1E001F3F83 /* NetStatusUtilIos.mm in Sources */,
 				AAB0D4521907E2C100E1788C /* DBDecryptUtil.cpp in Sources */,
 				AAB0D4501907E2C100E1788C /* Base64Util.cpp in Sources */,
 				AAB0D4581907E2C100E1788C /* FileDecryptUtil.cpp in Sources */,
@@ -1621,7 +1621,7 @@
 				AAB0D3EE1907E2C100E1788C /* JSONAllocator.cpp in Sources */,
 				AAB0D3FC1907E2C100E1788C /* JSONPreparse.cpp in Sources */,
 				AAB0D3FA1907E2C100E1788C /* JSONNode_Mutex.cpp in Sources */,
-				AA1C55E91907E713001F3F83 /* Reachability.m in Sources */,
+				AA1C56651907EE1E001F3F83 /* Reachability.m in Sources */,
 				AAB0D44A1907E2C100E1788C /* SQLite.cpp in Sources */,
 				AAB0D3F81907E2C100E1788C /* JSONNode.cpp in Sources */,
 				AAB0D4381907E2C100E1788C /* NetRequest.cpp in Sources */,
@@ -1646,9 +1646,9 @@
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
 				AAB0D4311907E2C100E1788C /* NetFilter.cpp in Sources */,
 				AAB0D4571907E2C100E1788C /* FileDecryptUtil.cpp in Sources */,
-				AA1C55E81907E713001F3F83 /* Reachability.m in Sources */,
+				AA1C56641907EE1E001F3F83 /* Reachability.m in Sources */,
 				AAB0D4371907E2C100E1788C /* NetRequest.cpp in Sources */,
-				AA1C55E61907E713001F3F83 /* NetStatusUtilIos.mm in Sources */,
+				AA1C56621907EE1E001F3F83 /* NetStatusUtilIos.mm in Sources */,
 				AAB0D44D1907E2C100E1788C /* Base64.cpp in Sources */,
 				AAB0D3E51907E2C100E1788C /* JSONElement.cpp in Sources */,
 				AA3C4A9F18F93A1500D65677 /* HttpService.cpp in Sources */,
