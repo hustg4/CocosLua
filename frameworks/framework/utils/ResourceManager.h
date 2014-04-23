@@ -11,8 +11,8 @@
 
 #include <iostream>
 #include "cocos2d.h"
-#include "JSONElement.h"
-#include "HttpDownloader.h"
+#include "../json/JSONElement.h"
+#include "../net/utils/HttpDownloader.h"
 
 enum ResourceManagerErrorType {
     kResourceManagerErrorTypeVersionIsLatest = 0,           //版本已是最新
