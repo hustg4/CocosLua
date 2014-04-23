@@ -55,6 +55,116 @@
 		AA1C56631907EE1E001F3F83 /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1C565F1907EE1E001F3F83 /* NetStatusUtilIos.mm */; };
 		AA1C56641907EE1E001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C56611907EE1E001F3F83 /* Reachability.m */; };
 		AA1C56651907EE1E001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C56611907EE1E001F3F83 /* Reachability.m */; };
+		AA1C681519080A40001F3F83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C681419080A40001F3F83 /* Cocoa.framework */; };
+		AA1C681F19080A40001F3F83 /* libCocosLuaIos.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C681E19080A40001F3F83 /* libCocosLuaIos.m */; };
+		AA1C683B19080ABA001F3F83 /* JSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3481907E2C100E1788C /* JSONElement.cpp */; };
+		AA1C683C19080ABA001F3F83 /* JSONFormatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D34A1907E2C100E1788C /* JSONFormatter.cpp */; };
+		AA1C683D19080ABA001F3F83 /* JSONParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D34C1907E2C100E1788C /* JSONParser.cpp */; };
+		AA1C683E19080ABA001F3F83 /* internalJSONNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3571907E2C100E1788C /* internalJSONNode.cpp */; };
+		AA1C683F19080ABA001F3F83 /* JSONAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D35A1907E2C100E1788C /* JSONAllocator.cpp */; };
+		AA1C684019080ABA001F3F83 /* JSONChildren.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D35C1907E2C100E1788C /* JSONChildren.cpp */; };
+		AA1C684119080ABA001F3F83 /* JSONDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D35E1907E2C100E1788C /* JSONDebug.cpp */; };
+		AA1C684219080ABA001F3F83 /* JSONIterators.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3671907E2C100E1788C /* JSONIterators.cpp */; };
+		AA1C684319080ABA001F3F83 /* JSONMemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3681907E2C100E1788C /* JSONMemory.cpp */; };
+		AA1C684419080ABA001F3F83 /* JSONNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D36B1907E2C100E1788C /* JSONNode.cpp */; };
+		AA1C684519080ABA001F3F83 /* JSONNode_Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D36D1907E2C100E1788C /* JSONNode_Mutex.cpp */; };
+		AA1C684619080ABA001F3F83 /* JSONPreparse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D36E1907E2C100E1788C /* JSONPreparse.cpp */; };
+		AA1C684719080ABA001F3F83 /* JSONStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3731907E2C100E1788C /* JSONStream.cpp */; };
+		AA1C684819080ABA001F3F83 /* JSONValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3751907E2C100E1788C /* JSONValidator.cpp */; };
+		AA1C684919080ABA001F3F83 /* JSONWorker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3771907E2C100E1788C /* JSONWorker.cpp */; };
+		AA1C684A19080ABA001F3F83 /* JSONWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3791907E2C100E1788C /* JSONWriter.cpp */; };
+		AA1C684B19080ABA001F3F83 /* libjson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D37A1907E2C100E1788C /* libjson.cpp */; };
+		AA1C684C19080ACD001F3F83 /* JSONElement.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3491907E2C100E1788C /* JSONElement.h */; };
+		AA1C684D19080ACD001F3F83 /* JSONFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D34B1907E2C100E1788C /* JSONFormatter.h */; };
+		AA1C684E19080ACD001F3F83 /* JSONParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D34D1907E2C100E1788C /* JSONParser.h */; };
+		AA1C684F19080ACD001F3F83 /* libbase64++.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3511907E2C100E1788C /* libbase64++.h */; };
+		AA1C685019080ACD001F3F83 /* mempool.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3531907E2C100E1788C /* mempool.h */; };
+		AA1C685119080ACD001F3F83 /* JSONOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3541907E2C100E1788C /* JSONOptions.h */; };
+		AA1C685219080ACD001F3F83 /* libjson.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3551907E2C100E1788C /* libjson.h */; };
+		AA1C685319080ACD001F3F83 /* internalJSONNode.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3581907E2C100E1788C /* internalJSONNode.h */; };
+		AA1C685419080ACD001F3F83 /* JSON_Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3591907E2C100E1788C /* JSON_Base64.h */; };
+		AA1C685519080ACD001F3F83 /* JSONAllocator.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D35B1907E2C100E1788C /* JSONAllocator.h */; };
+		AA1C685619080ACD001F3F83 /* JSONChildren.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D35D1907E2C100E1788C /* JSONChildren.h */; };
+		AA1C685719080ACD001F3F83 /* JSONDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D35F1907E2C100E1788C /* JSONDebug.h */; };
+		AA1C685819080ACD001F3F83 /* GNU_C.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3611907E2C100E1788C /* GNU_C.h */; };
+		AA1C685919080ACD001F3F83 /* Strings_Defs.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3621907E2C100E1788C /* Strings_Defs.h */; };
+		AA1C685A19080ACD001F3F83 /* Unknown_C.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3631907E2C100E1788C /* Unknown_C.h */; };
+		AA1C685B19080ACD001F3F83 /* Visual_C.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3641907E2C100E1788C /* Visual_C.h */; };
+		AA1C685C19080ACD001F3F83 /* JSONDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3651907E2C100E1788C /* JSONDefs.h */; };
+		AA1C685D19080ACD001F3F83 /* JSONGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3661907E2C100E1788C /* JSONGlobals.h */; };
+		AA1C685E19080ACD001F3F83 /* JSONMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3691907E2C100E1788C /* JSONMemory.h */; };
+		AA1C685F19080ACD001F3F83 /* JSONMemoryPool.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D36A1907E2C100E1788C /* JSONMemoryPool.h */; };
+		AA1C686019080ACD001F3F83 /* JSONNode.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D36C1907E2C100E1788C /* JSONNode.h */; };
+		AA1C686119080ACD001F3F83 /* JSONPreparse.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D36F1907E2C100E1788C /* JSONPreparse.h */; };
+		AA1C686219080ACD001F3F83 /* JSONSharedString.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3701907E2C100E1788C /* JSONSharedString.h */; };
+		AA1C686319080ACD001F3F83 /* JSONSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3711907E2C100E1788C /* JSONSingleton.h */; };
+		AA1C686419080ACD001F3F83 /* JSONStats.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3721907E2C100E1788C /* JSONStats.h */; };
+		AA1C686519080ACD001F3F83 /* JSONStream.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3741907E2C100E1788C /* JSONStream.h */; };
+		AA1C686619080ACD001F3F83 /* JSONValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3761907E2C100E1788C /* JSONValidator.h */; };
+		AA1C686719080ACD001F3F83 /* JSONWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3781907E2C100E1788C /* JSONWorker.h */; };
+		AA1C686819080ACD001F3F83 /* NumberToString.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D37B1907E2C100E1788C /* NumberToString.h */; };
+		AA1C686C19080C0E001F3F83 /* lua_framework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3931907E2C100E1788C /* lua_framework_auto.cpp */; };
+		AA1C686D19080C0E001F3F83 /* NetCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3971907E2C100E1788C /* NetCenter.cpp */; };
+		AA1C686E19080C0E001F3F83 /* NetFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3991907E2C100E1788C /* NetFilter.cpp */; };
+		AA1C686F19080C0E001F3F83 /* NetHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D39B1907E2C100E1788C /* NetHandler.cpp */; };
+		AA1C687019080C0E001F3F83 /* NetProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D39D1907E2C100E1788C /* NetProtocol.cpp */; };
+		AA1C687119080C0E001F3F83 /* NetRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D39F1907E2C100E1788C /* NetRequest.cpp */; };
+		AA1C687219080C0E001F3F83 /* NetResponse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3A11907E2C100E1788C /* NetResponse.cpp */; };
+		AA1C687319080C0E001F3F83 /* HttpDownloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3A51907E2C100E1788C /* HttpDownloader.cpp */; };
+		AA1C687419080C0E001F3F83 /* HttpForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3A71907E2C100E1788C /* HttpForm.cpp */; };
+		AA1C687519080C0E001F3F83 /* ODSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3A91907E2C100E1788C /* ODSocket.cpp */; };
+		AA1C687619080C0E001F3F83 /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3AB1907E2C100E1788C /* Socket.cpp */; };
+		AA1C687719080C0E001F3F83 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3B01907E2C100E1788C /* GameScene.cpp */; };
+		AA1C687819080C0E001F3F83 /* ViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3B21907E2C100E1788C /* ViewController.cpp */; };
+		AA1C687919080C0E001F3F83 /* SQLite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3B91907E2C100E1788C /* SQLite.cpp */; };
+		AA1C687A19080C0E001F3F83 /* SQLiteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3BB1907E2C100E1788C /* SQLiteTest.cpp */; };
+		AA1C687B19080C0E001F3F83 /* Base64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3C51907E2C100E1788C /* Base64.cpp */; };
+		AA1C687C19080C0E001F3F83 /* Base64Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3C71907E2C100E1788C /* Base64Util.cpp */; };
+		AA1C687D19080C0E001F3F83 /* DBDecryptUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3CA1907E2C100E1788C /* DBDecryptUtil.cpp */; };
+		AA1C687E19080C0E001F3F83 /* des.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3CC1907E2C100E1788C /* des.cpp */; };
+		AA1C687F19080C0E001F3F83 /* DESUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3CE1907E2C100E1788C /* DESUtil.cpp */; };
+		AA1C688019080C0E001F3F83 /* FileDecryptUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3D01907E2C100E1788C /* FileDecryptUtil.cpp */; };
+		AA1C688119080C0E001F3F83 /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3D21907E2C100E1788C /* FileManager.cpp */; };
+		AA1C688219080C0E001F3F83 /* LuaUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3D41907E2C100E1788C /* LuaUtil.cpp */; };
+		AA1C688319080C0E001F3F83 /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3D61907E2C100E1788C /* md5.cpp */; };
+		AA1C688419080C0E001F3F83 /* RegexUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3DE1907E2C100E1788C /* RegexUtil.cpp */; };
+		AA1C688519080C0E001F3F83 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3E01907E2C100E1788C /* ResourceManager.cpp */; };
+		AA1C688819080C1D001F3F83 /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1C565F1907EE1E001F3F83 /* NetStatusUtilIos.mm */; };
+		AA1C688919080C1D001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C56611907EE1E001F3F83 /* Reachability.m */; };
+		AA1C688A19080C1D001F3F83 /* UUIDGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3E41907E2C100E1788C /* UUIDGenerator.mm */; };
+		AA1C688B19080C30001F3F83 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3B61907E2C100E1788C /* sqlite3.c */; };
+		AA1C688C19080C8F001F3F83 /* lua_framework_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3941907E2C100E1788C /* lua_framework_auto.hpp */; };
+		AA1C688D19080C8F001F3F83 /* NetCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3981907E2C100E1788C /* NetCenter.h */; };
+		AA1C688E19080C8F001F3F83 /* NetFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D39A1907E2C100E1788C /* NetFilter.h */; };
+		AA1C688F19080C8F001F3F83 /* NetHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D39C1907E2C100E1788C /* NetHandler.h */; };
+		AA1C689019080C8F001F3F83 /* NetProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D39E1907E2C100E1788C /* NetProtocol.h */; };
+		AA1C689119080C8F001F3F83 /* NetRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3A01907E2C100E1788C /* NetRequest.h */; };
+		AA1C689219080C8F001F3F83 /* NetResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3A21907E2C100E1788C /* NetResponse.h */; };
+		AA1C689319080C8F001F3F83 /* NetService.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3A31907E2C100E1788C /* NetService.h */; };
+		AA1C689419080C8F001F3F83 /* HttpDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3A61907E2C100E1788C /* HttpDownloader.h */; };
+		AA1C689519080C8F001F3F83 /* HttpForm.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3A81907E2C100E1788C /* HttpForm.h */; };
+		AA1C689619080C8F001F3F83 /* ODSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3AA1907E2C100E1788C /* ODSocket.h */; };
+		AA1C689719080C8F001F3F83 /* Socket.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3AC1907E2C100E1788C /* Socket.h */; };
+		AA1C689819080C8F001F3F83 /* notification.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3AE1907E2C100E1788C /* notification.h */; };
+		AA1C689919080C8F001F3F83 /* GameScene.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3B11907E2C100E1788C /* GameScene.h */; };
+		AA1C689A19080C8F001F3F83 /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3B31907E2C100E1788C /* ViewController.h */; };
+		AA1C689B19080C8F001F3F83 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3B71907E2C100E1788C /* sqlite3.h */; };
+		AA1C689C19080C8F001F3F83 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3B81907E2C100E1788C /* sqlite3ext.h */; };
+		AA1C689D19080C8F001F3F83 /* SQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BA1907E2C100E1788C /* SQLite.h */; };
+		AA1C689E19080C8F001F3F83 /* SQLiteTest.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BC1907E2C100E1788C /* SQLiteTest.h */; };
+		AA1C689F19080CA7001F3F83 /* the9framework.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BD1907E2C100E1788C /* the9framework.h */; };
+		AA1C68A019080CA7001F3F83 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3C61907E2C100E1788C /* Base64.h */; };
+		AA1C68A119080CA7001F3F83 /* Base64Util.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3C81907E2C100E1788C /* Base64Util.h */; };
+		AA1C68A219080CA7001F3F83 /* DBDecryptUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3CB1907E2C100E1788C /* DBDecryptUtil.h */; };
+		AA1C68A319080CA7001F3F83 /* des.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3CD1907E2C100E1788C /* des.h */; };
+		AA1C68A419080CA7001F3F83 /* DESUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3CF1907E2C100E1788C /* DESUtil.h */; };
+		AA1C68A519080CA7001F3F83 /* FileDecryptUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3D11907E2C100E1788C /* FileDecryptUtil.h */; };
+		AA1C68A619080CA7001F3F83 /* FileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3D31907E2C100E1788C /* FileManager.h */; };
+		AA1C68A719080CA7001F3F83 /* LuaUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3D51907E2C100E1788C /* LuaUtil.h */; };
+		AA1C68A819080CA7001F3F83 /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3D71907E2C100E1788C /* md5.h */; };
+		AA1C68A919080CA7001F3F83 /* RegexUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3DF1907E2C100E1788C /* RegexUtil.h */; };
+		AA1C68AA19080CA7001F3F83 /* ResourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3E11907E2C100E1788C /* ResourceManager.h */; };
+		AA1C68AB19080CA7001F3F83 /* UUIDGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3E31907E2C100E1788C /* UUIDGenerator.h */; };
 		AA2A38FE18FE17E00053A4E5 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F618FE17E00053A4E5 /* ccb */; };
 		AA2A38FF18FE17E00053A4E5 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F618FE17E00053A4E5 /* ccb */; };
 		AA2A390018FE17E00053A4E5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F718FE17E00053A4E5 /* data */; };
@@ -465,6 +575,15 @@
 		AA1C565F1907EE1E001F3F83 /* NetStatusUtilIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetStatusUtilIos.mm; sourceTree = "<group>"; };
 		AA1C56601907EE1E001F3F83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AA1C56611907EE1E001F3F83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		AA1C681319080A40001F3F83 /* liblibCocosLuaIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibCocosLuaIos.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1C681419080A40001F3F83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AA1C681719080A40001F3F83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA1C681819080A40001F3F83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AA1C681919080A40001F3F83 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		AA1C681C19080A40001F3F83 /* libCocosLuaIos-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libCocosLuaIos-Prefix.pch"; sourceTree = "<group>"; };
+		AA1C681D19080A40001F3F83 /* libCocosLuaIos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libCocosLuaIos.h; sourceTree = "<group>"; };
+		AA1C681E19080A40001F3F83 /* libCocosLuaIos.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libCocosLuaIos.m; sourceTree = "<group>"; };
+		AA1C682519080A40001F3F83 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AA2A38F618FE17E00053A4E5 /* ccb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccb; sourceTree = "<group>"; };
 		AA2A38F718FE17E00053A4E5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		AA2A38F818FE17E00053A4E5 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
@@ -666,6 +785,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA1C681019080A40001F3F83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1C681519080A40001F3F83 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F293B3C515EB7BE500256477 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -791,6 +918,34 @@
 				AA1C56611907EE1E001F3F83 /* Reachability.m */,
 			);
 			path = ios_mac;
+			sourceTree = "<group>";
+		};
+		AA1C681619080A40001F3F83 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA1C681719080A40001F3F83 /* Foundation.framework */,
+				AA1C681819080A40001F3F83 /* CoreData.framework */,
+				AA1C681919080A40001F3F83 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		AA1C681A19080A40001F3F83 /* libCocosLuaIos */ = {
+			isa = PBXGroup;
+			children = (
+				AA1C681D19080A40001F3F83 /* libCocosLuaIos.h */,
+				AA1C681E19080A40001F3F83 /* libCocosLuaIos.m */,
+				AA1C681B19080A40001F3F83 /* Supporting Files */,
+			);
+			path = libCocosLuaIos;
+			sourceTree = "<group>";
+		};
+		AA1C681B19080A40001F3F83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA1C681C19080A40001F3F83 /* libCocosLuaIos-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		AA2A390E18FE191A0053A4E5 /* const */ = {
@@ -1217,6 +1372,7 @@
 				5023810617EBBCAC00990C9B /* ios */,
 				5023817117EBBE3400990C9B /* mac */,
 				F293BB7C15EB830F00256477 /* Classes */,
+				AA1C681A19080A40001F3F83 /* libCocosLuaIos */,
 				F293B3CB15EB7BE500256477 /* Frameworks */,
 				1A0227A417A3AA1A00B867AD /* Lua Common */,
 				F293B3C915EB7BE500256477 /* Products */,
@@ -1229,6 +1385,7 @@
 			children = (
 				F293B3C815EB7BE500256477 /* framework iOS.app */,
 				5023816B17EBBCE400990C9B /* framework Mac.app */,
+				AA1C681319080A40001F3F83 /* liblibCocosLuaIos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1255,6 +1412,9 @@
 				F293B3D615EB7BE500256477 /* UIKit.framework */,
 				F293B3D815EB7BE500256477 /* Foundation.framework */,
 				F293B3DA15EB7BE500256477 /* CoreGraphics.framework */,
+				AA1C681419080A40001F3F83 /* Cocoa.framework */,
+				AA1C682519080A40001F3F83 /* XCTest.framework */,
+				AA1C681619080A40001F3F83 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1271,6 +1431,77 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AA1C681119080A40001F3F83 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1C689F19080CA7001F3F83 /* the9framework.h in Headers */,
+				AA1C68A019080CA7001F3F83 /* Base64.h in Headers */,
+				AA1C68A119080CA7001F3F83 /* Base64Util.h in Headers */,
+				AA1C68A219080CA7001F3F83 /* DBDecryptUtil.h in Headers */,
+				AA1C68A319080CA7001F3F83 /* des.h in Headers */,
+				AA1C68A419080CA7001F3F83 /* DESUtil.h in Headers */,
+				AA1C68A519080CA7001F3F83 /* FileDecryptUtil.h in Headers */,
+				AA1C68A619080CA7001F3F83 /* FileManager.h in Headers */,
+				AA1C68A719080CA7001F3F83 /* LuaUtil.h in Headers */,
+				AA1C68A819080CA7001F3F83 /* md5.h in Headers */,
+				AA1C68A919080CA7001F3F83 /* RegexUtil.h in Headers */,
+				AA1C68AA19080CA7001F3F83 /* ResourceManager.h in Headers */,
+				AA1C68AB19080CA7001F3F83 /* UUIDGenerator.h in Headers */,
+				AA1C688C19080C8F001F3F83 /* lua_framework_auto.hpp in Headers */,
+				AA1C688D19080C8F001F3F83 /* NetCenter.h in Headers */,
+				AA1C688E19080C8F001F3F83 /* NetFilter.h in Headers */,
+				AA1C688F19080C8F001F3F83 /* NetHandler.h in Headers */,
+				AA1C689019080C8F001F3F83 /* NetProtocol.h in Headers */,
+				AA1C689119080C8F001F3F83 /* NetRequest.h in Headers */,
+				AA1C689219080C8F001F3F83 /* NetResponse.h in Headers */,
+				AA1C689319080C8F001F3F83 /* NetService.h in Headers */,
+				AA1C689419080C8F001F3F83 /* HttpDownloader.h in Headers */,
+				AA1C689519080C8F001F3F83 /* HttpForm.h in Headers */,
+				AA1C689619080C8F001F3F83 /* ODSocket.h in Headers */,
+				AA1C689719080C8F001F3F83 /* Socket.h in Headers */,
+				AA1C689819080C8F001F3F83 /* notification.h in Headers */,
+				AA1C689919080C8F001F3F83 /* GameScene.h in Headers */,
+				AA1C689A19080C8F001F3F83 /* ViewController.h in Headers */,
+				AA1C689B19080C8F001F3F83 /* sqlite3.h in Headers */,
+				AA1C689C19080C8F001F3F83 /* sqlite3ext.h in Headers */,
+				AA1C689D19080C8F001F3F83 /* SQLite.h in Headers */,
+				AA1C689E19080C8F001F3F83 /* SQLiteTest.h in Headers */,
+				AA1C684C19080ACD001F3F83 /* JSONElement.h in Headers */,
+				AA1C684D19080ACD001F3F83 /* JSONFormatter.h in Headers */,
+				AA1C684E19080ACD001F3F83 /* JSONParser.h in Headers */,
+				AA1C684F19080ACD001F3F83 /* libbase64++.h in Headers */,
+				AA1C685019080ACD001F3F83 /* mempool.h in Headers */,
+				AA1C685119080ACD001F3F83 /* JSONOptions.h in Headers */,
+				AA1C685219080ACD001F3F83 /* libjson.h in Headers */,
+				AA1C685319080ACD001F3F83 /* internalJSONNode.h in Headers */,
+				AA1C685419080ACD001F3F83 /* JSON_Base64.h in Headers */,
+				AA1C685519080ACD001F3F83 /* JSONAllocator.h in Headers */,
+				AA1C685619080ACD001F3F83 /* JSONChildren.h in Headers */,
+				AA1C685719080ACD001F3F83 /* JSONDebug.h in Headers */,
+				AA1C685819080ACD001F3F83 /* GNU_C.h in Headers */,
+				AA1C685919080ACD001F3F83 /* Strings_Defs.h in Headers */,
+				AA1C685A19080ACD001F3F83 /* Unknown_C.h in Headers */,
+				AA1C685B19080ACD001F3F83 /* Visual_C.h in Headers */,
+				AA1C685C19080ACD001F3F83 /* JSONDefs.h in Headers */,
+				AA1C685D19080ACD001F3F83 /* JSONGlobals.h in Headers */,
+				AA1C685E19080ACD001F3F83 /* JSONMemory.h in Headers */,
+				AA1C685F19080ACD001F3F83 /* JSONMemoryPool.h in Headers */,
+				AA1C686019080ACD001F3F83 /* JSONNode.h in Headers */,
+				AA1C686119080ACD001F3F83 /* JSONPreparse.h in Headers */,
+				AA1C686219080ACD001F3F83 /* JSONSharedString.h in Headers */,
+				AA1C686319080ACD001F3F83 /* JSONSingleton.h in Headers */,
+				AA1C686419080ACD001F3F83 /* JSONStats.h in Headers */,
+				AA1C686519080ACD001F3F83 /* JSONStream.h in Headers */,
+				AA1C686619080ACD001F3F83 /* JSONValidator.h in Headers */,
+				AA1C686719080ACD001F3F83 /* JSONWorker.h in Headers */,
+				AA1C686819080ACD001F3F83 /* NumberToString.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		5023812617EBBCE400990C9B /* framework Mac */ = {
@@ -1295,6 +1526,23 @@
 			productName = MyLuaGame;
 			productReference = 5023816B17EBBCE400990C9B /* framework Mac.app */;
 			productType = "com.apple.product-type.application";
+		};
+		AA1C681219080A40001F3F83 /* libCocosLuaIos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA1C683919080A40001F3F83 /* Build configuration list for PBXNativeTarget "libCocosLuaIos" */;
+			buildPhases = (
+				AA1C680F19080A40001F3F83 /* Sources */,
+				AA1C681019080A40001F3F83 /* Frameworks */,
+				AA1C681119080A40001F3F83 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libCocosLuaIos;
+			productName = libCocosLuaIos;
+			productReference = AA1C681319080A40001F3F83 /* liblibCocosLuaIos.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		F293B3C715EB7BE500256477 /* framework iOS */ = {
 			isa = PBXNativeTarget;
@@ -1356,6 +1604,7 @@
 			targets = (
 				F293B3C715EB7BE500256477 /* framework iOS */,
 				5023812617EBBCE400990C9B /* framework Mac */,
+				AA1C681219080A40001F3F83 /* libCocosLuaIos */,
 			);
 		};
 /* End PBXProject section */
@@ -1628,6 +1877,61 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA1C680F19080A40001F3F83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1C688B19080C30001F3F83 /* sqlite3.c in Sources */,
+				AA1C688819080C1D001F3F83 /* NetStatusUtilIos.mm in Sources */,
+				AA1C688919080C1D001F3F83 /* Reachability.m in Sources */,
+				AA1C688A19080C1D001F3F83 /* UUIDGenerator.mm in Sources */,
+				AA1C686C19080C0E001F3F83 /* lua_framework_auto.cpp in Sources */,
+				AA1C686D19080C0E001F3F83 /* NetCenter.cpp in Sources */,
+				AA1C686E19080C0E001F3F83 /* NetFilter.cpp in Sources */,
+				AA1C686F19080C0E001F3F83 /* NetHandler.cpp in Sources */,
+				AA1C687019080C0E001F3F83 /* NetProtocol.cpp in Sources */,
+				AA1C687119080C0E001F3F83 /* NetRequest.cpp in Sources */,
+				AA1C687219080C0E001F3F83 /* NetResponse.cpp in Sources */,
+				AA1C687319080C0E001F3F83 /* HttpDownloader.cpp in Sources */,
+				AA1C687419080C0E001F3F83 /* HttpForm.cpp in Sources */,
+				AA1C687519080C0E001F3F83 /* ODSocket.cpp in Sources */,
+				AA1C687619080C0E001F3F83 /* Socket.cpp in Sources */,
+				AA1C687719080C0E001F3F83 /* GameScene.cpp in Sources */,
+				AA1C687819080C0E001F3F83 /* ViewController.cpp in Sources */,
+				AA1C687919080C0E001F3F83 /* SQLite.cpp in Sources */,
+				AA1C687A19080C0E001F3F83 /* SQLiteTest.cpp in Sources */,
+				AA1C687B19080C0E001F3F83 /* Base64.cpp in Sources */,
+				AA1C687C19080C0E001F3F83 /* Base64Util.cpp in Sources */,
+				AA1C687D19080C0E001F3F83 /* DBDecryptUtil.cpp in Sources */,
+				AA1C687E19080C0E001F3F83 /* des.cpp in Sources */,
+				AA1C687F19080C0E001F3F83 /* DESUtil.cpp in Sources */,
+				AA1C688019080C0E001F3F83 /* FileDecryptUtil.cpp in Sources */,
+				AA1C688119080C0E001F3F83 /* FileManager.cpp in Sources */,
+				AA1C688219080C0E001F3F83 /* LuaUtil.cpp in Sources */,
+				AA1C688319080C0E001F3F83 /* md5.cpp in Sources */,
+				AA1C688419080C0E001F3F83 /* RegexUtil.cpp in Sources */,
+				AA1C688519080C0E001F3F83 /* ResourceManager.cpp in Sources */,
+				AA1C683B19080ABA001F3F83 /* JSONElement.cpp in Sources */,
+				AA1C683C19080ABA001F3F83 /* JSONFormatter.cpp in Sources */,
+				AA1C683D19080ABA001F3F83 /* JSONParser.cpp in Sources */,
+				AA1C683E19080ABA001F3F83 /* internalJSONNode.cpp in Sources */,
+				AA1C683F19080ABA001F3F83 /* JSONAllocator.cpp in Sources */,
+				AA1C684019080ABA001F3F83 /* JSONChildren.cpp in Sources */,
+				AA1C684119080ABA001F3F83 /* JSONDebug.cpp in Sources */,
+				AA1C684219080ABA001F3F83 /* JSONIterators.cpp in Sources */,
+				AA1C684319080ABA001F3F83 /* JSONMemory.cpp in Sources */,
+				AA1C684419080ABA001F3F83 /* JSONNode.cpp in Sources */,
+				AA1C684519080ABA001F3F83 /* JSONNode_Mutex.cpp in Sources */,
+				AA1C684619080ABA001F3F83 /* JSONPreparse.cpp in Sources */,
+				AA1C684719080ABA001F3F83 /* JSONStream.cpp in Sources */,
+				AA1C684819080ABA001F3F83 /* JSONValidator.cpp in Sources */,
+				AA1C684919080ABA001F3F83 /* JSONWorker.cpp in Sources */,
+				AA1C684A19080ABA001F3F83 /* JSONWriter.cpp in Sources */,
+				AA1C684B19080ABA001F3F83 /* libjson.cpp in Sources */,
+				AA1C681F19080A40001F3F83 /* libCocosLuaIos.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F293B3C415EB7BE500256477 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1815,6 +2119,82 @@
 			};
 			name = Release;
 		};
+		AA1C683319080A40001F3F83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libCocosLuaIos/libCocosLuaIos-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					CC_TARGET_OS_IPHONE,
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d-x $(SRCROOT)/../../cocos2d-x/cocos $(SRCROOT)/../../cocos2d-x/cocos/base $(SRCROOT)/../../cocos2d-x/cocos/physics $(SRCROOT)/../../cocos2d-x/cocos/math/kazmath $(SRCROOT)/../../cocos2d-x/cocos/2d $(SRCROOT)/../../cocos2d-x/cocos/ui $(SRCROOT)/../../cocos2d-x/cocos/network $(SRCROOT)/../../cocos2d-x/cocos/audio/include $(SRCROOT)/../../cocos2d-x/cocos/editor-support $(SRCROOT)/../../cocos2d-x/extensions $(SRCROOT)/../../cocos2d-x/external $(SRCROOT)/../../cocos2d-x/external/chipmunk/include/chipmunk $(SRCROOT)/../../cocos2d-x/external/lua/luajit/include $(SRCROOT)/../../cocos2d-x/external/lua/tolua $(SRCROOT)/../../cocos2d-x/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2d-x/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../cocos2d-x/external/curl/include/ios $(SRCROOT)/../../cocos2d-x/cocos/2d/platform/ios";
+			};
+			name = Debug;
+		};
+		AA1C683419080A40001F3F83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libCocosLuaIos/libCocosLuaIos-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NDEBUG,
+					USE_FILE32API,
+					"CC_LUA_ENGINE_ENABLED=1",
+					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					CC_TARGET_OS_IPHONE,
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d-x $(SRCROOT)/../../cocos2d-x/cocos $(SRCROOT)/../../cocos2d-x/cocos/base $(SRCROOT)/../../cocos2d-x/cocos/physics $(SRCROOT)/../../cocos2d-x/cocos/math/kazmath $(SRCROOT)/../../cocos2d-x/cocos/2d $(SRCROOT)/../../cocos2d-x/cocos/ui $(SRCROOT)/../../cocos2d-x/cocos/network $(SRCROOT)/../../cocos2d-x/cocos/audio/include $(SRCROOT)/../../cocos2d-x/cocos/editor-support $(SRCROOT)/../../cocos2d-x/extensions $(SRCROOT)/../../cocos2d-x/external $(SRCROOT)/../../cocos2d-x/external/chipmunk/include/chipmunk $(SRCROOT)/../../cocos2d-x/external/lua/luajit/include $(SRCROOT)/../../cocos2d-x/external/lua/tolua $(SRCROOT)/../../cocos2d-x/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2d-x/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../cocos2d-x/external/curl/include/ios $(SRCROOT)/../../cocos2d-x/cocos/2d/platform/ios";
+			};
+			name = Release;
+		};
 		F293B6C215EB7BEA00256477 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1918,6 +2298,15 @@
 			buildConfigurations = (
 				5023816917EBBCE400990C9B /* Debug */,
 				5023816A17EBBCE400990C9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA1C683919080A40001F3F83 /* Build configuration list for PBXNativeTarget "libCocosLuaIos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA1C683319080A40001F3F83 /* Debug */,
+				AA1C683419080A40001F3F83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

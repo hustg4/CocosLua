@@ -11,7 +11,7 @@
 #include "cocos2d.h"
 
 #include "curl/curl.h"
-#include <curl/easy.h>
+#include "curl/easy.h"
 #include <stdio.h>
 
 #include <pthread.h>

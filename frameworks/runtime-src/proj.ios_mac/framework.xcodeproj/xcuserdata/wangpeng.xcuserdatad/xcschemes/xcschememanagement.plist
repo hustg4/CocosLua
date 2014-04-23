@@ -7,17 +7,32 @@
 		<key>framework Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>17</integer>
 		</dict>
 		<key>framework iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>16</integer>
+		</dict>
+		<key>libCocosLuaIos.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>5023812617EBBCE400990C9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA1C681219080A40001F3F83</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA1C682319080A40001F3F83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
