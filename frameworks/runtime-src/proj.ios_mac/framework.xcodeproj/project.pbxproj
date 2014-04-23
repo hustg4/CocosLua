@@ -50,6 +50,11 @@
 		50D7C96C17EBBEDF005D0B91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96B17EBBEDF005D0B91 /* OpenGL.framework */; };
 		50D7C96E17EBBEE6005D0B91 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96D17EBBEE6005D0B91 /* AppKit.framework */; };
 		50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96F17EBBEEC005D0B91 /* IOKit.framework */; };
+		AA1C55DF1907E5E7001F3F83 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55DE1907E5E7001F3F83 /* SystemConfiguration.framework */; };
+		AA1C55E61907E713001F3F83 /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1C55E31907E713001F3F83 /* NetStatusUtilIos.mm */; };
+		AA1C55E71907E713001F3F83 /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1C55E31907E713001F3F83 /* NetStatusUtilIos.mm */; };
+		AA1C55E81907E713001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C55E51907E713001F3F83 /* Reachability.m */; };
+		AA1C55E91907E713001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C55E51907E713001F3F83 /* Reachability.m */; };
 		AA2A38FE18FE17E00053A4E5 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F618FE17E00053A4E5 /* ccb */; };
 		AA2A38FF18FE17E00053A4E5 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F618FE17E00053A4E5 /* ccb */; };
 		AA2A390018FE17E00053A4E5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F718FE17E00053A4E5 /* data */; };
@@ -192,10 +197,6 @@
 		AAB0D45C1907E2C100E1788C /* LuaUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3D41907E2C100E1788C /* LuaUtil.cpp */; };
 		AAB0D45D1907E2C100E1788C /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3D61907E2C100E1788C /* md5.cpp */; };
 		AAB0D45E1907E2C100E1788C /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3D61907E2C100E1788C /* md5.cpp */; };
-		AAB0D45F1907E2C100E1788C /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3DA1907E2C100E1788C /* NetStatusUtilIos.mm */; };
-		AAB0D4601907E2C100E1788C /* NetStatusUtilIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3DA1907E2C100E1788C /* NetStatusUtilIos.mm */; };
-		AAB0D4611907E2C100E1788C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3DC1907E2C100E1788C /* Reachability.m */; };
-		AAB0D4621907E2C100E1788C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3DC1907E2C100E1788C /* Reachability.m */; };
 		AAB0D4631907E2C100E1788C /* RegexUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3DE1907E2C100E1788C /* RegexUtil.cpp */; };
 		AAB0D4641907E2C100E1788C /* RegexUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3DE1907E2C100E1788C /* RegexUtil.cpp */; };
 		AAB0D4651907E2C100E1788C /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3E01907E2C100E1788C /* ResourceManager.cpp */; };
@@ -460,6 +461,10 @@
 		50D7C96B17EBBEDF005D0B91 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		50D7C96D17EBBEE6005D0B91 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		50D7C96F17EBBEEC005D0B91 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		AA1C55DE1907E5E7001F3F83 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AA1C55E31907E713001F3F83 /* NetStatusUtilIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetStatusUtilIos.mm; sourceTree = "<group>"; };
+		AA1C55E41907E713001F3F83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		AA1C55E51907E713001F3F83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AA2A38F618FE17E00053A4E5 /* ccb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccb; sourceTree = "<group>"; };
 		AA2A38F718FE17E00053A4E5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		AA2A38F818FE17E00053A4E5 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
@@ -594,9 +599,6 @@
 		AAB0D3D51907E2C100E1788C /* LuaUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaUtil.h; sourceTree = "<group>"; };
 		AAB0D3D61907E2C100E1788C /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5.cpp; sourceTree = "<group>"; };
 		AAB0D3D71907E2C100E1788C /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
-		AAB0D3DA1907E2C100E1788C /* NetStatusUtilIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetStatusUtilIos.mm; sourceTree = "<group>"; };
-		AAB0D3DB1907E2C100E1788C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		AAB0D3DC1907E2C100E1788C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AAB0D3DD1907E2C100E1788C /* NetStatusUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetStatusUtil.h; sourceTree = "<group>"; };
 		AAB0D3DE1907E2C100E1788C /* RegexUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegexUtil.cpp; sourceTree = "<group>"; };
 		AAB0D3DF1907E2C100E1788C /* RegexUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexUtil.h; sourceTree = "<group>"; };
@@ -644,6 +646,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1C55DF1907E5E7001F3F83 /* SystemConfiguration.framework in Frameworks */,
 				C03781F518BF65A900FE4F13 /* libluabindings Mac.a in Frameworks */,
 				15A8A4881834C90F00142BE0 /* libcurl.dylib in Frameworks */,
 				15A8A4821834C73500142BE0 /* libchipmunk Mac.a in Frameworks */,
@@ -778,6 +781,16 @@
 				5023811217EBBCAC00990C9B /* Icon-76.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		AA1C55E21907E713001F3F83 /* ios_mac */ = {
+			isa = PBXGroup;
+			children = (
+				AA1C55E31907E713001F3F83 /* NetStatusUtilIos.mm */,
+				AA1C55E41907E713001F3F83 /* Reachability.h */,
+				AA1C55E51907E713001F3F83 /* Reachability.m */,
+			);
+			path = ios_mac;
 			sourceTree = "<group>";
 		};
 		AA2A390E18FE191A0053A4E5 /* const */ = {
@@ -1171,20 +1184,10 @@
 		AAB0D3D81907E2C100E1788C /* NetStatus */ = {
 			isa = PBXGroup;
 			children = (
-				AAB0D3D91907E2C100E1788C /* ios */,
+				AA1C55E21907E713001F3F83 /* ios_mac */,
 				AAB0D3DD1907E2C100E1788C /* NetStatusUtil.h */,
 			);
 			path = NetStatus;
-			sourceTree = "<group>";
-		};
-		AAB0D3D91907E2C100E1788C /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				AAB0D3DA1907E2C100E1788C /* NetStatusUtilIos.mm */,
-				AAB0D3DB1907E2C100E1788C /* Reachability.h */,
-				AAB0D3DC1907E2C100E1788C /* Reachability.m */,
-			);
-			path = ios;
 			sourceTree = "<group>";
 		};
 		AAB0D3E21907E2C100E1788C /* uuid */ = {
@@ -1233,6 +1236,7 @@
 		F293B3CB15EB7BE500256477 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA1C55DE1907E5E7001F3F83 /* SystemConfiguration.framework */,
 				AAFBD13818F8F3B80088FFA1 /* SystemConfiguration.framework */,
 				15A8A4871834C90E00142BE0 /* libcurl.dylib */,
 				D6B061341803AC000077942B /* CoreMotion.framework */,
@@ -1572,7 +1576,6 @@
 				AAB0D4541907E2C100E1788C /* des.cpp in Sources */,
 				AAB0D4481907E2C100E1788C /* sqlite3.c in Sources */,
 				AAB0D3F01907E2C100E1788C /* JSONChildren.cpp in Sources */,
-				AAB0D4621907E2C100E1788C /* Reachability.m in Sources */,
 				AAB0D45A1907E2C100E1788C /* FileManager.cpp in Sources */,
 				AAB0D4061907E2C100E1788C /* libjson.cpp in Sources */,
 				AAB0D4681907E2C100E1788C /* UUIDGenerator.mm in Sources */,
@@ -1584,6 +1587,7 @@
 				AAB0D3E61907E2C100E1788C /* JSONElement.cpp in Sources */,
 				AAB0D43C1907E2C100E1788C /* HttpDownloader.cpp in Sources */,
 				AAB0D44C1907E2C100E1788C /* SQLiteTest.cpp in Sources */,
+				AA1C55E71907E713001F3F83 /* NetStatusUtilIos.mm in Sources */,
 				AAB0D4521907E2C100E1788C /* DBDecryptUtil.cpp in Sources */,
 				AAB0D4501907E2C100E1788C /* Base64Util.cpp in Sources */,
 				AAB0D4581907E2C100E1788C /* FileDecryptUtil.cpp in Sources */,
@@ -1614,10 +1618,10 @@
 				AA3C4AA218F93A1500D65677 /* SocketService.cpp in Sources */,
 				AAB0D44E1907E2C100E1788C /* Base64.cpp in Sources */,
 				AAB0D4461907E2C100E1788C /* ViewController.cpp in Sources */,
-				AAB0D4601907E2C100E1788C /* NetStatusUtilIos.mm in Sources */,
 				AAB0D3EE1907E2C100E1788C /* JSONAllocator.cpp in Sources */,
 				AAB0D3FC1907E2C100E1788C /* JSONPreparse.cpp in Sources */,
 				AAB0D3FA1907E2C100E1788C /* JSONNode_Mutex.cpp in Sources */,
+				AA1C55E91907E713001F3F83 /* Reachability.m in Sources */,
 				AAB0D44A1907E2C100E1788C /* SQLite.cpp in Sources */,
 				AAB0D3F81907E2C100E1788C /* JSONNode.cpp in Sources */,
 				AAB0D4381907E2C100E1788C /* NetRequest.cpp in Sources */,
@@ -1642,7 +1646,9 @@
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
 				AAB0D4311907E2C100E1788C /* NetFilter.cpp in Sources */,
 				AAB0D4571907E2C100E1788C /* FileDecryptUtil.cpp in Sources */,
+				AA1C55E81907E713001F3F83 /* Reachability.m in Sources */,
 				AAB0D4371907E2C100E1788C /* NetRequest.cpp in Sources */,
+				AA1C55E61907E713001F3F83 /* NetStatusUtilIos.mm in Sources */,
 				AAB0D44D1907E2C100E1788C /* Base64.cpp in Sources */,
 				AAB0D3E51907E2C100E1788C /* JSONElement.cpp in Sources */,
 				AA3C4A9F18F93A1500D65677 /* HttpService.cpp in Sources */,
@@ -1655,7 +1661,6 @@
 				AAB0D44B1907E2C100E1788C /* SQLiteTest.cpp in Sources */,
 				AAB0D3FB1907E2C100E1788C /* JSONPreparse.cpp in Sources */,
 				AAB0D4031907E2C100E1788C /* JSONWriter.cpp in Sources */,
-				AAB0D4611907E2C100E1788C /* Reachability.m in Sources */,
 				AAB0D3FF1907E2C100E1788C /* JSONValidator.cpp in Sources */,
 				AAB0D4471907E2C100E1788C /* sqlite3.c in Sources */,
 				AAB0D4591907E2C100E1788C /* FileManager.cpp in Sources */,
@@ -1680,7 +1685,6 @@
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
 				AAB0D45D1907E2C100E1788C /* md5.cpp in Sources */,
 				AAB0D4491907E2C100E1788C /* SQLite.cpp in Sources */,
-				AAB0D45F1907E2C100E1788C /* NetStatusUtilIos.mm in Sources */,
 				AAB0D4091907E2C100E1788C /* JSONFormatTest.cpp in Sources */,
 				AAB0D3F31907E2C100E1788C /* JSONIterators.cpp in Sources */,
 			);
@@ -1770,6 +1774,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_LDFLAGS = (
 					"-image_base",
 					100000000,
@@ -1797,6 +1802,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_LDFLAGS = (
 					"-image_base",
 					100000000,

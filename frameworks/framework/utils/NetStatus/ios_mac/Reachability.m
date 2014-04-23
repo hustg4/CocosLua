@@ -66,8 +66,15 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char*
 {
 #if kShouldPrintReachabilityFlags
 
-    NSLog(@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
+#if	TARGET_OS_IPHONE
+    NSString* format = @"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n";
+#else
+    NSString* format = @"Reachability Flag Status: %c%c %c%c%c%c%c%c %s\n";
+#endif
+    NSLog(format,
+#if	TARGET_OS_IPHONE
           (flags & kSCNetworkReachabilityFlagsIsWWAN)				? 'W' : '-',
+#endif
           (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
 
           (flags & kSCNetworkReachabilityFlagsTransientConnection)  ? 't' : '-',
@@ -261,7 +268,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
             returnValue = ReachableViaWiFi;
         }
     }
-
+#if	TARGET_OS_IPHONE
 	if ((flags & kSCNetworkReachabilityFlagsIsWWAN) == kSCNetworkReachabilityFlagsIsWWAN)
 	{
 		/*
@@ -269,7 +276,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
          */
 		returnValue = ReachableViaWWAN;
 	}
-    
+#endif
 	return returnValue;
 }
 
