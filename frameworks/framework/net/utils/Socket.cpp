@@ -193,7 +193,7 @@ void Socket::startNetThread()
 {
     pthread_mutex_init(&operationQueueMutex, NULL);
     pthread_mutex_init(&eventQueueMutex, NULL);
-#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC
     pSem = sem_open(SOCKET_SEMAPHORE, O_CREAT, 0644, 0);
     if (pSem == SEM_FAILED) {
         CCLog("Open Socket Semaphore failed");
