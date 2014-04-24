@@ -49,5 +49,6 @@
 
 #include "utils/uuid/UUIDGenerator.h"
 
+#include "lua-bindings/lua_framework_auto.hpp"
 
 #endif
