@@ -275,6 +275,8 @@
 		AA1C69411908A349001F3F83 /* RegexUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3DF1907E2C100E1788C /* RegexUtil.h */; };
 		AA1C69421908A349001F3F83 /* ResourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3E11907E2C100E1788C /* ResourceManager.h */; };
 		AA1C69431908A349001F3F83 /* UUIDGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3E31907E2C100E1788C /* UUIDGenerator.h */; };
+		AA1C694B1908A50A001F3F83 /* cocosLuaIos-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA1C694A1908A50A001F3F83 /* cocosLuaIos-Prefix.pch */; };
+		AA1C694E1908A517001F3F83 /* cocosLuaMac-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA1C694D1908A517001F3F83 /* cocosLuaMac-Prefix.pch */; };
 		AA2A38FE18FE17E00053A4E5 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F618FE17E00053A4E5 /* ccb */; };
 		AA2A38FF18FE17E00053A4E5 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F618FE17E00053A4E5 /* ccb */; };
 		AA2A390018FE17E00053A4E5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = AA2A38F718FE17E00053A4E5 /* data */; };
@@ -685,15 +687,15 @@
 		AA1C565F1907EE1E001F3F83 /* NetStatusUtilIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetStatusUtilIos.mm; sourceTree = "<group>"; };
 		AA1C56601907EE1E001F3F83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AA1C56611907EE1E001F3F83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		AA1C681319080A40001F3F83 /* liblibCocosLuaIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibCocosLuaIos.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1C681319080A40001F3F83 /* liblibCocosLuaIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = liblibCocosLuaIos.a; path = libcocosLuaIos.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1C681419080A40001F3F83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA1C681719080A40001F3F83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA1C681819080A40001F3F83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AA1C681919080A40001F3F83 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		AA1C681C19080A40001F3F83 /* libCocosLuaIos-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libCocosLuaIos-Prefix.pch"; sourceTree = "<group>"; };
 		AA1C682519080A40001F3F83 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		AA1C68B619080FB2001F3F83 /* liblibCocosLuaMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibCocosLuaMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA1C68BA19080FB2001F3F83 /* libCocosLuaMac-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libCocosLuaMac-Prefix.pch"; sourceTree = "<group>"; };
+		AA1C68B619080FB2001F3F83 /* liblibCocosLuaMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = liblibCocosLuaMac.a; path = libcocosLuaMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1C694A1908A50A001F3F83 /* cocosLuaIos-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cocosLuaIos-Prefix.pch"; sourceTree = "<group>"; };
+		AA1C694D1908A517001F3F83 /* cocosLuaMac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cocosLuaMac-Prefix.pch"; sourceTree = "<group>"; };
 		AA2A38F618FE17E00053A4E5 /* ccb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccb; sourceTree = "<group>"; };
 		AA2A38F718FE17E00053A4E5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		AA2A38F818FE17E00053A4E5 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
@@ -1048,36 +1050,20 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		AA1C681A19080A40001F3F83 /* libCocosLuaIos */ = {
+		AA1C69491908A50A001F3F83 /* cocosLuaIos */ = {
 			isa = PBXGroup;
 			children = (
-				AA1C681B19080A40001F3F83 /* Supporting Files */,
+				AA1C694A1908A50A001F3F83 /* cocosLuaIos-Prefix.pch */,
 			);
-			path = libCocosLuaIos;
+			path = cocosLuaIos;
 			sourceTree = "<group>";
 		};
-		AA1C681B19080A40001F3F83 /* Supporting Files */ = {
+		AA1C694C1908A517001F3F83 /* cocosLuaMac */ = {
 			isa = PBXGroup;
 			children = (
-				AA1C681C19080A40001F3F83 /* libCocosLuaIos-Prefix.pch */,
+				AA1C694D1908A517001F3F83 /* cocosLuaMac-Prefix.pch */,
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AA1C68B819080FB2001F3F83 /* libCocosLuaMac */ = {
-			isa = PBXGroup;
-			children = (
-				AA1C68B919080FB2001F3F83 /* Supporting Files */,
-			);
-			path = libCocosLuaMac;
-			sourceTree = "<group>";
-		};
-		AA1C68B919080FB2001F3F83 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AA1C68BA19080FB2001F3F83 /* libCocosLuaMac-Prefix.pch */,
-			);
-			name = "Supporting Files";
+			path = cocosLuaMac;
 			sourceTree = "<group>";
 		};
 		AA2A390E18FE191A0053A4E5 /* const */ = {
@@ -1503,9 +1489,9 @@
 				AAB0D3461907E2C100E1788C /* framework */,
 				5023810617EBBCAC00990C9B /* ios */,
 				5023817117EBBE3400990C9B /* mac */,
+				AA1C69491908A50A001F3F83 /* cocosLuaIos */,
+				AA1C694C1908A517001F3F83 /* cocosLuaMac */,
 				F293BB7C15EB830F00256477 /* Classes */,
-				AA1C681A19080A40001F3F83 /* libCocosLuaIos */,
-				AA1C68B819080FB2001F3F83 /* libCocosLuaMac */,
 				F293B3CB15EB7BE500256477 /* Frameworks */,
 				1A0227A417A3AA1A00B867AD /* Lua Common */,
 				F293B3C915EB7BE500256477 /* Products */,
@@ -1579,6 +1565,7 @@
 				AA1C68A419080CA7001F3F83 /* DESUtil.h in Headers */,
 				AA1C68A519080CA7001F3F83 /* FileDecryptUtil.h in Headers */,
 				AA1C68A619080CA7001F3F83 /* FileManager.h in Headers */,
+				AA1C694B1908A50A001F3F83 /* cocosLuaIos-Prefix.pch in Headers */,
 				AA1C68A719080CA7001F3F83 /* LuaUtil.h in Headers */,
 				AA1C68A819080CA7001F3F83 /* md5.h in Headers */,
 				AA1C68A919080CA7001F3F83 /* RegexUtil.h in Headers */,
@@ -1701,6 +1688,7 @@
 				AA1C691E1908A325001F3F83 /* JSONStream.h in Headers */,
 				AA1C691F1908A325001F3F83 /* JSONValidator.h in Headers */,
 				AA1C69201908A325001F3F83 /* JSONWorker.h in Headers */,
+				AA1C694E1908A517001F3F83 /* cocosLuaMac-Prefix.pch in Headers */,
 				AA1C69211908A325001F3F83 /* NumberToString.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1731,9 +1719,9 @@
 			productReference = 5023816B17EBBCE400990C9B /* framework Mac.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AA1C681219080A40001F3F83 /* libCocosLuaIos */ = {
+		AA1C681219080A40001F3F83 /* cocosLuaIos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA1C683919080A40001F3F83 /* Build configuration list for PBXNativeTarget "libCocosLuaIos" */;
+			buildConfigurationList = AA1C683919080A40001F3F83 /* Build configuration list for PBXNativeTarget "cocosLuaIos" */;
 			buildPhases = (
 				AA1C680F19080A40001F3F83 /* Sources */,
 				AA1C681019080A40001F3F83 /* Frameworks */,
@@ -1743,14 +1731,14 @@
 			);
 			dependencies = (
 			);
-			name = libCocosLuaIos;
+			name = cocosLuaIos;
 			productName = libCocosLuaIos;
 			productReference = AA1C681319080A40001F3F83 /* liblibCocosLuaIos.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		AA1C68B519080FB2001F3F83 /* libCocosLuaMac */ = {
+		AA1C68B519080FB2001F3F83 /* cocosLuaMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA1C68D019080FB3001F3F83 /* Build configuration list for PBXNativeTarget "libCocosLuaMac" */;
+			buildConfigurationList = AA1C68D019080FB3001F3F83 /* Build configuration list for PBXNativeTarget "cocosLuaMac" */;
 			buildPhases = (
 				AA1C68B219080FB2001F3F83 /* Sources */,
 				AA1C68B319080FB2001F3F83 /* Frameworks */,
@@ -1760,7 +1748,7 @@
 			);
 			dependencies = (
 			);
-			name = libCocosLuaMac;
+			name = cocosLuaMac;
 			productName = libCocosLuaMac;
 			productReference = AA1C68B619080FB2001F3F83 /* liblibCocosLuaMac.a */;
 			productType = "com.apple.product-type.library.static";
@@ -1825,8 +1813,8 @@
 			targets = (
 				F293B3C715EB7BE500256477 /* framework iOS */,
 				5023812617EBBCE400990C9B /* framework Mac */,
-				AA1C681219080A40001F3F83 /* libCocosLuaIos */,
-				AA1C68B519080FB2001F3F83 /* libCocosLuaMac */,
+				AA1C681219080A40001F3F83 /* cocosLuaIos */,
+				AA1C68B519080FB2001F3F83 /* cocosLuaMac */,
 			);
 		};
 /* End PBXProject section */
@@ -2412,7 +2400,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "libCocosLuaIos/libCocosLuaIos-Prefix.pch";
+				GCC_PREFIX_HEADER = "cocosLuaIos/cocosLuaIos-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -2450,7 +2438,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "libCocosLuaIos/libCocosLuaIos-Prefix.pch";
+				GCC_PREFIX_HEADER = "cocosLuaIos/cocosLuaIos-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
 					USE_FILE32API,
@@ -2488,7 +2476,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "libCocosLuaMac/libCocosLuaMac-Prefix.pch";
+				GCC_PREFIX_HEADER = "cocosLuaMac/cocosLuaMac-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -2526,7 +2514,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "libCocosLuaMac/libCocosLuaMac-Prefix.pch";
+				GCC_PREFIX_HEADER = "cocosLuaMac/cocosLuaMac-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
 					USE_FILE32API,
@@ -2653,7 +2641,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA1C683919080A40001F3F83 /* Build configuration list for PBXNativeTarget "libCocosLuaIos" */ = {
+		AA1C683919080A40001F3F83 /* Build configuration list for PBXNativeTarget "cocosLuaIos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA1C683319080A40001F3F83 /* Debug */,
@@ -2662,7 +2650,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA1C68D019080FB3001F3F83 /* Build configuration list for PBXNativeTarget "libCocosLuaMac" */ = {
+		AA1C68D019080FB3001F3F83 /* Build configuration list for PBXNativeTarget "cocosLuaMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA1C68D119080FB3001F3F83 /* Debug */,

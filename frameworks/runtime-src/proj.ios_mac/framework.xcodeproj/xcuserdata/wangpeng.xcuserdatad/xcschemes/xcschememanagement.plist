@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>cocosLuaIos.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>cocosLuaMac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
 		<key>framework Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,16 +23,6 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>16</integer>
-		</dict>
-		<key>libCocosLuaIos.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>18</integer>
-		</dict>
-		<key>libCocosLuaMac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>19</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
