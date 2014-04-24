@@ -141,12 +141,12 @@ void ResourceManager::configSearchPath()
     //(b) res path:WritablePath->Bundle
     std::vector<std::string> searchPaths;
     searchPaths.push_back(this->fullLocalResourcePath(""));
-    searchPaths.push_back("");
+    searchPaths.push_back(RMLocalResourceDirectory);
     
     //script
     std::string scriptPath = "script";
     searchPaths.push_back(this->fullLocalResourcePath(scriptPath));
-    searchPaths.push_back(CCFileUtils::getInstance()->fullPathForFilename(scriptPath.c_str()));
+    searchPaths.push_back(FileManager::splicePath(CCFileUtils::getInstance()->fullPathForFilename(RMLocalResourceDirectory), scriptPath));
     
     
     CCFileUtils::getInstance()->setSearchPaths(searchPaths);
