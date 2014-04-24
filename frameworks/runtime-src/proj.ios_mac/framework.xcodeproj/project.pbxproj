@@ -151,7 +151,7 @@
 		AA1C689C19080C8F001F3F83 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3B81907E2C100E1788C /* sqlite3ext.h */; };
 		AA1C689D19080C8F001F3F83 /* SQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BA1907E2C100E1788C /* SQLite.h */; };
 		AA1C689E19080C8F001F3F83 /* SQLiteTest.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BC1907E2C100E1788C /* SQLiteTest.h */; };
-		AA1C689F19080CA7001F3F83 /* the9framework.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BD1907E2C100E1788C /* the9framework.h */; };
+		AA1C689F19080CA7001F3F83 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BD1907E2C100E1788C /* framework.h */; };
 		AA1C68A019080CA7001F3F83 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3C61907E2C100E1788C /* Base64.h */; };
 		AA1C68A119080CA7001F3F83 /* Base64Util.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3C81907E2C100E1788C /* Base64Util.h */; };
 		AA1C68A219080CA7001F3F83 /* DBDecryptUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3CB1907E2C100E1788C /* DBDecryptUtil.h */; };
@@ -260,7 +260,7 @@
 		AA1C69321908A349001F3F83 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3B81907E2C100E1788C /* sqlite3ext.h */; };
 		AA1C69331908A349001F3F83 /* SQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BA1907E2C100E1788C /* SQLite.h */; };
 		AA1C69341908A349001F3F83 /* SQLiteTest.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BC1907E2C100E1788C /* SQLiteTest.h */; };
-		AA1C69351908A349001F3F83 /* the9framework.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BD1907E2C100E1788C /* the9framework.h */; };
+		AA1C69351908A349001F3F83 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3BD1907E2C100E1788C /* framework.h */; };
 		AA1C69361908A349001F3F83 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3C61907E2C100E1788C /* Base64.h */; };
 		AA1C69371908A349001F3F83 /* Base64Util.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3C81907E2C100E1788C /* Base64Util.h */; };
 		AA1C69381908A349001F3F83 /* DBDecryptUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3CB1907E2C100E1788C /* DBDecryptUtil.h */; };
@@ -790,7 +790,7 @@
 		AAB0D3BA1907E2C100E1788C /* SQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLite.h; sourceTree = "<group>"; };
 		AAB0D3BB1907E2C100E1788C /* SQLiteTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SQLiteTest.cpp; sourceTree = "<group>"; };
 		AAB0D3BC1907E2C100E1788C /* SQLiteTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteTest.h; sourceTree = "<group>"; };
-		AAB0D3BD1907E2C100E1788C /* the9framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = the9framework.h; sourceTree = "<group>"; };
+		AAB0D3BD1907E2C100E1788C /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		AAB0D3C51907E2C100E1788C /* Base64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base64.cpp; sourceTree = "<group>"; };
 		AAB0D3C61907E2C100E1788C /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		AAB0D3C71907E2C100E1788C /* Base64Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base64Util.cpp; sourceTree = "<group>"; };
@@ -1099,7 +1099,7 @@
 				AAB0D3AD1907E2C100E1788C /* notification */,
 				AAB0D3AF1907E2C100E1788C /* scene */,
 				AAB0D3B41907E2C100E1788C /* sqlite */,
-				AAB0D3BD1907E2C100E1788C /* the9framework.h */,
+				AAB0D3BD1907E2C100E1788C /* framework.h */,
 				AAB0D3BE1907E2C100E1788C /* ui */,
 				AAB0D3C31907E2C100E1788C /* utils */,
 			);
@@ -1520,7 +1520,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1C689F19080CA7001F3F83 /* the9framework.h in Headers */,
+				AA1C689F19080CA7001F3F83 /* framework.h in Headers */,
 				AA1C68A019080CA7001F3F83 /* Base64.h in Headers */,
 				AA1C68A119080CA7001F3F83 /* Base64Util.h in Headers */,
 				AA1C68A219080CA7001F3F83 /* DBDecryptUtil.h in Headers */,
@@ -1608,7 +1608,7 @@
 				AA1C69321908A349001F3F83 /* sqlite3ext.h in Headers */,
 				AA1C69331908A349001F3F83 /* SQLite.h in Headers */,
 				AA1C69341908A349001F3F83 /* SQLiteTest.h in Headers */,
-				AA1C69351908A349001F3F83 /* the9framework.h in Headers */,
+				AA1C69351908A349001F3F83 /* framework.h in Headers */,
 				AA1C69361908A349001F3F83 /* Base64.h in Headers */,
 				AA1C69371908A349001F3F83 /* Base64Util.h in Headers */,
 				AA1C69381908A349001F3F83 /* DBDecryptUtil.h in Headers */,

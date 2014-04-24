@@ -1,16 +1,16 @@
 //
 //  SocketService.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-2-22.
 //
 //
 
-#ifndef __The9Framework__SocketService__
-#define __The9Framework__SocketService__
+#ifndef __Framework__SocketService__
+#define __Framework__SocketService__
 
 #include <iostream>
-#include "the9framework.h"
+#include "framework.h"
 
 class SocketService : public NetService{
     
@@ -27,4 +27,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__SocketService__) */
+#endif /* defined(__Framework__SocketService__) */

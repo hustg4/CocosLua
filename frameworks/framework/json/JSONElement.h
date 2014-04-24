@@ -1,13 +1,13 @@
 //
 //  JSONElement.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-2-27.
 //
 //
 
-#ifndef __The9Framework__JSONElement__
-#define __The9Framework__JSONElement__
+#ifndef __Framework__JSONElement__
+#define __Framework__JSONElement__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -308,4 +308,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__JSONElement__) */
+#endif /* defined(__Framework__JSONElement__) */

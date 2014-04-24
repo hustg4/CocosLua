@@ -1,13 +1,13 @@
 //
 //  ViewController.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-3-11.
 //
 //
 
-#ifndef __The9Framework__ViewController__
-#define __The9Framework__ViewController__
+#ifndef __Framework__ViewController__
+#define __Framework__ViewController__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -32,4 +32,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__ViewController__) */
+#endif /* defined(__Framework__ViewController__) */

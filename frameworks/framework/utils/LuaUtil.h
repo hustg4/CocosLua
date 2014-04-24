@@ -1,13 +1,13 @@
 //
 //  LuaUtil.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-3-13.
 //
 //
 
-#ifndef __The9Framework__LuaUtil__
-#define __The9Framework__LuaUtil__
+#ifndef __Framework__LuaUtil__
+#define __Framework__LuaUtil__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -50,4 +50,4 @@ private:
     
 };
 
-#endif /* defined(__The9Framework__LuaUtil__) */
+#endif /* defined(__Framework__LuaUtil__) */

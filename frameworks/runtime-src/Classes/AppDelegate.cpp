@@ -3,7 +3,7 @@
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
 
-#include "the9framework.h"
+#include "framework.h"
 #include "HttpService.h"
 #include "SocketService.h"
 
@@ -42,7 +42,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     director->setAnimationInterval(1.0 / 60);
 
     //框架版本号
-    CCLOG("The9Framework: version:%.2f",The9FrameworkVersion);
+    CCLOG("Framework: version:%.2f",FrameworkVersion);
     
     //配置SearchPath
     ResourceManager::sharedResourceManager()->configSearchPath();
@@ -52,7 +52,6 @@ bool AppDelegate::applicationDidFinishLaunching()
 
 	auto engine = LuaEngine::getInstance();
 	ScriptEngineManager::getInstance()->setScriptEngine(engine);
-//	engine->executeScriptFile("src/main.lua");
     
     register_all_framework(engine->getLuaStack()->getLuaState());
     

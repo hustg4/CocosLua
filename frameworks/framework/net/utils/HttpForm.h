@@ -1,13 +1,13 @@
 //
 //  HttpForm.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-3-5.
 //
 //
 
-#ifndef __The9Framework__HttpForm__
-#define __The9Framework__HttpForm__
+#ifndef __Framework__HttpForm__
+#define __Framework__HttpForm__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -46,4 +46,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__HttpForm__) */
+#endif /* defined(__Framework__HttpForm__) */

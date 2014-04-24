@@ -1,15 +1,15 @@
 //
-//  the9framework.h
-//  The9Framework
+//  framework.h
+//  Framework
 //
 //  Created by wp_g4 on 13-7-15.
 //
 //
 
-#ifndef The9Framework_the9framework_h
-#define The9Framework_the9framework_h
+#ifndef Framework_framework_h
+#define Framework_framework_h
 
-#define The9FrameworkVersion 1.53
+#define FrameworkVersion 0.10
 
 #include "json/JSONElement.h"
 

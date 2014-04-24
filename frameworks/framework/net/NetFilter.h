@@ -1,13 +1,13 @@
 //
 //  NetFilter.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-6-26.
 //
 //
 
-#ifndef __The9Framework__NetFilter__
-#define __The9Framework__NetFilter__
+#ifndef __Framework__NetFilter__
+#define __Framework__NetFilter__
 
 #include "cocos2d.h"
 #include "NetResponse.h"
@@ -30,4 +30,4 @@ public:
 
 };
 
-#endif /* defined(__The9Framework__NetFilter__) */
+#endif /* defined(__Framework__NetFilter__) */

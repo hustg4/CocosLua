@@ -1,13 +1,13 @@
 //
 //  notification.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-11-7.
 //
 //
 
-#ifndef The9Framework_notification_h
-#define The9Framework_notification_h
+#ifndef Framework_notification_h
+#define Framework_notification_h
 
 #define kNotificationApplicationDidEnterBackground          "applicationDidEnterBackground"
 #define kNotificationApplicationWillEnterForeground         "applicationWillEnterForeground"

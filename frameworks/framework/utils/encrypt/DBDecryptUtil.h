@@ -1,13 +1,13 @@
 //
 //  DBDecryptUtil.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-11-19.
 //
 //
 
-#ifndef __The9Framework__DBDecryptUtil__
-#define __The9Framework__DBDecryptUtil__
+#ifndef __Framework__DBDecryptUtil__
+#define __Framework__DBDecryptUtil__
 
 #include <iostream>
 
@@ -23,4 +23,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__DBDecryptUtil__) */
+#endif /* defined(__Framework__DBDecryptUtil__) */

@@ -1,13 +1,13 @@
 //
 //  Base64Util.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-7-18.
 //
 //
 
-#ifndef __The9Framework__Base64Util__
-#define __The9Framework__Base64Util__
+#ifndef __Framework__Base64Util__
+#define __Framework__Base64Util__
 
 #include <iostream>
 
@@ -29,4 +29,4 @@ public:
 
 };
 
-#endif /* defined(__The9Framework__Base64Util__) */
+#endif /* defined(__Framework__Base64Util__) */

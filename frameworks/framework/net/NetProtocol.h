@@ -1,13 +1,13 @@
 //
 //  NetProtocol.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-3-2.
 //
 //
 
-#ifndef __The9Framework__NetProtocol__
-#define __The9Framework__NetProtocol__
+#ifndef __Framework__NetProtocol__
+#define __Framework__NetProtocol__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -42,4 +42,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__NetProtocol__) */
+#endif /* defined(__Framework__NetProtocol__) */

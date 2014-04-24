@@ -1,13 +1,13 @@
 //
 //  Socket.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-8-22.
 //
 //
 
-#ifndef __The9Framework__Socket__
-#define __The9Framework__Socket__
+#ifndef __Framework__Socket__
+#define __Framework__Socket__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -186,4 +186,4 @@ private:
     
 };
 
-#endif /* defined(__The9Framework__Socket__) */
+#endif /* defined(__Framework__Socket__) */

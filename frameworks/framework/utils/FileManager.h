@@ -1,13 +1,13 @@
 //
 //  FileManager.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-4-23.
 //
 //
 
-#ifndef __The9Framework__FileManager__
-#define __The9Framework__FileManager__
+#ifndef __Framework__FileManager__
+#define __Framework__FileManager__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -49,4 +49,4 @@ private:
     static bool doCreateDirectory(const std::string& directoryPath);    
 };
 
-#endif /* defined(__The9Framework__FileManager__) */
+#endif /* defined(__Framework__FileManager__) */

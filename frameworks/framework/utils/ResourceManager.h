@@ -1,13 +1,13 @@
 //
 //  ResourceManager.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-4-18.
 //
 //
 
-#ifndef __The9Framework__ResourceManager__
-#define __The9Framework__ResourceManager__
+#ifndef __Framework__ResourceManager__
+#define __Framework__ResourceManager__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -281,4 +281,4 @@ private:
 
 /***************************************** End *****************************************/
 
-#endif /* defined(__The9Framework__ResourceManager__) */
+#endif /* defined(__Framework__ResourceManager__) */

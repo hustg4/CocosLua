@@ -1,13 +1,13 @@
 //
 //  NetStatusUtil.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-10-11.
 //
 //
 
-#ifndef __The9Framework__NetStatusUtil__
-#define __The9Framework__NetStatusUtil__
+#ifndef __Framework__NetStatusUtil__
+#define __Framework__NetStatusUtil__
 
 #include <iostream>
 
@@ -30,4 +30,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__NetStatusUtil__) */
+#endif /* defined(__Framework__NetStatusUtil__) */

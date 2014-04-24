@@ -1,13 +1,13 @@
 //
 //  NetService.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-2-21.
 //
 //
 
-#ifndef __The9Framework__NetService__
-#define __The9Framework__NetService__
+#ifndef __Framework__NetService__
+#define __Framework__NetService__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -33,4 +33,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__NetService__) */
+#endif /* defined(__Framework__NetService__) */

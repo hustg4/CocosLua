@@ -1,13 +1,13 @@
 //
 //  FileDecryptUtil.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-12-12.
 //
 //
 
-#ifndef __The9Framework__FileDecryptUtil__
-#define __The9Framework__FileDecryptUtil__
+#ifndef __Framework__FileDecryptUtil__
+#define __Framework__FileDecryptUtil__
 
 #include <iostream>
 
@@ -23,4 +23,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__FileDecryptUtil__) */
+#endif /* defined(__Framework__FileDecryptUtil__) */

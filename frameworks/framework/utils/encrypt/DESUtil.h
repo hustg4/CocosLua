@@ -1,13 +1,13 @@
 //
 //  DESUtil.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-9-18.
 //
 //
 
-#ifndef __The9Framework__DESUtil__
-#define __The9Framework__DESUtil__
+#ifndef __Framework__DESUtil__
+#define __Framework__DESUtil__
 
 #include <iostream>
 
@@ -23,4 +23,4 @@ public:
     
 };
 
-#endif /* defined(__The9Framework__DESUtil__) */
+#endif /* defined(__Framework__DESUtil__) */

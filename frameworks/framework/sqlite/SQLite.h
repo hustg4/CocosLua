@@ -1,13 +1,13 @@
 //
 //  SQLite.h
-//  The9Framework
+//  Framework
 //
 //  Created by wp_g4 on 13-5-14.
 //
 //
 
-#ifndef __The9Framework__SQLite__
-#define __The9Framework__SQLite__
+#ifndef __Framework__SQLite__
+#define __Framework__SQLite__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -176,4 +176,4 @@ protected:
     
 };
 
-#endif /* defined(__The9Framework__SQLite__) */
+#endif /* defined(__Framework__SQLite__) */
