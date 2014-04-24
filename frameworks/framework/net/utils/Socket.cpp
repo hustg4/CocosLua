@@ -153,8 +153,8 @@ void Socket::destroy()
         
         pSem = NULL;
     }
-//    pthread_cancel(senderThread);
-//    pthread_cancel(recevierThread);
+    //    pthread_cancel(senderThread);
+    //    pthread_cancel(recevierThread);
     this->release();
 }
 
@@ -236,7 +236,9 @@ void Socket::processOperationQueue()
         switch (operation->getType()) {
             case SocketOperationTypeConnect:
             {
-                bool res = odsocket->Connect(this->host.c_str(), this->port);
+                char ip[100] = {0};
+                ODSocket::DnsParse(this->host.c_str(), ip);
+                bool res = odsocket->Connect(ip, this->port);
                 if (res) {
                     this->addEvent(SocketEvent::create(SocketEventTypeConnected, Data::Null));
                 }
