@@ -38,6 +38,16 @@
                ReferencedContainer = "container:framework.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AA1C68C119080FB3001F3F83"
+               BuildableName = "libCocosLuaMacTests.xctest"
+               BlueprintName = "libCocosLuaMacTests"
+               ReferencedContainer = "container:framework.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
