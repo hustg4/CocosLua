@@ -687,13 +687,13 @@
 		AA1C565F1907EE1E001F3F83 /* NetStatusUtilIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetStatusUtilIos.mm; sourceTree = "<group>"; };
 		AA1C56601907EE1E001F3F83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AA1C56611907EE1E001F3F83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		AA1C681319080A40001F3F83 /* liblibCocosLuaIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = liblibCocosLuaIos.a; path = libcocosLuaIos.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1C681319080A40001F3F83 /* libcocosLuaIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcocosLuaIos.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1C681419080A40001F3F83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA1C681719080A40001F3F83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA1C681819080A40001F3F83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AA1C681919080A40001F3F83 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		AA1C682519080A40001F3F83 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		AA1C68B619080FB2001F3F83 /* liblibCocosLuaMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = liblibCocosLuaMac.a; path = libcocosLuaMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1C68B619080FB2001F3F83 /* libcocosLuaMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcocosLuaMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1C694A1908A50A001F3F83 /* cocosLuaIos-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cocosLuaIos-Prefix.pch"; sourceTree = "<group>"; };
 		AA1C694D1908A517001F3F83 /* cocosLuaMac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cocosLuaMac-Prefix.pch"; sourceTree = "<group>"; };
 		AA2A38F618FE17E00053A4E5 /* ccb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccb; sourceTree = "<group>"; };
@@ -1504,8 +1504,8 @@
 			children = (
 				F293B3C815EB7BE500256477 /* framework iOS.app */,
 				5023816B17EBBCE400990C9B /* framework Mac.app */,
-				AA1C681319080A40001F3F83 /* liblibCocosLuaIos.a */,
-				AA1C68B619080FB2001F3F83 /* liblibCocosLuaMac.a */,
+				AA1C681319080A40001F3F83 /* libcocosLuaIos.a */,
+				AA1C68B619080FB2001F3F83 /* libcocosLuaMac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1733,7 +1733,7 @@
 			);
 			name = cocosLuaIos;
 			productName = libCocosLuaIos;
-			productReference = AA1C681319080A40001F3F83 /* liblibCocosLuaIos.a */;
+			productReference = AA1C681319080A40001F3F83 /* libcocosLuaIos.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		AA1C68B519080FB2001F3F83 /* cocosLuaMac */ = {
@@ -1750,7 +1750,7 @@
 			);
 			name = cocosLuaMac;
 			productName = libCocosLuaMac;
-			productReference = AA1C68B619080FB2001F3F83 /* liblibCocosLuaMac.a */;
+			productReference = AA1C68B619080FB2001F3F83 /* libcocosLuaMac.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		F293B3C715EB7BE500256477 /* framework iOS */ = {
