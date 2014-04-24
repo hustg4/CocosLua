@@ -153,8 +153,8 @@ void Socket::destroy()
         
         pSem = NULL;
     }
-//    pthread_cancel(senderThread);
-//    pthread_cancel(recevierThread);
+    //    pthread_cancel(senderThread);
+    //    pthread_cancel(recevierThread);
     this->release();
 }
 
