@@ -224,7 +224,8 @@ void Socket::processOperationQueue()
 {
     pthread_mutex_lock(&operationQueueMutex);
     //剪切操作队列（多线程环境下，减少线程对操作队列的持有时间）
-    __Array* tempArray = __Array::create();
+    __Array* tempArray = new __Array();
+    tempArray->init();
     tempArray->addObjectsFromArray(this->operationQueue);
     this->operationQueue->removeAllObjects();
     pthread_mutex_unlock(&operationQueueMutex);
@@ -259,6 +260,7 @@ void Socket::processOperationQueue()
                 break;
         }
     }
+    tempArray->release();
 }
 
 //run in receiver thread
