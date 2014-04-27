@@ -100,7 +100,6 @@ ResourceManager::~ResourceManager()
     downloader->destroy();
     CC_SAFE_RELEASE_NULL(downloadCache);
     CC_SAFE_RELEASE_NULL(updatingModuleList);
-    CC_SAFE_RELEASE_NULL(copyFileList);
     CC_SAFE_RELEASE_NULL(jsonObjConfig);
     CC_SAFE_RELEASE_NULL(jsonObjMd5);
 }
@@ -160,10 +159,8 @@ void ResourceManager::clearSearchPath()
     CCFileUtils::getInstance()->purgeCachedEntries();
 }
 
-void ResourceManager::setCopyFileList(cocos2d::__Array *copyFileList)
+void ResourceManager::setCopyFileList(const cocos2d::ValueVector &copyFileList)
 {
-    CC_SAFE_RETAIN(copyFileList);
-    CC_SAFE_RELEASE_NULL(this->copyFileList);
     this->copyFileList = copyFileList;
 }
 
@@ -623,23 +620,23 @@ void ResourceManager::reportError(const std::string &moduleName, ResourceManager
     }
 }
 
-void ResourceManager::copyFiles(cocos2d::__Array *copyFileList)
+void ResourceManager::copyFiles(const cocos2d::ValueVector &copyFileList)
 {
-    if (copyFileList == NULL) {
+    if (copyFileList.empty()) {
         CCLOG("copyFiles copyFileList is empty");
         return;
     }
-    CCLOG("copyFiles:%d",copyFileList->count());
-    for (int i = 0; i < copyFileList->count(); i++) {
-        __String* filePath = (__String*) copyFileList->getObjectAtIndex(i);
+    CCLOG("copyFiles:%ld",copyFileList.size());
+    for (int i = 0; i < copyFileList.size(); i++) {
+        std::string filePath = copyFileList[i].asString();
         long len = 0;
         //为兼容android  此处必须先获取全路径
-        std::string fullPath = CCFileUtils::getInstance()->fullPathForFilename(filePath->getCString());
+        std::string fullPath = CCFileUtils::getInstance()->fullPathForFilename(filePath);
         unsigned char* fileData = CCFileUtils::getInstance()->getFileData(fullPath.c_str(), "rb", &len);
         CCLOG("fullPath:[%s]",fullPath.c_str());
         CCLOG("file len:[%lu]",len);
-        FileManager::createDirectory(this->fullLocalResourcePath(filePath->getCString()));
-        FileManager::writeDataToFile(fileData , len , this->fullLocalResourcePath(filePath->getCString()));
+        FileManager::createDirectory(this->fullLocalResourcePath(filePath));
+        FileManager::writeDataToFile(fileData , len , this->fullLocalResourcePath(filePath));
         delete [] fileData;
     }
     CCFileUtils::getInstance()->purgeCachedEntries();
