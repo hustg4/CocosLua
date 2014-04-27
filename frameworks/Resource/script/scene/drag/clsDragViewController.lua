@@ -40,16 +40,16 @@ function clsDragViewController:movedImage(filename)
     ----[[
     local sprite = nil
     if filename then
-        sprite = CCSprite:create("images/"..filename);
+        sprite = cc.Sprite:create("images/"..filename);
     else
-        sprite = CCSprite:create("images/cat.png");
+        sprite = cc.Sprite:create("images/cat.png");
     end
     sprite:setAnchorPoint(cc.p(0,0))
 
-    sprite:runAction(CCRotateTo:create(0.1,0));
-    local rotLeft = CCRotateBy:create(0.1, -4.0);
-    local rotCenter = CCRotateBy:create(0.1, 0.0);
-    local rotRight = CCRotateBy:create(0.1, 4.0);
+    sprite:runAction(cc.RotateTo:create(0.1,0));
+    local rotLeft = cc.RotateBy:create(0.1, -4.0);
+    local rotCenter = cc.RotateBy:create(0.1, 0.0);
+    local rotRight = cc.RotateBy:create(0.1, 4.0);
     
 
     local array =  CCArray:create();--  (rotLeft,rotCenter,rotRight,rotCenter,nil);
@@ -60,8 +60,8 @@ function clsDragViewController:movedImage(filename)
 
     --local array =  CCArray:create(rotLeft,rotCenter,rotRight,rotCenter,nil);
     
-    local rotSeq = CCSequence:create(array);
-    sprite:runAction(CCRepeatForever:create(rotSeq));
+    local rotSeq = cc.Sequence:create(array);
+    sprite:runAction(cc.RepeatForever:create(rotSeq));
 
     return sprite;
     --]]--
@@ -73,16 +73,16 @@ function clsDragViewController:testRadioMenu()
         local p = cc.p(i * 40 , i * 40);
         pointArray:addControlPoint(p)
     end
-    local radioMenu = CCRadioMenu:create(pointArray, "images/bird.png", "images/cat.png");
+    local radioMenu = cc.RadioMenu:create(pointArray, "images/bird.png", "images/cat.png");
     radioMenu:setScriptDelegate(self)
     self.layer:addChild(radioMenu);
 end
 
 function clsDragViewController:addScrollView()
     local images = {"bird.png", "cat.png", "dog.png","turtle.png"}
-    local layer = CCLayerColor:create(ccc4(57, 109, 111, 255));
+    local layer = cc.LayerColor:create(ccc4(57, 109, 111, 255));
     
-    local scrollView = CCScrollView:create(CCSizeMake(400,80), layer)
+    local scrollView = cc.ScrollView:create(cc.size(400,80), layer)
     scrollView:setScriptDelegate(self)
     
 
@@ -90,13 +90,13 @@ function clsDragViewController:addScrollView()
     scrollView:setDirection(kCCScrollViewDirectionHorizontal)
     
     
-    scrollView:setContentSize(CCSizeMake(400 * self.scrollViewPageNum, 80));
+    scrollView:setContentSize(cc.size(400 * self.scrollViewPageNum, 80));
     layer:setContentSize(scrollView:getContentSize());
     scrollView:setPosition(cc.p(50,100));
     
     for i = 1,#images do
         local filename = images[i]
-        local sprite = CCSprite:create("images/"..filename);
+        local sprite = cc.Sprite:create("images/"..filename);
         sprite:setPosition(cc.p(20 + (i - 1) * 400, 10));
         scrollView:addChild(sprite,2)
     end
@@ -140,13 +140,13 @@ function clsDragViewController:testScrollIndictor()
         self.scrollView:setShowScrollIndicator(true)
     elseif  self.isTestScrollViewIndicator == 2 then
         print ("test 2");
-        local tmpSprite = CCSprite:create("images/icon/scroll_indicator_h.png");
+        local tmpSprite = cc.Sprite:create("images/icon/scroll_indicator_h.png");
         local tmpSize = tmpSprite:getContentSize();
-        local fullRect = CCRectMake(0,0, tmpSize.width, tmpSize.height);
-        local insetRect = CCRectMake(16, 7,tmpSize.width-16*2, tmpSize.height-7*2);
+        local fullRect = cc.rect(0,0, tmpSize.width, tmpSize.height);
+        local insetRect = cc.rect(16, 7,tmpSize.width-16*2, tmpSize.height-7*2);
         
-        local pSprite = CCScale9Sprite:create("images/icon/scroll_indicator_h.png",fullRect,insetRect);
-        pSprite:setContentSize(CCSizeMake(100,14));
+        local pSprite = cc.Scale9Sprite:create("images/icon/scroll_indicator_h.png",fullRect,insetRect);
+        pSprite:setContentSize(cc.size(100,14));
         self.scrollView:setScrollIndicator(pSprite);
 
     end
@@ -155,16 +155,16 @@ end
 
 function clsDragViewController:testDrag()
     --ask director the window size
-    local size = CCDirector:getInstance():getWinSize()
+    local size = cc.Director:getInstance():getWinSize()
     
     --(1)sprites
     local images = {"bird.png", "cat.png", "dog.png","turtle.png"};
     
     for i = 1,#images do
         local filename = images[i]
-        --local sprite = CCSprite:create("images/"..filename);
+        --local sprite = cc.Sprite:create("images/"..filename);
         local sprite = self:movedImage(filename)
-        local dragableItem = CCDragableItem:create(sprite)
+        local dragableItem = cc.DragableItem:create(sprite)
         dragableItem:setMovedImage(self:movedImage(filename))
         dragableItem:setTag(i)
         dragableItem:setScriptDelegate(self)
@@ -178,7 +178,7 @@ function clsDragViewController:testDrag()
     
     
     
-    self.icon = CCSprite:create("images/editbox.png")
+    self.icon = cc.Sprite:create("images/editbox.png")
     self.icon:setPosition(size.width/2, size.height/2)
     self.layer:addChild(self.icon)
 end
@@ -205,16 +205,16 @@ end
 
 function clsDragViewController:testLongPress()
     
-    local s = CCSprite:create("images/cat.png")
+    local s = cc.Sprite:create("images/cat.png")
     s:setPosition(cc.p(300,200))
     self.layer:addChild(s)
-    local lpRecognizer = CCLongPressGestureRecognizer:create()
+    local lpRecognizer = cc.LongPressGestureRecognizer:create()
     lpRecognizer:setScriptDelegate(self)
     s:addChild( lpRecognizer )
 end
 
 function clsDragViewController:showView()
-    self.layer = CCLayer:create()
+    self.layer = cc.Layer:create()
     self:getScene():addChild(self.layer)
     
     
@@ -267,7 +267,7 @@ function clsDragViewController:onDragEnded(item,x,y)
           movedNode = item
     end
 
-    local rect = CCRectMake(x - movedNode:getAnchorPointInPoints().x, y - movedNode:getAnchorPointInPoints().y, movedNode:getContentSize().width, movedNode:getContentSize().height)
+    local rect = cc.rect(x - movedNode:getAnchorPointInPoints().x, y - movedNode:getAnchorPointInPoints().y, movedNode:getContentSize().width, movedNode:getContentSize().height)
     
 
     if rect:intersectsRect( self.icon:boundingBox()) then
@@ -315,7 +315,7 @@ end
 
 function clsDragViewController:node(pickerView,row,componet,reusingNode)
     local str  = tostring(row + 1)
-    local label = CCLabelTTF:create(str,"Helvetica",12)
+    local label = cc.LabelTTF:create(str,"Helvetica",12)
     return label
 end
 
@@ -342,15 +342,15 @@ end
 
 
 function clsDragViewController:sizeOfPickerView(pickerView)
-    local size = CCSize(45 - 5, 63 - 5)
+    local size = cc.size(45 - 5, 63 - 5)
     
     return size
 end
 
 
 function clsDragViewController:overlayImage(pickerView)
-    --local sprite = CCSprite:create("ui/FuBenSaoDang/3slots.png");
-    local sprite = CCSprite:create("images/bg_pickerView.png");
+    --local sprite = cc.Sprite:create("ui/FuBenSaoDang/3slots.png");
+    local sprite = cc.Sprite:create("images/bg_pickerView.png");
     print("sprete " , sprite)
     
     return sprite;

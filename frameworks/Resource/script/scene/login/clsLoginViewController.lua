@@ -20,19 +20,19 @@ end
 function clsLoginViewController:showView()
     
     --ask director the window size
-    local size = CCDirector:getInstance():getWinSize()
-    self.layer = CCLayer:create()
+    local size = cc.Director:getInstance():getWinSize()
+    self.layer = cc.Layer:create()
 
     --(1)背景
-    local spriteBg = CCSprite:create("images/Background_FullScreen_login.png")
+    local spriteBg = cc.Sprite:create("images/Background_FullScreen_login.png")
     spriteBg:setPosition(size.width/2, size.height/2)
     self.layer:addChild(spriteBg)
     
     --(2)标题
-    local labelTitle = CCLabelTTF:create("Abc123!!?@登录场景" , "DFPYuanW7-GB", 32)
+    local labelTitle = cc.LabelTTF:create("Abc123!!?@登录场景" , "DFPYuanW7-GB", 32)
     --labelTitle:setStroke(cc.c3b(0,0,0),1)
     --labelTitle:setShadow(cc.c3b(0,0,0),1,-1)
-    --local labelTitle = CCLabelBMFont:create("文档接口的实现","font/hh.fnt")
+    --local labelTitle = cc.LabelBMFont:create("文档接口的实现","font/hh.fnt")
     -- position the label on the center of the screen
     labelTitle:setColor(cc.c3b(255,0,0))
     labelTitle:setPosition(cc.p(size.width/2,size.height/2+50))
@@ -46,8 +46,8 @@ function clsLoginViewController:showView()
     --]]
     
     --(3)注册按钮
-    --local menuItemRegister = CCMenuItemFont:create("注册")
-    local menuItemRegister = CCMenuItemLabel:create(CCLabelTTF:create("注册2" , "汉仪蝶语体简", 32))
+    --local menuItemRegister = cc.MenuItemFont:create("注册")
+    local menuItemRegister = cc.MenuItemLabel:create(cc.LabelTTF:create("注册2" , "汉仪蝶语体简", 32))
     --TODO 为什么此方法调用存在问题
     --menuItemRegister:setFontSize(20)
     --menuItemRegister:setFontSizeObj(20)
@@ -55,24 +55,24 @@ function clsLoginViewController:showView()
     menuItemRegister:setPosition(180, 160)
     
     --(4)登录按钮
-    local menuItemLogin = CCMenuItemFont:create("登录")
+    local menuItemLogin = cc.MenuItemFont:create("登录")
     menuItemLogin:setFontSizeObj(20)
     menuItemLogin:registerScriptTapHandler(MakeScriptHandler(self,self.menuCallbackLogin))
     menuItemLogin:setPosition(240, 160)
     
     --(4)模态对话框按钮
-    local menuItemModal = CCMenuItemFont:create("模态")
+    local menuItemModal = cc.MenuItemFont:create("模态")
     menuItemModal:setFontSizeObj(20)
     menuItemModal:registerScriptTapHandler(MakeScriptHandler(self,self.menuCallbackModal))
     menuItemModal:setPosition(300, 160)
     
-    local menuItemSprite1 = CCMenuItemSprite:create(CCSprite:create("images/icon/effect_gantanhao_disable.png"),nil)
-    local menuItemSprite2 = CCMenuItemSprite:create(CCSprite:create("images/icon/effect_gantanhao_up.png"),nil)
-    local menuItemToogle = CCMenuItemToggle:create(menuItemSprite1)
+    local menuItemSprite1 = cc.MenuItemSprite:create(cc.Sprite:create("images/icon/effect_gantanhao_disable.png"),nil)
+    local menuItemSprite2 = cc.MenuItemSprite:create(cc.Sprite:create("images/icon/effect_gantanhao_up.png"),nil)
+    local menuItemToogle = cc.MenuItemToggle:create(menuItemSprite1)
     menuItemToogle:addSubItem(menuItemSprite2)
     menuItemToogle:setPosition(460, 40)
     
-    local menu = CCMenu:create()
+    local menu = cc.Menu:create()
     menu:setPosition(0,0)
     
     menu:addChild(menuItemRegister)
@@ -120,18 +120,18 @@ function clsLoginViewController:onTouch(eventType,x,y)
             self.webView = nil
         else
             
-            local size = CCDirector:getInstance():getWinSize()
+            local size = cc.Director:getInstance():getWinSize()
             local w = 320
             local h = 240
             
-            local spriteBg = CCSprite:create("images/blue.png")
+            local spriteBg = cc.Sprite:create("images/blue.png")
             spriteBg:setAnchorPoint(cc.p(0,0))
             spriteBg:setPosition(cc.p(50,50))
             self.layer:addChild(spriteBg)
             
             local spriteSize = spriteBg:getContentSize()
             
-            self.webView = WebView:new(CCRectMake(50,50,spriteSize.width,spriteSize.height))
+            self.webView = WebView:new(cc.rect(50,50,spriteSize.width,spriteSize.height))
             self.webView:loadURL("http://www.baidu.com")
             self.webView:show()
         end
@@ -143,7 +143,7 @@ function clsLoginViewController:onTouch(eventType,x,y)
 end
 
 function clsLoginViewController:menuCallbackRegister()
-    self.layer:removeFromParentAndCleanup(true)
+    self.layer:removeFromParent(true)
     Notifier:notify(NotifyEvent.UI.ShowRegisterView)
 end
 
@@ -171,12 +171,12 @@ end
 
 function clsLoginViewController:menuCallbackModal(tag,sender)
     
-    local size = CCDirector:getInstance():getWinSize()
+    local size = cc.Director:getInstance():getWinSize()
     self.modalLayer = ModalLayer:create()
     
     self.layer:addChild(self.modalLayer)
     
-    local tableView = CCTableView:create(self,CCSize:new(300,69))
+    local tableView = cc.TableView:create(self,cc.size(300,69))
     tableView:setTag(101)
     tableView:setScriptDelegate(self)
     tableView:setPosition(90, size.height/2)
@@ -203,7 +203,7 @@ end
 --table data source
 function clsLoginViewController:cellSizeForTable(tableView)
     --print("clsLoginViewController:cellSizeForTable")
-    return CCSize:new(29,69)
+    return cc.size:new(29,69)
 end
 
 function clsLoginViewController:numberOfCellsInTableView(tableView)
@@ -216,8 +216,8 @@ function clsLoginViewController:tableCellAtIndex(tableView,index)
     local cell = tableView:dequeueCell()
     if cell == nil then
         
-        cell = CCTableViewCell:create()
-        local sprite = CCSprite:create("images/icon/effect_gantanhao_up.png")
+        cell = cc.TableViewCell:create()
+        local sprite = cc.Sprite:create("images/icon/effect_gantanhao_up.png")
         sprite:setAnchorPoint(CCPoint:new(0,0))
         sprite:setPosition(cc.p(0,0))
         cell:addChild(sprite)
@@ -230,7 +230,7 @@ end
 function clsLoginViewController:tableCellTouched(tableView,cell)
     print("clsLoginViewController:tableCellTouched")
     print(tableView:getTag())
-    self.modalLayer:removeFromParentAndCleanup(true)
+    self.modalLayer:removeFromParent(true)
 end
 
 

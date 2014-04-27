@@ -20,8 +20,8 @@ function Game:start()
     
     --启动场景
     --ReplaceScene(clsParticleScene)
-    --ReplaceScene(clsLoginScene)
-    ReplaceScene(clsDemoScene)
+    ReplaceScene(clsLoginScene)
+    --ReplaceScene(clsDemoScene)
 end
 
 --重启游戏
@@ -33,7 +33,7 @@ function Game:restart()
     --(3)清理数据库连接缓存
     SQLite:clearConnectionCache()
     --(4)重新执行本文件
-    local path = CCFileUtils:sharedFileUtils():fullPathForFilename("script/main.lua")
+    local path = cc.FileUtils:sharedFileUtils():fullPathForFilename("script/main.lua")
     dofile(path)
 end
 

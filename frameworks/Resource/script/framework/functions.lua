@@ -63,9 +63,9 @@ end
 
 --获取布局时的缩放比例
 function GetLayoutScale()
-    --计算scaleNoBoder与scaleShowAll 算法参见CCEGLViewProtocol
-    local screenSize = CCEGLView:sharedOpenGLView():getFrameSize()
-    local designSize = CCEGLView:sharedOpenGLView():getDesignResolutionSize()
+    --计算scaleNoBoder与scaleShowAll 算法参见cc.EGLViewProtocol
+    local screenSize = cc.EGLView:sharedOpenGLView():getFrameSize()
+    local designSize = cc.EGLView:sharedOpenGLView():getDesignResolutionSize()
     local scaleX = screenSize.width / designSize.width
     local scaleY = screenSize.height / designSize.height
     local scaleNoBoder = math.max(scaleX,scaleY)
@@ -110,7 +110,7 @@ end
  --]]
 function LayoutNode(node)
     local TAG_LAYOUT_MIN = 10000
-    local designSize = CCEGLView:sharedOpenGLView():getDesignResolutionSize()
+    local designSize = cc.EGLView:sharedOpenGLView():getDesignResolutionSize()
     local layoutScale = GetLayoutScale()
     --检查tag是否符合规范，不符合规范的不予处理
     local tag = node:getTag()
@@ -191,7 +191,7 @@ function ReplaceScene(sceneClass,paramDict)
     
     if type(paramDict) == "table" then
         local paramTable = paramDict
-        paramDict = CCDictionary:create()
+        paramDict = cc.Dictionary:create()
         for k,v in pairs(paramTable) do
             local key = tostring(k)
             if type(v) == "string" then
@@ -203,17 +203,17 @@ function ReplaceScene(sceneClass,paramDict)
     end
     
     local scene = sceneClass["create"](sceneClass,paramDict)
-    local currentScene = CCDirector:getInstance():getRunningScene()
+    local currentScene = cc.Director:getInstance():getRunningScene()
     if currentScene == nil then
-        CCDirector:getInstance():runWithScene(scene)
+        cc.Director:getInstance():runWithScene(scene)
         else
-        CCDirector:getInstance():replaceScene(scene)
+        cc.Director:getInstance():replaceScene(scene)
     end
 end
 
 --设计尺寸
 function DesignSize()
-    return CCEGLView:sharedOpenGLView():getDesignResolutionSize()
+    return cc.EGLView:sharedOpenGLView():getDesignResolutionSize()
 end
 
 --创建菜单
@@ -266,8 +266,8 @@ function ReplaceToEditBox(scale9Sprite,tips)
     local size = scale9Sprite:getContentSize()
     local parentNode = scale9Sprite:getParent()
     
-    local editBoxBg = CCScale9Sprite:create("image/skin/login/textfield.png")
-    local editBox = CCEditBox:create(size,editBoxBg)
+    local editBoxBg = cc.Scale9Sprite:create("image/skin/login/textfield.png")
+    local editBox = cc.EditBox:create(size,editBoxBg)
     editBox:setPosition(position)
     editBox:setFont("Thonburi",16)
     editBox:setMaxLength(20)
@@ -290,7 +290,7 @@ end
 --为按钮添加文本
 function AddTitleForMenuItem(menuItem,title,fontName,fontSize,tag)
     local size = menuItem:getContentSize()
-    local labelTitle = CCLabelTTF:create(title, fontName, fontSize)
+    local labelTitle = cc.LabelTTF:create(title, fontName, fontSize)
     labelTitle:setPosition(cc.p(size.width/2,size.height/2))
     if tag then
         labelTitle:setTag(tag)
@@ -308,7 +308,7 @@ function CreateMaskSprite(maskSprite,textureSprite)
     
     local maskSize = maskSprite:getTexture():getContentSize()
     
-    local rt = CCRenderTexture:create(maskSize.width,maskSize.height)
+    local rt = cc.RenderTexture:create(maskSize.width,maskSize.height)
     
     local mContentSize = maskSprite:getContentSize()
     maskSprite:setPosition(cc.p(mContentSize.width/2,mContentSize.height/2))
@@ -329,7 +329,7 @@ function CreateMaskSprite(maskSprite,textureSprite)
     
     local sprite = rt:getSprite()
     
-    local retval = CCSprite:createWithTexture(sprite:getTexture())
+    local retval = cc.Sprite:createWithTexture(sprite:getTexture())
     
     return retval
 end

@@ -27,16 +27,16 @@ end
 
 function clsUpdateViewController:showView()
     
-    self.layer=CCLayer:create()
+    self.layer=cc.Layer:create()
     -- ask director the window size
-    local size = CCDirector:getInstance():getWinSize();
+    local size = cc.Director:getInstance():getWinSize();
     --(1)背景
-    local spriteBg=CCSprite:create("images/Background_FullScreen_login.png");
+    local spriteBg=cc.Sprite:create("images/Background_FullScreen_login.png");
     spriteBg:setPosition(size.width/2, size.height/2);
     self.layer:addChild(spriteBg);
     
     --(2)标题
-    local labelTitle = CCLabelTTF:create("更新客户端版本", "Thonburi", 32);
+    local labelTitle = cc.LabelTTF:create("更新客户端版本", "Thonburi", 32);
     -- position the label on the center of the screen
     labelTitle:setPosition( size.width / 2, size.height/2 + 30 );
     -- add the label as a child to this layer

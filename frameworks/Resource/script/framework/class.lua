@@ -9,7 +9,7 @@
  
         (1) super是"构造'C++实例'的function列表"时，调用方式如下：
             
-            class("clsSprite",{create = function() return CCSprite:create() end})
+            class("clsSprite",{create = function() return cc.Sprite:create() end})
  
             "构造'C++实例'的function列表"是一个lua table,key是function名，value为是一个function,function的功能是创建一个"C++实例"
  

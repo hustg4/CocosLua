@@ -57,9 +57,10 @@ bool LuaEngine::init(void)
 {
     _stack = LuaStack::create();
     _stack->retain();
-    executeScriptFile("DeprecatedEnum.lua");
-    executeScriptFile("DeprecatedClass.lua");
-    executeScriptFile("Deprecated.lua");
+    
+    executeScriptFile("Cocos2d.lua");
+    executeScriptFile("Cocos2dConstants.lua");
+    
     return true;
 }
 

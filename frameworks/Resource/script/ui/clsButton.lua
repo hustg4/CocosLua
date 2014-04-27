@@ -36,15 +36,15 @@ function clsButton:initWithNormalImage( normalImage, selectedImage, disabledImag
     local disabledSprite = nil
 
     if normalImage then 
-    	normalSprite = CCSprite:create(normalImage)
+    	normalSprite = cc.Sprite:create(normalImage)
     end 
 
     if selectedImage then 
-    	selectedSprite = CCSprite:create(selectedImage)
+    	selectedSprite = cc.Sprite:create(selectedImage)
     end
 
     if disabledImage then 
-    	disabledSprite = CCSprite:create(disabledImage)
+    	disabledSprite = cc.Sprite:create(disabledImage)
     end 
 
 	return self:initWithNormalSprite( normalSprite, selectedSprite, disabledSprite, target, selector)
@@ -55,7 +55,7 @@ function clsButton:initWithNormalSprite( normalSprite, selectedSprite, disabledS
 	self.target = target
 	self.selector = selector
 
-	self.touchLayer = CCLayer:create()
+	self.touchLayer = cc.Layer:create()
     self.touchLayer:registerScriptTouchHandler(MakeScriptHandler(self,self.onTouch))
     self.touchLayer:setTouchEnabled(true)
     self:addChild(self.touchLayer)
@@ -162,7 +162,7 @@ function clsButton:selected()
         if action then
             self:stopAction(action)
         end
-        local actionScale = CCScaleTo:create(0.1,1.2)
+        local actionScale = cc.ScaleTo:create(0.1,1.2)
         actionScale:setTag(TAG_ACTION_SCALE)
         self:runAction(actionScale)
     end
@@ -189,7 +189,7 @@ function clsButton:unselected()
         if action then
             self:stopAction(action)
         end
-        local actionScale = CCScaleTo:create(0.1,1)
+        local actionScale = cc.ScaleTo:create(0.1,1)
         actionScale:setTag(TAG_ACTION_SCALE)
         self:runAction(actionScale)
     end

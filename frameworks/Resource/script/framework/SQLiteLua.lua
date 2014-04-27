@@ -12,7 +12,7 @@ function SQLiteLua:selectTableAsLua(...)
     local tArray = {}
     local resultCount = resultArray:count()
     for i = 0 , resultCount-1 do
-        local columnDict = tolua.cast(resultArray:objectAtIndex(i),"CCDictionary")
+        local columnDict = tolua.cast(resultArray:objectAtIndex(i),"cc.Dictionary")
         local tObject = {}
         local columnNameArray = columnDict:allKeys()
         columnNameArray = tolua.cast(columnNameArray,"CCArray")
@@ -30,11 +30,11 @@ end
 -- 查询符合多个条件的数据,以Lua Table包装返回结果
 -- @param dbpath 数据库文件路径
 -- @param tableName 表名
--- @param conditionDict 条件字典 (CCDictionary)
+-- @param conditionDict 条件字典 (cc.Dictionary)
 function SQLiteLua:selectTableByCondition(tablename, conditionDict)
     if type(conditionDict) == "table" then
         local conditionTable = conditionDict
-        conditionDict = CCDictionary:create()
+        conditionDict = cc.Dictionary:create()
         for k,v in pairs(conditionTable) do
             conditionDict:setObject(CCString:create(v),k)
         end

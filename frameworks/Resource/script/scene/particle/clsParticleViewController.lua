@@ -20,16 +20,16 @@ end
 
 function clsParticleViewController:showView()
     
-    self.layer=CCLayer:create()
+    self.layer=cc.Layer:create()
     self.layer:setTouchEnabled(true)
     self.layer:registerScriptTouchHandler(MakeScriptHandler(self,self.onTouch))
     self:getScene():addChild(self.layer)
     
     -- ask director the window size
-    local size = CCDirector:getInstance():getWinSize()
+    local size = cc.Director:getInstance():getWinSize()
     
     --(1)背景
-    local spriteBg=CCSprite:create("images/Background_FullScreen_login.png")
+    local spriteBg=cc.Sprite:create("images/Background_FullScreen_login.png")
     spriteBg:setPosition(size.width/2, size.height/2);
     self.layer:addChild(spriteBg)
     
@@ -124,10 +124,10 @@ function clsParticleViewController:showView()
     particle:setPosition(100, size.height/2)
     self.layer:addChild(particle)
     
-    local moveRight = CCMoveTo:create(1,cc.p(400,size.height/2))
-    local moveLeft = CCMoveTo:create(1,cc.p(100,size.height/2))
-    local seq = CCSequence:createWithTwoActions(moveRight, moveLeft)
-    particle:runAction(CCRepeatForever:create(seq))
+    local moveRight = cc.MoveTo:create(1,cc.p(400,size.height/2))
+    local moveLeft = cc.MoveTo:create(1,cc.p(100,size.height/2))
+    local seq = cc.Sequence:createWithTwoActions(moveRight, moveLeft)
+    particle:runAction(cc.RepeatForever:create(seq))
      --]]
 
 end
@@ -143,17 +143,17 @@ end
 function clsParticleViewController:showReviveAnimation()
     
     if self.reviveLayer then
-        self.reviveLayer:removeFromParentAndCleanup(true)
+        self.reviveLayer:removeFromParent(true)
         self.reviveLayer = nil
     end
     
-    local winSize = CCDirector:getInstance():getWinSize()
+    local winSize = cc.Director:getInstance():getWinSize()
     
-    self.reviveLayer = CCLayer:create()
+    self.reviveLayer = cc.Layer:create()
     self.layer:addChild(self.reviveLayer)
     
     --精灵
-    local spriteHero = CCSprite:create("images/juren.png")
+    local spriteHero = cc.Sprite:create("images/juren.png")
     spriteHero:setPosition(cc.p(winSize.width/2,winSize.height/2))
     self.reviveLayer:addChild(spriteHero)
     
@@ -162,38 +162,38 @@ function clsParticleViewController:showReviveAnimation()
     --四道光线
     for i=1,4 do
         
-        local spriteLine = CCSprite:create("images/revive/2.png")
+        local spriteLine = cc.Sprite:create("images/revive/2.png")
         spriteLine:setAnchorPoint(cc.p(0.5,0))
         spriteLine:setPosition(cc.p(heroSize.width/2,heroSize.height/2))
         spriteLine:setRotation(90*i)
         spriteHero:addChild(spriteLine)
         
         --缩小动画
-        local scaleTo = CCEaseIn:create(CCScaleTo:create(0.5,0.1),2)
+        local scaleTo = cc.EaseIn:create(cc.ScaleTo:create(0.5,0.1),2)
         spriteLine:runAction(scaleTo)
     end
     
     -- 光圈 和 十字星
-    local ring = CCSprite:create("images/revive/1.png")
+    local ring = cc.Sprite:create("images/revive/1.png")
     ring:setOpacity(0)
     ring:setPosition(cc.p(heroSize.width/2,heroSize.height/2))
     spriteHero:addChild(ring)
     
-    local star = CCSprite:create("images/revive/4.png")
+    local star = cc.Sprite:create("images/revive/4.png")
     star:setOpacity(0)
     star:setPosition(cc.p(heroSize.width/2,heroSize.height/2))
     spriteHero:addChild(star)
     
-    local delay = CCDelayTime:create(0.2)
-    local fadeIn = CCFadeIn:create(0)
-    local scaleTo = CCScaleTo:create(0.3,0.1)
+    local delay = cc.DelayTime:create(0.2)
+    local fadeIn = cc.FadeIn:create(0)
+    local scaleTo = cc.ScaleTo:create(0.3,0.1)
 
     local actions = CCArray:create()
     actions:addObject(delay)
     actions:addObject(fadeIn)
     actions:addObject(scaleTo)
     
-    local seq = CCSequence:create(actions)
+    local seq = cc.Sequence:create(actions)
     ring:runAction(seq)
     
     local seqCopy = tolua.cast(seq:copy(),"CCAction")
@@ -209,7 +209,7 @@ function clsParticleViewController:showReviveAnimation()
         local num = 25
         for i=1,num do
             local index = math.ceil(math.random()*(#items))
-            local spriteItem = CCSprite:create(items[index].path)
+            local spriteItem = cc.Sprite:create(items[index].path)
             spriteItem:setAnchorPoint(cc.p(0.5,0))
             spriteItem:setOpacity(0)
             spriteItem:setPosition(cc.p((heroSize.width-itemTotalWidth)/2+math.random()*itemTotalWidth,heroSize.height/2 - 50))
@@ -217,16 +217,16 @@ function clsParticleViewController:showReviveAnimation()
             
             local totalTime = 0.6
             local delayTime = math.random()*totalTime
-            local delay = CCDelayTime:create(delayTime)
-            local fadeIn = CCFadeIn:create(0.1)
-            local fadeOut = CCFadeOut:create(0.1)
+            local delay = cc.DelayTime:create(delayTime)
+            local fadeIn = cc.FadeIn:create(0.1)
+            local fadeOut = cc.FadeOut:create(0.1)
             
             local actions = CCArray:create()
             actions:addObject(delay)
             actions:addObject(fadeIn)
             actions:addObject(fadeOut)
             
-            local seq = CCSequence:create(actions)
+            local seq = cc.Sequence:create(actions)
             spriteItem:runAction(seq)
         end
         
@@ -238,21 +238,21 @@ function clsParticleViewController:showReviveAnimation()
         
     end
     
-    local delay = CCDelayTime:create(0.5)
+    local delay = cc.DelayTime:create(0.5)
     local callback = CCCallFunc:create(endParticleFunc)
-    spriteHero:runAction(CCSequence:createWithTwoActions(delay, callback))
+    spriteHero:runAction(cc.Sequence:createWithTwoActions(delay, callback))
     
     
 end
 
 function clsParticleViewController:showStaBar()
-    local winSize = CCDirector:getInstance():getWinSize()
+    local winSize = cc.Director:getInstance():getWinSize()
     
     local endPercent = 100
     local animationTime = 1
     
     --背景条
-    local spriteBg = CCSprite:create("images/sta/sta_bar_background.png")
+    local spriteBg = cc.Sprite:create("images/sta/sta_bar_background.png")
     local bgSize = spriteBg:getContentSize()
     
     spriteBg:setPosition(cc.p(winSize.width/2,winSize.height/2))
@@ -260,7 +260,7 @@ function clsParticleViewController:showStaBar()
     
     
     --体力条
-    local progresBar = CCProgressTimer:create(CCSprite:create("images/sta/sta_bar.png"))
+    local progresBar = CCProgressTimer:create(cc.Sprite:create("images/sta/sta_bar.png"))
     local barSize = progresBar:getContentSize()
     
     progresBar:setAnchorPoint(cc.p(0,0))
@@ -286,7 +286,7 @@ function clsParticleViewController:showStaBar()
     
     local callback = CCCallFunc:create(endParticleFunc)
     
-    progresBar:runAction(CCSequence:createWithTwoActions(progresTo, callback))
+    progresBar:runAction(cc.Sequence:createWithTwoActions(progresTo, callback))
     
     --小星星（尾巴）
     local x = progresBar:getPercentage()/100*bgSize.width
@@ -295,14 +295,14 @@ function clsParticleViewController:showStaBar()
     particleTail:setPosition(cc.p(x,bgSize.height/2))
     spriteBg:addChild(particleTail)
     
-    local moveTo = CCMoveTo:create(animationTime,cc.p(endPercent/100*bgSize.width,bgSize.height/2))
+    local moveTo = cc.MoveTo:create(animationTime,cc.p(endPercent/100*bgSize.width,bgSize.height/2))
     
     local function removeTail()
-        particleTail:removeFromParentAndCleanup(true)
+        particleTail:removeFromParent(true)
     end
     
     local callback = CCCallFunc:create(removeTail)
     
-    particleTail:runAction(CCSequence:createWithTwoActions(moveTo, callback))
+    particleTail:runAction(cc.Sequence:createWithTwoActions(moveTo, callback))
     
 end

@@ -21,13 +21,13 @@ class("clsViewController",{create = function() return ViewController:create() en
 class("clsNode",{create = function() return CCNode:create() end})
 
 --clsLayer
-class("clsLayer",{create = function() return CCLayer:create() end})
+class("clsLayer",{create = function() return cc.Layer:create() end})
 
 --clsSprite
-class("clsSprite",{ create = function(...) return CCSprite:create(...) end,
-                    createWithTexture = function(...) return CCSprite:createWithTexture(...) end,
-                    createWithSpriteFrame = function(...) return CCSprite:createWithSpriteFrame(...) end,
-                    createWithSpriteFrameName = function(...) return CCSprite:createWithSpriteFrameName(...) end    })
+class("clsSprite",{ create = function(...) return cc.Sprite:create(...) end,
+                    createWithTexture = function(...) return cc.Sprite:createWithTexture(...) end,
+                    createWithSpriteFrame = function(...) return cc.Sprite:createWithSpriteFrame(...) end,
+                    createWithSpriteFrameName = function(...) return cc.Sprite:createWithSpriteFrameName(...) end    })
 
 --系统tag分配.所有框架级控件，如果要在scene上添加layer，使用的tag必须在此处申请
 TAG_SYSTEM_MIN = 100000000
