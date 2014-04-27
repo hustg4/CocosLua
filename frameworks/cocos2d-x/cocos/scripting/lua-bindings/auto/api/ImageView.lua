@@ -6,7 +6,7 @@
 --------------------------------
 -- @function [parent=#ImageView] loadTexture 
 -- @param self
--- @param #char char
+-- @param #string str
 -- @param #ccui.TextureResType texturerestype
         
 --------------------------------
@@ -35,19 +35,20 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
--- @function [parent=#ImageView] create 
+-- overload function: create(string, ccui.TextureResType)
+--          
+-- overload function: create()
+--          
+-- @function [parent=#ImageView] create
 -- @param self
--- @return ImageView#ImageView ret (return value: ccui.ImageView)
-        
+-- @param #string str
+-- @param #ccui.TextureResType texturerestype
+-- @return ImageView#ImageView ret (retunr value: ccui.ImageView)
+
 --------------------------------
 -- @function [parent=#ImageView] createInstance 
 -- @param self
 -- @return Ref#Ref ret (return value: cc.Ref)
-        
---------------------------------
--- @function [parent=#ImageView] setAnchorPoint 
--- @param self
--- @param #point_table point
         
 --------------------------------
 -- @function [parent=#ImageView] getVirtualRenderer 
@@ -60,7 +61,7 @@
 -- @return string#string ret (return value: string)
         
 --------------------------------
--- @function [parent=#ImageView] getContentSize 
+-- @function [parent=#ImageView] getVirtualRendererSize 
 -- @param self
 -- @return size_table#size_table ret (return value: size_table)
         

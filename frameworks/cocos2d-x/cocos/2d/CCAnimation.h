@@ -29,7 +29,6 @@ THE SOFTWARE.
 
 #include "CCPlatformConfig.h"
 #include "CCRef.h"
-#include "CCArray.h"
 #include "CCValue.h"
 #include "CCGeometry.h"
 #include "CCSpriteFrame.h"
@@ -148,7 +147,7 @@ public:
      The frames will be added with one "delay unit".
      @since v0.99.5
      */
-    static Animation* createWithSpriteFrames(const Vector<SpriteFrame*>& arrayOfSpriteFrameNames, float delay = 0.0f);
+    static Animation* createWithSpriteFrames(const Vector<SpriteFrame*>& arrayOfSpriteFrameNames, float delay = 0.0f, unsigned int loops = 1);
 
     /* Creates an animation with an array of AnimationFrame, the delay per units in seconds and and how many times it should be executed.
      @since v2.0
@@ -224,7 +223,7 @@ CC_CONSTRUCTOR_ACCESS:
     /** Initializes a Animation with frames and a delay between frames
      @since v0.99.5
      */
-    bool initWithSpriteFrames(const Vector<SpriteFrame*>& arrayOfSpriteFrameNames, float delay = 0.0f);
+    bool initWithSpriteFrames(const Vector<SpriteFrame*>& arrayOfSpriteFrameNames, float delay = 0.0f, unsigned int loops = 1);
     
     /** Initializes a Animation with AnimationFrame
      @since v2.0

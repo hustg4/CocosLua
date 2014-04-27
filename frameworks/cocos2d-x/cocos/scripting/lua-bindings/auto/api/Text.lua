@@ -79,19 +79,21 @@
 -- @param #size_table size
         
 --------------------------------
--- @function [parent=#Text] create 
+-- overload function: create(string, string, int)
+--          
+-- overload function: create()
+--          
+-- @function [parent=#Text] create
 -- @param self
--- @return Text#Text ret (return value: ccui.Text)
-        
+-- @param #string str
+-- @param #string str
+-- @param #int int
+-- @return Text#Text ret (retunr value: ccui.Text)
+
 --------------------------------
 -- @function [parent=#Text] createInstance 
 -- @param self
 -- @return Ref#Ref ret (return value: cc.Ref)
-        
---------------------------------
--- @function [parent=#Text] setAnchorPoint 
--- @param self
--- @param #point_table point
         
 --------------------------------
 -- @function [parent=#Text] getVirtualRenderer 
@@ -104,7 +106,7 @@
 -- @return string#string ret (return value: string)
         
 --------------------------------
--- @function [parent=#Text] getContentSize 
+-- @function [parent=#Text] getVirtualRendererSize 
 -- @param self
 -- @return size_table#size_table ret (return value: size_table)
         

@@ -55,6 +55,13 @@ public:
      * Allocates and initializes.
      */
     static Text* create();
+    
+    /**
+     *  create a Text object with textContent, fontName and fontSize
+     */
+    static Text* create(const std::string& textContent,
+                        const std::string& fontName,
+                        int fontSize);
 
     /**
      * Changes the string value of label.
@@ -109,11 +116,8 @@ public:
      */
     bool isTouchScaleChangeEnabled();
 
-    //override "setAnchorPoint" method of widget.
-    virtual void setAnchorPoint(const Point &pt) override;
-
-    //override "getContentSize" method of widget.
-    virtual const Size& getContentSize() const override;
+    //override "getVirtualRendererSize" method of widget.
+    virtual const Size& getVirtualRendererSize() const override;
 
     //override "getVirtualRenderer" method of widget.
     virtual Node* getVirtualRenderer() override;
@@ -137,6 +141,9 @@ public:
     
 CC_CONSTRUCTOR_ACCESS:
     virtual bool init() override;
+    virtual bool init(const std::string& textContent,
+                      const std::string& fontName,
+                      int fontSize);
 
 protected:
     virtual void initRenderer() override;
@@ -152,6 +159,7 @@ protected:
     void labelScaleChangedWithSize();
     virtual Widget* createCloneInstance() override;
     virtual void copySpecialProperties(Widget* model) override;
+    virtual void adaptRenderers() override;
 protected:
     bool _touchScaleChangeEnabled;
     float _normalScaleValueX;
@@ -160,6 +168,7 @@ protected:
     int _fontSize;
     float _onSelectedScaleOffset;
     Label* _labelRenderer;
+    bool _labelRendererAdaptDirty;
 };
 
 }

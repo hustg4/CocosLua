@@ -942,7 +942,14 @@ bool Image::initWithPngData(const unsigned char * data, ssize_t dataLen)
 
         _dataLen = rowbytes * _height;
         _data = static_cast<unsigned char*>(malloc(_dataLen * sizeof(unsigned char)));
-        CC_BREAK_IF(!_data);
+        if(!_data)
+        {
+            if (row_pointers != nullptr)
+            {
+                free(row_pointers);
+            }
+            break;
+        }
 
         for (unsigned short i = 0; i < _height; ++i)
         {
@@ -957,7 +964,7 @@ bool Image::initWithPngData(const unsigned char * data, ssize_t dataLen)
         if (row_pointers != nullptr)
         {
             free(row_pointers);
-        };
+        }
 
         bRet = true;
     } while (0);
@@ -1552,7 +1559,7 @@ bool Image::initWithTGAData(tImageTGA* tgaData)
     }
     else
     {
-        if (tgaData->imageData != nullptr)
+        if (tgaData && tgaData->imageData != nullptr)
         {
             free(tgaData->imageData);
             _data = nullptr;
@@ -2023,11 +2030,14 @@ bool Image::saveImageToPNG(const std::string& filePath, bool isToRGB)
         {
             if (isToRGB)
             {
-                unsigned char *pTempData = static_cast<unsigned char*>(malloc(_width * _height * 3 * sizeof(unsigned char*)));
+                unsigned char *pTempData = static_cast<unsigned char*>(malloc(_width * _height * 3 * sizeof(unsigned char)));
                 if (nullptr == pTempData)
                 {
                     fclose(fp);
                     png_destroy_write_struct(&png_ptr, &info_ptr);
+                    
+                    free(row_pointers);
+                    row_pointers = nullptr;
                     break;
                 }
 
