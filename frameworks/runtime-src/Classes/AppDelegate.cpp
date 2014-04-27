@@ -7,8 +7,6 @@
 #include "HttpService.h"
 #include "SocketService.h"
 
-#include "SQLiteTest.h"
-
 using namespace CocosDenshion;
 
 USING_NS_CC;
@@ -58,9 +56,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     register_all_framework(luaState);
     
     // run main lua file
-//    engine->executeScriptFile("main.lua");
-    
-    SQLiteTest::run();
+    engine->executeScriptFile("main.lua");
 
     return true;
 }
