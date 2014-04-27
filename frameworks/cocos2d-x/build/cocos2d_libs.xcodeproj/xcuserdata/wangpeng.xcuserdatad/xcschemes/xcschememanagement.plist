@@ -12,7 +12,7 @@
 		<key>CocosDenshion iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>13</integer>
 		</dict>
 		<key>box2d Mac.xcscheme</key>
 		<dict>
@@ -27,7 +27,7 @@
 		<key>build all libs Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>build all libs iOS.xcscheme</key>
 		<dict>

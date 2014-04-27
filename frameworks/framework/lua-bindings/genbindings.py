@@ -91,8 +91,8 @@ def main():
         sys.exit(1)
 
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-    cocos_root = os.path.abspath(os.path.join(project_root, '..','..','cocos2d-x'))
-    cxx_generator_root = os.path.abspath(os.path.join(project_root, '../../cocos2d-x/tools/bindings-generator'))
+    cocos_root = os.path.abspath(os.path.join(project_root,'cocos2d-x'))
+    cxx_generator_root = os.path.abspath(os.path.join(project_root, 'cocos2d-x/tools/bindings-generator'))
 
     # save config to file
     config = ConfigParser.ConfigParser()

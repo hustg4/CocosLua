@@ -57,29 +57,16 @@ void SQLite::clearConnectionCache()
     sqliteCache.removeAllObjects();
 }
 
-const char* SQLite::getValueTypeName(cocos2d::Ref *value)
-{
-    if (dynamic_cast<__String*>(value) != NULL) {
-        return "__String";
-    }else if (dynamic_cast<__Integer*>(value) != NULL){
-        return "__Integer";
-    }else if (dynamic_cast<CCFloat*>(value) != NULL){
-        return "CCFloat";
-    }else{
-        return "UNKNOWN";
-    }
-}
-
-bool SQLite::createTable(const std::string &tableName, cocos2d::__Array *columnArray)
+bool SQLite::createTable(const std::string &tableName, const cocos2d::ValueVector &columnVector)
 {
     std::string sql = "CREATE TABLE IF NOT EXISTS ";
     sql.append(tableName);
     sql.append("(");
     
-    int count = columnArray->count();
+    int count = columnVector.size();
     for (int i = 0;i<count;i++) {
-        __String* columnName = (__String*)columnArray->getObjectAtIndex(i);
-        sql.append(columnName->getCString());
+        std::string columnName = columnVector[i].asString();
+        sql.append(columnName);
         sql.append(" TEXT");
         if (i != count-1) {
             sql.append(",");
@@ -100,27 +87,29 @@ bool SQLite::dropTable(const std::string &tableName)
     return res;
 }
 
-bool SQLite::insertIntoTable(const std::string &tableName, cocos2d::__Dictionary *keyValueDict)
+bool SQLite::insertIntoTable(const std::string &tableName, const cocos2d::ValueMap &keyValueMap)
 {
     std::string sql = "INSERT INTO ";
     sql.append(tableName);
     std::string keyStr = "(";
     std::string valueStr = "(";
     
-    __Array* keyArray = keyValueDict->allKeys();
-    int count = keyArray->count();
+    int count = keyValueMap.size();
     
-    for (int i = 0; i < count; i++) {
-        __String* key = (__String*)keyArray->getObjectAtIndex(i);
-        __String* value = (__String*)keyValueDict->objectForKey(key->getCString());
-        keyStr.append(key->getCString());
+    int i = 0;
+    for (auto iter = keyValueMap.cbegin(); iter != keyValueMap.cend(); ++iter)
+    {
+        std::string key = iter->first;
+        std::string value = iter->second.asString();
+        keyStr.append(key);
         valueStr.append("'");
-        valueStr.append(value->getCString());
+        valueStr.append(value);
         valueStr.append("'");
         if (i != count-1) {
             keyStr.append(",");
             valueStr.append(",");
         }
+        i++;
     }
     
     keyStr.append(")");
@@ -133,59 +122,63 @@ bool SQLite::insertIntoTable(const std::string &tableName, cocos2d::__Dictionary
 }
 
 bool SQLite::clearTable(const std::string &tableName){
-    return this->deleteFromTable(tableName, NULL);
+    return this->deleteFromTable(tableName, ValueMap());
 }
 
-bool SQLite::deleteFromTable(const std::string &tableName, cocos2d::__Dictionary *conditionDict)
+bool SQLite::deleteFromTable(const std::string &tableName, const cocos2d::ValueMap &conditionMap)
 {
     std::string sql = "DELETE FROM ";
     sql.append(tableName);
-    sql.append(this->convertConditionDictionary(conditionDict));
+    sql.append(this->convertConditionMap(conditionMap));
     
     return this->executeUpdate(sql);
 }
 
 bool SQLite::deleteFromTable(const std::string &tableName, const std::string &columnName, const std::string &columnValue)
 {
-    __Dictionary* conditionDict = __Dictionary::create();
-    conditionDict->setObject(__String::create(columnValue), columnName);
+    ValueMap conditionMap;
+    conditionMap[columnName]=columnValue;
     
-    return this->deleteFromTable(tableName,conditionDict);
+    return this->deleteFromTable(tableName,conditionMap);
 }
 
 // 以下为更新接口
-bool SQLite::updateTable(const std::string &tableName, cocos2d::__Dictionary *keyValueDict, cocos2d::__Dictionary *conditionDict)
+bool SQLite::updateTable(const std::string &tableName, const cocos2d::ValueMap &keyValueMap, const cocos2d::ValueMap &conditionMap)
 {
     std::string sql = "UPDATE ";
     sql.append(tableName);
     sql.append(" SET ");
     
-    __Array* keyArray = keyValueDict->allKeys();
-    int count = keyArray->count();
+    int count = keyValueMap.size();
     
-    for (int i=0; i<count; i++) {
-        __String* key = (__String*)keyArray->getObjectAtIndex(i);
-        __String* value = (__String*)keyValueDict->objectForKey(key->getCString());
-        sql.append(key->getCString());
+    int i = 0;
+    for (auto iter = keyValueMap.cbegin(); iter != keyValueMap.cend(); ++iter)
+    {
+        std::string key = iter->first;
+        std::string value = iter->second.asString();
+        
+        sql.append(key);
         sql.append("='");
-        sql.append(value->getCString());
+        sql.append(value);
         sql.append("'");
         if (i != count-1) {
             sql.append(",");
         }
+        
+        i++;
     }
     
-    sql.append(this->convertConditionDictionary(conditionDict));
+    sql.append(this->convertConditionMap(conditionMap));
     
     return this->executeUpdate(sql);
 }
 
-bool SQLite::updateTable(const std::string &tableName, cocos2d::__Dictionary *keyValueDict, const std::string &columnName, const std::string &columnValue)
+bool SQLite::updateTable(const std::string &tableName, const cocos2d::ValueMap &keyValueMap, const std::string &columnName, const std::string &columnValue)
 {
-    __Dictionary* conditionDict = __Dictionary::create();
-    conditionDict->setObject(__String::create(columnValue), columnName);
+    ValueMap conditionMap;
+    conditionMap[columnName]=columnValue;
     
-    return this->updateTable(tableName, keyValueDict, conditionDict);
+    return this->updateTable(tableName, keyValueMap, conditionMap);
 }
 
 int SQLite::getRecordCount(const std::string &tableName)
@@ -209,28 +202,28 @@ int SQLite::getRecordCount(const std::string &tableName)
 }
 
 // 以下为查询接口
-__Array* SQLite::selectTable(const std::string &tableName, cocos2d::__Dictionary *conditionDict)
+cocos2d::ValueVector SQLite::selectTable(const std::string &tableName, const cocos2d::ValueMap &conditionMap)
 {
-    std::string sql = this->getExecuteSql(tableName, conditionDict);
+    std::string sql = this->getExecuteSql(tableName, conditionMap);
     
     return this->executeQuery(sql);
 }
 
-__Array* SQLite::selectTable(const std::string &tableName, const std::string &columnName, const std::string &columnValue)
+cocos2d::ValueVector SQLite::selectTable(const std::string &tableName, const std::string &columnName, const std::string &columnValue)
 {
     std::string sql = this->getExecuteSql(tableName, columnName, columnValue);
     
     return this->executeQuery(sql);
 }
 
-cocos2d::__Array* SQLite::selectTable(const std::string& tableName,const std::string& columnName,cocos2d::__Array* columnValues)
+cocos2d::ValueVector SQLite::selectTable(const std::string &tableName, const std::string &columnName, const cocos2d::ValueVector &columnValues)
 {
     std::string sql = this->getExecuteSql(tableName, columnName, columnValues);
     
     return this->executeQuery(sql);
 }
 
-cocos2d::__Array* SQLite::selectTable(const std::string &tableName, const std::string &sql)
+cocos2d::ValueVector SQLite::selectTable(const std::string &tableName, const std::string &sql)
 {
     return this->executeQuery(sql);
 }
@@ -238,24 +231,24 @@ cocos2d::__Array* SQLite::selectTable(const std::string &tableName, const std::s
 /****************************** 以下为私有api ******************************/
 
 // 组装查询sql
-std::string SQLite::getExecuteSql(const std::string& tableName,cocos2d::__Dictionary* conditionDict)
+std::string SQLite::getExecuteSql(const std::string &tableName, const cocos2d::ValueMap &conditionMap)
 {
     std::string sql = "SELECT * FROM ";
     sql.append(tableName);
-    sql.append(this->convertConditionDictionary(conditionDict));
+    sql.append(this->convertConditionMap(conditionMap));
     
     return sql;
 }
 
 std::string SQLite::getExecuteSql(const std::string& tableName, const std::string& columnName,const std::string& columnValue)
 {
-    __Dictionary* conditionDict = __Dictionary::create();
-    conditionDict->setObject(__String::create(columnValue), columnName);
+    ValueMap conditionMap;
+    conditionMap[columnName]=columnValue;
     
-    return this->getExecuteSql(tableName, conditionDict);
+    return this->getExecuteSql(tableName, conditionMap);
 }
 
-std::string SQLite::getExecuteSql(const std::string& tableName,const std::string& columnName,cocos2d::__Array* columnValues)
+std::string SQLite::getExecuteSql(const std::string &tableName, const std::string &columnName, const cocos2d::ValueVector &columnValues)
 {
     std::string sql = "SELECT * FROM ";
     sql.append(tableName);
@@ -263,11 +256,11 @@ std::string SQLite::getExecuteSql(const std::string& tableName,const std::string
     sql.append(columnName);
     sql.append(" IN (");
     
-    int count = columnValues->count();
+    int count = columnValues.size();
     for (int i = 0; i < count; i++) {
-        __String* value = (__String*)columnValues->getObjectAtIndex(i);
+        std::string value = columnValues[i].asString();
         sql.append("'");
-        sql.append(value->getCString());
+        sql.append(value);
         sql.append("'");
         if (i != count-1) {
             sql.append(",");
@@ -291,34 +284,33 @@ bool SQLite::executeUpdate(const std::string &sql)
     return res;
 }
 
-__Array* SQLite::executeQuery(const std::string &sql)
+cocos2d::ValueVector SQLite::executeQuery(const std::string &sql)
 {
     CCLOG("SQLite:%s",sql.c_str());
-    __Array* valueArray = __Array::create();
+    ValueVector valueArray;
     sqlite3_stmt* stmt = NULL;
     
     bool res = sqlite3_prepare(db, sql.c_str(), -1, &stmt, NULL) == SQLITE_OK;
     if (res) {
         while (sqlite3_step(stmt) == SQLITE_ROW ) {
-            __Dictionary* columnDict = __Dictionary::create();
+            ValueMap columnMap;
             int columnNum = sqlite3_column_count(stmt);
             for (int i = 0; i < columnNum; i++) {
                 int type = sqlite3_column_type(stmt, i);
                 
                 const char* name = sqlite3_column_name(stmt, i);
-                Ref* value = NULL;
+                
                 if (type == SQLITE_INTEGER) {
-                    value = __Integer::create(sqlite3_column_int(stmt, i));
+                    columnMap[name]=Value(sqlite3_column_int(stmt, i));
                 }else if (type == SQLITE_FLOAT){
-                    value = CCFloat::create(sqlite3_column_int(stmt, i));
+                    columnMap[name]=Value(sqlite3_column_int(stmt, i));
                 }else if (type == SQLITE_TEXT){
-                    value = __String::create((char*)sqlite3_column_text(stmt, i));
+                    columnMap[name]=Value((char*)sqlite3_column_text(stmt, i));
                 }else{
-                    value = __String::create("");
+                    columnMap[name] = "";
                 }
-                columnDict->setObject(value, name);
             }
-            valueArray->addObject(columnDict);
+            valueArray.push_back(Value(columnMap));
         }
         sqlite3_finalize(stmt);
     }
@@ -326,48 +318,54 @@ __Array* SQLite::executeQuery(const std::string &sql)
     return valueArray;
 }
 
-std::string SQLite::convertConditionDictionary(cocos2d::__Dictionary *conditionDict)
+std::string SQLite::convertConditionMap(const cocos2d::ValueMap &conditionMap)
 {
     std::string conditionStr;
-    if (conditionDict && conditionDict->count() > 0) {
+    
+    int count = conditionMap.size();
+    
+    if (count > 0) {
         
         conditionStr.append(" WHERE ");
         
-        __Array* columnNameArray = conditionDict->allKeys();
-        int count = columnNameArray->count();
-        
-        for (int i = 0; i < count; i++) {
-            __String* columnName = (__String*)columnNameArray->getObjectAtIndex(i);
-            __String* columnValue = (__String*)conditionDict->objectForKey(columnName->getCString());
+        int i = 0;
+        for (auto iter = conditionMap.cbegin(); iter != conditionMap.cend(); ++iter)
+        {
+            std::string columnName = iter->first;
+            std::string columnValue = iter->second.asString();
             
-            conditionStr.append(columnName->getCString());
+            conditionStr.append(columnName);
             conditionStr.append("='");
-            conditionStr.append(columnValue->getCString());
+            conditionStr.append(columnValue);
             conditionStr.append("'");
             
             if (i != count-1) {
                 conditionStr.append(" AND ");
             }
+            i++;
+            
         }
+        
     }
     return conditionStr;
 }
 
-bool SQLite::insertIntoTable(const std::string &tableName, cocos2d::__Array *valueArray)
+bool SQLite::insertIntoTable(const std::string &tableName, const cocos2d::ValueVector& valueArray)
 {
     std::string sql = "INSERT INTO ";
     sql.append(tableName);
     sql.append(" VALUES(");
     
-    int count = valueArray->count();
+    int count = valueArray.size();
     for (int i = 0;i < count;i++) {
-        __String* value = (__String*)valueArray->getObjectAtIndex(i);
+        std::string value = valueArray[i].asString();
         sql.append("'");
-        sql.append(value->getCString());
+        sql.append(value);
         sql.append("'");
         if (i != count-1) {
             sql.append(",");
         }
+        i++;
     }
     sql.append(")");
     

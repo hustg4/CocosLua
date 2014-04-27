@@ -4,14 +4,14 @@
 -- @extend Ref
 
 --------------------------------
--- overload function: updateTable(string, cc.__Dictionary, string, string)
+-- overload function: updateTable(string, map_table, string, string)
 --          
--- overload function: updateTable(string, cc.__Dictionary, cc.__Dictionary)
+-- overload function: updateTable(string, map_table, map_table)
 --          
 -- @function [parent=#SQLite] updateTable
 -- @param self
 -- @param #string str
--- @param #cc.__Dictionary __dictionary
+-- @param #map_table map
 -- @param #string str
 -- @param #string str
 -- @return bool#bool ret (retunr value: bool)
@@ -31,7 +31,7 @@
 --------------------------------
 -- overload function: deleteFromTable(string, string, string)
 --          
--- overload function: deleteFromTable(string, cc.__Dictionary)
+-- overload function: deleteFromTable(string, map_table)
 --          
 -- @function [parent=#SQLite] deleteFromTable
 -- @param self
@@ -50,28 +50,22 @@
 -- @function [parent=#SQLite] createTable 
 -- @param self
 -- @param #string str
--- @param #cc.__Array __array
+-- @param #array_table array
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
 -- @function [parent=#SQLite] insertIntoTable 
 -- @param self
 -- @param #string str
--- @param #cc.__Dictionary __dictionary
+-- @param #map_table map
 -- @return bool#bool ret (return value: bool)
-        
---------------------------------
--- @function [parent=#SQLite] getValueTypeName 
--- @param self
--- @param #cc.Ref ref
--- @return char#char ret (return value: char)
         
 --------------------------------
 -- overload function: selectTable(string, string, string)
 --          
--- overload function: selectTable(string, cc.__Dictionary)
+-- overload function: selectTable(string, map_table)
 --          
--- overload function: selectTable(string, string, cc.__Array)
+-- overload function: selectTable(string, string, array_table)
 --          
 -- overload function: selectTable(string, string)
 --          
@@ -79,8 +73,8 @@
 -- @param self
 -- @param #string str
 -- @param #string str
--- @param #cc.__Array __array
--- @return __Array#__Array ret (retunr value: cc.__Array)
+-- @param #array_table array
+-- @return array_table#array_table ret (retunr value: array_table)
 
 --------------------------------
 -- @function [parent=#SQLite] openSQLite 

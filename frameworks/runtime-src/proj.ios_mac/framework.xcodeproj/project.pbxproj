@@ -102,7 +102,6 @@
 		AA1C686619080ACD001F3F83 /* JSONValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3761907E2C100E1788C /* JSONValidator.h */; };
 		AA1C686719080ACD001F3F83 /* JSONWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3781907E2C100E1788C /* JSONWorker.h */; };
 		AA1C686819080ACD001F3F83 /* NumberToString.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D37B1907E2C100E1788C /* NumberToString.h */; };
-		AA1C686C19080C0E001F3F83 /* lua_framework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3931907E2C100E1788C /* lua_framework_auto.cpp */; };
 		AA1C686D19080C0E001F3F83 /* NetCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3971907E2C100E1788C /* NetCenter.cpp */; };
 		AA1C686E19080C0E001F3F83 /* NetFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3991907E2C100E1788C /* NetFilter.cpp */; };
 		AA1C686F19080C0E001F3F83 /* NetHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D39B1907E2C100E1788C /* NetHandler.cpp */; };
@@ -132,7 +131,6 @@
 		AA1C688919080C1D001F3F83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1C56611907EE1E001F3F83 /* Reachability.m */; };
 		AA1C688A19080C1D001F3F83 /* UUIDGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3E41907E2C100E1788C /* UUIDGenerator.mm */; };
 		AA1C688B19080C30001F3F83 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3B61907E2C100E1788C /* sqlite3.c */; };
-		AA1C688C19080C8F001F3F83 /* lua_framework_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3941907E2C100E1788C /* lua_framework_auto.hpp */; };
 		AA1C688D19080C8F001F3F83 /* NetCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3981907E2C100E1788C /* NetCenter.h */; };
 		AA1C688E19080C8F001F3F83 /* NetFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D39A1907E2C100E1788C /* NetFilter.h */; };
 		AA1C688F19080C8F001F3F83 /* NetHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D39C1907E2C100E1788C /* NetHandler.h */; };
@@ -182,7 +180,6 @@
 		AA1C68E41908A2F2001F3F83 /* JSONWorker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3771907E2C100E1788C /* JSONWorker.cpp */; };
 		AA1C68E51908A2F2001F3F83 /* JSONWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3791907E2C100E1788C /* JSONWriter.cpp */; };
 		AA1C68E61908A2F2001F3F83 /* libjson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D37A1907E2C100E1788C /* libjson.cpp */; };
-		AA1C68E71908A306001F3F83 /* lua_framework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3931907E2C100E1788C /* lua_framework_auto.cpp */; };
 		AA1C68E81908A306001F3F83 /* NetCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3971907E2C100E1788C /* NetCenter.cpp */; };
 		AA1C68E91908A306001F3F83 /* NetFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3991907E2C100E1788C /* NetFilter.cpp */; };
 		AA1C68EA1908A306001F3F83 /* NetHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D39B1907E2C100E1788C /* NetHandler.cpp */; };
@@ -241,7 +238,6 @@
 		AA1C691F1908A325001F3F83 /* JSONValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3761907E2C100E1788C /* JSONValidator.h */; };
 		AA1C69201908A325001F3F83 /* JSONWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3781907E2C100E1788C /* JSONWorker.h */; };
 		AA1C69211908A325001F3F83 /* NumberToString.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D37B1907E2C100E1788C /* NumberToString.h */; };
-		AA1C69221908A349001F3F83 /* lua_framework_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3941907E2C100E1788C /* lua_framework_auto.hpp */; };
 		AA1C69231908A349001F3F83 /* NetCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D3981907E2C100E1788C /* NetCenter.h */; };
 		AA1C69241908A349001F3F83 /* NetFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D39A1907E2C100E1788C /* NetFilter.h */; };
 		AA1C69251908A349001F3F83 /* NetHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0D39C1907E2C100E1788C /* NetHandler.h */; };
@@ -283,6 +279,12 @@
 		AA3C4AA018F93A1500D65677 /* HttpService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3C4A9A18F93A1500D65677 /* HttpService.cpp */; };
 		AA3C4AA118F93A1500D65677 /* SocketService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3C4A9D18F93A1500D65677 /* SocketService.cpp */; };
 		AA3C4AA218F93A1500D65677 /* SocketService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3C4A9D18F93A1500D65677 /* SocketService.cpp */; };
+		AA6E8CAA190B572900D64EE5 /* lua_framework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA6E8CA8190B572900D64EE5 /* lua_framework_auto.cpp */; };
+		AA6E8CAB190B572900D64EE5 /* lua_framework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA6E8CA8190B572900D64EE5 /* lua_framework_auto.cpp */; };
+		AA6E8CAC190B572900D64EE5 /* lua_framework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA6E8CA8190B572900D64EE5 /* lua_framework_auto.cpp */; };
+		AA6E8CAD190B572900D64EE5 /* lua_framework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA6E8CA8190B572900D64EE5 /* lua_framework_auto.cpp */; };
+		AA6E8CAE190B572900D64EE5 /* lua_framework_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA6E8CA9190B572900D64EE5 /* lua_framework_auto.hpp */; };
+		AA6E8CAF190B572900D64EE5 /* lua_framework_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA6E8CA9190B572900D64EE5 /* lua_framework_auto.hpp */; };
 		AA7EB549190928BE00A902DD /* AudioEngine.lua in Resources */ = {isa = PBXBuildFile; fileRef = AA7EB537190928BE00A902DD /* AudioEngine.lua */; };
 		AA7EB54A190928BE00A902DD /* AudioEngine.lua in Resources */ = {isa = PBXBuildFile; fileRef = AA7EB537190928BE00A902DD /* AudioEngine.lua */; };
 		AA7EB54B190928BE00A902DD /* CCBReaderLoad.lua in Resources */ = {isa = PBXBuildFile; fileRef = AA7EB538190928BE00A902DD /* CCBReaderLoad.lua */; };
@@ -389,8 +391,6 @@
 		AAB0D4281907E2C100E1788C /* framework.ini in Resources */ = {isa = PBXBuildFile; fileRef = AAB0D3911907E2C100E1788C /* framework.ini */; };
 		AAB0D4291907E2C100E1788C /* genbindings.py in Resources */ = {isa = PBXBuildFile; fileRef = AAB0D3921907E2C100E1788C /* genbindings.py */; };
 		AAB0D42A1907E2C100E1788C /* genbindings.py in Resources */ = {isa = PBXBuildFile; fileRef = AAB0D3921907E2C100E1788C /* genbindings.py */; };
-		AAB0D42B1907E2C100E1788C /* lua_framework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3931907E2C100E1788C /* lua_framework_auto.cpp */; };
-		AAB0D42C1907E2C100E1788C /* lua_framework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3931907E2C100E1788C /* lua_framework_auto.cpp */; };
 		AAB0D42D1907E2C100E1788C /* userconf.ini in Resources */ = {isa = PBXBuildFile; fileRef = AAB0D3951907E2C100E1788C /* userconf.ini */; };
 		AAB0D42E1907E2C100E1788C /* userconf.ini in Resources */ = {isa = PBXBuildFile; fileRef = AAB0D3951907E2C100E1788C /* userconf.ini */; };
 		AAB0D42F1907E2C100E1788C /* NetCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3971907E2C100E1788C /* NetCenter.cpp */; };
@@ -688,6 +688,8 @@
 		AA3C4A9B18F93A1500D65677 /* HttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpService.h; sourceTree = "<group>"; };
 		AA3C4A9D18F93A1500D65677 /* SocketService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SocketService.cpp; sourceTree = "<group>"; };
 		AA3C4A9E18F93A1500D65677 /* SocketService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketService.h; sourceTree = "<group>"; };
+		AA6E8CA8190B572900D64EE5 /* lua_framework_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_framework_auto.cpp; sourceTree = "<group>"; };
+		AA6E8CA9190B572900D64EE5 /* lua_framework_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_framework_auto.hpp; sourceTree = "<group>"; };
 		AA7EB537190928BE00A902DD /* AudioEngine.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AudioEngine.lua; path = "../../cocos2d-x/cocos/scripting/lua-bindings/script/AudioEngine.lua"; sourceTree = "<group>"; };
 		AA7EB538190928BE00A902DD /* CCBReaderLoad.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CCBReaderLoad.lua; path = "../../cocos2d-x/cocos/scripting/lua-bindings/script/CCBReaderLoad.lua"; sourceTree = "<group>"; };
 		AA7EB539190928BE00A902DD /* Cocos2d.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cocos2d.lua; path = "../../cocos2d-x/cocos/scripting/lua-bindings/script/Cocos2d.lua"; sourceTree = "<group>"; };
@@ -772,8 +774,6 @@
 		AAB0D3901907E2C100E1788C /* ViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.lua; sourceTree = "<group>"; };
 		AAB0D3911907E2C100E1788C /* framework.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = framework.ini; sourceTree = "<group>"; };
 		AAB0D3921907E2C100E1788C /* genbindings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = genbindings.py; sourceTree = "<group>"; };
-		AAB0D3931907E2C100E1788C /* lua_framework_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_framework_auto.cpp; sourceTree = "<group>"; };
-		AAB0D3941907E2C100E1788C /* lua_framework_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_framework_auto.hpp; sourceTree = "<group>"; };
 		AAB0D3951907E2C100E1788C /* userconf.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = userconf.ini; sourceTree = "<group>"; };
 		AAB0D3971907E2C100E1788C /* NetCenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetCenter.cpp; sourceTree = "<group>"; };
 		AAB0D3981907E2C100E1788C /* NetCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCenter.h; sourceTree = "<group>"; };
@@ -1227,9 +1227,9 @@
 				AAB0D3831907E2C100E1788C /* api */,
 				AAB0D3911907E2C100E1788C /* framework.ini */,
 				AAB0D3921907E2C100E1788C /* genbindings.py */,
-				AAB0D3931907E2C100E1788C /* lua_framework_auto.cpp */,
-				AAB0D3941907E2C100E1788C /* lua_framework_auto.hpp */,
 				AAB0D3951907E2C100E1788C /* userconf.ini */,
+				AA6E8CA8190B572900D64EE5 /* lua_framework_auto.cpp */,
+				AA6E8CA9190B572900D64EE5 /* lua_framework_auto.hpp */,
 			);
 			path = "lua-bindings";
 			sourceTree = "<group>";
@@ -1534,7 +1534,6 @@
 				AA1C68A919080CA7001F3F83 /* RegexUtil.h in Headers */,
 				AA1C68AA19080CA7001F3F83 /* ResourceManager.h in Headers */,
 				AA1C68AB19080CA7001F3F83 /* UUIDGenerator.h in Headers */,
-				AA1C688C19080C8F001F3F83 /* lua_framework_auto.hpp in Headers */,
 				AA1C688D19080C8F001F3F83 /* NetCenter.h in Headers */,
 				AA1C688E19080C8F001F3F83 /* NetFilter.h in Headers */,
 				AA1C688F19080C8F001F3F83 /* NetHandler.h in Headers */,
@@ -1546,6 +1545,7 @@
 				AA1C689519080C8F001F3F83 /* HttpForm.h in Headers */,
 				AA1C689619080C8F001F3F83 /* ODSocket.h in Headers */,
 				AA1C689719080C8F001F3F83 /* Socket.h in Headers */,
+				AA6E8CAE190B572900D64EE5 /* lua_framework_auto.hpp in Headers */,
 				AA1C689819080C8F001F3F83 /* notification.h in Headers */,
 				AA1C689919080C8F001F3F83 /* GameScene.h in Headers */,
 				AA1C689A19080C8F001F3F83 /* ViewController.h in Headers */,
@@ -1589,7 +1589,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1C69221908A349001F3F83 /* lua_framework_auto.hpp in Headers */,
 				AA1C69231908A349001F3F83 /* NetCenter.h in Headers */,
 				AA1C69241908A349001F3F83 /* NetFilter.h in Headers */,
 				AA1C69251908A349001F3F83 /* NetHandler.h in Headers */,
@@ -1609,6 +1608,7 @@
 				AA1C69331908A349001F3F83 /* SQLite.h in Headers */,
 				AA1C69341908A349001F3F83 /* SQLiteTest.h in Headers */,
 				AA1C69351908A349001F3F83 /* framework.h in Headers */,
+				AA6E8CAF190B572900D64EE5 /* lua_framework_auto.hpp in Headers */,
 				AA1C69361908A349001F3F83 /* Base64.h in Headers */,
 				AA1C69371908A349001F3F83 /* Base64Util.h in Headers */,
 				AA1C69381908A349001F3F83 /* DBDecryptUtil.h in Headers */,
@@ -1999,10 +1999,10 @@
 				AAB0D4521907E2C100E1788C /* DBDecryptUtil.cpp in Sources */,
 				AAB0D4501907E2C100E1788C /* Base64Util.cpp in Sources */,
 				AAB0D4581907E2C100E1788C /* FileDecryptUtil.cpp in Sources */,
-				AAB0D42C1907E2C100E1788C /* lua_framework_auto.cpp in Sources */,
 				AAB0D40A1907E2C100E1788C /* JSONFormatTest.cpp in Sources */,
 				AAB0D4361907E2C100E1788C /* NetProtocol.cpp in Sources */,
 				AAB0D4301907E2C100E1788C /* NetCenter.cpp in Sources */,
+				AA6E8CAB190B572900D64EE5 /* lua_framework_auto.cpp in Sources */,
 				AA3C4AA018F93A1500D65677 /* HttpService.cpp in Sources */,
 				AAB0D4641907E2C100E1788C /* RegexUtil.cpp in Sources */,
 				AAB0D40C1907E2C100E1788C /* JSONParserTest.cpp in Sources */,
@@ -2044,7 +2044,6 @@
 				AA1C688819080C1D001F3F83 /* NetStatusUtilIos.mm in Sources */,
 				AA1C688919080C1D001F3F83 /* Reachability.m in Sources */,
 				AA1C688A19080C1D001F3F83 /* UUIDGenerator.mm in Sources */,
-				AA1C686C19080C0E001F3F83 /* lua_framework_auto.cpp in Sources */,
 				AA1C686D19080C0E001F3F83 /* NetCenter.cpp in Sources */,
 				AA1C686E19080C0E001F3F83 /* NetFilter.cpp in Sources */,
 				AA1C686F19080C0E001F3F83 /* NetHandler.cpp in Sources */,
@@ -2054,6 +2053,7 @@
 				AA1C687319080C0E001F3F83 /* HttpDownloader.cpp in Sources */,
 				AA1C687419080C0E001F3F83 /* HttpForm.cpp in Sources */,
 				AA1C687519080C0E001F3F83 /* ODSocket.cpp in Sources */,
+				AA6E8CAC190B572900D64EE5 /* lua_framework_auto.cpp in Sources */,
 				AA1C687619080C0E001F3F83 /* Socket.cpp in Sources */,
 				AA1C687719080C0E001F3F83 /* GameScene.cpp in Sources */,
 				AA1C687819080C0E001F3F83 /* ViewController.cpp in Sources */,
@@ -2097,7 +2097,6 @@
 				AA1C69021908A316001F3F83 /* NetStatusUtilIos.mm in Sources */,
 				AA1C69031908A316001F3F83 /* Reachability.m in Sources */,
 				AA1C69041908A316001F3F83 /* UUIDGenerator.mm in Sources */,
-				AA1C68E71908A306001F3F83 /* lua_framework_auto.cpp in Sources */,
 				AA1C68E81908A306001F3F83 /* NetCenter.cpp in Sources */,
 				AA1C68E91908A306001F3F83 /* NetFilter.cpp in Sources */,
 				AA1C68EA1908A306001F3F83 /* NetHandler.cpp in Sources */,
@@ -2108,6 +2107,7 @@
 				AA1C68EF1908A306001F3F83 /* HttpForm.cpp in Sources */,
 				AA1C68F01908A306001F3F83 /* ODSocket.cpp in Sources */,
 				AA1C68F11908A306001F3F83 /* Socket.cpp in Sources */,
+				AA6E8CAD190B572900D64EE5 /* lua_framework_auto.cpp in Sources */,
 				AA1C68F21908A306001F3F83 /* GameScene.cpp in Sources */,
 				AA1C68F31908A306001F3F83 /* ViewController.cpp in Sources */,
 				AA1C68F41908A306001F3F83 /* sqlite3.c in Sources */,
@@ -2148,7 +2148,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB0D42B1907E2C100E1788C /* lua_framework_auto.cpp in Sources */,
 				AAB0D4511907E2C100E1788C /* DBDecryptUtil.cpp in Sources */,
 				AAB0D3EF1907E2C100E1788C /* JSONChildren.cpp in Sources */,
 				AAB0D3E71907E2C100E1788C /* JSONFormatter.cpp in Sources */,
@@ -2159,6 +2158,7 @@
 				AAB0D3F11907E2C100E1788C /* JSONDebug.cpp in Sources */,
 				AAB0D43F1907E2C100E1788C /* ODSocket.cpp in Sources */,
 				AAB0D3F51907E2C100E1788C /* JSONMemory.cpp in Sources */,
+				AA6E8CAA190B572900D64EE5 /* lua_framework_auto.cpp in Sources */,
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
 				AAB0D4311907E2C100E1788C /* NetFilter.cpp in Sources */,
 				AAB0D4571907E2C100E1788C /* FileDecryptUtil.cpp in Sources */,

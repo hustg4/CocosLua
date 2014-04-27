@@ -34,16 +34,11 @@ public:
     static void clearConnectionCache();
     
     /**
-     * 获取值类型
-     */
-    const char* getValueTypeName(cocos2d::Ref* value);
-    
-    /**
      * 创建表
      * @param tableName 表名
-     * @param columnArray 列名数组
+     * @param columnVector 列名数组
      */
-    bool createTable(const std::string& tableName,cocos2d::__Array* columnArray);
+    bool createTable(const std::string& tableName,const cocos2d::ValueVector& columnVector);
     
     /**
      * 删除表
@@ -54,9 +49,9 @@ public:
     /**
      * 插入数据
      * @param tableName 表名
-     * @param keyValueDict 键值对
+     * @param keyValueMap 键值对
      */
-    bool insertIntoTable(const std::string& tableName,cocos2d::__Dictionary* keyValueDict);
+    bool insertIntoTable(const std::string& tableName,const cocos2d::ValueMap& keyValueMap);
     
     /**
      * 清空表
@@ -67,9 +62,9 @@ public:
     /**
      * 删除符合多个条件的数据
      * @param tableName 表名
-     * @param conditionDict 条件字典
+     * @param conditionMap 条件字典
      */
-    bool deleteFromTable(const std::string& tableName,cocos2d::__Dictionary* conditionDict);
+    bool deleteFromTable(const std::string& tableName,const cocos2d::ValueMap& conditionMap);
     
     /**
      * 删除符合单个条件的数据
@@ -82,19 +77,19 @@ public:
     /**
      * 更新符合多个条件的数据
      * @param tableName 表名
-     * @param keyValueDict 键值对
-     * @param conditionDict 条件字典
+     * @param keyValueMap 键值对
+     * @param conditionMap 条件字典
      */
-    bool updateTable(const std::string& tableName,cocos2d::__Dictionary* keyValueDict,cocos2d::__Dictionary* conditionDict=NULL);
+    bool updateTable(const std::string& tableName,const cocos2d::ValueMap& keyValueMap,const cocos2d::ValueMap& conditionMap);
     
     /**
      * 更新符合单个条件的数据
      * @param tableName 表名
-     * @param keyValueDict 键值对
+     * @param keyValueMap 键值对
      * @param columnName 条件column名
      * @param columnValue 条件column值
      */
-    bool updateTable(const std::string& tableName,cocos2d::__Dictionary* keyValueDict,const std::string& columnName,const std::string& columnValue);
+    bool updateTable(const std::string& tableName,const cocos2d::ValueMap& keyValueMap,const std::string& columnName,const std::string& columnValue);
     
     /**
      * 获取表中记录数量
@@ -105,9 +100,9 @@ public:
     /**
      * 查询符合多个条件的数据
      * @param tableName 表名
-     * @param conditionDict 条件字典
+     * @param conditionMap 条件字典
      */
-    cocos2d::__Array* selectTable(const std::string& tableName,cocos2d::__Dictionary* conditionDict=NULL);
+    cocos2d::ValueVector selectTable(const std::string& tableName,const cocos2d::ValueMap& conditionMap);
     
     /**
      * 查询符合单个条件的数据
@@ -115,22 +110,22 @@ public:
      * @param columnName 条件column名
      * @param columnValue 条件column值
      */
-    cocos2d::__Array* selectTable(const std::string& tableName,const std::string& columnName,const std::string& columnValue);
+    cocos2d::ValueVector selectTable(const std::string& tableName,const std::string& columnName,const std::string& columnValue);
     
     /**
      * 查询条件为一个字段多个值的结果
      * @param tableName 表名
      * @param columnName 条件column名
-     * @param columnValueDict 条件column 所有可能的值
+     * @param columnValues 条件column 所有可能的值
      */
-    cocos2d::__Array* selectTable(const std::string& tableName,const std::string& columnName,cocos2d::__Array* columnValues);
+    cocos2d::ValueVector selectTable(const std::string& tableName,const std::string& columnName,const cocos2d::ValueVector& columnValues);
     
     /**
      * 根据sql查询表
      * @param tableName 表名
      * @param sql 查询语句
      */
-    cocos2d::__Array* selectTable(const std::string& tableName,const std::string& sql);
+    cocos2d::ValueVector selectTable(const std::string& tableName,const std::string& sql);
     
 protected:
     
@@ -141,9 +136,9 @@ protected:
     /**
      * 根据多个字段名条件，组装查询sql
      * @param tableName 表名
-     * @param conditionDict 条件字典
+     * @param conditionMap 条件字典
      */
-    std::string getExecuteSql(const std::string& tableName,cocos2d::__Dictionary* conditionDict=NULL);
+    std::string getExecuteSql(const std::string& tableName,const cocos2d::ValueMap& conditionMap);
     
     /**
      * 根据单个字段名条件，组装查询sql
@@ -158,21 +153,21 @@ protected:
      * 根据一个字段多个值的条件，组装查询sql
      * @param tableName 表名
      * @param columnName 条件column名
-     * @param columnValueDict 条件column 所有可能的值
+     * @param columnValues 条件column 所有可能的值
      */
-    std::string getExecuteSql(const std::string& tableName,const std::string& columnName,cocos2d::__Array* columnValues);
+    std::string getExecuteSql(const std::string& tableName,const std::string& columnName,const cocos2d::ValueVector& columnValues);
     
     //执行更新的sql
     bool executeUpdate(const std::string& sql);
     
-    // 返回查询结果  __Array - __Dictionary
-    cocos2d::__Array* executeQuery(const std::string& sql);
+    // 返回查询结果  ValueVector - ValueMap
+    cocos2d::ValueVector executeQuery(const std::string& sql);
     
     //转换条件字典为字符串
-    std::string convertConditionDictionary(cocos2d::__Dictionary* conditionDict);
+    std::string convertConditionMap(const cocos2d::ValueMap& conditionMap);
     
     //不需要指定列名，按顺序插入数据(此功能使用有风险，暂时废弃)
-    bool insertIntoTable(const std::string& tableName,cocos2d::__Array* valueArray);
+    bool insertIntoTable(const std::string& tableName,const cocos2d::ValueVector& valueArray);
     
 };
 

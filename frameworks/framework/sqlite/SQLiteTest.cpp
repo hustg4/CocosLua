@@ -13,10 +13,14 @@
 
 using namespace cocos2d;
 
+//注:测试在macos上进行，
+
+#define DB_PATH "/Users/wangpeng/Desktop/db.sqlite"
+
 void SQLiteTest::run()
 {
 //    testDrop();
-//        testCreate();
+//    testCreate();
 //    testInsert();
 //    testDelete();
 //    testUpdate();
@@ -26,10 +30,13 @@ void SQLiteTest::run()
 
 void SQLiteTest::testCreate()
 {
-    SQLite* sqlite = SQLite::openSQLite("db.sqlite");
+    SQLite* sqlite = SQLite::openSQLite(DB_PATH);
     if (sqlite) {
-        __Array* columnArray = __Array::create(__String::create("id"),__String::create("name"),__String::create("age"),NULL);
-        bool res = sqlite->createTable("people", columnArray);
+        ValueVector valueVector;
+        valueVector.push_back(Value("id"));
+        valueVector.push_back(Value("name"));
+        valueVector.push_back(Value("age"));
+        bool res = sqlite->createTable("people", valueVector);
         if (res) {
             CCLOG("创建表成功");
         }else{
@@ -42,7 +49,7 @@ void SQLiteTest::testCreate()
 
 void SQLiteTest::testDrop()
 {
-    SQLite* sqlite = SQLite::openSQLite("db.sqlite");
+    SQLite* sqlite = SQLite::openSQLite(DB_PATH);
     if (sqlite) {
         bool res = sqlite->dropTable("people");
         if (res) {
@@ -57,12 +64,13 @@ void SQLiteTest::testDrop()
 
 void SQLiteTest::testInsert()
 {
-    SQLite* sqlite = SQLite::openSQLite("db.sqlite");
-    __Dictionary* dict = __Dictionary::create();
-    dict->setObject(__String::create("wangpeng"), "name");
-    dict->setObject(__String::create("27"), "age");
-    dict->setObject(__String::create("108"), "id");
-    bool res = sqlite->insertIntoTable("people", dict);
+    SQLite* sqlite = SQLite::openSQLite(DB_PATH);
+    
+    ValueMap valueMap;
+    valueMap["name"] = "wangpeng";
+    valueMap["age"] = "27";
+    valueMap["id"] = "108";
+    bool res = sqlite->insertIntoTable("people", valueMap);
     if (res) {
         CCLOG("插入成功");
     }else{
@@ -72,7 +80,7 @@ void SQLiteTest::testInsert()
 
 void SQLiteTest::testDelete()
 {
-    SQLite* sqlite = SQLite::openSQLite("db.sqlite");
+    SQLite* sqlite = SQLite::openSQLite(DB_PATH);
     bool res = sqlite->deleteFromTable("people", "age","27");
     if (res) {
         CCLOG("删除成功");
@@ -83,10 +91,12 @@ void SQLiteTest::testDelete()
 
 void SQLiteTest::testUpdate()
 {
-    SQLite* sqlite = SQLite::openSQLite("db.sqlite");
-    __Dictionary* dict = __Dictionary::create();
-    dict->setObject(__String::create("wp_g4"), "name");
-    bool res = sqlite->updateTable("people", dict,"age","27");
+    SQLite* sqlite = SQLite::openSQLite(DB_PATH);
+    
+    ValueMap map;
+    map["name"] = "wp_g4";
+    
+    bool res = sqlite->updateTable("people", map,"age","27");
     if (res) {
         CCLOG("更新成功");
     }else{
@@ -96,20 +106,21 @@ void SQLiteTest::testUpdate()
 
 void SQLiteTest::testSelect()
 {
-    SQLite* sqlite = SQLite::openSQLite("db.sqlite");
-    __Dictionary* cndDict = __Dictionary::create();
-    cndDict->setObject(__String::create("28"), "age");
-    __Array* ids = __Array::create(__String::create("wangpeng"),__String::create("wp"),NULL);
-    __Array* array = sqlite->selectTable("people", "name",ids);
-    CCLOG("count:%ld",array->count());
-    for (int i=0; i<array->count(); i++) {
-        __Dictionary* dict = (__Dictionary*)array->getObjectAtIndex(i);
-        __Array* keyArray = dict->allKeys();
-        CCLOG("===================");
-        for (int j=0; j<keyArray->count(); j++) {
-            __String* key = (__String*)keyArray->getObjectAtIndex(j);
-            __String* value = (__String*)dict->objectForKey(key->getCString());
-            CCLOG("key:%s value:%s",key->getCString(),value->getCString());
+    SQLite* sqlite = SQLite::openSQLite(DB_PATH);
+    
+    ValueVector ids;
+    ids.push_back(Value("wangpeng"));
+    ids.push_back(Value("wp"));
+    
+    ValueVector array = sqlite->selectTable("people", "name",ids);
+    CCLOG("count:%ld",array.size());
+    for (int i=0; i<array.size(); i++) {
+        ValueMap map = array[i].asValueMap();
+        for (auto iter = map.cbegin(); iter != map.cend(); ++iter)
+        {
+            std::string key = iter->first;
+            std::string value = iter->second.asString();
+            CCLOG("key:%s value:%s",key.c_str(),value.c_str());
         }
     }
 }
