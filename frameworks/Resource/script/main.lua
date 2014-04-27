@@ -20,7 +20,8 @@ function Game:start()
     
     --启动场景
     --ReplaceScene(clsParticleScene)
-    ReplaceScene(clsLoginScene)
+    --ReplaceScene(clsLoginScene)
+    ReplaceScene(clsDemoScene)
 end
 
 --重启游戏
@@ -82,6 +83,7 @@ function Game:requireCommonModule()
     require ("scene/map/clsMapScene")
     require ("scene/update/clsUpdateScene")
     require ("scene/particle/clsParticleScene")
+    require ("scene/demo/clsDemoScene")
 end
 
 --加载网络配置
