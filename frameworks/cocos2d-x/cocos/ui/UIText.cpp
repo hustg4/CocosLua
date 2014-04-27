@@ -39,7 +39,8 @@ _normalScaleValueY(1.0f),
 _fontName("Thonburi"),
 _fontSize(10),
 _onSelectedScaleOffset(0.5),
-_labelRenderer(nullptr)
+_labelRenderer(nullptr),
+_labelRendererAdaptDirty(true)
 {
 }
 
@@ -68,6 +69,32 @@ bool Text::init()
     }
     return false;
 }
+    
+Text* Text::create(const std::string &textContent, const std::string &fontName, int fontSize)
+{
+    Text *text = new Text;
+    if (text && text->init(textContent, fontName, fontSize)) {
+        text->autorelease();
+        return text;
+    }
+    CC_SAFE_DELETE(text);
+    return nullptr;
+}
+    
+bool Text::init(const std::string &textContent, const std::string &fontName, int fontSize)
+{
+    bool ret = true;
+    do {
+        if (!Widget::init()) {
+            ret = false;
+            break;
+        }
+        this->setText(textContent);
+        this->setFontName(fontName);
+        this->setFontSize(fontSize);
+    } while (0);
+    return ret;
+}
 
 void Text::initRenderer()
 {
@@ -78,7 +105,8 @@ void Text::initRenderer()
 void Text::setText(const std::string& text)
 {
     _labelRenderer->setString(text);
-    labelScaleChangedWithSize();
+    updateContentSizeWithTextureSize(_labelRenderer->getContentSize());
+    _labelRendererAdaptDirty = true;
 }
 
 const std::string& Text::getStringValue()
@@ -94,8 +122,9 @@ ssize_t Text::getStringLength()
 void Text::setFontSize(int size)
 {
     _fontSize = size;
-    _labelRenderer->setFontSize(size);
-    labelScaleChangedWithSize();
+    _labelRenderer->setSystemFontSize(size);
+    updateContentSizeWithTextureSize(_labelRenderer->getContentSize());
+    _labelRendererAdaptDirty = true;
 }
     
 int Text::getFontSize()
@@ -106,8 +135,9 @@ int Text::getFontSize()
 void Text::setFontName(const std::string& name)
 {
     _fontName = name;
-    _labelRenderer->setFontName(name);
-    labelScaleChangedWithSize();
+    _labelRenderer->setSystemFontName(name);
+    updateContentSizeWithTextureSize(_labelRenderer->getContentSize());
+    _labelRendererAdaptDirty = true;
 }
     
 const std::string& Text::getFontName()
@@ -118,7 +148,8 @@ const std::string& Text::getFontName()
 void Text::setTextAreaSize(const Size &size)
 {
     _labelRenderer->setDimensions(size.width,size.height);
-    labelScaleChangedWithSize();
+    updateContentSizeWithTextureSize(_labelRenderer->getContentSize());
+    _labelRendererAdaptDirty = true;
 }
     
 const Size& Text::getTextAreaSize()
@@ -129,7 +160,8 @@ const Size& Text::getTextAreaSize()
 void Text::setTextHorizontalAlignment(TextHAlignment alignment)
 {
     _labelRenderer->setHorizontalAlignment(alignment);
-    labelScaleChangedWithSize();
+    updateContentSizeWithTextureSize(_labelRenderer->getContentSize());
+    _labelRendererAdaptDirty = true;
 }
     
 TextHAlignment Text::getTextHorizontalAlignment()
@@ -140,7 +172,8 @@ TextHAlignment Text::getTextHorizontalAlignment()
 void Text::setTextVerticalAlignment(TextVAlignment alignment)
 {
     _labelRenderer->setVerticalAlignment(alignment);
-    labelScaleChangedWithSize();
+    updateContentSizeWithTextureSize(_labelRenderer->getContentSize());
+    _labelRendererAdaptDirty = true;
 }
     
 TextVAlignment Text::getTextVerticalAlignment()
@@ -207,19 +240,22 @@ void Text::updateFlippedY()
     }
 }
 
-void Text::setAnchorPoint(const Point &pt)
-{
-    Widget::setAnchorPoint(pt);
-    _labelRenderer->setAnchorPoint(pt);
-}
-
 void Text::onSizeChanged()
 {
     Widget::onSizeChanged();
-    labelScaleChangedWithSize();
+    _labelRendererAdaptDirty = true;
+}
+    
+void Text::adaptRenderers()
+{
+    if (_labelRendererAdaptDirty)
+    {
+        labelScaleChangedWithSize();
+        _labelRendererAdaptDirty = false;
+    }
 }
 
-const Size& Text::getContentSize() const
+const Size& Text::getVirtualRendererSize() const
 {
     return _labelRenderer->getContentSize();
 }
@@ -235,7 +271,6 @@ void Text::labelScaleChangedWithSize()
     {
         _labelRenderer->setDimensions(0,0);
         _labelRenderer->setScale(1.0f);
-        _size = _labelRenderer->getContentSize();
         _normalScaleValueX = _normalScaleValueY = 1.0f;
     }
     else
@@ -254,7 +289,7 @@ void Text::labelScaleChangedWithSize()
         _normalScaleValueX = scaleX;
         _normalScaleValueY = scaleY;
     }
-    
+    _labelRenderer->setPosition(_contentSize.width / 2.0f, _contentSize.height / 2.0f);
 }
 
 std::string Text::getDescription() const
@@ -287,8 +322,8 @@ void Text::copySpecialProperties(Widget *widget)
     Text* label = dynamic_cast<Text*>(widget);
     if (label)
     {
-        setFontName(label->_fontName.c_str());
-        setFontSize(label->_labelRenderer->getFontSize());
+        setFontName(label->_fontName);
+        setFontSize(label->_labelRenderer->getSystemFontSize());
         setText(label->getStringValue());
         setTouchScaleChangeEnabled(label->_touchScaleChangeEnabled);
         setTextHorizontalAlignment(label->_labelRenderer->getHorizontalAlignment());

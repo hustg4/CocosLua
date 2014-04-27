@@ -63,7 +63,10 @@ _pressedTextureScaleXInSize(1.0f),
 _pressedTextureScaleYInSize(1.0f),
 _normalTextureLoaded(false),
 _pressedTextureLoaded(false),
-_disabledTextureLoaded(false)
+_disabledTextureLoaded(false),
+_normalTextureAdaptDirty(true),
+_pressedTextureAdaptDirty(true),
+_disabledTextureAdaptDirty(true)
 {
 
 }
@@ -82,6 +85,38 @@ Button* Button::create()
     }
     CC_SAFE_DELETE(widget);
     return nullptr;
+}
+    
+Button* Button::create(const std::string &normalImage,
+                       const std::string& selectedImage ,
+                       const std::string& disableImage,
+                       TextureResType texType)
+{
+    Button *btn = new Button;
+    if (btn && btn->init(normalImage,selectedImage,disableImage,texType)) {
+        btn->autorelease();
+        return btn;
+    }
+    CC_SAFE_DELETE(btn);
+    return nullptr;
+}
+    
+bool Button::init(const std::string &normalImage,
+                  const std::string& selectedImage ,
+                  const std::string& disableImage,
+                  TextureResType texType)
+{
+    bool ret = true;
+    do {
+        if (!Widget::init()) {
+            ret = false;
+            break;
+        }
+        
+        setTouchEnabled(true);
+        this->loadTextures(normalImage, selectedImage, disableImage,texType);
+    } while (0);
+    return ret;
 }
 
 bool Button::init()
@@ -135,9 +170,9 @@ void Button::setScale9Enabled(bool able)
         _buttonDisableRenderer = Sprite::create();
     }
 
-    loadTextureNormal(_normalFileName.c_str(), _normalTexType);
-    loadTexturePressed(_clickedFileName.c_str(), _pressedTexType);
-    loadTextureDisabled(_disabledFileName.c_str(), _disabledTexType);
+    loadTextureNormal(_normalFileName, _normalTexType);
+    loadTexturePressed(_clickedFileName, _pressedTexType);
+    loadTextureDisabled(_disabledFileName, _disabledTexType);
     addProtectedChild(_buttonNormalRenderer, NORMAL_RENDERER_Z, -1);
     addProtectedChild(_buttonClickedRenderer, PRESSED_RENDERER_Z, -1);
     addProtectedChild(_buttonDisableRenderer, DISABLED_RENDERER_Z, -1);
@@ -171,16 +206,19 @@ void Button::ignoreContentAdaptWithSize(bool ignore)
     }
 }
 
-void Button::loadTextures(const char* normal,const char* selected,const char* disabled,TextureResType texType)
+void Button::loadTextures(const std::string& normal,
+                          const std::string& selected,
+                          const std::string& disabled,
+                          TextureResType texType)
 {
     loadTextureNormal(normal,texType);
     loadTexturePressed(selected,texType);
     loadTextureDisabled(disabled,texType);
 }
 
-void Button::loadTextureNormal(const char* normal,TextureResType texType)
+void Button::loadTextureNormal(const std::string& normal,TextureResType texType)
 {
-    if (!normal || strcmp(normal, "") == 0)
+    if (normal.empty())
     {
         return;
     }
@@ -218,17 +256,17 @@ void Button::loadTextureNormal(const char* normal,TextureResType texType)
         }
     }
     _normalTextureSize = _buttonNormalRenderer->getContentSize();
-    normalTextureScaleChangedWithSize();
-    updateAnchorPoint();
     updateFlippedX();
     updateFlippedY();
     updateRGBAToRenderer(_buttonNormalRenderer);
+    updateContentSizeWithTextureSize(_normalTextureSize);
     _normalTextureLoaded = true;
+    _normalTextureAdaptDirty = true;
 }
 
-void Button::loadTexturePressed(const char* selected,TextureResType texType)
+void Button::loadTexturePressed(const std::string& selected,TextureResType texType)
 {
-    if (!selected || strcmp(selected, "") == 0)
+    if (selected.empty())
     {
         return;
     }
@@ -266,17 +304,16 @@ void Button::loadTexturePressed(const char* selected,TextureResType texType)
         }
     }
     _pressedTextureSize = _buttonClickedRenderer->getContentSize();
-    pressedTextureScaleChangedWithSize();
-    updateAnchorPoint();
     updateFlippedX();
     updateFlippedY();
     updateRGBAToRenderer(_buttonDisableRenderer);
     _pressedTextureLoaded = true;
+    _pressedTextureAdaptDirty = true;
 }
 
-void Button::loadTextureDisabled(const char* disabled,TextureResType texType)
+void Button::loadTextureDisabled(const std::string& disabled,TextureResType texType)
 {
-    if (!disabled || strcmp(disabled, "") == 0)
+    if (disabled.empty())
     {
         return;
     }
@@ -314,12 +351,11 @@ void Button::loadTextureDisabled(const char* disabled,TextureResType texType)
         }
     }
     _disabledTextureSize = _buttonDisableRenderer->getContentSize();
-    disabledTextureScaleChangedWithSize();
-    updateAnchorPoint();
     updateFlippedX();
     updateFlippedY();
     updateRGBAToRenderer(_buttonDisableRenderer);
     _disabledTextureLoaded = true;
+    _disabledTextureAdaptDirty = true;
 }
 
 void Button::setCapInsets(const Rect &capInsets)
@@ -481,25 +517,41 @@ void Button::updateFlippedY()
         static_cast<Sprite*>(_buttonDisableRenderer)->setFlippedY(_flippedY);
     }
 }
-
-void Button::setAnchorPoint(const Point &pt)
+    
+void Button::updateTitleLocation()
 {
-    Widget::setAnchorPoint(pt);
-    _buttonNormalRenderer->setAnchorPoint(pt);
-    _buttonClickedRenderer->setAnchorPoint(pt);
-    _buttonDisableRenderer->setAnchorPoint(pt);
-    _titleRenderer->setPosition(Point(_size.width*(0.5f-_anchorPoint.x), _size.height*(0.5f-_anchorPoint.y)));
+    _titleRenderer->setPosition(Point(_contentSize.width * 0.5f, _contentSize.height * 0.5f));
 }
 
 void Button::onSizeChanged()
 {
     Widget::onSizeChanged();
-    normalTextureScaleChangedWithSize();
-    pressedTextureScaleChangedWithSize();
-    disabledTextureScaleChangedWithSize();
+    updateTitleLocation();
+    _normalTextureAdaptDirty = true;
+    _pressedTextureAdaptDirty = true;
+    _disabledTextureAdaptDirty = true;
+}
+    
+void Button::adaptRenderers()
+{
+    if (_normalTextureAdaptDirty)
+    {
+        normalTextureScaleChangedWithSize();
+        _normalTextureAdaptDirty = false;
+    }
+    if (_pressedTextureAdaptDirty)
+    {
+        pressedTextureScaleChangedWithSize();
+        _pressedTextureAdaptDirty = false;
+    }
+    if (_disabledTextureAdaptDirty)
+    {
+        disabledTextureScaleChangedWithSize();
+        _disabledTextureAdaptDirty = false;
+    }
 }
 
-const Size& Button::getContentSize() const
+const Size& Button::getVirtualRendererSize() const
 {
     return _normalTextureSize;
 }
@@ -532,7 +584,6 @@ void Button::normalTextureScaleChangedWithSize()
         {
             _buttonNormalRenderer->setScale(1.0f);
             _normalTextureScaleXInSize = _normalTextureScaleYInSize = 1.0f;
-            _size = _normalTextureSize;
         }
     }
     else
@@ -558,6 +609,7 @@ void Button::normalTextureScaleChangedWithSize()
             _normalTextureScaleYInSize = scaleY;
         }
     }
+    _buttonNormalRenderer->setPosition(_contentSize.width / 2.0f, _contentSize.height / 2.0f);
 }
 
 void Button::pressedTextureScaleChangedWithSize()
@@ -593,6 +645,7 @@ void Button::pressedTextureScaleChangedWithSize()
             _pressedTextureScaleYInSize = scaleY;
         }
     }
+    _buttonClickedRenderer->setPosition(_contentSize.width / 2.0f, _contentSize.height / 2.0f);
 }
 
 void Button::disabledTextureScaleChangedWithSize()
@@ -624,6 +677,7 @@ void Button::disabledTextureScaleChangedWithSize()
             _buttonDisableRenderer->setScaleY(scaleY);
         }
     }
+    _buttonDisableRenderer->setPosition(_contentSize.width / 2.0f, _contentSize.height / 2.0f);
 }
 
 void Button::setPressedActionEnabled(bool enabled)
@@ -654,22 +708,22 @@ const Color3B& Button::getTitleColor() const
 
 void Button::setTitleFontSize(float size)
 {
-    _titleRenderer->setFontSize(size);
+    _titleRenderer->setSystemFontSize(size);
 }
 
 float Button::getTitleFontSize() const
 {
-    return _titleRenderer->getFontSize();
+    return _titleRenderer->getSystemFontSize();
 }
 
-void Button::setTitleFontName(const char* fontName)
+void Button::setTitleFontName(const std::string& fontName)
 {
-    _titleRenderer->setFontName(fontName);
+    _titleRenderer->setSystemFontName(fontName);
 }
 
-const char* Button::getTitleFontName() const
+const std::string& Button::getTitleFontName() const
 {
-    return _titleRenderer->getFontName().c_str();
+    return _titleRenderer->getSystemFontName();
 }
     
 std::string Button::getDescription() const
@@ -710,9 +764,9 @@ void Button::copySpecialProperties(Widget *widget)
     {
         _prevIgnoreSize = button->_prevIgnoreSize;
         setScale9Enabled(button->_scale9Enabled);
-        loadTextureNormal(button->_normalFileName.c_str(), button->_normalTexType);
-        loadTexturePressed(button->_clickedFileName.c_str(), button->_pressedTexType);
-        loadTextureDisabled(button->_disabledFileName.c_str(), button->_disabledTexType);
+        loadTextureNormal(button->_normalFileName, button->_normalTexType);
+        loadTexturePressed(button->_clickedFileName, button->_pressedTexType);
+        loadTextureDisabled(button->_disabledFileName, button->_disabledTexType);
         setCapInsetsNormalRenderer(button->_capInsetsNormal);
         setCapInsetsPressedRenderer(button->_capInsetsPressed);
         setCapInsetsDisabledRenderer(button->_capInsetsDisabled);

@@ -18,24 +18,32 @@
 -- @return string#string ret (return value: string)
         
 --------------------------------
+-- @function [parent=#TextAtlas] adaptRenderers 
+-- @param self
+        
+--------------------------------
 -- @function [parent=#TextAtlas] setStringValue 
 -- @param self
 -- @param #string str
         
 --------------------------------
--- @function [parent=#TextAtlas] create 
+-- overload function: create(string, string, int, int, string)
+--          
+-- overload function: create()
+--          
+-- @function [parent=#TextAtlas] create
 -- @param self
--- @return TextAtlas#TextAtlas ret (return value: ccui.TextAtlas)
-        
+-- @param #string str
+-- @param #string str
+-- @param #int int
+-- @param #int int
+-- @param #string str
+-- @return TextAtlas#TextAtlas ret (retunr value: ccui.TextAtlas)
+
 --------------------------------
 -- @function [parent=#TextAtlas] createInstance 
 -- @param self
 -- @return Ref#Ref ret (return value: cc.Ref)
-        
---------------------------------
--- @function [parent=#TextAtlas] setAnchorPoint 
--- @param self
--- @param #point_table point
         
 --------------------------------
 -- @function [parent=#TextAtlas] getVirtualRenderer 
@@ -48,7 +56,7 @@
 -- @return string#string ret (return value: string)
         
 --------------------------------
--- @function [parent=#TextAtlas] getContentSize 
+-- @function [parent=#TextAtlas] getVirtualRendererSize 
 -- @param self
 -- @return size_table#size_table ret (return value: size_table)
         
