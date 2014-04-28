@@ -57,7 +57,12 @@ int onProgress(void *ptr, double totalToDownload, double nowDownloaded, double t
     progress = progress > 1 ? 1 : progress;
     //CCLOG("download progress:[%.2f%%]", progress*100);
     
-    downloader->addDownloadEvent(kDownloadEventTypeProgress, task, progress, "");
+    Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+        if(downloader->delegate)
+        {
+            downloader->delegate->onProgress(task->userdata, progress);
+        }
+    });
     
     return 0;
 }
@@ -70,7 +75,7 @@ void* downloadThread(void *ptr)
     HttpDownloader* downloader = (HttpDownloader*)ptr;
     
     while (!downloader->needQuit) {
-    
+        
         sem_wait(downloader->pSem);
         
         downloader->downloading = true;
@@ -104,7 +109,7 @@ void* downloadThread(void *ptr)
 /********************************* DownloadTask *********************************/
 
 
-DownloadTask::DownloadTask(const std::string &url, const std::string &path, bool breakpointResume, cocos2d::Ref *userdata)
+DownloadTask::DownloadTask(const std::string &url, const std::string &path, bool breakpointResume, void *userdata)
 :userdata(NULL),
 breakPointBytes(0),
 pFile(NULL),
@@ -114,14 +119,13 @@ unreceivedDataTimes(0)
     this->url = url;
     this->path = path;
     this->breakpointResume = breakpointResume;
-    this->setUserdata(userdata);
+    this->userdata = userdata;
 }
 
 DownloadTask::~DownloadTask(){
-    CC_SAFE_RELEASE_NULL(userdata);
 }
 
-DownloadTask* DownloadTask::create(const std::string &url, const std::string &path, bool breakpointResume, cocos2d::Ref *userdata)
+DownloadTask* DownloadTask::create(const std::string &url, const std::string &path, bool breakpointResume, void *userdata)
 {
     DownloadTask* task = new DownloadTask(url,path,breakpointResume,userdata);
     task->autorelease();
@@ -184,33 +188,17 @@ int DownloadTask::getUnreceivedDataTimes()
     return this->unreceivedDataTimes;
 }
 
-Ref* DownloadTask::getUserdata()
+void* DownloadTask::getUserdata()
 {
     return this->userdata;
 }
 
-void DownloadTask::setUserdata(cocos2d::Ref *userdata)
+void DownloadTask::setUserdata(void *userdata)
 {
-    CC_SAFE_RETAIN(userdata);
-    CC_SAFE_RELEASE_NULL(this->userdata);
     this->userdata = userdata;
 }
 
-/********************************* DownloadTask *********************************/
-
-DownloadEvent::DownloadEvent(DownloadEventType type, DownloadTask *task)
-:task(NULL),
-progress(0),
-errorMsg("")
-{
-    this->setType(type);
-    this->setTask(task);
-}
-
-DownloadEvent::~DownloadEvent()
-{
-    CC_SAFE_RELEASE_NULL(task);
-}
+/********************************* end DownloadTask *********************************/
 
 
 /********************************* HttpDownloader *******************************/
@@ -225,15 +213,11 @@ pSem(NULL)
 {
     taskQueue = __Array::create();
     CC_SAFE_RETAIN(taskQueue);
-    
-    eventQueue = __Array::create();
-    CC_SAFE_RETAIN(eventQueue);
 }
 
 HttpDownloader::~HttpDownloader()
 {
     CC_SAFE_RELEASE_NULL(taskQueue);
-    CC_SAFE_RELEASE_NULL(eventQueue);
 }
 
 void HttpDownloader::setDelegate(HttpDownloaderDelegate *delegate)
@@ -249,7 +233,7 @@ HttpDownloaderDelegate* HttpDownloader::getDelegate()
 bool HttpDownloader::initThread()
 {
     pthread_mutex_init(&taskQueueMutex, NULL);
-    pthread_mutex_init(&eventQueueMutex, NULL);
+    //    pthread_mutex_init(&eventQueueMutex, NULL);
     
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
     long t = time(NULL);
@@ -271,8 +255,6 @@ bool HttpDownloader::initThread()
     
     pthread_create(&networkThread, NULL, downloadThread, this);
     pthread_detach(networkThread);
-    
-    CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(HttpDownloader::processDownloadEvent), this,  0 ,false);
     
     return true;
 }
@@ -299,12 +281,12 @@ void HttpDownloader::destroy()
     
 }
 
-void HttpDownloader::download(const std::string &url, const std::string &savePath, bool breakpointResume,Ref* userdata)
+bool HttpDownloader::download(const std::string &url, const std::string &savePath, bool breakpointResume, void* userdata)
 {
     //参数检查
     if (url.length() ==0 || savePath.size() == 0) {
         CCLOG("url和文件保存路径均不能为空");
-        return ;
+        return false;
     }
     
     //初始化线程
@@ -312,7 +294,7 @@ void HttpDownloader::download(const std::string &url, const std::string &savePat
         isThreadInited = this->initThread();
         if (!isThreadInited) {
             CCLOG("HttpDownloader 线程初始化失败");
-            return;
+            return false;
         }
     }
     
@@ -326,31 +308,12 @@ void HttpDownloader::download(const std::string &url, const std::string &savePat
     //向下载线程发信号
     sem_post(pSem);
     
+    return true;
 }
 
 bool HttpDownloader::isDownloading()
 {
     return this->downloading;
-}
-
-void HttpDownloader::processDownloadEvent(float deta)
-{
-    __Array* tempEventList = __Array::create();
-    pthread_mutex_lock(&eventQueueMutex);
-    tempEventList->addObjectsFromArray(this->eventQueue);
-    this->eventQueue->removeAllObjects();
-    pthread_mutex_unlock(&eventQueueMutex);
-    
-    int count = tempEventList->count();
-    for (int i = 0; i < count; i++) {
-        
-        DownloadEvent* event = (DownloadEvent*)tempEventList->getObjectAtIndex(i);
-        if (this->delegate)
-        {
-            this->delegate->onDownloadEvent(this, event);
-        }
-        
-    }
 }
 
 /**
@@ -362,7 +325,12 @@ void HttpDownloader::executeTask()
     // 下载和保存文件
     CCLOG("即将下载文件:[%s]",this->currentTask->getUrl());
     
-    this->addDownloadEvent(kDownloadEventTypeStart, this->currentTask, 0, "");
+    Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+        if(this->delegate)
+        {
+            delegate->onStart(this->currentTask->userdata);
+        }
+    });
     
     bool status = true;
     
@@ -375,7 +343,12 @@ void HttpDownloader::executeTask()
         
         //检查初始化结果
         if (!status) {
-            this->addDownloadEvent(kDownloadEventTypeFailure, this->currentTask, 0, "初始化任务失败");
+            Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+                if(delegate)
+                {
+                    delegate->onError(this->currentTask->userdata, HttpDownloaderErrorCode::INIT_TASK_ERROR);
+                }
+            });
             break;
         }
         
@@ -386,7 +359,12 @@ void HttpDownloader::executeTask()
         
         //检查下载结果
         if (!status) {
-            this->addDownloadEvent(kDownloadEventTypeFailure, this->currentTask, 0, "下载失败");
+            Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+                if(delegate)
+                {
+                    delegate->onError(this->currentTask->userdata, HttpDownloaderErrorCode::DOWNLOAD_ERROR);
+                }
+            });
             break;
         }
         
@@ -397,10 +375,15 @@ void HttpDownloader::executeTask()
         
         //检查后续处理结果
         if (!status) {
-            this->addDownloadEvent(kDownloadEventTypeFailure, this->currentTask, 0, "下载后重命名文件失败");
+            Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+                if(delegate)
+                {
+                    delegate->onError(this->currentTask->userdata, HttpDownloaderErrorCode::RENAME_FILE_ERROR);
+                }
+            });
             break;
         }
-    
+        
     }while (0);
     
     if (this->currentTask->getSavedFile()) {
@@ -411,7 +394,12 @@ void HttpDownloader::executeTask()
     //如果所有步骤正确完成，则下载成功
     if (status) {
         CCLOG("下载成功");
-        this->addDownloadEvent(kDownloadEventTypeSuccess, this->currentTask, 1, "");
+        Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+            if(delegate)
+            {
+                delegate->onSuccess(this->currentTask->userdata);
+            }
+        });
     }
 }
 
@@ -548,27 +536,4 @@ bool HttpDownloader::renameFile()
         return false;
     }
     return true;
-}
-
-/**
- * 往事件队列中添加事件. run in download thread
- */
-void HttpDownloader::addDownloadEvent(DownloadEventType type, DownloadTask *task, float progress, const std::string &errorMsg)
-{
-    
-    DownloadEvent* event = new DownloadEvent(type,task);
-    
-    if (type == kDownloadEventTypeProgress) {
-        event->setProgress(progress);
-    }else if (type == kDownloadEventTypeSuccess){
-        event->setProgress(1);
-    }else if (type == kDownloadEventTypeFailure){
-        event->setErrorMsg(errorMsg);
-    }
-    
-    pthread_mutex_lock(&eventQueueMutex);
-    this->eventQueue->addObject(event);
-    pthread_mutex_unlock(&eventQueueMutex);
-    
-    event->release();
 }

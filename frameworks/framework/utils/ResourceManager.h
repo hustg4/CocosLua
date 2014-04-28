@@ -186,8 +186,10 @@ public:
     void flush();
     
 public:
+    // HttpDownloaderDelegate
+    virtual void onError(void *userData, HttpDownloaderErrorCode errorCode);
+    virtual void onSuccess(void *userData);
     
-    virtual void onDownloadEvent(HttpDownloader* downloader,DownloadEvent* event);
     
 private:
     

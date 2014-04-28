@@ -207,7 +207,8 @@ void ResourceManager::downloadBundleMD5File()
     
     //(3) 下载
     this->downloadFileType = kDownloadFileTypeBundleMd5File;
-    downloader->download(downloadPath,savePath,false,__String::create(RMMainModuleName));
+    std::string *userData = new std::string(RMMainModuleName);
+    downloader->download(downloadPath,savePath,false,userData);
 }
 
 void ResourceManager::mergeMD5File()
@@ -324,7 +325,8 @@ void ResourceManager::downloadVersionFile()
     
     //(3) 下载
     this->downloadFileType = kDownloadFileTypeVersionFile;
-    downloader->download(downloadPath,savePath,false,__String::create(RMMainModuleName));
+    std::string *userData = new std::string(RMMainModuleName);
+    downloader->download(downloadPath,savePath,false,userData);
 }
 
 void ResourceManager::downloadConfigFile()
@@ -338,7 +340,8 @@ void ResourceManager::downloadConfigFile()
     
     //(3) 下载
     this->downloadFileType = kDownloadFileTypeConfigFile;
-    downloader->download(downloadPath,savePath,false,__String::create(RMMainModuleName));
+    std::string *userData = new std::string(RMMainModuleName);
+    downloader->download(downloadPath,savePath,false,userData);
 }
 
 
@@ -384,49 +387,95 @@ void ResourceManager::downloadModuleFile()
     //(5-3) 下载
     this->downloadFileType = kDownloadFileTypeModule;
     
-    downloader->download(downloadPath,savePath,false,__String::create(moduleName));
+    std::string *userData = new std::string(moduleName);
+    downloader->download(downloadPath,savePath,false,userData);
     
 }
 
-void ResourceManager::onDownloadEvent(HttpDownloader *downloader, DownloadEvent *event)
+//void ResourceManager::onDownloadEvent(HttpDownloader *downloader, DownloadEvent *event)
+//{
+//    __String* moduleName = (__String*)event->getTask()->getUserdata();
+//
+//    if (event->getType() == kDownloadEventTypeSuccess) {
+//        //文件下载成功
+//        if (this->downloadFileType == kDownloadFileTypeBundleMd5File) {
+//
+//            //Bundler资源md5文件
+//            this->mergeMD5File();
+//            //下载 版本描述文件
+//            this->downloadVersionFile();
+//
+//        }else if (this->downloadFileType == kDownloadFileTypeVersionFile) {
+//
+//            //版本描述文件
+//            this->processAfterVersionFileDownload();
+//
+//        }else if (this->downloadFileType == kDownloadFileTypeConfigFile) {
+//
+//            //资源配置文件
+//            this->processAfterConfigFileDownload();
+//
+//        }else{
+//
+//            //模块文件
+//            this->processAfterSingleModleFileDownload(moduleName->getCString());
+//
+//        }
+//    }else if (event->getType() == kDownloadEventTypeFailure){
+//
+//        moduleUpdating = false;
+//
+//        //文件下载出错
+//        CCLOG("error:%s",event->getErrorMsg().c_str());
+//        this->reportError(moduleName->getCString(),kResourceManagerErrorTypeDownloadFailure,event->getErrorMsg());
+//
+//    }
+//}
+
+#pragma mark - HttpDownloaderDelegate
+void ResourceManager::onError(void *userData, HttpDownloaderErrorCode errorCode)
 {
-    __String* moduleName = (__String*)event->getTask()->getUserdata();
+    std::string* moduleName = (std::string*)userData;
+    moduleUpdating = false;
     
-    if (event->getType() == kDownloadEventTypeSuccess) {
-        //文件下载成功
-        if (this->downloadFileType == kDownloadFileTypeBundleMd5File) {
-            
-            //Bundler资源md5文件
-            this->mergeMD5File();
-            //下载 版本描述文件
-            this->downloadVersionFile();
-            
-        }else if (this->downloadFileType == kDownloadFileTypeVersionFile) {
-            
-            //版本描述文件
-            this->processAfterVersionFileDownload();
-            
-        }else if (this->downloadFileType == kDownloadFileTypeConfigFile) {
-            
-            //资源配置文件
-            this->processAfterConfigFileDownload();
-            
-        }else{
-            
-            //模块文件
-            this->processAfterSingleModleFileDownload(moduleName->getCString());
-            
-        }
-    }else if (event->getType() == kDownloadEventTypeFailure){
+    this->reportError(*moduleName,kResourceManagerErrorTypeDownloadFailure, "");
+    delete moduleName;
+    moduleName = nullptr;
+    
+}
+
+//文件下载成功
+void ResourceManager::onSuccess(void *userData)
+{
+    std::string* moduleName = (std::string*)userData;
+    if (this->downloadFileType == kDownloadFileTypeBundleMd5File) {
         
-        moduleUpdating = false;
+        //Bundler资源md5文件
+        this->mergeMD5File();
+        //下载 版本描述文件
+        this->downloadVersionFile();
         
-        //文件下载出错
-        CCLOG("error:%s",event->getErrorMsg().c_str());
-        this->reportError(moduleName->getCString(),kResourceManagerErrorTypeDownloadFailure,event->getErrorMsg());
+    }else if (this->downloadFileType == kDownloadFileTypeVersionFile) {
+        
+        //版本描述文件
+        this->processAfterVersionFileDownload();
+        
+    }else if (this->downloadFileType == kDownloadFileTypeConfigFile) {
+        
+        //资源配置文件
+        this->processAfterConfigFileDownload();
+        
+    }else{
+        
+        //模块文件
+        this->processAfterSingleModleFileDownload(*moduleName);
         
     }
+    delete moduleName;
+    moduleName = nullptr;
 }
+
+#pragma mark -
 
 void ResourceManager::processAfterVersionFileDownload()
 {

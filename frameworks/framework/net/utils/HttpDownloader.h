@@ -24,7 +24,14 @@
 
 class HttpDownloader;
 class DownloadTask;
-class DownloadEvent;
+
+//TODO:明确的error code
+enum class HttpDownloaderErrorCode
+{
+    INIT_TASK_ERROR,
+    DOWNLOAD_ERROR,
+    RENAME_FILE_ERROR,
+};
 
 /**
  * 文件下载器的回调
@@ -35,8 +42,10 @@ public:
     
     virtual ~HttpDownloaderDelegate(){};
     
-    virtual void onDownloadEvent(HttpDownloader* downloader,DownloadEvent* event) = 0;
-    
+    virtual void onStart(void *userData) {};
+    virtual void onError(void *userData, HttpDownloaderErrorCode errorCode){};
+    virtual void onProgress(void *userData, double percent) {};
+    virtual void onSuccess(void *userData) {};
 };
 
 
@@ -47,11 +56,11 @@ class DownloadTask : public cocos2d::Ref{
     
 public:
     
-    DownloadTask(const std::string& url,const std::string& path,bool breakpointResume,Ref* userdata);
+    DownloadTask(const std::string& url,const std::string& path,bool breakpointResume, void* userdata);
     
     ~DownloadTask();
     
-    static DownloadTask* create(const std::string& url,const std::string& path,bool breakpointResume,Ref* userdata);
+    static DownloadTask* create(const std::string& url,const std::string& path,bool breakpointResume, void *userdata);
     
     const char* getUrl();
     
@@ -61,7 +70,7 @@ public:
     
     int getBreakPointBytes();
     
-    Ref* getUserdata();
+    void* getUserdata();
     
     
 protected:
@@ -80,7 +89,7 @@ protected:
     
     int getUnreceivedDataTimes();
     
-    void setUserdata(Ref* userdata);
+    void setUserdata(void* userdata);
     
 private:
     
@@ -96,7 +105,7 @@ private:
     
     bool breakpointResume;          //断点续传
     
-    Ref* userdata;             //用户信息
+    void* userdata;             //用户信息
     
     int breakPointBytes;            //断点的字节数
     
@@ -107,32 +116,6 @@ private:
     int unreceivedDataTimes;        //没收到数据的curl回调次数
     
 };
-
-enum DownloadEventType {
-    kDownloadEventTypeStart = 0,        //开始
-    kDownloadEventTypeProgress = 1,     //进度
-    kDownloadEventTypeSuccess = 2,      //成功
-    kDownloadEventTypeFailure = 3,      //失败
-};
-
-class DownloadEvent : public cocos2d::Ref{
-    
-public:
-    
-    DownloadEvent(DownloadEventType type,DownloadTask* task);
-    
-    ~DownloadEvent();
-    
-    CC_SYNTHESIZE(DownloadEventType, type, Type);
-    
-    CC_SYNTHESIZE_RETAIN(DownloadTask*, task, Task);
-    
-    CC_SYNTHESIZE(float, progress, Progress);
-    
-    CC_SYNTHESIZE_PASS_BY_REF(std::string, errorMsg, ErrorMsg);
-    
-};
-
 
 /**
  * 文件下载器
@@ -154,7 +137,7 @@ public:
     void destroy();
     
     //进行下载
-    void download(const std::string& url,const std::string& savePath,bool breakpointResume = false,Ref* userdata = NULL);
+    bool download(const std::string& url,const std::string& savePath,bool breakpointResume = false, void* userdata = NULL);
     
     bool isDownloading();
     
@@ -204,8 +187,6 @@ protected:
     
     cocos2d::__Array*           taskQueue;              //任务队列
     
-    cocos2d::__Array*           eventQueue;             //事件队列
-    
     bool                        needQuit;               //下载线程退出标志
     
     DownloadTask*               currentTask;            //当前下载任务
@@ -219,9 +200,6 @@ protected:
     sem_t                       sem;                    //信号量
     
     pthread_mutex_t             taskQueueMutex;         //任务队列互斥锁
-    
-    pthread_mutex_t             eventQueueMutex;        //事件队列互斥锁
-    
     
 };
 
