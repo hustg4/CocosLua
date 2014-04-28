@@ -144,7 +144,7 @@ public:
     /**
      * 设置需要从bundle/apk中拷贝到用户下的文件列表
      */
-    void setCopyFileList(cocos2d::__Array* copyFileList);
+    void setCopyFileList(const cocos2d::ValueVector& copyFileList);
     
     /**
      * 检查版本号
@@ -186,8 +186,10 @@ public:
     void flush();
     
 public:
+    // HttpDownloaderDelegate
+    virtual void onError(void *userData, HttpDownloaderErrorCode errorCode);
+    virtual void onSuccess(void *userData);
     
-    virtual void onDownloadEvent(HttpDownloader* downloader,DownloadEvent* event);
     
 private:
     
@@ -213,7 +215,7 @@ private:
     
     bool moduleUpdating;                            //模块是否正在更新
     
-    cocos2d::__Array* copyFileList;
+    cocos2d::ValueVector copyFileList;
     
     float minProgramVersion;                        //游戏运行需要的最小程序版本号
     
@@ -230,7 +232,7 @@ private:
     void init();
     
     //拷贝 bundle/apk 下的指定文件到 用户目录
-    void copyFiles(cocos2d::__Array* copyFileList);
+    void copyFiles(const cocos2d::ValueVector& copyFileList);
     
     //清理SearchPath
     void clearSearchPath();
