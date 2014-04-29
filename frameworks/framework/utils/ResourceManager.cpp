@@ -63,7 +63,6 @@ void ResourceManager::init()
     //实例化downloader
     downloader = new HttpDownloader();
     downloader->setDelegate(this);
-    CC_SAFE_RETAIN(downloader);
     
     //创建模块待下载文件缓存
     downloadCache = __Dictionary::create();

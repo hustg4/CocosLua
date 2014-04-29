@@ -174,9 +174,6 @@ protected:
     // 将下载完成的temp文件重命名为正确文件名
     bool renameFile();
     
-    //往事件队列中添加事件
-    void addDownloadEvent(DownloadEventType type,DownloadTask* task,float progress,const std::string& errorMsg);
-    
     /******************* functions run in download thread *******************/
     
 protected:
