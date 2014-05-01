@@ -6390,66 +6390,6 @@ int lua_register_framework_SQLite(lua_State* tolua_S)
     return 1;
 }
 
-int lua_framework_Game_start(lua_State* tolua_S)
-{
-    int argc = 0;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertable(tolua_S,1,"Game",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    argc = lua_gettop(tolua_S) - 1;
-
-    if (argc == 0)
-    {
-        if(!ok)
-            return 0;
-        Game::start();
-        return 0;
-    }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d\n ", "start",argc, 0);
-    return 0;
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_Game_start'.",&tolua_err);
-#endif
-    return 0;
-}
-int lua_framework_Game_stop(lua_State* tolua_S)
-{
-    int argc = 0;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertable(tolua_S,1,"Game",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    argc = lua_gettop(tolua_S) - 1;
-
-    if (argc == 0)
-    {
-        if(!ok)
-            return 0;
-        Game::stop();
-        return 0;
-    }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d\n ", "stop",argc, 0);
-    return 0;
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_Game_stop'.",&tolua_err);
-#endif
-    return 0;
-}
 int lua_framework_Game_restart(lua_State* tolua_S)
 {
     int argc = 0;
@@ -6492,8 +6432,6 @@ int lua_register_framework_Game(lua_State* tolua_S)
     tolua_cclass(tolua_S,"Game","Game","",nullptr);
 
     tolua_beginmodule(tolua_S,"Game");
-        tolua_function(tolua_S,"start", lua_framework_Game_start);
-        tolua_function(tolua_S,"stop", lua_framework_Game_stop);
         tolua_function(tolua_S,"restart", lua_framework_Game_restart);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(Game).name();
