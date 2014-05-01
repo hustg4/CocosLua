@@ -35,13 +35,6 @@ require ("scene/demo/clsDemoScene")
 function Game:onStart()
 
     print("Game:onStart")
-
-    if not TEST then
-        TEST = 12;
-    end
-
-    print("TEST:"..TEST)
-    TEST = 1000;
     
     --加载网络配置
     self:loadNetConfig()
