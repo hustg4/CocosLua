@@ -51,4 +51,6 @@
 
 #include "lua-bindings/lua_framework_auto.hpp"
 
+#include "Game.h"
+
 #endif

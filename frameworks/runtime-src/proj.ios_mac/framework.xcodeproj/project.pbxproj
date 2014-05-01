@@ -321,6 +321,12 @@
 		AA7EB56A190928BE00A902DD /* OpenglConstants.lua in Resources */ = {isa = PBXBuildFile; fileRef = AA7EB547190928BE00A902DD /* OpenglConstants.lua */; };
 		AA7EB56B190928BE00A902DD /* StudioConstants.lua in Resources */ = {isa = PBXBuildFile; fileRef = AA7EB548190928BE00A902DD /* StudioConstants.lua */; };
 		AA7EB56C190928BE00A902DD /* StudioConstants.lua in Resources */ = {isa = PBXBuildFile; fileRef = AA7EB548190928BE00A902DD /* StudioConstants.lua */; };
+		AAA42EFA190FF59000E7376D /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA42EF8190FF59000E7376D /* Game.cpp */; };
+		AAA42EFB190FF59000E7376D /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA42EF8190FF59000E7376D /* Game.cpp */; };
+		AAA42EFC190FF59000E7376D /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA42EF8190FF59000E7376D /* Game.cpp */; };
+		AAA42EFD190FF59000E7376D /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA42EF8190FF59000E7376D /* Game.cpp */; };
+		AAA42EFE190FF59000E7376D /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA42EF9190FF59000E7376D /* Game.h */; };
+		AAA42EFF190FF59000E7376D /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA42EF9190FF59000E7376D /* Game.h */; };
 		AAB0D3E51907E2C100E1788C /* JSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3481907E2C100E1788C /* JSONElement.cpp */; };
 		AAB0D3E61907E2C100E1788C /* JSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3481907E2C100E1788C /* JSONElement.cpp */; };
 		AAB0D3E71907E2C100E1788C /* JSONFormatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D34A1907E2C100E1788C /* JSONFormatter.cpp */; };
@@ -708,6 +714,8 @@
 		AA7EB546190928BE00A902DD /* Opengl.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Opengl.lua; path = "../../cocos2d-x/cocos/scripting/lua-bindings/script/Opengl.lua"; sourceTree = "<group>"; };
 		AA7EB547190928BE00A902DD /* OpenglConstants.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OpenglConstants.lua; path = "../../cocos2d-x/cocos/scripting/lua-bindings/script/OpenglConstants.lua"; sourceTree = "<group>"; };
 		AA7EB548190928BE00A902DD /* StudioConstants.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = StudioConstants.lua; path = "../../cocos2d-x/cocos/scripting/lua-bindings/script/StudioConstants.lua"; sourceTree = "<group>"; };
+		AAA42EF8190FF59000E7376D /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		AAA42EF9190FF59000E7376D /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		AAB0D3481907E2C100E1788C /* JSONElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONElement.cpp; sourceTree = "<group>"; };
 		AAB0D3491907E2C100E1788C /* JSONElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONElement.h; sourceTree = "<group>"; };
 		AAB0D34A1907E2C100E1788C /* JSONFormatter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONFormatter.cpp; sourceTree = "<group>"; };
@@ -1102,6 +1110,8 @@
 				AAB0D3BD1907E2C100E1788C /* framework.h */,
 				AAB0D3BE1907E2C100E1788C /* ui */,
 				AAB0D3C31907E2C100E1788C /* utils */,
+				AAA42EF8190FF59000E7376D /* Game.cpp */,
+				AAA42EF9190FF59000E7376D /* Game.h */,
 			);
 			name = framework;
 			path = ../../framework;
@@ -1564,6 +1574,7 @@
 				AA1C685419080ACD001F3F83 /* JSON_Base64.h in Headers */,
 				AA1C685519080ACD001F3F83 /* JSONAllocator.h in Headers */,
 				AA1C685619080ACD001F3F83 /* JSONChildren.h in Headers */,
+				AAA42EFE190FF59000E7376D /* Game.h in Headers */,
 				AA1C685719080ACD001F3F83 /* JSONDebug.h in Headers */,
 				AA1C685819080ACD001F3F83 /* GNU_C.h in Headers */,
 				AA1C685919080ACD001F3F83 /* Strings_Defs.h in Headers */,
@@ -1589,6 +1600,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA42EFF190FF59000E7376D /* Game.h in Headers */,
 				AA1C69231908A349001F3F83 /* NetCenter.h in Headers */,
 				AA1C69241908A349001F3F83 /* NetFilter.h in Headers */,
 				AA1C69251908A349001F3F83 /* NetHandler.h in Headers */,
@@ -2007,6 +2019,7 @@
 				AAB0D4641907E2C100E1788C /* RegexUtil.cpp in Sources */,
 				AAB0D40C1907E2C100E1788C /* JSONParserTest.cpp in Sources */,
 				AAB0D3FE1907E2C100E1788C /* JSONStream.cpp in Sources */,
+				AAA42EFB190FF59000E7376D /* Game.cpp in Sources */,
 				AAB0D4001907E2C100E1788C /* JSONValidator.cpp in Sources */,
 				AAB0D4661907E2C100E1788C /* ResourceManager.cpp in Sources */,
 				AAB0D43E1907E2C100E1788C /* HttpForm.cpp in Sources */,
@@ -2043,6 +2056,7 @@
 				AA1C688B19080C30001F3F83 /* sqlite3.c in Sources */,
 				AA1C688819080C1D001F3F83 /* NetStatusUtilIos.mm in Sources */,
 				AA1C688919080C1D001F3F83 /* Reachability.m in Sources */,
+				AAA42EFC190FF59000E7376D /* Game.cpp in Sources */,
 				AA1C688A19080C1D001F3F83 /* UUIDGenerator.mm in Sources */,
 				AA1C686D19080C0E001F3F83 /* NetCenter.cpp in Sources */,
 				AA1C686E19080C0E001F3F83 /* NetFilter.cpp in Sources */,
@@ -2097,6 +2111,7 @@
 				AA1C69021908A316001F3F83 /* NetStatusUtilIos.mm in Sources */,
 				AA1C69031908A316001F3F83 /* Reachability.m in Sources */,
 				AA1C69041908A316001F3F83 /* UUIDGenerator.mm in Sources */,
+				AAA42EFD190FF59000E7376D /* Game.cpp in Sources */,
 				AA1C68E81908A306001F3F83 /* NetCenter.cpp in Sources */,
 				AA1C68E91908A306001F3F83 /* NetFilter.cpp in Sources */,
 				AA1C68EA1908A306001F3F83 /* NetHandler.cpp in Sources */,
@@ -2175,6 +2190,7 @@
 				AA3C4AA118F93A1500D65677 /* SocketService.cpp in Sources */,
 				AAB0D45B1907E2C100E1788C /* LuaUtil.cpp in Sources */,
 				AAB0D44B1907E2C100E1788C /* SQLiteTest.cpp in Sources */,
+				AAA42EFA190FF59000E7376D /* Game.cpp in Sources */,
 				AAB0D3FB1907E2C100E1788C /* JSONPreparse.cpp in Sources */,
 				AAB0D4031907E2C100E1788C /* JSONWriter.cpp in Sources */,
 				AAB0D3FF1907E2C100E1788C /* JSONValidator.cpp in Sources */,

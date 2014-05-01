@@ -143,8 +143,9 @@ function clsLoginViewController:onTouch(eventType,x,y)
 end
 
 function clsLoginViewController:menuCallbackRegister()
-    self.layer:removeFromParent(true)
-    Notifier:notify(NotifyEvent.UI.ShowRegisterView)
+    --self.layer:removeFromParent(true)
+    --Notifier:notify(NotifyEvent.UI.ShowRegisterView)
+    Game:restart();
 end
 
 function clsLoginViewController:menuCallbackLogin(tag,sender)

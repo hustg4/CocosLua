@@ -1,5 +1,4 @@
 #include "AppDelegate.h"
-#include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
 
@@ -48,15 +47,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     //init network
     this->initNetwork();
 
-	auto engine = LuaEngine::getInstance();
-	ScriptEngineManager::getInstance()->setScriptEngine(engine);
-    
-    lua_State* luaState = engine->getLuaStack()->getLuaState();
-    
-    register_all_framework(luaState);
-    
-    // run main lua file
-    engine->executeScriptFile("main.lua");
+    Game::start();
 
     return true;
 }
