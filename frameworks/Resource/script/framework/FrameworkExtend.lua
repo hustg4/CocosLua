@@ -4,6 +4,17 @@
  date:2013/05/13
  --]]
 
+--clsNode
+class("clsNode",{create = function() return cc.Node:create() end})
+
+--clsLayer
+class("clsLayer",{create = function() return cc.Layer:create() end})
+
+--clsSprite
+class("clsSprite",{ create = function(...) return cc.Sprite:create(...) end,
+                    createWithTexture = function(...) return cc.Sprite:createWithTexture(...) end,
+                    createWithSpriteFrame = function(...) return cc.Sprite:createWithSpriteFrame(...) end,
+                    createWithSpriteFrameName = function(...) return cc.Sprite:createWithSpriteFrameName(...) end    })
 
 --clsGameScene
 class("clsGameScene",{create = function(...) return GameScene:create(...) end})
@@ -17,17 +28,11 @@ class("clsNetHandler",{create = function() return NetHandler:create() end})
 --clsViewController
 class("clsViewController",{create = function() return ViewController:create() end})
 
---clsNode
-class("clsNode",{create = function() return CCNode:create() end})
-
---clsLayer
-class("clsLayer",{create = function() return cc.Layer:create() end})
-
---clsSprite
-class("clsSprite",{ create = function(...) return cc.Sprite:create(...) end,
-                    createWithTexture = function(...) return cc.Sprite:createWithTexture(...) end,
-                    createWithSpriteFrame = function(...) return cc.Sprite:createWithSpriteFrame(...) end,
-                    createWithSpriteFrameName = function(...) return cc.Sprite:createWithSpriteFrameName(...) end    })
+function clsViewController:loadCCB(ccbFile)
+	local proxy = cc.CCBProxy:create()
+	local node = CCBReaderLoad(ccbFile,proxy,self)
+	return node
+end
 
 --系统tag分配.所有框架级控件，如果要在scene上添加layer，使用的tag必须在此处申请
 TAG_SYSTEM_MIN = 100000000

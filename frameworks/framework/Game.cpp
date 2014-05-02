@@ -48,12 +48,18 @@ void Game::start()
     
     //脚本初始化
     auto engine = LuaEngine::getInstance();
-	ScriptEngineManager::getInstance()->setScriptEngine(engine);
+    ScriptEngineManager::getInstance()->setScriptEngine(engine);
     
     lua_State* luaState = engine->getLuaStack()->getLuaState();
     
     register_all_framework(luaState);
     
+    //加载Common库
+    engine->executeScriptFile("Cocos2d.lua");
+    engine->executeScriptFile("Cocos2dConstants.lua");
+    engine->executeScriptFile("CCBReaderLoad.lua");
+    
+    //加载脚本主程序
     engine->executeScriptFile("main.lua");
     
     Game::callLuaFuncOnStart();

@@ -28,7 +28,7 @@ function clsPlayer:isAgeValid()
     return self.age < clsPlayer.MAX_AGE
 end
 
-local test = true
+local test = false
 
 if not test then
     return
