@@ -32,3 +32,11 @@ function clsCCBTestViewController:onItemCheckTapped(...)
     print(arg[2])
 end
 
+function clsCCBTestViewController:onControlButtonTapped(...)
+	local arg = pairlist(...)
+    print(#arg)
+    print(arg[1]==self.ccbControlButton)
+    print(arg[2])
+    print(self.ccbControlButton)
+end
+
