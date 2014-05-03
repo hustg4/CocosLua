@@ -41,8 +41,10 @@ function Game:onStart()
     
     --启动场景
     --ReplaceScene(clsParticleScene)
-    ReplaceScene(clsLoginScene)
+    --ReplaceScene(clsLoginScene)
     --ReplaceScene(clsDemoScene)
+    ReplaceScene(clsCCBTestScene)
+
 end
 
 --游戏停止

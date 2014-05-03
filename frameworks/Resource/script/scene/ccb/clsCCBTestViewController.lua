@@ -15,8 +15,8 @@ end
 
 function clsCCBTestViewController:showView()
     
-    self.layer = ScriptCCBReader:readCCB("ccb/MainScene.ccbi", self)
-    self:getScene():addChild(self.layer)
+    self:loadCCB("ccb/MainScene.ccbi")
+    self:getScene():addChild(self.ccbRootLayer)
 
 end
 
@@ -24,7 +24,11 @@ function clsCCBTestViewController:unload()
     
 end
 
-function clsCCBTestViewController:onClick(sender)
-    print(sender)
+function clsCCBTestViewController:onItemCheckTapped(...)
+	local arg = pairlist(...)
+    print(#arg)
+    print(self.ccbItemCheck == arg[2])
+    print(arg[1])
+    print(arg[2])
 end
 

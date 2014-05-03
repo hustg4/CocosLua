@@ -20,7 +20,7 @@ function CCBReaderLoad(strFilePath,proxy,owner)
             local callbackNode =  tolua.cast(ownerCallbackNodes[i],"cc.Node")
 
             if "function" == type(owner[callbackName]) then
-                proxy:setCallback(callbackNode, owner[callbackName], ownerCallbackControlEvents[i])
+                proxy:setCallback(callbackNode, MakeScriptHandler(owner,owner[callbackName]), ownerCallbackControlEvents[i])
             else
                 print("Warning: Cannot find owner's lua function:" .. ":" .. callbackName .. " for ownerVar selector")
             end
