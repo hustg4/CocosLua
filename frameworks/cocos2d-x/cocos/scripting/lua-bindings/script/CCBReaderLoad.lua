@@ -14,11 +14,11 @@ function CCBReaderLoad(strFilePath,proxy,owner)
         local ownerCallbackNames = ccbReader:getOwnerCallbackNames() 
         local ownerCallbackNodes = ccbReader:getOwnerCallbackNodes()
         local ownerCallbackControlEvents = ccbReader:getOwnerCallbackControlEvents()
+        print("Callbacks:" .. #ownerCallbackNames .. #ownerCallbackNodes .. #ownerCallbackControlEvents)
         local i = 1
         for i = 1,table.getn(ownerCallbackNames) do
             local callbackName =  ownerCallbackNames[i]
             local callbackNode =  tolua.cast(ownerCallbackNodes[i],"cc.Node")
-
             if "function" == type(owner[callbackName]) then
                 proxy:setCallback(callbackNode, MakeScriptHandler(owner,owner[callbackName]), ownerCallbackControlEvents[i])
             else
