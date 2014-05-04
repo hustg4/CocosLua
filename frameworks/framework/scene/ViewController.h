@@ -28,7 +28,17 @@ public:
     
     virtual void unload();
     
-    CC_SYNTHESIZE(GameScene*, scene, Scene);
+    GameScene* getScene();
+    
+    void addSceneNode(cocos2d::Node* node);
+    
+    void addUINode(cocos2d::Node* node);
+    
+private:
+    
+    friend class GameScene;
+    
+    GameScene* scene;
     
 };
 

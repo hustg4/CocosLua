@@ -14,7 +14,6 @@ function CCBReaderLoad(strFilePath,proxy,owner)
         local ownerCallbackNames = ccbReader:getOwnerCallbackNames() 
         local ownerCallbackNodes = ccbReader:getOwnerCallbackNodes()
         local ownerCallbackControlEvents = ccbReader:getOwnerCallbackControlEvents()
-        print("Callbacks:" .. #ownerCallbackNames .. #ownerCallbackNodes .. #ownerCallbackControlEvents)
         local i = 1
         for i = 1,table.getn(ownerCallbackNames) do
             local callbackName =  ownerCallbackNames[i]
@@ -34,6 +33,7 @@ function CCBReaderLoad(strFilePath,proxy,owner)
         for i = 1, table.getn(ownerOutletNames) do
             local outletName = ownerOutletNames[i]
             local outletNode = tolua.cast(ownerOutletNodes[i],"cc.Node")
+            --print("outletName:"..outletName.." outletNode:".. tostring(outletNode))
             owner[outletName] = outletNode
         end
     end

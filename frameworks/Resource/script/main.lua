@@ -24,7 +24,6 @@ require ("net/MessageSender")
 require ("model/GameData")
     
 require ("scene/ccb/clsCCBTestScene")
-require ("scene/drag/clsDragScene")
 require ("scene/login/clsLoginScene")
 require ("scene/map/clsMapScene")
 require ("scene/update/clsUpdateScene")
@@ -40,10 +39,10 @@ function Game:onStart()
     self:loadNetConfig()
     
     --启动场景
-    --ReplaceScene(clsParticleScene)
-    --ReplaceScene(clsLoginScene)
-    --ReplaceScene(clsDemoScene)
-    ReplaceScene(clsCCBTestScene)
+    --RunScene(clsParticleScene)
+    --RunScene(clsLoginScene)
+    --RunScene(clsDemoScene)
+    RunScene(clsCCBTestScene)
 
 end
 

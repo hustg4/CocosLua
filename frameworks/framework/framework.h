@@ -29,6 +29,8 @@
 
 #include "scene/GameScene.h"
 #include "scene/ViewController.h"
+#include "scene/UIManager.h"
+#include "scene/SceneManager.h"
 
 #include "sqlite/SQLite.h"
 

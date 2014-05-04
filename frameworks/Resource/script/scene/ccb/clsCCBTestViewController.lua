@@ -7,17 +7,13 @@
 
 class("clsCCBTestViewController",clsViewController)
 
-clsCCBTestViewController.layer=nil
-
 function clsCCBTestViewController:load()
     self:showView()
 end
 
 function clsCCBTestViewController:showView()
-    
     self:loadCCB("ccb/MainScene.ccbi")
-    self:getScene():addChild(self.ccbRootLayer)
-
+    self:addSceneNode(self.ccbRootLayer)
 end
 
 function clsCCBTestViewController:unload()
@@ -31,6 +27,7 @@ function clsCCBTestViewController:onItemCheckTapped(...)
     print(self.ccbItemCheck == arg[2])
     print(arg[1])
     print(arg[2])
+    print(self.ccbItemCheck)
 end
 
 function clsCCBTestViewController:onControlButtonTapped(...)
@@ -49,6 +46,7 @@ function clsCCBTestViewController:onCCBFileItemCheckTapped(...)
     print(self.ccbfileItemCheck == arg[2])
     print(arg[1])
     print(arg[2])
+    print(self.ccbfileItemCheck)
 end
 
 function clsCCBTestViewController:onCCBFileControlButtonTapped(...)
@@ -57,6 +55,6 @@ function clsCCBTestViewController:onCCBFileControlButtonTapped(...)
     print(#arg)
     print(arg[1]==self.ccbfileControlButton)
     print(arg[2])
-    print(self.ccbControlButton)
+    print(self.ccbfileControlButton)
 end
 

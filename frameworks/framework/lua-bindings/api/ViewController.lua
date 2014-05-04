@@ -8,9 +8,8 @@
 -- @param self
         
 --------------------------------
--- @function [parent=#ViewController] setScene 
+-- @function [parent=#ViewController] unload 
 -- @param self
--- @param #GameScene gamescene
         
 --------------------------------
 -- @function [parent=#ViewController] init 
@@ -23,8 +22,14 @@
 -- @return GameScene#GameScene ret (return value: GameScene)
         
 --------------------------------
--- @function [parent=#ViewController] unload 
+-- @function [parent=#ViewController] addUINode 
 -- @param self
+-- @param #cc.Node node
+        
+--------------------------------
+-- @function [parent=#ViewController] addSceneNode 
+-- @param self
+-- @param #cc.Node node
         
 --------------------------------
 -- @function [parent=#ViewController] create 

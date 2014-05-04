@@ -453,6 +453,16 @@
 		AAB0D4661907E2C100E1788C /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3E01907E2C100E1788C /* ResourceManager.cpp */; };
 		AAB0D4671907E2C100E1788C /* UUIDGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3E41907E2C100E1788C /* UUIDGenerator.mm */; };
 		AAB0D4681907E2C100E1788C /* UUIDGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D3E41907E2C100E1788C /* UUIDGenerator.mm */; };
+		AACE603B19164CD300806714 /* UIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AACE603919164CD300806714 /* UIManager.cpp */; };
+		AACE603C19164CD300806714 /* UIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AACE603919164CD300806714 /* UIManager.cpp */; };
+		AACE603D19164CD300806714 /* UIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AACE603919164CD300806714 /* UIManager.cpp */; };
+		AACE603E19164CD300806714 /* UIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AACE603919164CD300806714 /* UIManager.cpp */; };
+		AACE603F19164CD300806714 /* UIManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AACE603A19164CD300806714 /* UIManager.h */; };
+		AACE604019164CD300806714 /* UIManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AACE603A19164CD300806714 /* UIManager.h */; };
+		AAD87AC619165A0C00D757C0 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAD87AC419165A0C00D757C0 /* SceneManager.cpp */; };
+		AAD87AC9191663BA00D757C0 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAD87AC419165A0C00D757C0 /* SceneManager.cpp */; };
+		AAD87ACA191663BA00D757C0 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAD87AC419165A0C00D757C0 /* SceneManager.cpp */; };
+		AAD87ACB191663BB00D757C0 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAD87AC419165A0C00D757C0 /* SceneManager.cpp */; };
 		AAFBD13918F8F3B80088FFA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFBD13818F8F3B80088FFA1 /* SystemConfiguration.framework */; };
 		C03781F518BF65A900FE4F13 /* libluabindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03781B418BF654500FE4F13 /* libluabindings Mac.a */; };
 		C03781F618BF65B100FE4F13 /* libluabindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03781B618BF654500FE4F13 /* libluabindings iOS.a */; };
@@ -842,6 +852,10 @@
 		AAB0D3E11907E2C100E1788C /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
 		AAB0D3E31907E2C100E1788C /* UUIDGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUIDGenerator.h; sourceTree = "<group>"; };
 		AAB0D3E41907E2C100E1788C /* UUIDGenerator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UUIDGenerator.mm; sourceTree = "<group>"; };
+		AACE603919164CD300806714 /* UIManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIManager.cpp; sourceTree = "<group>"; };
+		AACE603A19164CD300806714 /* UIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIManager.h; sourceTree = "<group>"; };
+		AAD87AC419165A0C00D757C0 /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
+		AAD87AC519165A0C00D757C0 /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
 		AAFBD13818F8F3B80088FFA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../../cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
 		C06E23C318CEF9740093C81A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -1315,6 +1329,10 @@
 				AAB0D3B11907E2C100E1788C /* GameScene.h */,
 				AAB0D3B21907E2C100E1788C /* ViewController.cpp */,
 				AAB0D3B31907E2C100E1788C /* ViewController.h */,
+				AACE603919164CD300806714 /* UIManager.cpp */,
+				AACE603A19164CD300806714 /* UIManager.h */,
+				AAD87AC419165A0C00D757C0 /* SceneManager.cpp */,
+				AAD87AC519165A0C00D757C0 /* SceneManager.h */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -1588,6 +1606,7 @@
 				AA1C686119080ACD001F3F83 /* JSONPreparse.h in Headers */,
 				AA1C686219080ACD001F3F83 /* JSONSharedString.h in Headers */,
 				AA1C686319080ACD001F3F83 /* JSONSingleton.h in Headers */,
+				AACE603F19164CD300806714 /* UIManager.h in Headers */,
 				AA1C686419080ACD001F3F83 /* JSONStats.h in Headers */,
 				AA1C686519080ACD001F3F83 /* JSONStream.h in Headers */,
 				AA1C686619080ACD001F3F83 /* JSONValidator.h in Headers */,
@@ -1602,6 +1621,7 @@
 			files = (
 				AAA42EFF190FF59000E7376D /* Game.h in Headers */,
 				AA1C69231908A349001F3F83 /* NetCenter.h in Headers */,
+				AACE604019164CD300806714 /* UIManager.h in Headers */,
 				AA1C69241908A349001F3F83 /* NetFilter.h in Headers */,
 				AA1C69251908A349001F3F83 /* NetHandler.h in Headers */,
 				AA1C69261908A349001F3F83 /* NetProtocol.h in Headers */,
@@ -2034,7 +2054,9 @@
 				AAB0D4561907E2C100E1788C /* DESUtil.cpp in Sources */,
 				AAB0D4441907E2C100E1788C /* GameScene.cpp in Sources */,
 				AAB0D3EA1907E2C100E1788C /* JSONParser.cpp in Sources */,
+				AAD87AC9191663BA00D757C0 /* SceneManager.cpp in Sources */,
 				C06E23C418CEF9740093C81A /* main.cpp in Sources */,
+				AACE603C19164CD300806714 /* UIManager.cpp in Sources */,
 				5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */,
 				AA3C4AA218F93A1500D65677 /* SocketService.cpp in Sources */,
 				AAB0D44E1907E2C100E1788C /* Base64.cpp in Sources */,
@@ -2067,6 +2089,7 @@
 				AA1C687319080C0E001F3F83 /* HttpDownloader.cpp in Sources */,
 				AA1C687419080C0E001F3F83 /* HttpForm.cpp in Sources */,
 				AA1C687519080C0E001F3F83 /* ODSocket.cpp in Sources */,
+				AACE603D19164CD300806714 /* UIManager.cpp in Sources */,
 				AA6E8CAC190B572900D64EE5 /* lua_framework_auto.cpp in Sources */,
 				AA1C687619080C0E001F3F83 /* Socket.cpp in Sources */,
 				AA1C687719080C0E001F3F83 /* GameScene.cpp in Sources */,
@@ -2086,6 +2109,7 @@
 				AA1C688519080C0E001F3F83 /* ResourceManager.cpp in Sources */,
 				AA1C683B19080ABA001F3F83 /* JSONElement.cpp in Sources */,
 				AA1C683C19080ABA001F3F83 /* JSONFormatter.cpp in Sources */,
+				AAD87ACA191663BA00D757C0 /* SceneManager.cpp in Sources */,
 				AA1C683D19080ABA001F3F83 /* JSONParser.cpp in Sources */,
 				AA1C683E19080ABA001F3F83 /* internalJSONNode.cpp in Sources */,
 				AA1C683F19080ABA001F3F83 /* JSONAllocator.cpp in Sources */,
@@ -2122,6 +2146,7 @@
 				AA1C68EF1908A306001F3F83 /* HttpForm.cpp in Sources */,
 				AA1C68F01908A306001F3F83 /* ODSocket.cpp in Sources */,
 				AA1C68F11908A306001F3F83 /* Socket.cpp in Sources */,
+				AACE603E19164CD300806714 /* UIManager.cpp in Sources */,
 				AA6E8CAD190B572900D64EE5 /* lua_framework_auto.cpp in Sources */,
 				AA1C68F21908A306001F3F83 /* GameScene.cpp in Sources */,
 				AA1C68F31908A306001F3F83 /* ViewController.cpp in Sources */,
@@ -2141,6 +2166,7 @@
 				AA1C69011908A306001F3F83 /* ResourceManager.cpp in Sources */,
 				AA1C68D61908A2F2001F3F83 /* JSONElement.cpp in Sources */,
 				AA1C68D71908A2F2001F3F83 /* JSONFormatter.cpp in Sources */,
+				AAD87ACB191663BB00D757C0 /* SceneManager.cpp in Sources */,
 				AA1C68D81908A2F2001F3F83 /* JSONParser.cpp in Sources */,
 				AA1C68D91908A2F2001F3F83 /* internalJSONNode.cpp in Sources */,
 				AA1C68DA1908A2F2001F3F83 /* JSONAllocator.cpp in Sources */,
@@ -2166,6 +2192,7 @@
 				AAB0D4511907E2C100E1788C /* DBDecryptUtil.cpp in Sources */,
 				AAB0D3EF1907E2C100E1788C /* JSONChildren.cpp in Sources */,
 				AAB0D3E71907E2C100E1788C /* JSONFormatter.cpp in Sources */,
+				AACE603B19164CD300806714 /* UIManager.cpp in Sources */,
 				AAB0D4051907E2C100E1788C /* libjson.cpp in Sources */,
 				AAB0D4331907E2C100E1788C /* NetHandler.cpp in Sources */,
 				AAB0D4351907E2C100E1788C /* NetProtocol.cpp in Sources */,
@@ -2184,6 +2211,7 @@
 				AAB0D3E51907E2C100E1788C /* JSONElement.cpp in Sources */,
 				AA3C4A9F18F93A1500D65677 /* HttpService.cpp in Sources */,
 				AAB0D40B1907E2C100E1788C /* JSONParserTest.cpp in Sources */,
+				AAD87AC619165A0C00D757C0 /* SceneManager.cpp in Sources */,
 				AAB0D3F91907E2C100E1788C /* JSONNode_Mutex.cpp in Sources */,
 				AAB0D4411907E2C100E1788C /* Socket.cpp in Sources */,
 				AAB0D43D1907E2C100E1788C /* HttpForm.cpp in Sources */,

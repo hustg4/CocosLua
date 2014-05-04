@@ -13,11 +13,11 @@
 #include "cocos2d.h"
 #include "ViewController.h"
 
-class GameScene : public cocos2d::Scene {
+class GameScene : public cocos2d::Ref {
     
 private:
     
-    cocos2d::__Dictionary* paramDict;
+    cocos2d::ValueMap paramMap;
     
     cocos2d::__Array* viewControllerArray;
     
@@ -34,25 +34,9 @@ public:
     
     virtual void onExit();
     
-    void putAttribute(const std::string& key,bool value);
+    void putAttribute(const std::string& key,const cocos2d::Value& value);
     
-    void putAttribute(const std::string& key,int value);
-    
-    void putAttribute(const std::string& key,double value);
-    
-    void putAttribute(const std::string& key,const std::string& value);
-    
-    void putAttribute(const std::string& key,Ref* value);
-    
-    bool getBoolAttribute(const std::string& key);
-    
-    int getIntAttribute(const std::string& key);
-    
-    double getDoubleAttribute(const std::string& key);
-    
-    const char* getStringAttribute(const std::string& key);
-    
-    Ref* getAttribute(const std::string& key);
+    const cocos2d::Value getAttribute(const std::string& key);
     
     void loadViewController(ViewController* viewCotroller);
     
