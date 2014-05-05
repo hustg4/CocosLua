@@ -30,6 +30,7 @@ require ("scene/map/clsMapScene")
 require ("scene/update/clsUpdateScene")
 require ("scene/particle/clsParticleScene")
 require ("scene/demo/clsDemoScene")
+require ("scene/demo/clsDemoControlScene")
 
 --游戏启动
 function Game:onStart()
@@ -44,7 +45,7 @@ function Game:onStart()
     --ReplaceScene(clsLoginScene)
     --ReplaceScene(clsDemoScene)
     ReplaceScene(clsCCBTestScene)
-
+    -- ReplaceScene(clsDemoControlScene)
 end
 
 --游戏停止
