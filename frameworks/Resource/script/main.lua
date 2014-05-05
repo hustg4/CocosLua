@@ -29,6 +29,7 @@ require ("scene/map/clsMapScene")
 require ("scene/update/clsUpdateScene")
 require ("scene/particle/clsParticleScene")
 require ("scene/demo/clsDemoScene")
+require ("scene/demo/clsDemoControlScene")
 
 --游戏启动
 function Game:onStart()
@@ -42,6 +43,7 @@ function Game:onStart()
     --RunScene(clsParticleScene)
     --RunScene(clsLoginScene)
     --RunScene(clsDemoScene)
+    --RunScene(clsDemoControlScene)
     RunScene(clsCCBTestScene)
 
 end
