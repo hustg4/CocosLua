@@ -14,6 +14,8 @@ end
 function clsCCBTestViewController:showView()
     self:loadCCB("ccb/MainScene.ccbi")
     self:addSceneNode(self.ccbRootLayer)
+    print("self.checkRootNode:"..tostring(self.checkRootNode))
+    print("self.nodeCheck:"..tostring(self.nodeCheck))
 end
 
 function clsCCBTestViewController:unload()
@@ -56,5 +58,21 @@ function clsCCBTestViewController:onCCBFileControlButtonTapped(...)
     print(arg[1]==self.ccbfileControlButton)
     print(arg[2])
     print(self.ccbfileControlButton)
+end
+
+function clsCCBTestViewController:OnScaleEnd(...)
+    print("OnScaleEnd")
+	local arg = pairlist(...)
+    print(#arg)
+    print(self.nodeCheck == arg[1])
+    --self.ccbRootLayer.animationManager:runAnimationsForSequenceNamed("TL1")
+end
+
+function clsCCBTestViewController:OnRotationEnd(...)
+    print("OnRotationEnd")
+	local arg = pairlist(...)
+    print(#arg)
+    print(self.ccbRootLayer == arg[1])
+    self.ccbRootLayer:removeFromParent()
 end
 
