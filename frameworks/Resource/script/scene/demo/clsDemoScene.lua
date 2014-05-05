@@ -11,7 +11,7 @@ require ("scene/demo/clsDemoViewController")
 class("clsDemoScene",clsGameScene)
 
 function clsDemoScene:onEnter()
-    local demoViewController=clsDemoViewController:create()
+    local demoViewController = clsDemoViewController:create()
     self:loadViewController(demoViewController)
 end
 

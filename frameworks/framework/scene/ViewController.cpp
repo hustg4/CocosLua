@@ -8,11 +8,13 @@
 
 #include "ViewController.h"
 #include "LuaUtil.h"
+#include "UIManager.h"
 
 using namespace cocos2d;
 
 bool ViewController::init()
 {
+    scene = nullptr;
     return true;
 }
 
@@ -29,4 +31,19 @@ void ViewController::load()
 void ViewController::unload()
 {
     LuaUtil::executePeertableFunction(this, "unload", NULL, NULL, false);
+}
+
+GameScene* ViewController::getScene()
+{
+    return this->scene;
+}
+
+void ViewController::addSceneNode(cocos2d::Node *node)
+{
+    UIManager::getInstance()->addSceneNode(node);
+}
+
+void ViewController::addUINode(cocos2d::Node *node)
+{
+    UIManager::getInstance()->addUINode(node);
 }

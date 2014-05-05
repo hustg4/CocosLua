@@ -184,31 +184,19 @@ function LayoutNode(node)
     
 end
 
-function ReplaceScene(sceneClass,paramDict)
+function RunScene(sceneClass,paramTable)
     if type(sceneClass) == "string" then
         sceneClass = _G[sceneClass];
     end
     
-    if type(paramDict) == "table" then
-        local paramTable = paramDict
-        paramDict = cc.Dictionary:create()
-        for k,v in pairs(paramTable) do
-            local key = tostring(k)
-            if type(v) == "string" then
-                v = CCString:create(v)
-            end
-            paramDict:setObject(v,key)
-        end
-        paramDict = tolua.cast(paramDict,"Dictionary")
-    end
-    
     local scene = sceneClass["create"](sceneClass,paramDict)
-    local currentScene = cc.Director:getInstance():getRunningScene()
-    if currentScene == nil then
-        cc.Director:getInstance():runWithScene(scene)
-        else
-        cc.Director:getInstance():replaceScene(scene)
+
+    if paramTable then
+        for k,v in pairs(paramTable) do
+            scene:putAttribute(k,v)
+        end
     end
+    SceneManager:getInstance():runScene(scene)
 end
 
 --设计尺寸

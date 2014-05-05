@@ -71,7 +71,7 @@ function class(className,super)
                 table.insert(self.cinstanceList,cinstance)
             
                 --从类中实例化一个子表作为"C++ 实例"的peertable
-                --不直接用类作为"C++ 实例"的peertable的原因是，实例会有多个，如果所有实例的peertable都是类，会有潜在的风险
+                --不直接用类作为"C++ 实例"的peertable的原因是，实例会有多个
                 local peertable = {}
                 setmetatable(peertable,self)
             

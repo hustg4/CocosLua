@@ -12,35 +12,9 @@
 #include "lua-bindings/lua_framework_auto.hpp"
 #include "net/NetCenter.h"
 #include "sqlite/SQLite.h"
+#include "scene/UIManager.h"
 
 USING_NS_CC;
-
-//==================== Inner class GameHelper ====================
-
-class GameHelper : public Ref {
-    
-public:
-    
-    static GameHelper* getInstance()
-    {
-        static GameHelper helper;
-        return &helper;
-    }
-    
-    void scheduleCallGameDoRestart()
-    {
-        Director::getInstance()->getScheduler()->schedule(schedule_selector(GameHelper::callGameDoRestart), this, 0, false);
-    }
-    
-    void callGameDoRestart(float)
-    {
-        Director::getInstance()->getScheduler()->unscheduleAllForTarget(this);
-        Game::doRestart();
-    }
-    
-};
-
-//====================          End         ====================
 
 void Game::start()
 {
@@ -81,15 +55,10 @@ void Game::stop()
 
 void Game::restart()
 {
-    //clean scene
-    Director::getInstance()->replaceScene(Scene::create());
-    
-    GameHelper::getInstance()->scheduleCallGameDoRestart();
-}
-
-void Game::doRestart()
-{
     Game::stop();
+    
+    UIManager::getInstance()->reset();
+    
     Game::start();
 }
 

@@ -24,10 +24,6 @@ public:
     
 private:
     
-    friend class GameHelper;
-    
-    static void doRestart();
-    
     //******************** call lua func ********************
     
     static void callLuaFuncOnStart();

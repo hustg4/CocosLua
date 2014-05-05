@@ -58,6 +58,8 @@ bool LuaEngine::init(void)
     _stack = LuaStack::create();
     _stack->retain();
    
+    //delete by g4:move to Game.cpp
+    
     return true;
 }
 

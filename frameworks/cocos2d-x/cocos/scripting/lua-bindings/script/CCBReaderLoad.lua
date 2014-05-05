@@ -18,7 +18,6 @@ function CCBReaderLoad(strFilePath,proxy,owner)
         for i = 1,table.getn(ownerCallbackNames) do
             local callbackName =  ownerCallbackNames[i]
             local callbackNode =  tolua.cast(ownerCallbackNodes[i],"cc.Node")
-
             if "function" == type(owner[callbackName]) then
                 proxy:setCallback(callbackNode, MakeScriptHandler(owner,owner[callbackName]), ownerCallbackControlEvents[i])
             else
@@ -34,6 +33,7 @@ function CCBReaderLoad(strFilePath,proxy,owner)
         for i = 1, table.getn(ownerOutletNames) do
             local outletName = ownerOutletNames[i]
             local outletNode = tolua.cast(ownerOutletNodes[i],"cc.Node")
+            --print("outletName:"..outletName.." outletNode:".. tostring(outletNode))
             owner[outletName] = outletNode
         end
     end
