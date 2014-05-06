@@ -12,7 +12,6 @@ require ("framework/SystemExtend")
 require ("framework/FrameworkExtend")
 require ("framework/Notifier")
 require ("framework/functions")
-require ("framework/SQLiteLua")
     
 require ("ui/clsButton")
     
