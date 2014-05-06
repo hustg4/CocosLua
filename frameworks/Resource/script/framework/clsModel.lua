@@ -56,7 +56,7 @@ function clsModel:__createProxy()
         end,
         
         __newindex = function(t,k,v)
-        if Config.debug then
+        if MODEL_LOCK_DEBUG then
             assert(type(obj[k])~="nil", "table \"".. tostring(t) .."\" can't insert the key \""..k.."\"")
         end
         obj[k] = v

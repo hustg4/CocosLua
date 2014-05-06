@@ -65,7 +65,7 @@ function clsCCBTestViewController:OnScaleEnd(...)
 	local arg = pairlist(...)
     print(#arg)
     print(self.nodeCheck == arg[1])
-    --self.ccbRootLayer.animationManager:runAnimationsForSequenceNamed("TL1")
+    self.ccbRootLayer.animationManager:runAnimationsForSequenceNamed("TL1")
 end
 
 function clsCCBTestViewController:OnRotationEnd(...)

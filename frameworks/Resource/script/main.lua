@@ -4,7 +4,7 @@
  date:2013/03/13
  --]]
 
-require ("framework/Config")
+require ("framework/CocosLua")
 require ("framework/class")
 require ("framework/luaclass")
 require ("framework/clsModel")

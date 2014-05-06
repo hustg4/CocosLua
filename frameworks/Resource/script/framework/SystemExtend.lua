@@ -81,7 +81,7 @@ end
 
 --锁定表，使得表不能再插入新的k-v
 function table.lockInsert(t)
-    if not Config.debug then
+    if not MODEL_LOCK_DEBUG then
         return t
     end
     local _t = t
