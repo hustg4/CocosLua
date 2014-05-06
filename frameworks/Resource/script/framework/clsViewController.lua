@@ -10,8 +10,8 @@ class("clsViewController",{create = function() return ViewController:create() en
 function clsViewController:registerEvents()
 	self._eventNames_ = self:eventNames()
 	if self._eventNames_ then
-		for _,eventName in ipairs(self._eventNames_) do
-			Notifier:addObserver(eventName,self,self.onEvent)
+		for eventName,callback in pairs(self._eventNames_) do
+			Notifier:addObserver(eventName,self,callback)
 		end
 	end
 end
@@ -19,7 +19,7 @@ end
 --被C++调用，时机是unload()之前
 function clsViewController:unregisterEvents()
 	if self._eventNames_ then
-		for _,eventName in ipairs(self._eventNames_) do
+		for eventName,_ in pairs(self._eventNames_) do
 			Notifier:removeObserver(eventName,self)
 		end
 	end
@@ -30,11 +30,6 @@ function clsViewController:eventNames()
 	--override me
 	--sample
 	--return {"eventName1","eventName2","eventName3"};
-end
-
---被Notifier调用
-function clsViewController:onEvent(eventName,...)
-	--override me
 end
 
 function clsViewController:loadCCB(ccbFile)

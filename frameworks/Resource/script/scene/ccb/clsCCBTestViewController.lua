@@ -26,17 +26,17 @@ function clsCCBTestViewController:unload()
 end
 
 function clsCCBTestViewController:eventNames()
-    return {EVENT_SCALE_END,EVENT_ROTATION_END}
+    return {    [EVENT_SCALE_END] = self.onScaleEndEvent,
+                [EVENT_ROTATION_END] = self.onRotationEndEvent 
+            }
 end
 
---被Notifier调用
-function clsCCBTestViewController:onEvent(eventName,...)
-    print("eventName:",eventName,"params:",...)
-    if eventName == EVENT_SCALE_END then
-        print("收到缩放完毕事件")
-    elseif eventName == EVENT_ROTATION_END then
-        print("收到旋转完毕事件")
-    end
+function clsCCBTestViewController:onScaleEndEvent(eventName,...)
+    print("onScaleEndEvent:",eventName,"params:",...)
+end
+
+function clsCCBTestViewController:onRotationEndEvent(eventName,...)
+    print("onRotationEndEvent:",eventName,"params:",...)
 end
 
 function clsCCBTestViewController:onItemCheckTapped(...)
