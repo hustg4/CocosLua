@@ -7,6 +7,9 @@
 
 class("clsCCBTestViewController",clsViewController)
 
+local EVENT_SCALE_END = "scaleEnd"
+local EVENT_ROTATION_END = "rotationEnd"
+
 function clsCCBTestViewController:load()
     self:showView()
 end
@@ -20,6 +23,20 @@ end
 
 function clsCCBTestViewController:unload()
     
+end
+
+function clsCCBTestViewController:eventNames()
+    return {EVENT_SCALE_END,EVENT_ROTATION_END}
+end
+
+--被Notifier调用
+function clsCCBTestViewController:onEvent(eventName,...)
+    print("eventName:",eventName,"params:",...)
+    if eventName == EVENT_SCALE_END then
+        print("收到缩放完毕事件")
+    elseif eventName == EVENT_ROTATION_END then
+        print("收到旋转完毕事件")
+    end
 end
 
 function clsCCBTestViewController:onItemCheckTapped(...)
@@ -66,6 +83,7 @@ function clsCCBTestViewController:OnScaleEnd(...)
     print(#arg)
     print(self.nodeCheck == arg[1])
     --self.ccbRootLayer.animationManager:runAnimationsForSequenceNamed("TL1")
+    Notifier:notify(EVENT_SCALE_END,"hello",109)
 end
 
 function clsCCBTestViewController:OnRotationEnd(...)
@@ -73,6 +91,7 @@ function clsCCBTestViewController:OnRotationEnd(...)
 	local arg = pairlist(...)
     print(#arg)
     print(self.ccbRootLayer == arg[1])
-    self.ccbRootLayer:removeFromParent()
+    --self.ccbRootLayer:removeFromParent()
+    Notifier:notify(EVENT_ROTATION_END,12,18,"xxx")
 end
 

@@ -72,7 +72,7 @@ function Notifier:notify(name,...)
         local list=self.observerMap[name]
         for _,observer in pairs(list) do
             if observer.callback then
-                observer.callback(observer.target,unpack(arg))
+                observer.callback(observer.target,name,unpack(arg))
                 else
                 print("Notifier-Log:observer[".. tostring(observer) .."]的callback不存在")
             end

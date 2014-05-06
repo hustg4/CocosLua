@@ -5,13 +5,6 @@
  --]]
 
 require ("framework/CocosLua")
-require ("framework/class")
-require ("framework/luaclass")
-require ("framework/clsModel")
-require ("framework/SystemExtend")
-require ("framework/FrameworkExtend")
-require ("framework/Notifier")
-require ("framework/functions")
     
 require ("ui/clsButton")
     

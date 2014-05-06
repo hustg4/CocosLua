@@ -25,15 +25,6 @@ class("clsNetFilter",{create = function() return NetFilter:create() end})
 --clsNetHandler
 class("clsNetHandler",{create = function() return NetHandler:create() end})
 
---clsViewController
-class("clsViewController",{create = function() return ViewController:create() end})
-
-function clsViewController:loadCCB(ccbFile)
-	local proxy = cc.CCBProxy:create()
-	local node = CCBReaderLoad(ccbFile,proxy,self)
-	return node
-end
-
 --系统tag分配.所有框架级控件，如果要在scene上添加layer，使用的tag必须在此处申请
 TAG_SYSTEM_MIN = 100000000
 TAG_SYSTEM_INDICATOR = TAG_SYSTEM_MIN + 1           --clsIndicator
