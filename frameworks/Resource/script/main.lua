@@ -4,6 +4,9 @@
  date:2013/03/13
  --]]
 
+require ("framework/cocos2dx/Cocos2d")
+require ("framework/cocos2dx/Cocos2dConstants")
+
 require ("framework/CocosLua")
     
 require ("ui/clsButton")
@@ -33,10 +36,10 @@ function Game:onStart()
     
     --启动场景
     --RunScene(clsParticleScene)
-    --RunScene(clsLoginScene)
+    RunScene(clsLoginScene)
     --RunScene(clsDemoScene)
     --RunScene(clsDemoControlScene)
-    RunScene(clsCCBTestScene)
+    --RunScene(clsCCBTestScene)
 
 end
 

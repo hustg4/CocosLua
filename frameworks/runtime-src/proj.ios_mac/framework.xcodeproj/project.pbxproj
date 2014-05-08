@@ -957,31 +957,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1A0227A417A3AA1A00B867AD /* Lua Common */ = {
-			isa = PBXGroup;
-			children = (
-				AA7EB537190928BE00A902DD /* AudioEngine.lua */,
-				AA7EB538190928BE00A902DD /* CCBReaderLoad.lua */,
-				AA7EB539190928BE00A902DD /* Cocos2d.lua */,
-				AA7EB53A190928BE00A902DD /* Cocos2dConstants.lua */,
-				AA7EB53B190928BE00A902DD /* CocoStudio.lua */,
-				AA7EB53C190928BE00A902DD /* Deprecated.lua */,
-				AA7EB53D190928BE00A902DD /* DeprecatedClass.lua */,
-				AA7EB53E190928BE00A902DD /* DeprecatedEnum.lua */,
-				AA7EB53F190928BE00A902DD /* DeprecatedOpenglEnum.lua */,
-				AA7EB540190928BE00A902DD /* DrawPrimitives.lua */,
-				AA7EB541190928BE00A902DD /* extern.lua */,
-				AA7EB542190928BE00A902DD /* GuiConstants.lua */,
-				AA7EB543190928BE00A902DD /* json.lua */,
-				AA7EB544190928BE00A902DD /* luaj.lua */,
-				AA7EB545190928BE00A902DD /* luaoc.lua */,
-				AA7EB546190928BE00A902DD /* Opengl.lua */,
-				AA7EB547190928BE00A902DD /* OpenglConstants.lua */,
-				AA7EB548190928BE00A902DD /* StudioConstants.lua */,
-			);
-			name = "Lua Common";
-			sourceTree = "<group>";
-		};
+
 		5023810617EBBCAC00990C9B /* ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -1484,7 +1460,6 @@
 				AA1C694C1908A517001F3F83 /* cocosLuaMac */,
 				F293BB7C15EB830F00256477 /* Classes */,
 				F293B3CB15EB7BE500256477 /* Frameworks */,
-				1A0227A417A3AA1A00B867AD /* Lua Common */,
 				F293B3C915EB7BE500256477 /* Products */,
 				AA1C69F21908B9D3001F3F83 /* Resource */,
 			);
@@ -1951,10 +1926,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A8A4491834C64F00142BE0 /* Icon-114.png in Resources */,
+
 				AAB0D4251907E2C100E1788C /* ViewController.lua in Resources */,
 				AAB0D42D1907E2C100E1788C /* userconf.ini in Resources */,
+
 				5023811D17EBBCAC00990C9B /* Icon-120.png in Resources */,
 				5091733B17ECE17A00D62437 /* Icon-100.png in Resources */,
+
 				AAB0D41F1907E2C100E1788C /* NetResponse.lua in Resources */,
 				AAB0D4111907E2C100E1788C /* JSONObject.lua in Resources */,
 				5023811B17EBBCAC00990C9B /* Default@2x.png in Resources */,
@@ -1973,11 +1951,13 @@
 				AAB0D4071907E2C100E1788C /* battle.json in Resources */,
 				AAB0D40D1907E2C100E1788C /* GameScene.lua in Resources */,
 				AAB0D4211907E2C100E1788C /* NetService.lua in Resources */,
+
 				5091733A17ECE17A00D62437 /* Icon-80.png in Resources */,
 				AAB0D40F1907E2C100E1788C /* JSONArray.lua in Resources */,
 				5091733717ECE17A00D62437 /* Icon-40.png in Resources */,
 				5023811E17EBBCAC00990C9B /* Icon-144.png in Resources */,
 				5023811A17EBBCAC00990C9B /* Default.png in Resources */,
+
 				5091733817ECE17A00D62437 /* Icon-50.png in Resources */,
 				AAB0D4171907E2C100E1788C /* NetFilter.lua in Resources */,
 				AAB0D4131907E2C100E1788C /* lua_framework_auto_api.lua in Resources */,
@@ -2002,6 +1982,7 @@
 				AA7EB567190928BE00A902DD /* Opengl.lua in Resources */,
 				AA7EB569190928BE00A902DD /* OpenglConstants.lua in Resources */,
 				AA7EB56B190928BE00A902DD /* StudioConstants.lua in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

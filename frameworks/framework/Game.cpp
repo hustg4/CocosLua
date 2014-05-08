@@ -28,11 +28,6 @@ void Game::start()
     
     register_all_framework(luaState);
     
-    //加载Common库
-    engine->executeScriptFile("Cocos2d.lua");
-    engine->executeScriptFile("Cocos2dConstants.lua");
-    engine->executeScriptFile("CCBReaderLoad.lua");
-    
     //加载脚本主程序
     engine->executeScriptFile("main.lua");
     
@@ -48,16 +43,15 @@ void Game::stop()
     
     SQLite::clearConnectionCache();
     
+    UIManager::getInstance()->reset();
+    
     //脚本清理
     ScriptEngineManager::getInstance()->setScriptEngine(NULL);
-    
 }
 
 void Game::restart()
 {
     Game::stop();
-    
-    UIManager::getInstance()->reset();
     
     Game::start();
 }
