@@ -30,7 +30,7 @@ function table.dcopy(t1,t2)
 end
 
 --获取表t中键值对的数量
-function table.getKVCount(t)
+function table.size(t)
     local count = 0
     for k,v in pairs(t) do
         count = count +1
@@ -39,12 +39,12 @@ function table.getKVCount(t)
 end
 
 --获取表t中所有的键
-function table.getKeys(t)
-    local tk={}
+function table.allKeys(t)
+    local keys = {}
     for k,v in pairs(t) do
-        table.insert(tk,k)
+        table.insert(keys,k)
     end
-    return tk
+    return keys
 end
 
 --格式化输出表t
@@ -81,9 +81,6 @@ end
 
 --锁定表，使得表不能再插入新的k-v
 function table.lockInsert(t)
-    if not MODEL_LOCK_DEBUG then
-        return t
-    end
     local _t = t
     t = {}
     local mt = {
