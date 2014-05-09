@@ -29,10 +29,27 @@ UIManager::UIManager()
 {
 }
 
-void UIManager::reset()
+void UIManager::build()
+{
+    layerRoot = Layer::create();
+    scene->addChild(layerRoot);
+    
+    layerScene = Layer::create();
+    layerRoot->addChild(layerScene);
+    
+    layerUI = Layer::create();
+    layerRoot->addChild(layerUI);
+}
+
+void UIManager::clean()
 {
     scene->removeAllChildren();
-    this->buildScene();
+}
+
+void UIManager::reset()
+{
+    this->clean();
+    this->build();
 }
 
 void UIManager::addSceneNode(cocos2d::Node *node)
@@ -50,18 +67,6 @@ void UIManager::init()
     if (scene == nullptr) {
         scene = Scene::create();
         Director::getInstance()->runWithScene(scene);
-        this->buildScene();
     }
 }
 
-void UIManager::buildScene()
-{
-    layerRoot = Layer::create();
-    scene->addChild(layerRoot);
-    
-    layerScene = Layer::create();
-    layerRoot->addChild(layerScene);
-    
-    layerUI = Layer::create();
-    layerRoot->addChild(layerUI);
-}

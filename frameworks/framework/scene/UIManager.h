@@ -18,6 +18,10 @@ public:
     
     static UIManager* getInstance();
     
+    void build();
+    
+    void clean();
+    
     void reset();
     
     void addSceneNode(cocos2d::Node* node);

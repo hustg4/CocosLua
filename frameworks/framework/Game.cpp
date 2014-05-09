@@ -16,9 +16,31 @@
 
 USING_NS_CC;
 
+//================ GameHelper ================
+
+class GameHelper : public Ref{
+    
+public:
+    
+    void scheduleCallRestart(){
+        Director::getInstance()->getScheduler()->schedule(schedule_selector(GameHelper::callGameDoRestart), this, 0, false);
+    }
+    
+    void callGameDoRestart(float t){
+        Director::getInstance()->getScheduler()->unscheduleAllForTarget(this);
+        Game::doRestart();
+    }
+    
+};
+
+//================     End    ================
+
+GameHelper gameHelper;
+
 void Game::start()
 {
     //C++初始化
+    UIManager::getInstance()->build();
     
     //脚本初始化
     auto engine = LuaEngine::getInstance();
@@ -43,13 +65,17 @@ void Game::stop()
     
     SQLite::clearConnectionCache();
     
-    UIManager::getInstance()->reset();
-    
     //脚本清理
     ScriptEngineManager::getInstance()->setScriptEngine(NULL);
 }
 
 void Game::restart()
+{
+    UIManager::getInstance()->clean();
+    gameHelper.scheduleCallRestart();
+}
+
+void Game::doRestart()
 {
     Game::stop();
     
