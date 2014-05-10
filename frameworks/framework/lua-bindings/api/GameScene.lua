@@ -14,7 +14,7 @@
 --------------------------------
 -- @function [parent=#GameScene] unloadViewController 
 -- @param self
--- @param #ViewController viewcontroller
+-- @param #string str
         
 --------------------------------
 -- @function [parent=#GameScene] getAttribute 
@@ -25,12 +25,29 @@
 --------------------------------
 -- @function [parent=#GameScene] loadViewController 
 -- @param self
+-- @param #string str
 -- @param #ViewController viewcontroller
+        
+--------------------------------
+-- @function [parent=#GameScene] getViewController 
+-- @param self
+-- @param #string str
+-- @return ViewController#ViewController ret (return value: ViewController)
+        
+--------------------------------
+-- @function [parent=#GameScene] showViewController 
+-- @param self
+-- @param #string str
         
 --------------------------------
 -- @function [parent=#GameScene] init 
 -- @param self
 -- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- @function [parent=#GameScene] hideViewController 
+-- @param self
+-- @param #string str
         
 --------------------------------
 -- @function [parent=#GameScene] unloadAllViewController 

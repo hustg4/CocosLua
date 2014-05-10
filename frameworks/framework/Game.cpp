@@ -16,27 +16,6 @@
 
 USING_NS_CC;
 
-//================ GameHelper ================
-
-class GameHelper : public Ref{
-    
-public:
-    
-    void scheduleCallRestart(){
-        Director::getInstance()->getScheduler()->schedule(schedule_selector(GameHelper::callGameDoRestart), this, 0, false);
-    }
-    
-    void callGameDoRestart(float t){
-        Director::getInstance()->getScheduler()->unscheduleAllForTarget(this);
-        Game::doRestart();
-    }
-    
-};
-
-//================     End    ================
-
-GameHelper gameHelper;
-
 void Game::start()
 {
     //C++初始化
@@ -72,7 +51,15 @@ void Game::stop()
 void Game::restart()
 {
     UIManager::getInstance()->clean();
-    gameHelper.scheduleCallRestart();
+    
+    Node* tmpNode = Node::create();
+    CC_SAFE_RETAIN(tmpNode);
+    
+    Director::getInstance()->getScheduler()->schedule([tmpNode] (float val){
+        Director::getInstance()->getScheduler()->unscheduleAllForTarget(tmpNode);
+        tmpNode->release();
+        Game::doRestart();
+    },tmpNode , 0, false, "doRestart");
 }
 
 void Game::doRestart()

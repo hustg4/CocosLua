@@ -4,7 +4,7 @@
  date:2014/05/06
  --]]
 
-class("clsViewController",{create = function() return ViewController:create() end})
+class("clsViewController",{create = function() return ViewController:create(1) end})
 
 --被C++调用，时机是load()之后
 function clsViewController:registerEvents()

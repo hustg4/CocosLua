@@ -82,7 +82,7 @@ function clsLoginViewController:showView()
     
     menu:setTag(14111)
     self.layer:addChild(menu)
-    self:addSceneNode(self.layer)
+    self:setRootLayer(self.layer)
     
     self.layer:setTouchEnabled(true)
     self.layer:registerScriptTouchHandler(MakeScriptHandler(self,self.onTouch))

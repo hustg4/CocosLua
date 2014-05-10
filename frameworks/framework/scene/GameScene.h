@@ -19,7 +19,7 @@ private:
     
     cocos2d::ValueMap paramMap;
     
-    cocos2d::__Array* viewControllerArray;
+    cocos2d::Map<std::string, ViewController*> viewControllerMap;
     
 public:
     
@@ -38,11 +38,17 @@ public:
     
     const cocos2d::Value getAttribute(const std::string& key);
     
-    void loadViewController(ViewController* viewCotroller);
+    void loadViewController(const std::string& name,ViewController* viewController);
     
-    void unloadViewController(ViewController* viewCotroller);
+    void unloadViewController(const std::string& name);
     
     void unloadAllViewController();
+    
+    ViewController* getViewController(const std::string name);
+    
+    void showViewController(const std::string& name);
+    
+    void hideViewController(const std::string& name);
     
 };
 

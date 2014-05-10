@@ -8,14 +8,12 @@
 
 #include "GameScene.h"
 #include "LuaUtil.h"
+#include "UIManager.h"
 
 using namespace cocos2d;
 
 bool GameScene::init()
 {
-    viewControllerArray = __Array::create();
-    CC_SAFE_RETAIN(viewControllerArray);
-    
     return true;
 }
 
@@ -41,34 +39,68 @@ const Value GameScene::getAttribute(const std::string &key)
     return paramMap[key];
 }
 
-void GameScene::loadViewController(ViewController *viewCotroller)
+void GameScene::loadViewController(const std::string &name, ViewController *viewController)
 {
-    CCAssert(viewCotroller, "viewCotroller 不能为空");
+    CCAssert(viewController, "viewController 不能为空");
     
-    viewControllerArray->addObject(viewCotroller);
+    viewControllerMap.insert(name, viewController);
     
-    viewCotroller->scene = this;
-    viewCotroller->load();
+    viewController->scene = this;
+    
+    if (viewController->getType() == ViewControllerTypeScene) {
+        UIManager::getInstance()->addSceneNode(viewController->rootLayerForScene);
+    }else if (viewController->getType() == ViewControllerTypeUI){
+        UIManager::getInstance()->addUINode(viewController->rootLayerForScene);
+    }
+    
+    viewController->load();
 }
 
-void GameScene::unloadViewController(ViewController *viewCotroller)
+void GameScene::unloadViewController(const std::string &name)
 {
-    CCAssert(viewControllerArray->containsObject(viewCotroller), "viewCotroller 不存在");
-    viewCotroller->unload();
-    viewControllerArray->removeObject(viewCotroller);
+    ViewController* viewController = this->getViewController(name);
+    
+    if (viewController) {
+        
+        viewController->unload();
+        viewController->rootLayerForScene->removeFromParent();
+        viewController->scene = nullptr;
+        
+        viewControllerMap.erase(name);
+    }
 }
 
 void GameScene::unloadAllViewController()
 {
-    int count=viewControllerArray->count();
-    for (int i=0; i<count; i++) {
-        ViewController* viewController=(ViewController*)viewControllerArray->getObjectAtIndex(i);
-        viewController->unload();
+    std::vector<std::string> keys = viewControllerMap.keys();
+    for_each( keys.begin(), keys.end(), [this] (std::string val)
+    {
+        this->unloadViewController(val);
+    });
+}
+
+ViewController* GameScene::getViewController(const std::string name)
+{
+    return viewControllerMap.at(name);
+}
+
+void GameScene::showViewController(const std::string &name)
+{
+    ViewController* viewController = this->getViewController(name);
+    if (viewController) {
+        //TODO 调整ZOrder
+        viewController->rootLayerForScene->setVisible(true);
     }
-    viewControllerArray->removeAllObjects();
+}
+
+void GameScene::hideViewController(const std::string &name)
+{
+    ViewController* viewController = this->getViewController(name);
+    if (viewController) {
+        viewController->rootLayerForScene->setVisible(false);
+    }
 }
 
 GameScene::~GameScene()
 {
-    CC_SAFE_RELEASE_NULL(viewControllerArray);
 }

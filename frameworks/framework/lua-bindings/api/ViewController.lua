@@ -8,13 +8,18 @@
 -- @param self
         
 --------------------------------
+-- @function [parent=#ViewController] setRootLayer 
+-- @param self
+-- @param #cc.Layer layer
+        
+--------------------------------
 -- @function [parent=#ViewController] unload 
 -- @param self
         
 --------------------------------
--- @function [parent=#ViewController] init 
+-- @function [parent=#ViewController] getType 
 -- @param self
--- @return bool#bool ret (return value: bool)
+-- @return ViewControllerType#ViewControllerType ret (return value: ViewControllerType)
         
 --------------------------------
 -- @function [parent=#ViewController] getScene 
@@ -22,18 +27,19 @@
 -- @return GameScene#GameScene ret (return value: GameScene)
         
 --------------------------------
--- @function [parent=#ViewController] addUINode 
+-- @function [parent=#ViewController] getRootLayer 
 -- @param self
--- @param #cc.Node node
-        
---------------------------------
--- @function [parent=#ViewController] addSceneNode 
--- @param self
--- @param #cc.Node node
+-- @return Layer#Layer ret (return value: cc.Layer)
         
 --------------------------------
 -- @function [parent=#ViewController] create 
 -- @param self
+-- @param #ViewControllerType viewcontrollertype
 -- @return ViewController#ViewController ret (return value: ViewController)
+        
+--------------------------------
+-- @function [parent=#ViewController] ViewController 
+-- @param self
+-- @param #ViewControllerType viewcontrollertype
         
 return nil

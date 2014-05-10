@@ -13,9 +13,11 @@ class("clsLoginScene",clsGameScene)
 
 function clsLoginScene:onEnter()
     local loginViewController=clsLoginViewController:create()
-    self:loadViewController(loginViewController)
+    self:loadViewController("login",loginViewController)
     local registerViewController=clsRegisterViewController:create()
-    self:loadViewController(registerViewController)
+    self:loadViewController("register",registerViewController)
+
+    self:showViewController("login")
 
     --[[
     local sqlite = SQLiteLua:openSQLite("dictionary.sqlite")

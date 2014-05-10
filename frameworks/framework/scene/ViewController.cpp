@@ -12,14 +12,29 @@
 
 using namespace cocos2d;
 
-bool ViewController::init()
+ViewController* ViewController::create(ViewControllerType type)
 {
-    scene = nullptr;
-    return true;
+    ViewController* controller = new ViewController(type);
+    controller->autorelease();
+    return controller;
+}
+
+ViewController::ViewController(ViewControllerType type)
+: scene(nullptr)
+, rootLayer(nullptr)
+{
+    this->type = type;
+    
+    rootLayerForScene = Layer::create();
+    CC_SAFE_RETAIN(rootLayerForScene);
+    rootLayerForScene->setVisible(false);
+    
+    this->setRootLayer(Layer::create());
 }
 
 ViewController::~ViewController()
 {
+    CC_SAFE_RELEASE_NULL(rootLayerForScene);
 }
 
 
@@ -40,12 +55,27 @@ GameScene* ViewController::getScene()
     return this->scene;
 }
 
-void ViewController::addSceneNode(cocos2d::Node *node)
+ViewControllerType ViewController::getType()
 {
-    UIManager::getInstance()->addSceneNode(node);
+    return this->type;
 }
 
-void ViewController::addUINode(cocos2d::Node *node)
+cocos2d::Layer* ViewController::getRootLayer()
 {
-    UIManager::getInstance()->addUINode(node);
+    return this->rootLayer;
 }
+
+void ViewController::setRootLayer(cocos2d::Layer* rootLayer)
+{
+    if (rootLayer == this->rootLayer) {
+        return;
+    }
+    if (this->rootLayer) {
+        this->rootLayer->removeFromParent();
+    }
+    if (rootLayer) {
+        this->rootLayer = rootLayer;
+        this->rootLayerForScene->addChild(this->rootLayer);
+    }
+}
+

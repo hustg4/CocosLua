@@ -2588,6 +2588,52 @@ int lua_framework_ViewController_load(lua_State* tolua_S)
 
     return 0;
 }
+int lua_framework_ViewController_setRootLayer(lua_State* tolua_S)
+{
+    int argc = 0;
+    ViewController* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ViewController",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ViewController*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_setRootLayer'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        cocos2d::Layer* arg0;
+
+        ok &= luaval_to_object<cocos2d::Layer>(tolua_S, 2, "cc.Layer",&arg0);
+        if(!ok)
+            return 0;
+        cobj->setRootLayer(arg0);
+        return 0;
+    }
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "setRootLayer",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_setRootLayer'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_framework_ViewController_unload(lua_State* tolua_S)
 {
     int argc = 0;
@@ -2631,7 +2677,7 @@ int lua_framework_ViewController_unload(lua_State* tolua_S)
 
     return 0;
 }
-int lua_framework_ViewController_init(lua_State* tolua_S)
+int lua_framework_ViewController_getType(lua_State* tolua_S)
 {
     int argc = 0;
     ViewController* cobj = nullptr;
@@ -2651,7 +2697,7 @@ int lua_framework_ViewController_init(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_init'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_getType'", nullptr);
         return 0;
     }
 #endif
@@ -2661,16 +2707,16 @@ int lua_framework_ViewController_init(lua_State* tolua_S)
     {
         if(!ok)
             return 0;
-        bool ret = cobj->init();
-        tolua_pushboolean(tolua_S,(bool)ret);
+        int ret = (int)cobj->getType();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "init",argc, 0);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "getType",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_init'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_getType'.",&tolua_err);
 #endif
 
     return 0;
@@ -2719,7 +2765,7 @@ int lua_framework_ViewController_getScene(lua_State* tolua_S)
 
     return 0;
 }
-int lua_framework_ViewController_addUINode(lua_State* tolua_S)
+int lua_framework_ViewController_getRootLayer(lua_State* tolua_S)
 {
     int argc = 0;
     ViewController* cobj = nullptr;
@@ -2739,74 +2785,26 @@ int lua_framework_ViewController_addUINode(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_addUINode'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_getRootLayer'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 0) 
     {
-        cocos2d::Node* arg0;
-
-        ok &= luaval_to_object<cocos2d::Node>(tolua_S, 2, "cc.Node",&arg0);
         if(!ok)
             return 0;
-        cobj->addUINode(arg0);
-        return 0;
+        cocos2d::Layer* ret = cobj->getRootLayer();
+        object_to_luaval<cocos2d::Layer>(tolua_S, "cc.Layer",(cocos2d::Layer*)ret);
+        return 1;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "addUINode",argc, 1);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "getRootLayer",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_addUINode'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_framework_ViewController_addSceneNode(lua_State* tolua_S)
-{
-    int argc = 0;
-    ViewController* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"ViewController",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (ViewController*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_addSceneNode'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
-    {
-        cocos2d::Node* arg0;
-
-        ok &= luaval_to_object<cocos2d::Node>(tolua_S, 2, "cc.Node",&arg0);
-        if(!ok)
-            return 0;
-        cobj->addSceneNode(arg0);
-        return 0;
-    }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "addSceneNode",argc, 1);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_addSceneNode'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_getRootLayer'.",&tolua_err);
 #endif
 
     return 0;
@@ -2826,15 +2824,17 @@ int lua_framework_ViewController_create(lua_State* tolua_S)
 
     argc = lua_gettop(tolua_S) - 1;
 
-    if (argc == 0)
+    if (argc == 1)
     {
+        ViewControllerType arg0;
+        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0);
         if(!ok)
             return 0;
-        ViewController* ret = ViewController::create();
+        ViewController* ret = ViewController::create(arg0);
         object_to_luaval<ViewController>(tolua_S, "ViewController",(ViewController*)ret);
         return 1;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d\n ", "create",argc, 0);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d\n ", "create",argc, 1);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
@@ -2842,6 +2842,43 @@ int lua_framework_ViewController_create(lua_State* tolua_S)
 #endif
     return 0;
 }
+int lua_framework_ViewController_constructor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ViewController* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        ViewControllerType arg0;
+
+        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0);
+        if(!ok)
+            return 0;
+        cobj = new ViewController(arg0);
+        cobj->autorelease();
+        int ID =  (int)cobj->_ID ;
+        int* luaID =  &cobj->_luaID ;
+        toluafix_pushusertype_ccobject(tolua_S, ID, luaID, (void*)cobj,"ViewController");
+        return 1;
+    }
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "ViewController",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_constructor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+
 static int lua_framework_ViewController_finalize(lua_State* tolua_S)
 {
     printf("luabindings: finalizing LUA object (ViewController)");
@@ -2855,11 +2892,12 @@ int lua_register_framework_ViewController(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"ViewController");
         tolua_function(tolua_S,"load",lua_framework_ViewController_load);
+        tolua_function(tolua_S,"setRootLayer",lua_framework_ViewController_setRootLayer);
         tolua_function(tolua_S,"unload",lua_framework_ViewController_unload);
-        tolua_function(tolua_S,"init",lua_framework_ViewController_init);
+        tolua_function(tolua_S,"getType",lua_framework_ViewController_getType);
         tolua_function(tolua_S,"getScene",lua_framework_ViewController_getScene);
-        tolua_function(tolua_S,"addUINode",lua_framework_ViewController_addUINode);
-        tolua_function(tolua_S,"addSceneNode",lua_framework_ViewController_addSceneNode);
+        tolua_function(tolua_S,"getRootLayer",lua_framework_ViewController_getRootLayer);
+        tolua_function(tolua_S,"new",lua_framework_ViewController_constructor);
         tolua_function(tolua_S,"create", lua_framework_ViewController_create);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(ViewController).name();
@@ -2982,9 +3020,9 @@ int lua_framework_GameScene_unloadViewController(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 1) 
     {
-        ViewController* arg0;
+        std::string arg0;
 
-        ok &= luaval_to_object<ViewController>(tolua_S, 2, "ViewController",&arg0);
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0);
         if(!ok)
             return 0;
         cobj->unloadViewController(arg0);
@@ -3073,22 +3111,118 @@ int lua_framework_GameScene_loadViewController(lua_State* tolua_S)
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 2) 
     {
-        ViewController* arg0;
+        std::string arg0;
+        ViewController* arg1;
 
-        ok &= luaval_to_object<ViewController>(tolua_S, 2, "ViewController",&arg0);
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0);
+
+        ok &= luaval_to_object<ViewController>(tolua_S, 3, "ViewController",&arg1);
         if(!ok)
             return 0;
-        cobj->loadViewController(arg0);
+        cobj->loadViewController(arg0, arg1);
         return 0;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "loadViewController",argc, 1);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "loadViewController",argc, 2);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_framework_GameScene_loadViewController'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_framework_GameScene_getViewController(lua_State* tolua_S)
+{
+    int argc = 0;
+    GameScene* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"GameScene",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (GameScene*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_GameScene_getViewController'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0);
+        if(!ok)
+            return 0;
+        ViewController* ret = cobj->getViewController(arg0);
+        object_to_luaval<ViewController>(tolua_S, "ViewController",(ViewController*)ret);
+        return 1;
+    }
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "getViewController",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_GameScene_getViewController'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_framework_GameScene_showViewController(lua_State* tolua_S)
+{
+    int argc = 0;
+    GameScene* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"GameScene",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (GameScene*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_GameScene_showViewController'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0);
+        if(!ok)
+            return 0;
+        cobj->showViewController(arg0);
+        return 0;
+    }
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "showViewController",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_GameScene_showViewController'.",&tolua_err);
 #endif
 
     return 0;
@@ -3133,6 +3267,52 @@ int lua_framework_GameScene_init(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_framework_GameScene_init'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_framework_GameScene_hideViewController(lua_State* tolua_S)
+{
+    int argc = 0;
+    GameScene* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"GameScene",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (GameScene*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_GameScene_hideViewController'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0);
+        if(!ok)
+            return 0;
+        cobj->hideViewController(arg0);
+        return 0;
+    }
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "hideViewController",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_GameScene_hideViewController'.",&tolua_err);
 #endif
 
     return 0;
@@ -3277,7 +3457,10 @@ int lua_register_framework_GameScene(lua_State* tolua_S)
         tolua_function(tolua_S,"unloadViewController",lua_framework_GameScene_unloadViewController);
         tolua_function(tolua_S,"getAttribute",lua_framework_GameScene_getAttribute);
         tolua_function(tolua_S,"loadViewController",lua_framework_GameScene_loadViewController);
+        tolua_function(tolua_S,"getViewController",lua_framework_GameScene_getViewController);
+        tolua_function(tolua_S,"showViewController",lua_framework_GameScene_showViewController);
         tolua_function(tolua_S,"init",lua_framework_GameScene_init);
+        tolua_function(tolua_S,"hideViewController",lua_framework_GameScene_hideViewController);
         tolua_function(tolua_S,"unloadAllViewController",lua_framework_GameScene_unloadAllViewController);
         tolua_function(tolua_S,"putAttribute",lua_framework_GameScene_putAttribute);
         tolua_function(tolua_S,"create", lua_framework_GameScene_create);

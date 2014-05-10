@@ -14,15 +14,20 @@
 
 class GameScene;
 
+enum ViewControllerType{
+    ViewControllerTypeScene,
+    ViewControllerTypeUI
+};
+
 class ViewController : public cocos2d::Ref{
     
 public:
     
-    CREATE_FUNC(ViewController);
+    static ViewController* create(ViewControllerType type);
+    
+    ViewController(ViewControllerType type);
     
     virtual ~ViewController();
-    
-    virtual bool init();
     
     virtual void load();
     
@@ -30,15 +35,23 @@ public:
     
     GameScene* getScene();
     
-    void addSceneNode(cocos2d::Node* node);
+    ViewControllerType getType();
     
-    void addUINode(cocos2d::Node* node);
+    cocos2d::Layer* getRootLayer();
+    
+    void setRootLayer(cocos2d::Layer* rootLayer);
     
 private:
     
     friend class GameScene;
     
+    ViewControllerType type;
+    
     GameScene* scene;
+    
+    cocos2d::Layer* rootLayerForScene;//strong,for scene use
+    
+    cocos2d::Layer* rootLayer;//weak,child of rootLayerForScene,for logic use
     
 };
 
