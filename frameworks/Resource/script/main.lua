@@ -38,13 +38,8 @@ function Game:onStart()
     --RunScene(clsParticleScene)
     --RunScene(clsLoginScene)
     --RunScene(clsDemoScene)
-<<<<<<< HEAD
     --RunScene(clsDemoControlScene)
     RunScene(clsCCBTestScene)
-=======
-    RunScene(clsDemoControlScene)
-    --RunScene(clsCCBTestScene)
->>>>>>> fe3989f2900e37b21dba36e09ee18f99b54ecc45
 
 end
 
