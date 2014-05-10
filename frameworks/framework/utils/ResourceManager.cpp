@@ -175,15 +175,8 @@ void ResourceManager::checkVersion()
     //检查bundle内资源版本，如果比local内资源版本高，则先进行必要的处理
     if (compareVersion(this->bundleResourceVersion, localVersion) == 1) {
         
-        this->clearSearchPath();
-        
-        //(1) 下载BundleResourceVersion对应的md5文件
+        //下载 BundleResourceVersion对应的md5文件
         this->downloadBundleMD5File();
-        
-        //(2) 拷贝 bundle/apk 下的指定文件到 用户目录
-        this->copyFiles(this->copyFileList);
-        
-        this->configSearchPath();
         
     }else{
         //下载 版本描述文件
@@ -240,6 +233,10 @@ void ResourceManager::mergeMD5File()
     //(4) 设置新的local version
     this->saveVersion(this->bundleResourceVersion);
     
+    //(5) 拷贝 bundle/apk 下的指定文件到 用户目录
+    this->clearSearchPath();
+    this->copyFiles(this->copyFileList);
+    this->configSearchPath();
 }
 
 void ResourceManager::updateVersion()
