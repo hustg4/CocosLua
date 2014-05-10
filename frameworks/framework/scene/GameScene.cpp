@@ -89,7 +89,9 @@ void GameScene::showViewController(const std::string &name)
     ViewController* viewController = this->getViewController(name);
     if (viewController) {
         //TODO 调整ZOrder
+        viewController->layerWillAppear();
         viewController->rootLayerForScene->setVisible(true);
+        viewController->layerDidAppear();
     }
 }
 
@@ -97,7 +99,9 @@ void GameScene::hideViewController(const std::string &name)
 {
     ViewController* viewController = this->getViewController(name);
     if (viewController) {
+        viewController->layerWillDisappear();
         viewController->rootLayerForScene->setVisible(false);
+        viewController->layerDidDisappear();
     }
 }
 
