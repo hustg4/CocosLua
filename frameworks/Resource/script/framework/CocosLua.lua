@@ -11,6 +11,7 @@ require ("framework/luaclass")
 require ("framework/clsModel")
 require ("framework/FrameworkExtend")
 require ("framework/clsViewController")
+require ("framework/clsGameScene")
 require ("framework/functions")
 
 MODEL_LOCK_DEBUG = true     --model 加锁开关
@@ -19,3 +20,17 @@ NULL = nil
 if MODEL_LOCK_DEBUG then
     NULL = "null"
 end
+
+--=============== ===============
+
+cl = cl or {}
+
+function cl.showViewController()
+	
+end
+
+function cl.hideViewController()
+	
+end
+
+--=============== ===============

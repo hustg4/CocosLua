@@ -33,6 +33,14 @@ public:
     
     virtual void unload();
     
+    virtual void  layerWillAppear();
+    
+    virtual void  layerDidAppear();
+    
+    virtual void  layerWillDisappear();
+    
+    virtual void  layerDidDisappear();
+    
     GameScene* getScene();
     
     ViewControllerType getType();

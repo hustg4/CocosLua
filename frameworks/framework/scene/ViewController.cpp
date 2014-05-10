@@ -50,6 +50,26 @@ void ViewController::unload()
     LuaUtil::executePeertableFunction(this, "unload", NULL, NULL, false);
 }
 
+void  ViewController::layerWillAppear()
+{
+    LuaUtil::executePeertableFunction(this, "layerWillAppear", NULL, NULL, false);
+}
+
+void  ViewController::layerDidAppear()
+{
+    LuaUtil::executePeertableFunction(this, "layerDidAppear", NULL, NULL, false);
+}
+
+void  ViewController::layerWillDisappear()
+{
+    LuaUtil::executePeertableFunction(this, "layerWillDisappear", NULL, NULL, false);
+}
+
+void  ViewController::layerDidDisappear()
+{
+    LuaUtil::executePeertableFunction(this, "layerDidDisappear", NULL, NULL, false);
+}
+
 GameScene* ViewController::getScene()
 {
     return this->scene;

@@ -6,7 +6,7 @@
  --]]
 
 
-class("clsLoginViewController",clsViewController)
+class("clsLoginViewController",clsUIViewController)
 
 clsLoginViewController.layer=nil
 clsLoginViewController.modalLayer = nil

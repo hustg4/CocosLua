@@ -4,7 +4,7 @@
  date:2013/03/28
  --]]
 
-class("clsRegisterViewController",clsViewController)
+class("clsRegisterViewController",clsUIViewController)
 
 clsRegisterViewController.layer=nil
 

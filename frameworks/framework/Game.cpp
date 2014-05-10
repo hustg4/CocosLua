@@ -52,14 +52,9 @@ void Game::restart()
 {
     UIManager::getInstance()->clean();
     
-    Node* tmpNode = Node::create();
-    CC_SAFE_RETAIN(tmpNode);
-    
-    Director::getInstance()->getScheduler()->schedule([tmpNode] (float val){
-        Director::getInstance()->getScheduler()->unscheduleAllForTarget(tmpNode);
-        tmpNode->release();
+    Director::getInstance()->getScheduler()->performFunctionInCocosThread([](){
         Game::doRestart();
-    },tmpNode , 0, false, "doRestart");
+    });
 }
 
 void Game::doRestart()

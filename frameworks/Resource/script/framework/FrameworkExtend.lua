@@ -16,9 +16,6 @@ class("clsSprite",{ create = function(...) return cc.Sprite:create(...) end,
                     createWithSpriteFrame = function(...) return cc.Sprite:createWithSpriteFrame(...) end,
                     createWithSpriteFrameName = function(...) return cc.Sprite:createWithSpriteFrameName(...) end    })
 
---clsGameScene
-class("clsGameScene",{create = function(...) return GameScene:create(...) end})
-
 --clsNetFilter
 class("clsNetFilter",{create = function() return NetFilter:create() end})
 
