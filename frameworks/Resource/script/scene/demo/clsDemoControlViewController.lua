@@ -5,7 +5,9 @@
  date:2014/05/03
  --]]
 
-class("clsDemoControlViewController",clsViewController)
+class("clsDemoControlViewController",clsUIViewController)
+
+clsDemoControlViewController.layer=nil
 
 clsDemoControlViewController.contentLayer = nil
 clsDemoControlViewController.contentId = nil
@@ -16,11 +18,14 @@ function clsDemoControlViewController:load()
 end
 
 function clsDemoControlViewController:showView( )
+    print("clsDemoControlViewController:showView")
 	local winSize = cc.Director:getInstance():getWinSize()
+    self.layer = cc.Layer:create()
+    self:setRootLayer(self.layer)
 	
 	local background = cc.Sprite:create("images/control/background.png")
     background:setPosition(cc.p(winSize.width / 2, winSize.height / 2));
-    self:getScene():addChild(background)
+    self.layer:addChild(background)
 
     local pMenu = cc.Menu:create()
     pMenu:setPosition(cc.p(0, 0))
@@ -41,7 +46,7 @@ function clsDemoControlViewController:showView( )
     restartItem:setPosition(cc.p(winSize.width / 2, restartItem:getContentSize().height / 2))
     nextItem:setPosition(cc.p(winSize.width / 2 + restartItem:getContentSize().width * 2, restartItem:getContentSize().height / 2))
 
-    self:getScene():addChild(pMenu, 2)
+    self.layer:addChild(pMenu, 2)
 
     self:showContent()
 end
@@ -81,7 +86,7 @@ function clsDemoControlViewController:showControlButton(  )
     end 
 
     self.contentLayer = cc.Layer:create()
-    self:getScene():addChild(self.contentLayer, 1)
+    self.layer:addChild(self.contentLayer, 1)
 
     local winSize = cc.Director:getInstance():getWinSize()
 
@@ -150,7 +155,7 @@ function clsDemoControlViewController:showColourPicker( )
     end 
 
     self.contentLayer = cc.Layer:create()
-    self:getScene():addChild(self.contentLayer, 1)
+    self.layer:addChild(self.contentLayer, 1)
 
     local winSize = cc.Director:getInstance():getWinSize()
 

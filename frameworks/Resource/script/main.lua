@@ -36,9 +36,9 @@ function Game:onStart()
     
     --启动场景
     --RunScene(clsParticleScene)
-    RunScene(clsLoginScene)
+    --RunScene(clsLoginScene)
     --RunScene(clsDemoScene)
-    --RunScene(clsDemoControlScene)
+    RunScene(clsDemoControlScene)
     --RunScene(clsCCBTestScene)
 
 end
