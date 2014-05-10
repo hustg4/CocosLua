@@ -53,7 +53,7 @@ end
 
 function clsDemoControlViewController:showPreviousContent()
     if self.contentId <= 1 then 
-        self.contentId = 2
+        self.contentId = 6
     else 
         self.contentId = self.contentId - 1
     end
@@ -66,11 +66,19 @@ function clsDemoControlViewController:showContent()
         self:showControlButton()
     elseif self.contentId == 2 then 
         self:showColourPicker()
+    elseif self.contentId == 3 then
+        self:showControlSwitch()
+    elseif self.contentId == 4 then 
+        self:showControlSlider()
+    elseif self.contentId == 5 then 
+        self:showControlPotentiometer()
+    elseif self.contentId == 6 then 
+        self:showControlStepper()
     end 
 end
 
 function clsDemoControlViewController:showNextContent()
-    if self.contentId >= 2 then 
+    if self.contentId >= 6 then 
         self.contentId = 1
     else 
         self.contentId = self.contentId + 1
@@ -190,4 +198,202 @@ function clsDemoControlViewController:showColourPicker( )
     --Update the color text
     colourValueChanged(pColourPicker)
      
+end
+
+------------------------------------------------------------------------------
+
+function clsDemoControlViewController:showControlSwitch( )
+    if self.contentLayer then 
+        self.contentLayer:removeFromParent()
+    end 
+
+    self.contentLayer = cc.Layer:create()
+    self.layer:addChild(self.contentLayer, 1)
+
+    local winSize = cc.Director:getInstance():getWinSize()
+        
+    --Add the black background for the text
+    local pBackground = cc.Scale9Sprite:create("extensions/buttonBackground.png")
+    pBackground:setContentSize(cc.size(80, 50))
+    pBackground:setPosition(cc.p(winSize.width/2 - pBackground:getContentSize().width / 2.0, winSize.height/2))
+    self.contentLayer:addChild(pBackground)
+
+
+    local pDisplayValueLabel = cc.Label:createWithTTF("#color", "font/HANYI.ttf", 30)
+    pDisplayValueLabel:setPosition(pBackground:getPosition())
+    self.contentLayer:addChild(pDisplayValueLabel)
+    
+    --Create the switch
+    local function valueChanged(pSender)
+        if nil == pDisplayValueLabel or nil == pSender then
+            return
+        end
+        
+        local pControl = pSender
+        if pControl:isOn() then
+            pDisplayValueLabel:setString("On")
+        else
+            pDisplayValueLabel:setString("Off")
+        end
+    end
+
+    local pSwitchControl = cc.ControlSwitch:create(
+            cc.Sprite:create("extensions/switch-mask.png"),
+            cc.Sprite:create("extensions/switch-on.png"),
+            cc.Sprite:create("extensions/switch-off.png"),
+            cc.Sprite:create("extensions/switch-thumb.png"),
+            cc.Label:createWithTTF("On", "font/HANYI.ttf", 16),
+            cc.Label:createWithTTF("Off", "font/HANYI.ttf", 16)
+        )
+    pSwitchControl:setPosition(cc.p (winSize.width/2 + 10 + pSwitchControl:getContentSize().width / 2, winSize.height/2))
+    self.contentLayer:addChild(pSwitchControl)
+    pSwitchControl:registerControlEventHandler(valueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
+    
+    --Update the value label
+    valueChanged(pSwitchControl)
+end
+
+------------------------------------------------------------------------------
+
+function clsDemoControlViewController:showControlSlider( )
+    if self.contentLayer then 
+        self.contentLayer:removeFromParent()
+    end 
+
+    self.contentLayer = cc.Layer:create()
+    self.layer:addChild(self.contentLayer, 1)
+
+    local winSize = cc.Director:getInstance():getWinSize()
+
+    local pDisplayValueLabel = cc.Label:createWithTTF("Move the slider thumb!\nThe lower slider is restricted." ,"font/HANYI.ttf", 32)
+    pDisplayValueLabel:setPosition(cc.p(winSize.width / 2, winSize.height * 3 / 4))
+    self.contentLayer:addChild(pDisplayValueLabel)
+    
+    local function valueChanged(pSender)
+        if nil == pSender or nil == pDisplayValueLabel then
+            return
+        end         
+        local pControl = pSender
+        local strFmt = nil
+        if pControl:getTag() == 1 then
+            strFmt = string.format("Upper slider value = %.02f",pControl:getValue())
+        elseif pControl:getTag() == 2 then
+            strFmt = string.format("Lower slider value = %.02f",pControl:getValue())
+        end
+        
+        if nil ~= strFmt then
+            pDisplayValueLabel:setString(strFmt)
+        end         
+    end
+    --Add the slider
+    local pSlider = cc.ControlSlider:create("extensions/sliderTrack.png","extensions/sliderProgress.png" ,"extensions/sliderThumb.png")
+    pSlider:setAnchorPoint(cc.p(0.5, 1.0))
+    pSlider:setMinimumValue(0.0) 
+    pSlider:setMaximumValue(5.0) 
+    pSlider:setPosition(cc.p(winSize.width / 2.0, winSize.height / 2.0 + 16))
+    pSlider:setTag(1)
+    
+    --When the value of the slider will change, the given selector will be call
+    pSlider:registerControlEventHandler(valueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
+    
+    local pRestrictSlider = cc.ControlSlider:create("extensions/sliderTrack.png","extensions/sliderProgress.png" ,"extensions/sliderThumb.png")
+    pRestrictSlider:setAnchorPoint(cc.p(0.5, 1.0))
+    pRestrictSlider:setMinimumValue(0.0) 
+    pRestrictSlider:setMaximumValue(5.0) 
+    pRestrictSlider:setMaximumAllowedValue(4.0)
+    pRestrictSlider:setMinimumAllowedValue(1.5)
+    pRestrictSlider:setValue(3.0)
+    pRestrictSlider:setPosition(cc.p(winSize.width / 2.0, winSize.height / 2.0 - 24))
+    pRestrictSlider:setTag(2)       
+    --same with restricted
+    pRestrictSlider:registerControlEventHandler(valueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
+    self.contentLayer:addChild(pSlider)    
+    self.contentLayer:addChild(pRestrictSlider)
+end 
+
+------------------------------------------------------------------------------
+
+function clsDemoControlViewController:showControlPotentiometer( )
+    if self.contentLayer then 
+        self.contentLayer:removeFromParent()
+    end 
+
+    self.contentLayer = cc.Layer:create()
+    self.layer:addChild(self.contentLayer, 1)
+
+    local winSize = cc.Director:getInstance():getWinSize()
+
+    -- Add the black background for the text
+    local pBackground  = cc.Scale9Sprite:create("extensions/buttonBackground.png")
+    pBackground:setContentSize(cc.size(80, 50))
+    pBackground:setPosition(cc.p(winSize.width/2 - pBackground:getContentSize().width / 2.0, winSize.height/2))
+    self.contentLayer:addChild(pBackground)
+        
+    local pDisplayValueLabel = cc.Label:createWithTTF("", "font/HANYI.ttf", 30)
+    pDisplayValueLabel:setPosition(pBackground:getPosition())
+    self.contentLayer:addChild(pDisplayValueLabel)
+    
+    -- Add the slider
+    local function valueChanged(pSender)
+        if nil == pSender then
+            return
+        end
+        
+        local pControl = pSender
+        local strFmt = string.format("%0.2f",pControl:getValue())
+        pDisplayValueLabel:setString(strFmt )
+    end
+    local pPotentiometer = cc.ControlPotentiometer:create("extensions/potentiometerTrack.png","extensions/potentiometerProgress.png"
+                                                                           ,"extensions/potentiometerButton.png")
+    pPotentiometer:setPosition(cc.p (winSize.width/2 + 10 + pPotentiometer:getContentSize().width / 2, winSize.height/2))
+
+    -- When the value of the slider will change, the given selector will be call
+    pPotentiometer:registerControlEventHandler(valueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
+    
+    self.contentLayer:addChild(pPotentiometer)
+        
+    -- Update the value label
+    valueChanged(pPotentiometer)
+end
+
+function clsDemoControlViewController:showControlStepper( )
+    if self.contentLayer then 
+        self.contentLayer:removeFromParent()
+    end 
+
+    self.contentLayer = cc.Layer:create()
+    self.layer:addChild(self.contentLayer, 1)
+
+    local winSize = cc.Director:getInstance():getWinSize()
+        
+    -- Add the black background for the text
+    local background  = cc.Scale9Sprite:create("extensions/buttonBackground.png")
+    background:setContentSize(cc.size(100, 50))
+    background:setPosition(cc.p(winSize.width/2 - background:getContentSize().width / 2.0, winSize.height/2))
+    self.contentLayer:addChild(background)
+    
+    local pDisplayValueLabel =  cc.Label:createWithTTF("0", "font/HANYI.ttf", 30)
+    pDisplayValueLabel:setPosition(background:getPosition())
+    self.contentLayer:addChild(pDisplayValueLabel)
+    
+    
+    local minusSprite = cc.Sprite:create("extensions/stepper-minus.png")
+    local plusSprite  = cc.Sprite:create("extensions/stepper-plus.png")
+
+    local function valueChanged(pSender)
+        if nil == pDisplayValueLabel or nil == pSender then
+            return
+        end
+        
+        local pControl = pSender
+        local strFmt   = string.format("%0.02f",pControl:getValue() )
+        pDisplayValueLabel:setString(strFmt )
+    end
+    local stepper   = cc.ControlStepper:create(minusSprite, plusSprite)
+    stepper:setPosition(cc.p (winSize.width/2 + 10 + stepper:getContentSize().width / 2, winSize.height/2))
+    stepper:registerControlEventHandler(valueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
+    self.contentLayer:addChild(stepper)
+    
+    -- Update the value label
+    valueChanged(stepper)
 end
