@@ -7,9 +7,15 @@
 class("clsViewController",{create = function(type) return ViewController:create(type) end})
 
 function clsViewController:createWithCCB(ccbFile,type)
-    local controller = clsViewController:create(type)
+    local controller = self:create(type)
     local nodeCCB = controller:loadCCB(ccbFile)
     controller:setRootLayer(nodeCCB)
+    controller:onDidLoadFromCCB()
+    return controller
+end
+
+function clsViewController:onDidLoadFromCCB()
+    --override me
 end
 
 --被C++调用，时机是load()之后
@@ -108,8 +114,35 @@ function clsViewController:loadCCB(ccbFile)
     return node
 end
 
-class("clsSceneViewController",{create = function() return clsViewController:create(0) end,
-                                createWithCCB = function(ccbFile) return clsViewController:createWithCCB(ccbFile,0) end})
+--============= clsSceneViewController =============
 
-class("clsUIViewController",{create = function() return clsViewController:create(1) end,
-                                createWithCCB = function(ccbFile) return clsViewController:createWithCCB(ccbFile,1) end})
+class("clsSceneViewController",clsViewController)
+
+clsSceneViewController._create = clsSceneViewController.create
+
+function clsSceneViewController:create()
+    return self:_create(0)
+end
+
+clsSceneViewController._createWithCCB = clsSceneViewController.createWithCCB
+
+function clsSceneViewController:createWithCCB(ccbFile)
+    return self:_createWithCCB(ccbFile,0)
+end
+
+--============= clsUIViewController =============
+
+class("clsUIViewController",clsViewController)
+
+clsUIViewController._create = clsUIViewController.create
+
+function clsUIViewController:create()
+    return self:_create(1)
+end
+
+clsUIViewController._createWithCCB = clsUIViewController.createWithCCB
+
+function clsUIViewController:createWithCCB(ccbFile)
+    return self:_createWithCCB(ccbFile,1)
+end
+

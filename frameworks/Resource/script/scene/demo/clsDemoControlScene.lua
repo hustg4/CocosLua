@@ -14,7 +14,7 @@ function clsDemoControlScene:onEnter()
     local viewController=clsDemoControlViewController:create()
     self:loadViewController(viewController)
 
-    self:showViewController(viewController)
+    self:showViewController(clsDemoControlViewController)
 end
 
 function clsDemoControlScene:onExit()

@@ -5,18 +5,15 @@
  date:2013/08/13
  --]]
 
-class("clsCCBTestViewController",clsViewController)
+class("clsCCBTestViewController",clsUIViewController)
 
 local EVENT_SCALE_END = "scaleEnd"
 local EVENT_ROTATION_END = "rotationEnd"
 
 function clsCCBTestViewController:load()
-    self:showView()
 end
 
-function clsCCBTestViewController:showView()
-    self:loadCCB("ccb/MainScene.ccbi")
-    self:addSceneNode(self.ccbRootLayer)
+function clsCCBTestViewController:onDidLoadFromCCB()
     print("self.checkRootNode:"..tostring(self.checkRootNode))
     print("self.nodeCheck:"..tostring(self.nodeCheck))
 end
