@@ -6792,6 +6792,50 @@ int lua_framework_SceneManager_runScene(lua_State* tolua_S)
 
     return 0;
 }
+int lua_framework_SceneManager_getCurrentScene(lua_State* tolua_S)
+{
+    int argc = 0;
+    SceneManager* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"SceneManager",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (SceneManager*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_SceneManager_getCurrentScene'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+            return 0;
+        GameScene* ret = cobj->getCurrentScene();
+        object_to_luaval<GameScene>(tolua_S, "GameScene",(GameScene*)ret);
+        return 1;
+    }
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "getCurrentScene",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_SceneManager_getCurrentScene'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_framework_SceneManager_getInstance(lua_State* tolua_S)
 {
     int argc = 0;
@@ -6836,6 +6880,7 @@ int lua_register_framework_SceneManager(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"SceneManager");
         tolua_function(tolua_S,"runScene",lua_framework_SceneManager_runScene);
+        tolua_function(tolua_S,"getCurrentScene",lua_framework_SceneManager_getCurrentScene);
         tolua_function(tolua_S,"getInstance", lua_framework_SceneManager_getInstance);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(SceneManager).name();

@@ -20,6 +20,8 @@ public:
     
     void runScene(GameScene* scene);
     
+    GameScene* getCurrentScene();
+    
 private:
     
     SceneManager();

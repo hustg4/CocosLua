@@ -4,39 +4,6 @@
  date:2013/03/27
  --]]
 
---回调
-function CallFunction(target,callback,...)
-    if callback then
-        local arg = pairlist(...)
-        if type(callback)=="string" then
-            if target then
-                if target[callback] then
-                    return target[callback](target,unpack(arg))
-                end
-            end
-            else
-            if target then
-                return callback(target,unpack(arg))
-                else
-                return callback(unpack(arg))
-            end
-        end
-    end
-end
-
---构造script handler
-function MakeScriptHandler(target,selector,...)
-    local parg = pairlist(...)
-    return function(...)
-    local arg = pairlist(...)
-    for _,v in ipairs(parg) do
-        table.insert(arg,v)
-    end
-    arg.n = table.maxn(arg)
-    return selector(target,unpack(arg))
-end
-end
-
 --JsonObject->LuaTable JsonArray->LuaTable
 function JsonToLua(json)
     local luaStr=json:toLuaString()
@@ -184,26 +151,6 @@ function LayoutNode(node)
     
 end
 
-function RunScene(sceneClass,paramTable)
-    if type(sceneClass) == "string" then
-        sceneClass = _G[sceneClass];
-    end
-    
-    local scene = sceneClass["create"](sceneClass,paramDict)
-
-    if paramTable then
-        for k,v in pairs(paramTable) do
-            scene:putAttribute(k,v)
-        end
-    end
-    SceneManager:getInstance():runScene(scene)
-end
-
---设计尺寸
-function DesignSize()
-    return cc.EGLView:sharedOpenGLView():getDesignResolutionSize()
-end
-
 --创建菜单
 function CreateMenu(...)
     local arg = pairlist(...)
@@ -213,39 +160,6 @@ function CreateMenu(...)
         menu:addChild(item)
     end
     return menu
-end
-
---获取子节点，根据多个tag沿树结构搜索
-function GetChild(node,...)
-    local arg = pairlist(...)
-    local child = node
-    for i,tag in ipairs(arg) do
-        child = child:getChildByTag(tag)
-    end
-    return child
-end
-
---在所有子结点中搜索指定tag的结点，递归搜索
---使用范例:SearchChild(node,123)
-function SearchChild(node,tag,_includeSelf)
-    if _includeSelf and node:getTag() == tag then
-        return node
-    end
-    
-    local result
-    
-    local childArray = node:getChildren()
-    
-    for i,child in ipairs(childArray) do
-        
-        result = SearchChild(child,tag,true)
-        if result then
-            break
-        end
-        
-    end
-    
-    return result
 end
 
 --转换ccb中的控件为EditText

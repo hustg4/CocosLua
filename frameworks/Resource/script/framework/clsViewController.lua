@@ -44,6 +44,14 @@ function clsViewController:eventNames()
 	--return {"eventName1","eventName2","eventName3"};
 end
 
+function clsViewController:show()
+    self:getScene():showViewController(self)    
+end
+
+function clsViewController:hide()
+    self:getScene():hideViewController(self)
+end
+
 function clsViewController:loadCCB(ccbFile)
 
 	local proxy = cc.CCBProxy:create()
@@ -59,7 +67,7 @@ function clsViewController:loadCCB(ccbFile)
         local callbackName =  ownerCallbackNames[i]
         local callbackNode =  tolua.cast(ownerCallbackNodes[i],"cc.Node")
         if "function" == type(self[callbackName]) then
-            proxy:setCallback(callbackNode, MakeScriptHandler(self,self[callbackName]), ownerCallbackControlEvents[i])
+            proxy:setCallback(callbackNode, cl.makeScriptHandler(self,self[callbackName]), ownerCallbackControlEvents[i])
         else
             print("Warning: Cannot find ViewController's lua function:" .. ":" .. callbackName)
         end
@@ -97,7 +105,7 @@ function clsViewController:loadCCB(ccbFile)
             if 2 == callbackType then
                 --print("callbackName:"..callbackName.." callbackType:"..callbackType)
                 if "function" == type(self[callbackName]) then
-                    local callfunc = cc.CallFunc:create(MakeScriptHandler(self,self[callbackName]))
+                    local callfunc = cc.CallFunc:create(cl.makeScriptHandler(self,self[callbackName]))
                     animationManager:setCallFuncForLuaCallbackNamed(callfunc, callbackCombine)
                 else
                     print("Warning: Cannot find ViewController's lua function:" .. ":" .. callbackName)

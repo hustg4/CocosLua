@@ -40,15 +40,15 @@ function clsDemoPager:init()
     pMenu:setPosition(cc.p(0, 0))
 
     local previousItem = cc.MenuItemImage:create("images/control/b1.png", "images/control/b2.png")
-    previousItem:registerScriptTapHandler(MakeScriptHandler(self, self.showPrevious))
+    previousItem:registerScriptTapHandler(cl.makeScriptHandler(self, self.showPrevious))
     pMenu:addChild(previousItem)
 
     local restartItem = cc.MenuItemImage:create("images/control/r1.png", "images/control/r2.png")
-    restartItem:registerScriptTapHandler(MakeScriptHandler(self, self.restart))
+    restartItem:registerScriptTapHandler(cl.makeScriptHandler(self, self.restart))
     pMenu:addChild(restartItem)
 
     local nextItem = cc.MenuItemImage:create("images/control/f1.png", "images/control/f2.png")
-    nextItem:registerScriptTapHandler(MakeScriptHandler(self, self.showNext))
+    nextItem:registerScriptTapHandler(cl.makeScriptHandler(self, self.showNext))
     pMenu:addChild(nextItem)
 
     previousItem:setPosition(cc.p(winSize.width / 2 - restartItem:getContentSize().width * 2, restartItem:getContentSize().height / 2))

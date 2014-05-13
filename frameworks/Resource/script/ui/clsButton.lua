@@ -56,7 +56,7 @@ function clsButton:initWithNormalSprite( normalSprite, selectedSprite, disabledS
 	self.selector = selector
 
 	self.touchLayer = cc.Layer:create()
-    self.touchLayer:registerScriptTouchHandler(MakeScriptHandler(self,self.onTouch))
+    self.touchLayer:registerScriptTouchHandler(cl.makeScriptHandler(self,self.onTouch))
     self.touchLayer:setTouchEnabled(true)
     self:addChild(self.touchLayer)
 
