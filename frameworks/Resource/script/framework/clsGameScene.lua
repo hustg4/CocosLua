@@ -27,3 +27,11 @@ end
 function clsGameScene:hideViewController(viewControllerCls)
     self:callOrigin("hideViewController",viewControllerCls.className)
 end
+
+function clsGameScene:addMutexRelation(viewControllerCls1,viewControllerCls2)
+    self:callOrigin("addMutexRelation",viewControllerCls1.className,viewControllerCls2.className)
+end
+    
+function clsGameScene:removeMutexRelation(viewControllerCls1,viewControllerCls2)
+    self:callOrigin("removeMutexRelation",viewControllerCls1.className,viewControllerCls2.className)
+end
