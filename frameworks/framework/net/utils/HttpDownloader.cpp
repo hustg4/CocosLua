@@ -14,8 +14,6 @@ using namespace std;
 // 临时文件后缀，下载完成后会通过rename方式去掉
 #define FileTempSuffix ".tmp"
 
-static std::string httpDownloaderSemName = "download_sem"; //为安全起见，使用时应该附加唯一的值(比如时间戳)
-
 #define DOWNLOAD_WAIT_UNRECEIVED_DATA_TIMES 10      //下载数据不再变化到结束下载需要等待的次数
 
 
