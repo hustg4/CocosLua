@@ -24,6 +24,8 @@
 	<true/>
 	<key>javascriptMainCCB</key>
 	<string>MainScene</string>
+	<key>needRepublish</key>
+	<false/>
 	<key>onlyPublishCCBs</key>
 	<true/>
 	<key>publishDirectory</key>
@@ -77,5 +79,9 @@
 			<string>CCBResource</string>
 		</dict>
 	</array>
+	<key>versionStr</key>
+	<string>Version: 3.0-alpha5
+GitHub: 76499877e8
+</string>
 </dict>
 </plist>

@@ -1,3 +1,4 @@
+
 --[[
  description:实用功能集合
  author:wp_g4
@@ -63,9 +64,9 @@ end
 
 --获取布局时的缩放比例
 function GetLayoutScale()
-    --计算scaleNoBoder与scaleShowAll 算法参见cc.EGLViewProtocol
+    --计算scaleNoBoder与scaleShowAll 算法参见CCEGLViewProtocol
     local screenSize = cc.EGLView:sharedOpenGLView():getFrameSize()
-    local designSize = cc.EGLView:sharedOpenGLView():getDesignResolutionSize()
+    local designSize = DesignSize()
     local scaleX = screenSize.width / designSize.width
     local scaleY = screenSize.height / designSize.height
     local scaleNoBoder = math.max(scaleX,scaleY)
@@ -110,7 +111,7 @@ end
  --]]
 function LayoutNode(node)
     local TAG_LAYOUT_MIN = 10000
-    local designSize = cc.EGLView:sharedOpenGLView():getDesignResolutionSize()
+    local designSize = DesignSize()
     local layoutScale = GetLayoutScale()
     --检查tag是否符合规范，不符合规范的不予处理
     local tag = node:getTag()
@@ -201,7 +202,7 @@ end
 
 --设计尺寸
 function DesignSize()
-    return cc.EGLView:sharedOpenGLView():getDesignResolutionSize()
+    return cc.Director:getInstance():getOpenGLView():getDesignResolutionSize()
 end
 
 --创建菜单
@@ -269,7 +270,7 @@ end
 
 --修改sprite的texture
 function ChangeSpriteTexture(sprite,imagePath)
-    local texture = CCTextureCache:sharedTextureCache():addImage(imagePath)
+    local texture = cc.Director:getInstance():getTextureCache():addImage(imagePath)
     local textureSize = texture:getContentSize()
     sprite:setTexture(texture)
     sprite:setTextureRect({x=0,y=0,width=textureSize.width,height=textureSize.height})
@@ -293,7 +294,6 @@ end
 
 --创建遮罩精灵（遮罩精灵，显示精灵）
 function CreateMaskSprite(maskSprite,textureSprite)
-    
     local maskSize = maskSprite:getTexture():getContentSize()
     
     local rt = cc.RenderTexture:create(maskSize.width,maskSize.height)
@@ -305,10 +305,10 @@ function CreateMaskSprite(maskSprite,textureSprite)
     textureSprite:setPosition(cc.p(tContentSize.width/2,tContentSize.height/2))
     
     maskSprite:setBlendFunc(GL_ONE,GL_ZERO)
-    maskSprite:setFlipY(true)
+    maskSprite:setFlippedY(true)
     
     textureSprite:setBlendFunc(GL_DST_ALPHA,GL_ZERO)
-    textureSprite:setFlipY(true)
+    textureSprite:setFlippedY(true)
     
     rt:begin()
     maskSprite:visit()
