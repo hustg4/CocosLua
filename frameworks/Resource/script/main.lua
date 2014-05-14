@@ -35,11 +35,11 @@ function Game:onStart()
     self:loadNetConfig()
     
     --启动场景
-    --RunScene(clsParticleScene)
-    --RunScene(clsLoginScene)
-    --RunScene(clsDemoScene)
-    RunScene(clsDemoControlScene)
-    --RunScene(clsCCBTestScene)
+    --cl.runScene(clsParticleScene)
+    --cl.runScene(clsLoginScene)
+    --cl.runScene(clsDemoScene)
+    --cl.runScene(clsDemoControlScene)
+    cl.runScene(clsCCBTestScene)
 
 end
 

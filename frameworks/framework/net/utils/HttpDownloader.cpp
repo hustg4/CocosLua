@@ -14,8 +14,6 @@ using namespace std;
 // 临时文件后缀，下载完成后会通过rename方式去掉
 #define FileTempSuffix ".tmp"
 
-static std::string httpDownloaderSemName = "download_sem"; //为安全起见，使用时应该附加唯一的值(比如时间戳)
-
 #define DOWNLOAD_WAIT_UNRECEIVED_DATA_TIMES 10      //下载数据不再变化到结束下载需要等待的次数
 
 
@@ -70,39 +68,31 @@ int onProgress(void *ptr, double totalToDownload, double nowDownloaded, double t
 /********************************** thread function ***********************************/
 
 // Worker thread
-void* downloadThread(void *ptr)
+void HttpDownloader::downloadThreadFunc()
 {
-    HttpDownloader* downloader = (HttpDownloader*)ptr;
-    
-    while (!downloader->needQuit) {
-        
-        sem_wait(downloader->pSem);
-        
-        downloader->downloading = true;
-        
+    while (!needQuit) {
+        downloading = true;
         DownloadTask* task = NULL;
-        
-        pthread_mutex_lock(&downloader->taskQueueMutex);
-        
-        if (downloader->taskQueue->count() > 0) {
-            task = (DownloadTask*)downloader->taskQueue->getObjectAtIndex(0);
-            task->retain();
-            downloader->taskQueue->removeObjectAtIndex(0);
-        }
-        
-        pthread_mutex_unlock(&downloader->taskQueueMutex);
-        
-        if (task) {
+        do {
+            //scope lock
+            unique_lock<mutex> lock(downloadMutex);
+            while(taskQueue.empty())
+            {
+                queueSizeCond.wait(lock);
+            }
             
-            downloader->currentTask = task;
-            downloader->executeTask();
+            task = (DownloadTask*)taskQueue.back();
+            task->retain();
+            taskQueue.popBack();
+        } while( 0 );
+
+        if (task) {
+            currentTask = task;
+            executeTask();
             task->release();
         }
-        
-        downloader->downloading = false;
+        downloading = false;
     }
-    
-    return NULL;
 }
 
 
@@ -208,16 +198,12 @@ HttpDownloader::HttpDownloader()
 isThreadInited(false),
 needQuit(false),
 currentTask(NULL),
-downloading(false),
-pSem(NULL)
+downloading(false)
 {
-    taskQueue = __Array::create();
-    CC_SAFE_RETAIN(taskQueue);
 }
 
 HttpDownloader::~HttpDownloader()
 {
-    CC_SAFE_RELEASE_NULL(taskQueue);
 }
 
 void HttpDownloader::setDelegate(HttpDownloaderDelegate *delegate)
@@ -232,29 +218,11 @@ HttpDownloaderDelegate* HttpDownloader::getDelegate()
 
 bool HttpDownloader::initThread()
 {
-    pthread_mutex_init(&taskQueueMutex, NULL);
-    //    pthread_mutex_init(&eventQueueMutex, NULL);
-    
-#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-    long t = time(NULL);
-    httpDownloaderSemName.append(__String::createWithFormat("%ld",t)->getCString());
-    pSem = sem_open(httpDownloaderSemName.c_str(), O_CREAT, 0644, 0);
-    if (pSem == SEM_FAILED) {
-        CCLOG("Open HttpDownloader Semaphore failed,errno=%d",errno);
-        pSem = NULL;
-        return false;
-    }
-#else
-    int semRet = sem_init(&sem, 0, 0);
-    if (semRet < 0) {
-        CCLog("Init HttpDownloader Semaphore failed");
-        return false;
-    }
-    pSem = &sem;
-#endif
-    
-    pthread_create(&networkThread, NULL, downloadThread, this);
-    pthread_detach(networkThread);
+    downloadThread = thread([=]()
+                            {
+                                downloadThreadFunc();
+                            });
+    downloadThread.detach();
     
     return true;
 }
@@ -266,20 +234,10 @@ void HttpDownloader::destroy()
     
     this->needQuit = true;
     
-    if (pSem != NULL) {
-#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-        sem_unlink(httpDownloaderSemName.c_str());
-        sem_close(pSem);
-#else
-        sem_destroy(pSem);
-#endif
-        
-        pSem = NULL;
-    }
-    
     this->release();
     
 }
+
 
 bool HttpDownloader::download(const std::string &url, const std::string &savePath, bool breakpointResume, void* userdata)
 {
@@ -301,12 +259,9 @@ bool HttpDownloader::download(const std::string &url, const std::string &savePat
     //创建下载任务并添加到任务队列
     DownloadTask* task = DownloadTask::create(url, savePath, breakpointResume,userdata);
     
-    pthread_mutex_lock(&taskQueueMutex);
-    taskQueue->addObject(task);
-    pthread_mutex_unlock(&taskQueueMutex);
-    
-    //向下载线程发信号
-    sem_post(pSem);
+    unique_lock<mutex> lock(downloadMutex);
+    taskQueue.pushBack(task);
+    queueSizeCond.notify_one();
     
     return true;
 }

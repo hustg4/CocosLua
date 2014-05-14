@@ -22,7 +22,7 @@ function clsParticleViewController:showView()
     
     self.layer=cc.Layer:create()
     self.layer:setTouchEnabled(true)
-    self.layer:registerScriptTouchHandler(MakeScriptHandler(self,self.onTouch))
+    self.layer:registerScriptTouchHandler(cl.makeScriptHandler(self,self.onTouch))
     self:getScene():addChild(self.layer)
     
     -- ask director the window size

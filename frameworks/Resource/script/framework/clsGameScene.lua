@@ -12,18 +12,26 @@ function clsGameScene:loadViewController(viewController)
     self:callOrigin("loadViewController",name,viewController)
 end
 
-function clsGameScene:unloadViewController(viewControllerCls)
-    self:callOrigin("unloadViewController",viewControllerCls.className)
+function clsGameScene:unloadViewController(viewControllerClsOrInstance)
+    self:callOrigin("unloadViewController",viewControllerClsOrInstance.className)
 end
 
-function clsGameScene:getViewController(viewControllerCls)
-    self:callOrigin("getViewController",viewControllerCls.className)
+function clsGameScene:getViewController(viewControllerClsOrInstance)
+    self:callOrigin("getViewController",viewControllerClsOrInstance.className)
 end
 
-function clsGameScene:showViewController(viewControllerCls)
-    self:callOrigin("showViewController",viewControllerCls.className)
+function clsGameScene:showViewController(viewControllerClsOrInstance)
+    self:callOrigin("showViewController",viewControllerClsOrInstance.className)
 end
 
-function clsGameScene:hideViewController(viewControllerCls)
-    self:callOrigin("hideViewController",viewControllerCls.className)
+function clsGameScene:hideViewController(viewControllerClsOrInstance)
+    self:callOrigin("hideViewController",viewControllerClsOrInstance.className)
+end
+
+function clsGameScene:addMutexRelation(viewControllerClsOrInstance1,viewControllerClsOrInstance2)
+    self:callOrigin("addMutexRelation",viewControllerClsOrInstance1.className,viewControllerClsOrInstance2.className)
+end
+    
+function clsGameScene:removeMutexRelation(viewControllerClsOrInstance1,viewControllerClsOrInstance2)
+    self:callOrigin("removeMutexRelation",viewControllerClsOrInstance1.className,viewControllerClsOrInstance2.className)
 end

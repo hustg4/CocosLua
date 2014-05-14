@@ -4,6 +4,12 @@
 -- @extend Ref
 
 --------------------------------
+-- @function [parent=#GameScene] removeMutexRelation 
+-- @param self
+-- @param #string str
+-- @param #string str
+        
+--------------------------------
 -- @function [parent=#GameScene] onEnter 
 -- @param self
         
@@ -47,6 +53,18 @@
 --------------------------------
 -- @function [parent=#GameScene] hideViewController 
 -- @param self
+-- @param #string str
+        
+--------------------------------
+-- @function [parent=#GameScene] getMutexRelationArray 
+-- @param self
+-- @param #string str
+-- @return array_table#array_table ret (return value: array_table)
+        
+--------------------------------
+-- @function [parent=#GameScene] addMutexRelation 
+-- @param self
+-- @param #string str
 -- @param #string str
         
 --------------------------------

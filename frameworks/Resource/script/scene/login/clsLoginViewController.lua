@@ -51,19 +51,19 @@ function clsLoginViewController:showView()
     --TODO 为什么此方法调用存在问题
     --menuItemRegister:setFontSize(20)
     --menuItemRegister:setFontSizeObj(20)
-    menuItemRegister:registerScriptTapHandler(MakeScriptHandler(self,self.menuCallbackRegister))
+    menuItemRegister:registerScriptTapHandler(cl.makeScriptHandler(self,self.menuCallbackRegister))
     menuItemRegister:setPosition(180, 160)
     
     --(4)登录按钮
     local menuItemLogin = cc.MenuItemFont:create("登录")
     menuItemLogin:setFontSizeObj(20)
-    menuItemLogin:registerScriptTapHandler(MakeScriptHandler(self,self.menuCallbackLogin))
+    menuItemLogin:registerScriptTapHandler(cl.makeScriptHandler(self,self.menuCallbackLogin))
     menuItemLogin:setPosition(240, 160)
     
     --(4)模态对话框按钮
     local menuItemModal = cc.MenuItemFont:create("模态")
     menuItemModal:setFontSizeObj(20)
-    menuItemModal:registerScriptTapHandler(MakeScriptHandler(self,self.menuCallbackModal))
+    menuItemModal:registerScriptTapHandler(cl.makeScriptHandler(self,self.menuCallbackModal))
     menuItemModal:setPosition(300, 160)
     
     local menuItemSprite1 = cc.MenuItemSprite:create(cc.Sprite:create("images/icon/effect_gantanhao_disable.png"),nil)
@@ -85,10 +85,10 @@ function clsLoginViewController:showView()
     self:setRootLayer(self.layer)
     
     self.layer:setTouchEnabled(true)
-    self.layer:registerScriptTouchHandler(MakeScriptHandler(self,self.onTouch))
+    self.layer:registerScriptTouchHandler(cl.makeScriptHandler(self,self.onTouch))
     
     self.layer:setAccelerometerEnabled(true)
-    self.layer:registerScriptAccelerateHandler(MakeScriptHandler(self,self.onAccelerate))
+    self.layer:registerScriptAccelerateHandler(cl.makeScriptHandler(self,self.onAccelerate))
     
     --AutoLayout(self.layer)
     

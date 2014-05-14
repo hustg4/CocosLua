@@ -4,166 +4,180 @@
  author:qiuwenbo
  date:2014/05/03
  --]]
+require ("scene/demo/clsDemoPager")
 
 class("clsDemoControlViewController",clsUIViewController)
 
 clsDemoControlViewController.layer=nil
 
-clsDemoControlViewController.contentLayer = nil
+clsDemoControlViewController.demoPager = nil
 clsDemoControlViewController.contentId = nil
 
+clsDemoControlViewController.kDemoCount = 6
+
 function clsDemoControlViewController:load()
-    self.contentId = 1
     self:showView()
 end
 
 function clsDemoControlViewController:showView( )
-    print("clsDemoControlViewController:showView")
 	local winSize = cc.Director:getInstance():getWinSize()
     self.layer = cc.Layer:create()
     self:setRootLayer(self.layer)
+
+    self.demoPager = clsDemoPager:create()
+    self.demoPager.delegate = self
+    self.layer:addChild(self.demoPager)
 	
-	local background = cc.Sprite:create("images/control/background.png")
-    background:setPosition(cc.p(winSize.width / 2, winSize.height / 2));
-    self.layer:addChild(background)
-
-    local pMenu = cc.Menu:create()
-    pMenu:setPosition(cc.p(0, 0))
-
-    local previousItem = cc.MenuItemImage:create("images/control/b1.png", "images/control/b2.png")
-    previousItem:registerScriptTapHandler(MakeScriptHandler(self, self.showPreviousContent))
-    pMenu:addChild(previousItem)
-
-    local restartItem = cc.MenuItemImage:create("images/control/r1.png", "images/control/r2.png")
-    restartItem:registerScriptTapHandler(MakeScriptHandler(self, self.showContent))
-    pMenu:addChild(restartItem)
-
-    local nextItem = cc.MenuItemImage:create("images/control/f1.png", "images/control/f2.png")
-    nextItem:registerScriptTapHandler(MakeScriptHandler(self, self.showNextContent))
-    pMenu:addChild(nextItem)
-
-    previousItem:setPosition(cc.p(winSize.width / 2 - restartItem:getContentSize().width * 2, restartItem:getContentSize().height / 2))
-    restartItem:setPosition(cc.p(winSize.width / 2, restartItem:getContentSize().height / 2))
-    nextItem:setPosition(cc.p(winSize.width / 2 + restartItem:getContentSize().width * 2, restartItem:getContentSize().height / 2))
-
-    self.layer:addChild(pMenu, 2)
-
-    self:showContent()
+    self:showContent(0)
 end
 
-function clsDemoControlViewController:showPreviousContent()
-    if self.contentId <= 1 then 
-        self.contentId = 6
-    else 
-        self.contentId = self.contentId - 1
+function clsDemoControlViewController:showContent( offset )
+    if not self.contentId then 
+        self.contentId = 1
+    end 
+
+    self.contentId = self.contentId + offset
+
+    if self.contentId < 1 then 
+        self.contentId = self.kDemoCount
+    elseif self.contentId > self.kDemoCount then 
+        self.contentId = 1
+    end 
+
+    local contentLayer = nil
+    local contentName = nil
+
+    if self.contentId == 1 then 
+        contentLayer = self:showControlButton()
+        contentName = "ControlTest"
+    elseif self.contentId == 2 then 
+        contentLayer = self:showColourPicker()
+        contentName = "ColourPickerTest"
+    elseif self.contentId == 3 then
+        contentLayer = self:showControlSwitch()
+        contentName = "ControlSwitchTest"
+    elseif self.contentId == 4 then 
+        contentLayer = self:showControlSlider()
+        contentName = "ControlSliderTest"
+    elseif self.contentId == 5 then 
+        contentLayer = self:showControlPotentiometer()
+        contentName = "PotentiometerTest"
+    elseif self.contentId == 6 then 
+        contentLayer = self:showControlStepper()
+        contentName = "ControlStepperTest"
     end
 
-    self:showContent() 
-end 
-
-function clsDemoControlViewController:showContent()
-    if self.contentId == 1 then 
-        self:showControlButton()
-    elseif self.contentId == 2 then 
-        self:showColourPicker()
-    elseif self.contentId == 3 then
-        self:showControlSwitch()
-    elseif self.contentId == 4 then 
-        self:showControlSlider()
-    elseif self.contentId == 5 then 
-        self:showControlPotentiometer()
-    elseif self.contentId == 6 then 
-        self:showControlStepper()
+    if contentLayer and contentName then 
+        self.demoPager:addContent(contentLayer, contentName)
     end 
 end
-
-function clsDemoControlViewController:showNextContent()
-    if self.contentId >= 6 then 
-        self.contentId = 1
-    else 
-        self.contentId = self.contentId + 1
-    end
-
-    self:showContent() 
-end 
 
 ------------------------------------------------------------------------------
 function clsDemoControlViewController:showControlButton(  )
-    if self.contentLayer then 
-        self.contentLayer:removeFromParent()
-    end 
 
-    self.contentLayer = cc.Layer:create()
-    self.layer:addChild(self.contentLayer, 1)
+    local contentLayer = cc.Layer:create()
 
     local winSize = cc.Director:getInstance():getWinSize()
 
-    local backgroundButton = cc.Scale9Sprite:create("images/control/button.png")
-    local backgroundHighlightedButton = cc.Scale9Sprite:create("images/control/buttonHighlighted.png")
+    --Add a label in which the button events will be displayed
+    local pDisplayValueLabel = nil
+    pDisplayValueLabel = cc.Label:create("No Event", "font/HANYI.ttf", 32)
+    pDisplayValueLabel:setAnchorPoint(cc.p(0.5, -1))
+    pDisplayValueLabel:setPosition(cc.p(winSize.width / 2.0, winSize.height / 2.0))
+    contentLayer:addChild(pDisplayValueLabel, 1)
     
-    local titleButton = cc.Label:createWithTTF("点我", "font/HANYI.ttf", 30)
-    titleButton:setColor(cc.c3b(159, 168, 176))
+    --Add the button
+    local pBackgroundButton            = cc.Scale9Sprite:create("extensions/button.png")
+    local pBackgroundHighlightedButton = cc.Scale9Sprite:create("extensions/buttonHighlighted.png")
     
+    local pTitleButtonLabel = cc.Label:create("Touch Me!", "font/HANYI.ttf", 30)
+    pTitleButtonLabel:setColor(cc.c3b(159, 168, 176))
     
-    local controlButton = cc.ControlButton:create(titleButton, backgroundButton)
-    controlButton:setBackgroundSpriteForState(backgroundHighlightedButton, cc.CONTROL_STATE_HIGH_LIGHTED)
-    controlButton:setTitleColorForState(cc.c3b(255, 255, 255), cc.CONTROL_STATE_HIGH_LIGHTED)
+    local pControlButton = cc.ControlButton:create(pTitleButtonLabel, pBackgroundButton)
+    local function touchDownAction()
+        if nil == pDisplayValueLabel then
+            return
+        end         
+        pDisplayValueLabel:setString("Touch Down" )
+    end
+    
+    local function touchDragInsideAction()
+        if nil == pDisplayValueLabel then
+            return
+        end 
+        pDisplayValueLabel:setString("Drag Inside")
+    end
+    
+    local function touchDragOutsideAction()
+        if nil == pDisplayValueLabel then
+            return
+        end 
+        pDisplayValueLabel:setString("Drag Outside")
+    end
+    
+    local function touchDragEnterAction()
+        if nil == pDisplayValueLabel then
+            return
+        end 
+        pDisplayValueLabel:setString("Drag Enter")
+    end
+    
+    local function touchDragExitAction()
+        if nil == pDisplayValueLabel then
+            return
+        end 
+        pDisplayValueLabel:setString("Drag Exit")
+    end
+    
+    local function touchUpInsideAction()
+        if nil == pDisplayValueLabel then
+            return
+        end 
+        pDisplayValueLabel:setString("Touch Up Inside.")
+    end
+    
+    local function touchUpOutsideAction()
+        if nil == pDisplayValueLabel then
+            return
+        end 
+        pDisplayValueLabel:setString("Touch Up Outside.")
+    end
+    
+    local function touchCancelAction()
+        if nil == pDisplayValueLabel then
+            return
+        end 
+        pDisplayValueLabel:setString("Touch Cancel")
+    end
+    
+    pControlButton:setBackgroundSpriteForState(pBackgroundHighlightedButton, cc.CONTROL_STATE_HIGH_LIGHTED )
+    pControlButton:setTitleColorForState(cc.c3b(255, 255, 255), cc.CONTROL_STATE_HIGH_LIGHTED )
+    pControlButton:setAnchorPoint(cc.p(0.5, 1))
+    pControlButton:setPosition(cc.p(winSize.width / 2.0, winSize.height / 2.0))
+    pControlButton:registerControlEventHandler(touchDownAction,cc.CONTROL_EVENTTYPE_TOUCH_DOWN )
+    pControlButton:registerControlEventHandler(touchDragInsideAction,cc.CONTROL_EVENTTYPE_DRAG_INSIDE)
+    pControlButton:registerControlEventHandler(touchDragOutsideAction,cc.CONTROL_EVENTTYPE_DRAG_OUTSIDE)
+    pControlButton:registerControlEventHandler(touchDragEnterAction,cc.CONTROL_EVENTTYPE_DRAG_ENTER)
+    pControlButton:registerControlEventHandler(touchDragExitAction,cc.CONTROL_EVENTTYPE_DRAG_EXIT)
+    pControlButton:registerControlEventHandler(touchUpInsideAction,cc.CONTROL_EVENTTYPE_TOUCH_UP_INSIDE)
+    pControlButton:registerControlEventHandler(touchUpOutsideAction,cc.CONTROL_EVENTTYPE_TOUCH_UP_OUTSIDE)
+    pControlButton:registerControlEventHandler(touchCancelAction,cc.CONTROL_EVENTTYPE_TOUCH_CANCEL)
+    contentLayer:addChild(pControlButton, 1)
+    
+    --Add the black background
+    local pBackgroundButton = cc.Scale9Sprite:create("extensions/buttonBackground.png")
+    pBackgroundButton:setContentSize(cc.size(300, 170))
+    pBackgroundButton:setPosition(cc.p(winSize.width / 2.0, winSize.height / 2.0))
+    contentLayer:addChild(pBackgroundButton)
 
-    controlButton:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
-
-    controlButton:registerControlEventHandler(self.touchDownAction, cc.CONTROL_EVENTTYPE_TOUCH_DOWN)
-    controlButton:registerControlEventHandler(self.touchDragInsideAction, cc.CONTROL_EVENTTYPE_DRAG_INSIDE)
-    controlButton:registerControlEventHandler(self.touchDragOutsideAction, cc.CONTROL_EVENTTYPE_DRAG_OUTSIDE)
-    controlButton:registerControlEventHandler(self.touchDragEnterAction, cc.CONTROL_EVENTTYPE_DRAG_ENTER)
-    controlButton:registerControlEventHandler(self.touchDragExitAction, cc.CONTROL_EVENTTYPE_DRAG_EXIT)
-    controlButton:registerControlEventHandler(self.touchUpInsideAction, cc.CONTROL_EVENTTYPE_TOUCH_UP_INSIDE)
-    controlButton:registerControlEventHandler(self.touchUpOutsideAction, cc.CONTROL_EVENTTYPE_TOUCH_UP_OUTSIDE)
-    controlButton:registerControlEventHandler(self.touchCancelAction, cc.CONTROL_EVENTTYPE_TOUCH_CANCEL)
-
-
-    self.contentLayer:addChild(controlButton)
+    return contentLayer
 end
 
-function clsDemoControlViewController:touchDownAction(  )
-    print("touchDownAction")
-end
-
-function clsDemoControlViewController:touchDragInsideAction(  )
-    print("touchDragInsideAction")
-end
-
-function clsDemoControlViewController:touchDragOutsideAction(  )
-    print("touchDragOutsideAction")
-end
-
-function clsDemoControlViewController:touchDragEnterAction(  )
-    print("touchDragEnterAction")
-end
-
-function clsDemoControlViewController:touchDragExitAction(  )
-    print("touchDragExitAction")
-end
-
-function clsDemoControlViewController:touchUpInsideAction(  )
-    print("touchUpInsideAction")
-end
-
-function clsDemoControlViewController:touchUpOutsideAction(  )
-    print("touchUpOutsideAction")
-end
-
-function clsDemoControlViewController:touchCancelAction(  )
-    print("touchCancelAction")
-end
 ------------------------------------------------------------------------------
 
 function clsDemoControlViewController:showColourPicker( )
-    if self.contentLayer then 
-        self.contentLayer:removeFromParent()
-    end 
 
-    self.contentLayer = cc.Layer:create()
-    self.layer:addChild(self.contentLayer, 1)
+    local contentLayer = cc.Layer:create()
 
     local winSize = cc.Director:getInstance():getWinSize()
 
@@ -183,32 +197,29 @@ function clsDemoControlViewController:showColourPicker( )
     pColourPicker:setColor(cc.c3b(37, 46, 252))
     pColourPicker:setPosition(cc.p (winSize.width/2 - pColourPicker:getContentSize().width / 2, winSize.height/2))
     pColourPicker:registerControlEventHandler(colourValueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
-    self.contentLayer:addChild(pColourPicker)     
+    contentLayer:addChild(pColourPicker)     
               
     --Add the black background for the text
     local pBackground = cc.Scale9Sprite:create("images/control/buttonBackground.png")
     pBackground:setContentSize(cc.size(150, 50))
     pBackground:setPosition(cc.p(winSize.width/2 + pBackground:getContentSize().width / 2.0, winSize.height/2))
-    self.contentLayer:addChild(pBackground)
+    contentLayer:addChild(pBackground)
      
     pColorLabel = cc.Label:createWithTTF("#color", "font/HANYI.ttf", 30)
     pColorLabel:setPosition(pBackground:getPosition())
-    self.contentLayer:addChild(pColorLabel)
+    contentLayer:addChild(pColorLabel)
      
     --Update the color text
     colourValueChanged(pColourPicker)
      
+    return contentLayer
 end
 
 ------------------------------------------------------------------------------
 
 function clsDemoControlViewController:showControlSwitch( )
-    if self.contentLayer then 
-        self.contentLayer:removeFromParent()
-    end 
 
-    self.contentLayer = cc.Layer:create()
-    self.layer:addChild(self.contentLayer, 1)
+    local contentLayer = cc.Layer:create()
 
     local winSize = cc.Director:getInstance():getWinSize()
         
@@ -216,12 +227,12 @@ function clsDemoControlViewController:showControlSwitch( )
     local pBackground = cc.Scale9Sprite:create("extensions/buttonBackground.png")
     pBackground:setContentSize(cc.size(80, 50))
     pBackground:setPosition(cc.p(winSize.width/2 - pBackground:getContentSize().width / 2.0, winSize.height/2))
-    self.contentLayer:addChild(pBackground)
+    contentLayer:addChild(pBackground)
 
 
     local pDisplayValueLabel = cc.Label:createWithTTF("#color", "font/HANYI.ttf", 30)
     pDisplayValueLabel:setPosition(pBackground:getPosition())
-    self.contentLayer:addChild(pDisplayValueLabel)
+    contentLayer:addChild(pDisplayValueLabel)
     
     --Create the switch
     local function valueChanged(pSender)
@@ -246,28 +257,26 @@ function clsDemoControlViewController:showControlSwitch( )
             cc.Label:createWithTTF("Off", "font/HANYI.ttf", 16)
         )
     pSwitchControl:setPosition(cc.p (winSize.width/2 + 10 + pSwitchControl:getContentSize().width / 2, winSize.height/2))
-    self.contentLayer:addChild(pSwitchControl)
+    contentLayer:addChild(pSwitchControl)
     pSwitchControl:registerControlEventHandler(valueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
     
     --Update the value label
     valueChanged(pSwitchControl)
+
+    return contentLayer
 end
 
 ------------------------------------------------------------------------------
 
 function clsDemoControlViewController:showControlSlider( )
-    if self.contentLayer then 
-        self.contentLayer:removeFromParent()
-    end 
 
-    self.contentLayer = cc.Layer:create()
-    self.layer:addChild(self.contentLayer, 1)
+    local contentLayer = cc.Layer:create()
 
     local winSize = cc.Director:getInstance():getWinSize()
 
     local pDisplayValueLabel = cc.Label:createWithTTF("Move the slider thumb!\nThe lower slider is restricted." ,"font/HANYI.ttf", 32)
     pDisplayValueLabel:setPosition(cc.p(winSize.width / 2, winSize.height * 3 / 4))
-    self.contentLayer:addChild(pDisplayValueLabel)
+    contentLayer:addChild(pDisplayValueLabel)
     
     local function valueChanged(pSender)
         if nil == pSender or nil == pDisplayValueLabel then
@@ -307,19 +316,17 @@ function clsDemoControlViewController:showControlSlider( )
     pRestrictSlider:setTag(2)       
     --same with restricted
     pRestrictSlider:registerControlEventHandler(valueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
-    self.contentLayer:addChild(pSlider)    
-    self.contentLayer:addChild(pRestrictSlider)
+    contentLayer:addChild(pSlider)    
+    contentLayer:addChild(pRestrictSlider)
+
+    return contentLayer
 end 
 
 ------------------------------------------------------------------------------
 
 function clsDemoControlViewController:showControlPotentiometer( )
-    if self.contentLayer then 
-        self.contentLayer:removeFromParent()
-    end 
 
-    self.contentLayer = cc.Layer:create()
-    self.layer:addChild(self.contentLayer, 1)
+    local contentLayer = cc.Layer:create()
 
     local winSize = cc.Director:getInstance():getWinSize()
 
@@ -327,11 +334,11 @@ function clsDemoControlViewController:showControlPotentiometer( )
     local pBackground  = cc.Scale9Sprite:create("extensions/buttonBackground.png")
     pBackground:setContentSize(cc.size(80, 50))
     pBackground:setPosition(cc.p(winSize.width/2 - pBackground:getContentSize().width / 2.0, winSize.height/2))
-    self.contentLayer:addChild(pBackground)
+    contentLayer:addChild(pBackground)
         
     local pDisplayValueLabel = cc.Label:createWithTTF("", "font/HANYI.ttf", 30)
     pDisplayValueLabel:setPosition(pBackground:getPosition())
-    self.contentLayer:addChild(pDisplayValueLabel)
+    contentLayer:addChild(pDisplayValueLabel)
     
     -- Add the slider
     local function valueChanged(pSender)
@@ -350,19 +357,17 @@ function clsDemoControlViewController:showControlPotentiometer( )
     -- When the value of the slider will change, the given selector will be call
     pPotentiometer:registerControlEventHandler(valueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
     
-    self.contentLayer:addChild(pPotentiometer)
+    contentLayer:addChild(pPotentiometer)
         
     -- Update the value label
     valueChanged(pPotentiometer)
+
+    return contentLayer
 end
 
 function clsDemoControlViewController:showControlStepper( )
-    if self.contentLayer then 
-        self.contentLayer:removeFromParent()
-    end 
 
-    self.contentLayer = cc.Layer:create()
-    self.layer:addChild(self.contentLayer, 1)
+    local contentLayer = cc.Layer:create()
 
     local winSize = cc.Director:getInstance():getWinSize()
         
@@ -370,11 +375,11 @@ function clsDemoControlViewController:showControlStepper( )
     local background  = cc.Scale9Sprite:create("extensions/buttonBackground.png")
     background:setContentSize(cc.size(100, 50))
     background:setPosition(cc.p(winSize.width/2 - background:getContentSize().width / 2.0, winSize.height/2))
-    self.contentLayer:addChild(background)
+    contentLayer:addChild(background)
     
     local pDisplayValueLabel =  cc.Label:createWithTTF("0", "font/HANYI.ttf", 30)
     pDisplayValueLabel:setPosition(background:getPosition())
-    self.contentLayer:addChild(pDisplayValueLabel)
+    contentLayer:addChild(pDisplayValueLabel)
     
     
     local minusSprite = cc.Sprite:create("extensions/stepper-minus.png")
@@ -392,8 +397,10 @@ function clsDemoControlViewController:showControlStepper( )
     local stepper   = cc.ControlStepper:create(minusSprite, plusSprite)
     stepper:setPosition(cc.p (winSize.width/2 + 10 + stepper:getContentSize().width / 2, winSize.height/2))
     stepper:registerControlEventHandler(valueChanged, cc.CONTROL_EVENTTYPE_VALUE_CHANGED)
-    self.contentLayer:addChild(stepper)
+    contentLayer:addChild(stepper)
     
     -- Update the value label
     valueChanged(stepper)
+
+    return contentLayer
 end

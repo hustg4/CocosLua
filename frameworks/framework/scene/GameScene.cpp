@@ -12,6 +12,10 @@
 
 using namespace cocos2d;
 
+GameScene::~GameScene()
+{
+}
+
 bool GameScene::init()
 {
     return true;
@@ -88,7 +92,14 @@ void GameScene::showViewController(const std::string &name)
 {
     ViewController* viewController = this->getViewController(name);
     if (viewController) {
-        //TODO 调整ZOrder
+        
+        //(1)隐藏互斥的viewController
+        ValueVector mutexRelationArray = this->getMutexRelationArray(name);
+        for (auto it = mutexRelationArray.begin(); it != mutexRelationArray.end(); it++) {
+            this->hideViewController((*it).asString());
+        }
+        
+        //(2) TODO 调整所有可见ViewController的ZOrder
         viewController->layerWillAppear();
         viewController->rootLayerForScene->setVisible(true);
         viewController->layerDidAppear();
@@ -105,6 +116,42 @@ void GameScene::hideViewController(const std::string &name)
     }
 }
 
-GameScene::~GameScene()
+void GameScene::addMutexRelation(const std::string &viewControllerName1, const std::string &viewControllerName2)
 {
+    this->addUnilateralMutexRelation(viewControllerName1, viewControllerName2);
+    this->addUnilateralMutexRelation(viewControllerName2, viewControllerName1);
+}
+
+void GameScene::removeMutexRelation(const std::string &viewControllerName1, const std::string &viewControllerName2)
+{
+    this->removeUnilateralMutexRelation(viewControllerName1, viewControllerName2);
+    this->removeUnilateralMutexRelation(viewControllerName2, viewControllerName1);
+}
+
+ValueVector GameScene::getMutexRelationArray(const std::string &viewControllerName)
+{
+    ValueVector keyVector;
+    ValueMap& mutexRelationMap = this->getMutexRelationMap(viewControllerName);
+    for (auto it = mutexRelationMap.begin(); it != mutexRelationMap.end(); it ++) {
+        keyVector.push_back(Value((*it).first));
+    }
+    return keyVector;
+}
+
+void GameScene::addUnilateralMutexRelation(const std::string &viewControllerName1, const std::string &viewControllerName2)
+{
+    this->getMutexRelationMap(viewControllerName1)[viewControllerName2] = "";
+}
+
+void GameScene::removeUnilateralMutexRelation(const std::string &viewControllerName1, const std::string &viewControllerName2)
+{
+    this->getMutexRelationMap(viewControllerName1).erase(viewControllerName2);
+}
+
+ValueMap& GameScene::getMutexRelationMap(const std::string &viewControllerName)
+{
+    if (mutexRelationMapMap.find(viewControllerName) == mutexRelationMapMap.end()) {
+        mutexRelationMapMap[viewControllerName] = ValueMap();
+    }
+    return mutexRelationMapMap[viewControllerName].asValueMap();
 }

@@ -40,4 +40,9 @@ void SceneManager::runScene(GameScene *scene)
     currentScene->onEnter();
 }
 
+GameScene* SceneManager::getCurrentScene()
+{
+    return this->currentScene;
+}
+
 

@@ -34,14 +34,14 @@ function clsRegisterViewController:showView()
     --menuItemRegister:setFontSize(20)
     menuItemRegister:setFontSizeObj(18)
     menuItemRegister:setPosition(0, 0)
-    menuItemRegister:registerScriptTapHandler(MakeScriptHandler(self,self.menuCallbackRegister))
+    menuItemRegister:registerScriptTapHandler(cl.makeScriptHandler(self,self.menuCallbackRegister))
     menuItemRegister:setPosition(-40, -20)
     
     --(4)登录按钮
     local menuItemLogin = cc.MenuItemFont:create("前往登录")
     menuItemLogin:setFontSizeObj(18)
     menuItemLogin:setPosition(0, 0)
-    menuItemLogin:registerScriptTapHandler(MakeScriptHandler(self,self.menuCallbackLogin))
+    menuItemLogin:registerScriptTapHandler(cl.makeScriptHandler(self,self.menuCallbackLogin))
     menuItemLogin:setPosition(40, -20)
     
     local menu = cc.Menu:create()

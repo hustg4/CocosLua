@@ -148,7 +148,9 @@ protected:
     
     friend size_t onReceiveData(void *buffer, size_t size, size_t nmemb, void *ptr);
     
-    friend void* downloadThread(void *data);
+//    friend void* downloadThread(void *data);
+    
+    void downloadThreadFunc();
     
     friend int onProgress(void *ptr, double totalToDownload, double nowDownloaded, double totalToUpLoad, double nowUpLoaded);
     
@@ -182,7 +184,7 @@ protected:
     
     bool                        isThreadInited;         //线程是否已经初始化
     
-    cocos2d::__Array*           taskQueue;              //任务队列
+    cocos2d::Vector<DownloadTask*>                 taskQueue;              //任务队列
     
     bool                        needQuit;               //下载线程退出标志
     
@@ -190,13 +192,9 @@ protected:
     
     bool                        downloading;            //下载标志
     
-    pthread_t                   networkThread;          //线程
-    
-    sem_t*                      pSem;                   //信号量
-    
-    sem_t                       sem;                    //信号量
-    
-    pthread_mutex_t             taskQueueMutex;         //任务队列互斥锁
+    std::thread                 downloadThread;         //线程
+    std::condition_variable     queueSizeCond;
+    std::mutex                  downloadMutex;
     
 };
 

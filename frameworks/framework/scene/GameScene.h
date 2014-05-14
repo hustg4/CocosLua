@@ -15,14 +15,7 @@
 
 class GameScene : public cocos2d::Ref {
     
-private:
-    
-    cocos2d::ValueMap paramMap;
-    
-    cocos2d::Map<std::string, ViewController*> viewControllerMap;
-    
 public:
-    
     
     CREATE_FUNC(GameScene);
     
@@ -50,6 +43,25 @@ public:
     
     void hideViewController(const std::string& name);
     
+    void addMutexRelation(const std::string& viewControllerName1,const std::string& viewControllerName2);
+    
+    void removeMutexRelation(const std::string& viewControllerName1,const std::string& viewControllerName2);
+    
+    cocos2d::ValueVector getMutexRelationArray(const std::string& viewControllerName);
+    
+private:
+    
+    cocos2d::ValueMap paramMap;
+    
+    cocos2d::Map<std::string, ViewController*> viewControllerMap;
+    
+    cocos2d::ValueMap mutexRelationMapMap;  //{name1:{name2:""}}
+    
+    void addUnilateralMutexRelation(const std::string& viewControllerName1,const std::string& viewControllerName2);
+    
+    void removeUnilateralMutexRelation(const std::string& viewControllerName1,const std::string& viewControllerName2);
+    
+    cocos2d::ValueMap& getMutexRelationMap(const std::string& viewControllerName);
 };
 
 #endif /* defined(__Framework__GameScene__) */

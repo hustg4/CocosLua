@@ -159,4 +159,12 @@ int register_all_framework(lua_State* tolua_S);
 
 
 
+
+
+
+
+
+
+
+
 #endif // __framework_h__
