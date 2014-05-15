@@ -17,10 +17,15 @@ function clsGameScene:unloadViewController(viewControllerClsOrInstance)
 end
 
 function clsGameScene:getViewController(viewControllerClsOrInstance)
-    self:callOrigin("getViewController",viewControllerClsOrInstance.className)
+	--TODO 此接口是否应该废除待考虑
+    return self:callOrigin("getViewController",viewControllerClsOrInstance.className)
 end
 
-function clsGameScene:showViewController(viewControllerClsOrInstance)
+function clsGameScene:showViewController(viewControllerClsOrInstance,data)
+	local viewController = self:callOrigin("getViewController",viewControllerClsOrInstance.className)
+	if viewController then
+		viewController.data = data
+	end
     self:callOrigin("showViewController",viewControllerClsOrInstance.className)
 end
 
