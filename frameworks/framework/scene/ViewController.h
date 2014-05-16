@@ -14,18 +14,13 @@
 
 class GameScene;
 
-enum ViewControllerType{
-    ViewControllerTypeScene,
-    ViewControllerTypeUI
-};
-
 class ViewController : public cocos2d::Ref{
     
 public:
     
-    static ViewController* create(ViewControllerType type);
+    static ViewController* create();
     
-    ViewController(ViewControllerType type);
+    ViewController();
     
     virtual ~ViewController();
     
@@ -43,8 +38,6 @@ public:
     
     GameScene* getScene();
     
-    ViewControllerType getType();
-    
     cocos2d::Layer* getRootLayer();
     
     void setRootLayer(cocos2d::Layer* rootLayer);
@@ -52,8 +45,6 @@ public:
 private:
     
     friend class GameScene;
-    
-    ViewControllerType type;
     
     GameScene* scene;
     

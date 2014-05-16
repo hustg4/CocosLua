@@ -26,11 +26,6 @@
 -- @return Layer#Layer ret (return value: cc.Layer)
         
 --------------------------------
--- @function [parent=#ViewController] getType 
--- @param self
--- @return ViewControllerType#ViewControllerType ret (return value: ViewControllerType)
-        
---------------------------------
 -- @function [parent=#ViewController] layerWillDisappear 
 -- @param self
         
@@ -50,12 +45,10 @@
 --------------------------------
 -- @function [parent=#ViewController] create 
 -- @param self
--- @param #ViewControllerType viewcontrollertype
 -- @return ViewController#ViewController ret (return value: ViewController)
         
 --------------------------------
 -- @function [parent=#ViewController] ViewController 
 -- @param self
--- @param #ViewControllerType viewcontrollertype
         
 return nil

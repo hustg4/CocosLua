@@ -5,7 +5,7 @@
  date:2013/08/13
  --]]
 
-class("clsCCBTestViewController",clsUIViewController)
+class("clsCCBTestViewController",clsViewController)
 
 local EVENT_SCALE_END = "scaleEnd"
 local EVENT_ROTATION_END = "rotationEnd"

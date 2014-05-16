@@ -2764,50 +2764,6 @@ int lua_framework_ViewController_getRootLayer(lua_State* tolua_S)
 
     return 0;
 }
-int lua_framework_ViewController_getType(lua_State* tolua_S)
-{
-    int argc = 0;
-    ViewController* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"ViewController",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (ViewController*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_getType'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
-    {
-        if(!ok)
-            return 0;
-        int ret = (int)cobj->getType();
-        tolua_pushnumber(tolua_S,(lua_Number)ret);
-        return 1;
-    }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "getType",argc, 0);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_getType'.",&tolua_err);
-#endif
-
-    return 0;
-}
 int lua_framework_ViewController_layerWillDisappear(lua_State* tolua_S)
 {
     int argc = 0;
@@ -2996,17 +2952,15 @@ int lua_framework_ViewController_create(lua_State* tolua_S)
 
     argc = lua_gettop(tolua_S) - 1;
 
-    if (argc == 1)
+    if (argc == 0)
     {
-        ViewControllerType arg0;
-        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0);
         if(!ok)
             return 0;
-        ViewController* ret = ViewController::create(arg0);
+        ViewController* ret = ViewController::create();
         object_to_luaval<ViewController>(tolua_S, "ViewController",(ViewController*)ret);
         return 1;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d\n ", "create",argc, 1);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d\n ", "create",argc, 0);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
@@ -3027,21 +2981,18 @@ int lua_framework_ViewController_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 0) 
     {
-        ViewControllerType arg0;
-
-        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0);
         if(!ok)
             return 0;
-        cobj = new ViewController(arg0);
+        cobj = new ViewController();
         cobj->autorelease();
         int ID =  (int)cobj->_ID ;
         int* luaID =  &cobj->_luaID ;
         toluafix_pushusertype_ccobject(tolua_S, ID, luaID, (void*)cobj,"ViewController");
         return 1;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "ViewController",argc, 1);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "ViewController",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
@@ -3068,7 +3019,6 @@ int lua_register_framework_ViewController(lua_State* tolua_S)
         tolua_function(tolua_S,"layerDidDisappear",lua_framework_ViewController_layerDidDisappear);
         tolua_function(tolua_S,"unload",lua_framework_ViewController_unload);
         tolua_function(tolua_S,"getRootLayer",lua_framework_ViewController_getRootLayer);
-        tolua_function(tolua_S,"getType",lua_framework_ViewController_getType);
         tolua_function(tolua_S,"layerWillDisappear",lua_framework_ViewController_layerWillDisappear);
         tolua_function(tolua_S,"getScene",lua_framework_ViewController_getScene);
         tolua_function(tolua_S,"layerWillAppear",lua_framework_ViewController_layerWillAppear);

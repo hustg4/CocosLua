@@ -6,7 +6,7 @@
  --]]
 require ("scene/demo/clsDemoPager")
 
-class("clsDemoControlViewController",clsUIViewController)
+class("clsDemoControlViewController",clsViewController)
 
 clsDemoControlViewController.layer=nil
 

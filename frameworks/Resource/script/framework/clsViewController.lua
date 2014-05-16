@@ -4,10 +4,10 @@
  date:2014/05/06
  --]]
 
-class("clsViewController",{create = function(type) return ViewController:create(type) end})
+class("clsViewController",{create = function() return ViewController:create() end})
 
-function clsViewController:createWithCCB(ccbFile,type)
-    local controller = self:create(type)
+function clsViewController:createWithCCB(ccbFile)
+    local controller = self:create()
     local nodeCCB = controller:loadCCB(ccbFile)
     controller:setRootLayer(nodeCCB)
     controller:onDidLoadFromCCB()
@@ -121,36 +121,3 @@ function clsViewController:loadCCB(ccbFile)
 
     return node
 end
-
---============= clsSceneViewController =============
-
-class("clsSceneViewController",clsViewController)
-
-clsSceneViewController._create = clsSceneViewController.create
-
-function clsSceneViewController:create()
-    return self:_create(0)
-end
-
-clsSceneViewController._createWithCCB = clsSceneViewController.createWithCCB
-
-function clsSceneViewController:createWithCCB(ccbFile)
-    return self:_createWithCCB(ccbFile,0)
-end
-
---============= clsUIViewController =============
-
-class("clsUIViewController",clsViewController)
-
-clsUIViewController._create = clsUIViewController.create
-
-function clsUIViewController:create()
-    return self:_create(1)
-end
-
-clsUIViewController._createWithCCB = clsUIViewController.createWithCCB
-
-function clsUIViewController:createWithCCB(ccbFile)
-    return self:_createWithCCB(ccbFile,1)
-end
-

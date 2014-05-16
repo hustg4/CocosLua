@@ -24,9 +24,7 @@ public:
     
     void reset();
     
-    void addSceneNode(cocos2d::Node* node);
-    
-    void addUINode(cocos2d::Node* node);
+    void addNode(cocos2d::Node* node);
     
 private:
     
@@ -39,10 +37,6 @@ private:
     cocos2d::Scene* scene; //weak
     
     cocos2d::Layer* layerRoot;//weak
-    
-    cocos2d::Layer* layerScene;//weak
-    
-    cocos2d::Layer* layerUI;//weak
     
 };
 

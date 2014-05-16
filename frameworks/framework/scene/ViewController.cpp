@@ -12,19 +12,17 @@
 
 using namespace cocos2d;
 
-ViewController* ViewController::create(ViewControllerType type)
+ViewController* ViewController::create()
 {
-    ViewController* controller = new ViewController(type);
+    ViewController* controller = new ViewController();
     controller->autorelease();
     return controller;
 }
 
-ViewController::ViewController(ViewControllerType type)
+ViewController::ViewController()
 : scene(nullptr)
 , rootLayer(nullptr)
 {
-    this->type = type;
-    
     rootLayerForScene = Layer::create();
     CC_SAFE_RETAIN(rootLayerForScene);
     rootLayerForScene->setVisible(false);
@@ -73,11 +71,6 @@ void  ViewController::layerDidDisappear()
 GameScene* ViewController::getScene()
 {
     return this->scene;
-}
-
-ViewControllerType ViewController::getType()
-{
-    return this->type;
 }
 
 cocos2d::Layer* ViewController::getRootLayer()

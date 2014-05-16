@@ -51,11 +51,7 @@ void GameScene::loadViewController(const std::string &name, ViewController *view
     
     viewController->scene = this;
     
-    if (viewController->getType() == ViewControllerTypeScene) {
-        UIManager::getInstance()->addSceneNode(viewController->rootLayerForScene);
-    }else if (viewController->getType() == ViewControllerTypeUI){
-        UIManager::getInstance()->addUINode(viewController->rootLayerForScene);
-    }
+    UIManager::getInstance()->addNode(viewController->rootLayerForScene);
     
     viewController->load();
 }
