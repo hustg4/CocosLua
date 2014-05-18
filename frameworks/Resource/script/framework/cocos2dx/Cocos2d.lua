@@ -1,4 +1,4 @@
-require "CocoStudio"
+require "framework/cocos2dx/CocoStudio"
 
 cc = cc or {}
 

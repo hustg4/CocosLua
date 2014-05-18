@@ -111,6 +111,14 @@
 							</dict>
 							<dict>
 								<key>name</key>
+								<string>touchRangeFactor</string>
+								<key>type</key>
+								<string>Float</string>
+								<key>value</key>
+								<real>1</real>
+							</dict>
+							<dict>
+								<key>name</key>
 								<string>normalSpriteFrame</string>
 								<key>type</key>
 								<string>SpriteFrame</string>
@@ -429,6 +437,14 @@
 					</dict>
 					<dict>
 						<key>name</key>
+						<string>touchRangeFactor</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>1</real>
+					</dict>
+					<dict>
+						<key>name</key>
 						<string>title|1</string>
 						<key>type</key>
 						<string>String</string>
@@ -571,6 +587,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
