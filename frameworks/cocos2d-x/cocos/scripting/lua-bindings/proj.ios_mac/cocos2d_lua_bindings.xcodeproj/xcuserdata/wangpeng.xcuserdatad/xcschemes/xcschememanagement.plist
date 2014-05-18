@@ -7,7 +7,7 @@
 		<key>luabindings Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>13</integer>
 		</dict>
 		<key>luabindings iOS.xcscheme</key>
 		<dict>
