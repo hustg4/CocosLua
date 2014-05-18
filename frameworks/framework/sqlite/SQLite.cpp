@@ -223,7 +223,7 @@ cocos2d::ValueVector SQLite::selectTable(const std::string &tableName, const std
     return this->executeQuery(sql);
 }
 
-cocos2d::ValueVector SQLite::selectTable(const std::string &tableName, const std::string &sql)
+cocos2d::ValueVector SQLite::selectTable(const std::string &sql)
 {
     return this->executeQuery(sql);
 }

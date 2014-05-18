@@ -122,10 +122,9 @@ public:
     
     /**
      * 根据sql查询表
-     * @param tableName 表名
      * @param sql 查询语句
      */
-    cocos2d::ValueVector selectTable(const std::string& tableName,const std::string& sql);
+    cocos2d::ValueVector selectTable(const std::string& sql);
     
 protected:
     

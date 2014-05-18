@@ -6529,22 +6529,18 @@ int lua_framework_SQLite_selectTable(lua_State* tolua_S)
     }while(0);
     ok  = true;
     do{
-        if (argc == 2) {
+        if (argc == 1) {
             std::string arg0;
             ok &= luaval_to_std_string(tolua_S, 2,&arg0);
 
             if (!ok) { break; }
-            std::string arg1;
-            ok &= luaval_to_std_string(tolua_S, 3,&arg1);
-
-            if (!ok) { break; }
-            cocos2d::ValueVector ret = cobj->selectTable(arg0, arg1);
+            cocos2d::ValueVector ret = cobj->selectTable(arg0);
             ccvaluevector_to_luaval(tolua_S, ret);
             return 1;
         }
     }while(0);
     ok  = true;
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "selectTable",argc, 2);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "selectTable",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1

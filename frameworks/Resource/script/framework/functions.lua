@@ -33,7 +33,7 @@ end
 function GetLayoutScale()
     --计算scaleNoBoder与scaleShowAll 算法参见CCEGLViewProtocol
     local screenSize = cc.EGLView:sharedOpenGLView():getFrameSize()
-    local designSize = DesignSize()
+    local designSize = cl.designSize()
     local scaleX = screenSize.width / designSize.width
     local scaleY = screenSize.height / designSize.height
     local scaleNoBoder = math.max(scaleX,scaleY)
@@ -78,7 +78,7 @@ end
  --]]
 function LayoutNode(node)
     local TAG_LAYOUT_MIN = 10000
-    local designSize = DesignSize()
+    local designSize = cl.designSize()
     local layoutScale = GetLayoutScale()
     --检查tag是否符合规范，不符合规范的不予处理
     local tag = node:getTag()
@@ -152,26 +152,6 @@ function LayoutNode(node)
     
 end
 
-function RunScene(sceneClass,paramTable)
-    if type(sceneClass) == "string" then
-        sceneClass = _G[sceneClass];
-    end
-    
-    local scene = sceneClass["create"](sceneClass,paramDict)
-
-    if paramTable then
-        for k,v in pairs(paramTable) do
-            scene:putAttribute(k,v)
-        end
-    end
-    SceneManager:getInstance():runScene(scene)
-end
-
---设计尺寸
-function DesignSize()
-    return cc.Director:getInstance():getOpenGLView():getDesignResolutionSize()
-end
-
 --创建菜单
 function CreateMenu(...)
     local arg = pairlist(...)
@@ -183,22 +163,24 @@ function CreateMenu(...)
     return menu
 end
 
---转换ccb中的控件为EditText
+--转换ccb中的控件为EditBox
 function ReplaceToEditBox(scale9Sprite,tips)
     local position = cc.p(scale9Sprite:getPosition())
     local size = scale9Sprite:getContentSize()
+
     local parentNode = scale9Sprite:getParent()
+    scale9Sprite:retain()
+    scale9Sprite:removeFromParent(false)
     
-    local editBoxBg = cc.Scale9Sprite:create("image/skin/login/textfield.png")
-    local editBox = cc.EditBox:create(size,editBoxBg)
+    local editBox = cc.EditBox:create(size,scale9Sprite)
     editBox:setPosition(position)
-    editBox:setFont("Thonburi",16)
+    editBox:setFont("Thonburi",32)
     editBox:setMaxLength(20)
-    editBox:setPlaceholderFont("Thonburi",12)
+    editBox:setPlaceholderFont("Thonburi",32)
     editBox:setPlaceHolder(tips)
-    editBox:setTag(scale9Sprite:getTag())
     parentNode:addChild(editBox)
-    scale9Sprite:removeFromParent()
+    
+    scale9Sprite:release()
     return editBox
 end
 
@@ -238,10 +220,10 @@ function CreateMaskSprite(maskSprite,textureSprite)
     local tContentSize = textureSprite:getContentSize()
     textureSprite:setPosition(cc.p(tContentSize.width/2,tContentSize.height/2))
     
-    maskSprite:setBlendFunc(GL_ONE,GL_ZERO)
+    maskSprite:setBlendFunc(gl.ONE,gl.ZERO)
     maskSprite:setFlippedY(true)
     
-    textureSprite:setBlendFunc(GL_DST_ALPHA,GL_ZERO)
+    textureSprite:setBlendFunc(gl.DST_ALPHA,gl.ZERO)
     textureSprite:setFlippedY(true)
     
     rt:begin()
@@ -252,6 +234,5 @@ function CreateMaskSprite(maskSprite,textureSprite)
     local sprite = rt:getSprite()
     
     local retval = cc.Sprite:createWithTexture(sprite:getTexture())
-    
     return retval
 end

@@ -67,7 +67,7 @@
 --          
 -- overload function: selectTable(string, string, array_table)
 --          
--- overload function: selectTable(string, string)
+-- overload function: selectTable(string)
 --          
 -- @function [parent=#SQLite] selectTable
 -- @param self

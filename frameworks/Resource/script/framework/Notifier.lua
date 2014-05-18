@@ -37,6 +37,7 @@ Notifier.observerMap={}   --观察者map
 
 --添加观察者
 function Notifier:addObserver(name,targetOrFunction,callback)
+    print("Notifier-addObserver",name,targetOrFunction,callback)
     if not self.observerMap[name] then
         self.observerMap[name] = {}
     end
@@ -44,7 +45,7 @@ function Notifier:addObserver(name,targetOrFunction,callback)
     if type(targetOrFunction) == "function" then
         table.insert(list,clsObserver:new(nil,targetOrFunction))
     else
-        table.insert(list,clsObserver:new(target,callback))
+        table.insert(list,clsObserver:new(targetOrFunction,callback))
     end
 end
 
@@ -67,6 +68,7 @@ end
 --发送通知
 function Notifier:notify(name,...)
     local arg = pairlist(...)
+    print("Notifier-notify",name,unpack(arg))
     if self.observerMap[name] then
         local list = self.observerMap[name]
         for _,observer in pairs(list) do
@@ -74,9 +76,9 @@ function Notifier:notify(name,...)
             local callback = observer.callback
             if callback then
                 if target then
-                    callback(target,name,unpack(arg))
+                    callback(target,unpack(arg))
                 else
-                    callback(name,unpack(arg))
+                    callback(unpack(arg))
                 end
             else
                 print("Notifier:observer[".. tostring(observer) .."]的callback不存在")
