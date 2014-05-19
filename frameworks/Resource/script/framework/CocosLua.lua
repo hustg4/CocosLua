@@ -66,7 +66,7 @@ function cl.getChild(node,...)
 end
 
 --在所有子结点中搜索指定tag的结点，递归搜索
---使用范例:SearchChild(node,123)
+--使用范例:cl.searchChild(node,123)
 function cl.searchChild(node,tag,_includeSelf)
     if _includeSelf and node:getTag() == tag then
         return node
@@ -78,7 +78,7 @@ function cl.searchChild(node,tag,_includeSelf)
     
     for i,child in ipairs(childArray) do
         
-        result = SearchChild(child,tag,true)
+        result = cl.searchChild(child,tag,true)
         if result then
             break
         end

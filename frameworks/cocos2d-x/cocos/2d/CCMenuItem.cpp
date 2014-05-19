@@ -483,8 +483,7 @@ void MenuItemSprite::setNormalImage(Node* image)
         if (image)
         {
             addChild(image, 0, kNormalTag);
-            //TODO delete by g4
-//            image->setAnchorPoint(Point(0, 0));
+            image->setAnchorPoint(Point(0, 0));
         }
 
         if (_normalImage)
