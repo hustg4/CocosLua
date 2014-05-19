@@ -1,0 +1,1166 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15A8A4491834C64F00142BE0 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023810C17EBBCAC00990C9B /* Icon-114.png */; };
+		1AF4C403178663F200122817 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF4C402178663F200122817 /* libz.dylib */; };
+		5023811817EBBCAC00990C9B /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5023810817EBBCAC00990C9B /* AppController.mm */; };
+		5023811917EBBCAC00990C9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023810917EBBCAC00990C9B /* Default-568h@2x.png */; };
+		5023811A17EBBCAC00990C9B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023810A17EBBCAC00990C9B /* Default.png */; };
+		5023811B17EBBCAC00990C9B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023810B17EBBCAC00990C9B /* Default@2x.png */; };
+		5023811D17EBBCAC00990C9B /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023810D17EBBCAC00990C9B /* Icon-120.png */; };
+		5023811E17EBBCAC00990C9B /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023810E17EBBCAC00990C9B /* Icon-144.png */; };
+		5023811F17EBBCAC00990C9B /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023810F17EBBCAC00990C9B /* Icon-152.png */; };
+		5023812017EBBCAC00990C9B /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023811017EBBCAC00990C9B /* Icon-57.png */; };
+		5023812117EBBCAC00990C9B /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023811117EBBCAC00990C9B /* Icon-72.png */; };
+		5023812217EBBCAC00990C9B /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023811217EBBCAC00990C9B /* Icon-76.png */; };
+		5023812417EBBCAC00990C9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5023811417EBBCAC00990C9B /* main.m */; };
+		5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5023811717EBBCAC00990C9B /* RootViewController.mm */; };
+		5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F293BB7E15EB831F00256477 /* AppDelegate.cpp */; };
+		5023813717EBBCE400990C9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF4C402178663F200122817 /* libz.dylib */; };
+		5023813E17EBBCE400990C9B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3CC15EB7BE500256477 /* QuartzCore.framework */; };
+		5023814017EBBCE400990C9B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D015EB7BE500256477 /* OpenAL.framework */; };
+		5023814117EBBCE400990C9B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D215EB7BE500256477 /* AudioToolbox.framework */; };
+		5023814217EBBCE400990C9B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D415EB7BE500256477 /* AVFoundation.framework */; };
+		5023814417EBBCE400990C9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D815EB7BE500256477 /* Foundation.framework */; };
+		5023814517EBBCE400990C9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3DA15EB7BE500256477 /* CoreGraphics.framework */; };
+		5023817617EBBE3400990C9B /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5023817217EBBE3400990C9B /* Icon.icns */; };
+		5023817A17EBBE8300990C9B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5023817917EBBE8300990C9B /* OpenGLES.framework */; };
+		50805AAF17EBBEAA004CFAD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50805AAE17EBBEAA004CFAD3 /* UIKit.framework */; };
+		5091733617ECE17A00D62437 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091733017ECE17A00D62437 /* Icon-29.png */; };
+		5091733717ECE17A00D62437 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091733117ECE17A00D62437 /* Icon-40.png */; };
+		5091733817ECE17A00D62437 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091733217ECE17A00D62437 /* Icon-50.png */; };
+		5091733917ECE17A00D62437 /* Icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091733317ECE17A00D62437 /* Icon-58.png */; };
+		5091733A17ECE17A00D62437 /* Icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091733417ECE17A00D62437 /* Icon-80.png */; };
+		5091733B17ECE17A00D62437 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091733517ECE17A00D62437 /* Icon-100.png */; };
+		50D7C96C17EBBEDF005D0B91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96B17EBBEDF005D0B91 /* OpenGL.framework */; };
+		50D7C96E17EBBEE6005D0B91 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96D17EBBEE6005D0B91 /* AppKit.framework */; };
+		50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96F17EBBEEC005D0B91 /* IOKit.framework */; };
+		AA1C55F51907EA07001F3F83 /* libbox2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55EF1907EA07001F3F83 /* libbox2d iOS.a */; };
+		AA1C55F61907EA07001F3F83 /* libchipmunk iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55F01907EA07001F3F83 /* libchipmunk iOS.a */; };
+		AA1C55F71907EA07001F3F83 /* libcocos2dx iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55F11907EA07001F3F83 /* libcocos2dx iOS.a */; };
+		AA1C55F81907EA07001F3F83 /* libcocos2dx-extensions iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55F21907EA07001F3F83 /* libcocos2dx-extensions iOS.a */; };
+		AA1C55F91907EA07001F3F83 /* libCocosDenshion iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55F31907EA07001F3F83 /* libCocosDenshion iOS.a */; };
+		AA1C55FA1907EA07001F3F83 /* libluabindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55F41907EA07001F3F83 /* libluabindings iOS.a */; };
+		AA1C56011907EA1A001F3F83 /* libbox2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55FB1907EA19001F3F83 /* libbox2d Mac.a */; };
+		AA1C56021907EA1A001F3F83 /* libchipmunk Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55FC1907EA19001F3F83 /* libchipmunk Mac.a */; };
+		AA1C56031907EA1A001F3F83 /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55FD1907EA19001F3F83 /* libcocos2dx Mac.a */; };
+		AA1C56041907EA1A001F3F83 /* libcocos2dx-extensions Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55FE1907EA19001F3F83 /* libcocos2dx-extensions Mac.a */; };
+		AA1C56051907EA1A001F3F83 /* libCocosDenshion Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C55FF1907EA19001F3F83 /* libCocosDenshion Mac.a */; };
+		AA1C56061907EA1A001F3F83 /* libluabindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C56001907EA1A001F3F83 /* libluabindings Mac.a */; };
+		AA1C69E71908AAB8001F3F83 /* libcocosLuaIos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C68B019080D68001F3F83 /* libcocosLuaIos.a */; };
+		AA1C69E81908AAC4001F3F83 /* libcocosLuaMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C69541908A5D9001F3F83 /* libcocosLuaMac.a */; };
+		AA1C69EB1908AE60001F3F83 /* libcurl.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C69EA1908AE60001F3F83 /* libcurl.4.dylib */; };
+		AA1C6A081908CA59001F3F83 /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6A071908CA59001F3F83 /* Resource */; };
+		AA1C6A091908CA59001F3F83 /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6A071908CA59001F3F83 /* Resource */; };
+		C06E23C418CEF9740093C81A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C06E23C318CEF9740093C81A /* main.cpp */; };
+		D6B061351803AC000077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B061341803AC000077942B /* CoreMotion.framework */; };
+		F293B3CD15EB7BE500256477 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3CC15EB7BE500256477 /* QuartzCore.framework */; };
+		F293B3D115EB7BE500256477 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D015EB7BE500256477 /* OpenAL.framework */; };
+		F293B3D315EB7BE500256477 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D215EB7BE500256477 /* AudioToolbox.framework */; };
+		F293B3D515EB7BE500256477 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D415EB7BE500256477 /* AVFoundation.framework */; };
+		F293B3D915EB7BE500256477 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D815EB7BE500256477 /* Foundation.framework */; };
+		F293B3DB15EB7BE500256477 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3DA15EB7BE500256477 /* CoreGraphics.framework */; };
+		F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F293BB7E15EB831F00256477 /* AppDelegate.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA1C68AF19080D68001F3F83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAB0D3371907E20600E1788C /* framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA1C681319080A40001F3F83;
+			remoteInfo = libCocosLuaIos;
+		};
+		AA1C69531908A5D9001F3F83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAB0D3371907E20600E1788C /* framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA1C68B619080FB2001F3F83;
+			remoteInfo = cocosLuaMac;
+		};
+		AAB0D33E1907E20700E1788C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAB0D3371907E20600E1788C /* framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F293B3C815EB7BE500256477;
+			remoteInfo = "framework iOS";
+		};
+		AAB0D3401907E20700E1788C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAB0D3371907E20600E1788C /* framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5023816B17EBBCE400990C9B;
+			remoteInfo = "framework Mac";
+		};
+		AAB911C71928EFEC00900993 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAB0D3371907E20600E1788C /* framework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AA1C681219080A40001F3F83;
+			remoteInfo = cocosLuaIos;
+		};
+		AAB911C91928EFFA00900993 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAB0D3371907E20600E1788C /* framework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AA1C68B519080FB2001F3F83;
+			remoteInfo = cocosLuaMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15A8A4871834C90E00142BE0 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
+		15C1568D1683131500D239F2 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "../../cocos2d-x/cocos2dx/platform/third_party/ios/libraries/libcurl.a"; sourceTree = "<group>"; };
+		1AF4C402178663F200122817 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5023810717EBBCAC00990C9B /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		5023810817EBBCAC00990C9B /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = "<group>"; };
+		5023810917EBBCAC00990C9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5023810A17EBBCAC00990C9B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		5023810B17EBBCAC00990C9B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5023810C17EBBCAC00990C9B /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
+		5023810D17EBBCAC00990C9B /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
+		5023810E17EBBCAC00990C9B /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
+		5023810F17EBBCAC00990C9B /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-152.png"; sourceTree = "<group>"; };
+		5023811017EBBCAC00990C9B /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
+		5023811117EBBCAC00990C9B /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		5023811217EBBCAC00990C9B /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		5023811317EBBCAC00990C9B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5023811417EBBCAC00990C9B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5023811517EBBCAC00990C9B /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		5023811617EBBCAC00990C9B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		5023811717EBBCAC00990C9B /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewController.mm; sourceTree = "<group>"; };
+		5023816B17EBBCE400990C9B /* template Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "template Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5023817217EBBE3400990C9B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		5023817317EBBE3400990C9B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5023817517EBBE3400990C9B /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		5023817917EBBE8300990C9B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		50805AAE17EBBEAA004CFAD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5091733017ECE17A00D62437 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
+		5091733117ECE17A00D62437 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
+		5091733217ECE17A00D62437 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
+		5091733317ECE17A00D62437 /* Icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-58.png"; sourceTree = "<group>"; };
+		5091733417ECE17A00D62437 /* Icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-80.png"; sourceTree = "<group>"; };
+		5091733517ECE17A00D62437 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
+		50D7C96B17EBBEDF005D0B91 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		50D7C96D17EBBEE6005D0B91 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		50D7C96F17EBBEEC005D0B91 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		AA1C55EF1907EA07001F3F83 /* libbox2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libbox2d iOS.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug-iphoneos/libbox2d iOS.a"; sourceTree = "<group>"; };
+		AA1C55F01907EA07001F3F83 /* libchipmunk iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libchipmunk iOS.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug-iphoneos/libchipmunk iOS.a"; sourceTree = "<group>"; };
+		AA1C55F11907EA07001F3F83 /* libcocos2dx iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx iOS.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug-iphoneos/libcocos2dx iOS.a"; sourceTree = "<group>"; };
+		AA1C55F21907EA07001F3F83 /* libcocos2dx-extensions iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx-extensions iOS.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug-iphoneos/libcocos2dx-extensions iOS.a"; sourceTree = "<group>"; };
+		AA1C55F31907EA07001F3F83 /* libCocosDenshion iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCocosDenshion iOS.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug-iphoneos/libCocosDenshion iOS.a"; sourceTree = "<group>"; };
+		AA1C55F41907EA07001F3F83 /* libluabindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluabindings iOS.a"; path = "../../../../framework/frameworks/cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/build/Debug-iphoneos/libluabindings iOS.a"; sourceTree = "<group>"; };
+		AA1C55FB1907EA19001F3F83 /* libbox2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libbox2d Mac.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug/libbox2d Mac.a"; sourceTree = "<group>"; };
+		AA1C55FC1907EA19001F3F83 /* libchipmunk Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libchipmunk Mac.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug/libchipmunk Mac.a"; sourceTree = "<group>"; };
+		AA1C55FD1907EA19001F3F83 /* libcocos2dx Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx Mac.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug/libcocos2dx Mac.a"; sourceTree = "<group>"; };
+		AA1C55FE1907EA19001F3F83 /* libcocos2dx-extensions Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx-extensions Mac.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug/libcocos2dx-extensions Mac.a"; sourceTree = "<group>"; };
+		AA1C55FF1907EA19001F3F83 /* libCocosDenshion Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCocosDenshion Mac.a"; path = "../../../../framework/frameworks/cocos2d-x/build/build/Debug/libCocosDenshion Mac.a"; sourceTree = "<group>"; };
+		AA1C56001907EA1A001F3F83 /* libluabindings Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluabindings Mac.a"; path = "../../../../framework/frameworks/cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/build/Debug/libluabindings Mac.a"; sourceTree = "<group>"; };
+		AA1C69EA1908AE60001F3F83 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.4.dylib; path = usr/lib/libcurl.4.dylib; sourceTree = SDKROOT; };
+		AA1C6A071908CA59001F3F83 /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resource; path = ../../Resource; sourceTree = "<group>"; };
+		AAB0D3371907E20600E1788C /* framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = framework.xcodeproj; path = "../../../../framework/frameworks/runtime-src/proj.ios_mac/framework.xcodeproj"; sourceTree = "<group>"; };
+		C06E23C318CEF9740093C81A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D6B061341803AC000077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		F293B3C815EB7BE500256477 /* template iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "template iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F293B3CC15EB7BE500256477 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F293B3CE15EB7BE500256477 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		F293B3D015EB7BE500256477 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		F293B3D215EB7BE500256477 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F293B3D415EB7BE500256477 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F293B3D615EB7BE500256477 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F293B3D815EB7BE500256477 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F293B3DA15EB7BE500256477 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F293BB7E15EB831F00256477 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
+		F293BB7F15EB831F00256477 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5023813617EBBCE400990C9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1C69EB1908AE60001F3F83 /* libcurl.4.dylib in Frameworks */,
+				AA1C69E81908AAC4001F3F83 /* libcocosLuaMac.a in Frameworks */,
+				AA1C56011907EA1A001F3F83 /* libbox2d Mac.a in Frameworks */,
+				AA1C56021907EA1A001F3F83 /* libchipmunk Mac.a in Frameworks */,
+				AA1C56031907EA1A001F3F83 /* libcocos2dx Mac.a in Frameworks */,
+				AA1C56041907EA1A001F3F83 /* libcocos2dx-extensions Mac.a in Frameworks */,
+				AA1C56051907EA1A001F3F83 /* libCocosDenshion Mac.a in Frameworks */,
+				AA1C56061907EA1A001F3F83 /* libluabindings Mac.a in Frameworks */,
+				50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */,
+				50D7C96E17EBBEE6005D0B91 /* AppKit.framework in Frameworks */,
+				50D7C96C17EBBEDF005D0B91 /* OpenGL.framework in Frameworks */,
+				5023813717EBBCE400990C9B /* libz.dylib in Frameworks */,
+				5023813E17EBBCE400990C9B /* QuartzCore.framework in Frameworks */,
+				5023814017EBBCE400990C9B /* OpenAL.framework in Frameworks */,
+				5023814117EBBCE400990C9B /* AudioToolbox.framework in Frameworks */,
+				5023814217EBBCE400990C9B /* AVFoundation.framework in Frameworks */,
+				5023814417EBBCE400990C9B /* Foundation.framework in Frameworks */,
+				5023814517EBBCE400990C9B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F293B3C515EB7BE500256477 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1C69E71908AAB8001F3F83 /* libcocosLuaIos.a in Frameworks */,
+				AA1C55F51907EA07001F3F83 /* libbox2d iOS.a in Frameworks */,
+				AA1C55F61907EA07001F3F83 /* libchipmunk iOS.a in Frameworks */,
+				AA1C55F71907EA07001F3F83 /* libcocos2dx iOS.a in Frameworks */,
+				AA1C55F81907EA07001F3F83 /* libcocos2dx-extensions iOS.a in Frameworks */,
+				AA1C55F91907EA07001F3F83 /* libCocosDenshion iOS.a in Frameworks */,
+				AA1C55FA1907EA07001F3F83 /* libluabindings iOS.a in Frameworks */,
+				D6B061351803AC000077942B /* CoreMotion.framework in Frameworks */,
+				1AF4C403178663F200122817 /* libz.dylib in Frameworks */,
+				50805AAF17EBBEAA004CFAD3 /* UIKit.framework in Frameworks */,
+				5023817A17EBBE8300990C9B /* OpenGLES.framework in Frameworks */,
+				F293B3CD15EB7BE500256477 /* QuartzCore.framework in Frameworks */,
+				F293B3D115EB7BE500256477 /* OpenAL.framework in Frameworks */,
+				F293B3D315EB7BE500256477 /* AudioToolbox.framework in Frameworks */,
+				F293B3D515EB7BE500256477 /* AVFoundation.framework in Frameworks */,
+				F293B3D915EB7BE500256477 /* Foundation.framework in Frameworks */,
+				F293B3DB15EB7BE500256477 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5023810617EBBCAC00990C9B /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				5023810717EBBCAC00990C9B /* AppController.h */,
+				5023810817EBBCAC00990C9B /* AppController.mm */,
+				5023810917EBBCAC00990C9B /* Default-568h@2x.png */,
+				5023810A17EBBCAC00990C9B /* Default.png */,
+				5023810B17EBBCAC00990C9B /* Default@2x.png */,
+				5091734A17ECE18300D62437 /* Icons */,
+				5023811317EBBCAC00990C9B /* Info.plist */,
+				5023811417EBBCAC00990C9B /* main.m */,
+				5023811517EBBCAC00990C9B /* Prefix.pch */,
+				5023811617EBBCAC00990C9B /* RootViewController.h */,
+				5023811717EBBCAC00990C9B /* RootViewController.mm */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		5023817117EBBE3400990C9B /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				C06E23C318CEF9740093C81A /* main.cpp */,
+				5023817217EBBE3400990C9B /* Icon.icns */,
+				5023817317EBBE3400990C9B /* Info.plist */,
+				5023817517EBBE3400990C9B /* Prefix.pch */,
+			);
+			path = mac;
+			sourceTree = "<group>";
+		};
+		5091734A17ECE18300D62437 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				5091733017ECE17A00D62437 /* Icon-29.png */,
+				5091733117ECE17A00D62437 /* Icon-40.png */,
+				5091733217ECE17A00D62437 /* Icon-50.png */,
+				5091733317ECE17A00D62437 /* Icon-58.png */,
+				5091733417ECE17A00D62437 /* Icon-80.png */,
+				5091733517ECE17A00D62437 /* Icon-100.png */,
+				5023810C17EBBCAC00990C9B /* Icon-114.png */,
+				5023810D17EBBCAC00990C9B /* Icon-120.png */,
+				5023810E17EBBCAC00990C9B /* Icon-144.png */,
+				5023810F17EBBCAC00990C9B /* Icon-152.png */,
+				5023811017EBBCAC00990C9B /* Icon-57.png */,
+				5023811117EBBCAC00990C9B /* Icon-72.png */,
+				5023811217EBBCAC00990C9B /* Icon-76.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		AAB0D3381907E20600E1788C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAB0D33F1907E20700E1788C /* framework iOS.app */,
+				AAB0D3411907E20700E1788C /* framework Mac.app */,
+				AA1C68B019080D68001F3F83 /* libcocosLuaIos.a */,
+				AA1C69541908A5D9001F3F83 /* libcocosLuaMac.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F293B3BD15EB7BE500256477 = {
+			isa = PBXGroup;
+			children = (
+				AAB0D3371907E20600E1788C /* framework.xcodeproj */,
+				5023810617EBBCAC00990C9B /* ios */,
+				5023817117EBBE3400990C9B /* mac */,
+				F293BB7C15EB830F00256477 /* Classes */,
+				F293B3CB15EB7BE500256477 /* Frameworks */,
+				F293B3C915EB7BE500256477 /* Products */,
+				AA1C6A071908CA59001F3F83 /* Resource */,
+			);
+			sourceTree = "<group>";
+		};
+		F293B3C915EB7BE500256477 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F293B3C815EB7BE500256477 /* template iOS.app */,
+				5023816B17EBBCE400990C9B /* template Mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F293B3CB15EB7BE500256477 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA1C69EA1908AE60001F3F83 /* libcurl.4.dylib */,
+				AA1C55FB1907EA19001F3F83 /* libbox2d Mac.a */,
+				AA1C55FC1907EA19001F3F83 /* libchipmunk Mac.a */,
+				AA1C55FD1907EA19001F3F83 /* libcocos2dx Mac.a */,
+				AA1C55FE1907EA19001F3F83 /* libcocos2dx-extensions Mac.a */,
+				AA1C55FF1907EA19001F3F83 /* libCocosDenshion Mac.a */,
+				AA1C56001907EA1A001F3F83 /* libluabindings Mac.a */,
+				AA1C55EF1907EA07001F3F83 /* libbox2d iOS.a */,
+				AA1C55F01907EA07001F3F83 /* libchipmunk iOS.a */,
+				AA1C55F11907EA07001F3F83 /* libcocos2dx iOS.a */,
+				AA1C55F21907EA07001F3F83 /* libcocos2dx-extensions iOS.a */,
+				AA1C55F31907EA07001F3F83 /* libCocosDenshion iOS.a */,
+				AA1C55F41907EA07001F3F83 /* libluabindings iOS.a */,
+				15A8A4871834C90E00142BE0 /* libcurl.dylib */,
+				D6B061341803AC000077942B /* CoreMotion.framework */,
+				50D7C96F17EBBEEC005D0B91 /* IOKit.framework */,
+				50D7C96D17EBBEE6005D0B91 /* AppKit.framework */,
+				50D7C96B17EBBEDF005D0B91 /* OpenGL.framework */,
+				50805AAE17EBBEAA004CFAD3 /* UIKit.framework */,
+				5023817917EBBE8300990C9B /* OpenGLES.framework */,
+				1AF4C402178663F200122817 /* libz.dylib */,
+				15C1568D1683131500D239F2 /* libcurl.a */,
+				F293B3CC15EB7BE500256477 /* QuartzCore.framework */,
+				F293B3CE15EB7BE500256477 /* OpenGLES.framework */,
+				F293B3D015EB7BE500256477 /* OpenAL.framework */,
+				F293B3D215EB7BE500256477 /* AudioToolbox.framework */,
+				F293B3D415EB7BE500256477 /* AVFoundation.framework */,
+				F293B3D615EB7BE500256477 /* UIKit.framework */,
+				F293B3D815EB7BE500256477 /* Foundation.framework */,
+				F293B3DA15EB7BE500256477 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F293BB7C15EB830F00256477 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
+				F293BB7F15EB831F00256477 /* AppDelegate.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5023812617EBBCE400990C9B /* template Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5023816817EBBCE400990C9B /* Build configuration list for PBXNativeTarget "template Mac" */;
+			buildPhases = (
+				AAB91140192860A900900993 /* Run Script-Clean */,
+				5023813117EBBCE400990C9B /* Sources */,
+				5023813617EBBCE400990C9B /* Frameworks */,
+				5023814617EBBCE400990C9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAB911CA1928EFFA00900993 /* PBXTargetDependency */,
+			);
+			name = "template Mac";
+			productName = MyLuaGame;
+			productReference = 5023816B17EBBCE400990C9B /* template Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F293B3C715EB7BE500256477 /* template iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "template iOS" */;
+			buildPhases = (
+				AA774194192A2BB60089A466 /* Run Script-Clean */,
+				F293B3C415EB7BE500256477 /* Sources */,
+				F293B3C515EB7BE500256477 /* Frameworks */,
+				F293B3C615EB7BE500256477 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAB911C81928EFEC00900993 /* PBXTargetDependency */,
+			);
+			name = "template iOS";
+			productName = MyLuaGame;
+			productReference = F293B3C815EB7BE500256477 /* template iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F293B3BF15EB7BE500256477 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					F293B3C715EB7BE500256477 = {
+						DevelopmentTeam = MDDB52YB8L;
+					};
+				};
+			};
+			buildConfigurationList = F293B3C215EB7BE500256477 /* Build configuration list for PBXProject "template" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F293B3BD15EB7BE500256477;
+			productRefGroup = F293B3C915EB7BE500256477 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AAB0D3381907E20600E1788C /* Products */;
+					ProjectRef = AAB0D3371907E20600E1788C /* framework.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F293B3C715EB7BE500256477 /* template iOS */,
+				5023812617EBBCE400990C9B /* template Mac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AA1C68B019080D68001F3F83 /* libcocosLuaIos.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcocosLuaIos.a;
+			remoteRef = AA1C68AF19080D68001F3F83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA1C69541908A5D9001F3F83 /* libcocosLuaMac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcocosLuaMac.a;
+			remoteRef = AA1C69531908A5D9001F3F83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAB0D33F1907E20700E1788C /* framework iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "framework iOS.app";
+			remoteRef = AAB0D33E1907E20700E1788C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAB0D3411907E20700E1788C /* framework Mac.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "framework Mac.app";
+			remoteRef = AAB0D3401907E20700E1788C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5023814617EBBCE400990C9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5023817617EBBE3400990C9B /* Icon.icns in Resources */,
+				AA1C6A091908CA59001F3F83 /* Resource in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F293B3C615EB7BE500256477 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15A8A4491834C64F00142BE0 /* Icon-114.png in Resources */,
+				5023811D17EBBCAC00990C9B /* Icon-120.png in Resources */,
+				5091733B17ECE17A00D62437 /* Icon-100.png in Resources */,
+				5023811B17EBBCAC00990C9B /* Default@2x.png in Resources */,
+				5091733617ECE17A00D62437 /* Icon-29.png in Resources */,
+				5023811917EBBCAC00990C9B /* Default-568h@2x.png in Resources */,
+				5091733917ECE17A00D62437 /* Icon-58.png in Resources */,
+				5023811F17EBBCAC00990C9B /* Icon-152.png in Resources */,
+				5023812017EBBCAC00990C9B /* Icon-57.png in Resources */,
+				5023812217EBBCAC00990C9B /* Icon-76.png in Resources */,
+				5091733A17ECE17A00D62437 /* Icon-80.png in Resources */,
+				5091733717ECE17A00D62437 /* Icon-40.png in Resources */,
+				5023811E17EBBCAC00990C9B /* Icon-144.png in Resources */,
+				5023811A17EBBCAC00990C9B /* Default.png in Resources */,
+				5091733817ECE17A00D62437 /* Icon-50.png in Resources */,
+				5023812117EBBCAC00990C9B /* Icon-72.png in Resources */,
+				AA1C6A081908CA59001F3F83 /* Resource in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA774194192A2BB60089A466 /* Run Script-Clean */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script-Clean";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf \"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app\"";
+		};
+		AAB91140192860A900900993 /* Run Script-Clean */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script-Clean";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf \"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5023813117EBBCE400990C9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C06E23C418CEF9740093C81A /* main.cpp in Sources */,
+				5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F293B3C415EB7BE500256477 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
+				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
+				5023812417EBBCAC00990C9B /* main.m in Sources */,
+				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAB911C81928EFEC00900993 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = cocosLuaIos;
+			targetProxy = AAB911C71928EFEC00900993 /* PBXContainerItemProxy */;
+		};
+		AAB911CA1928EFFA00900993 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = cocosLuaMac;
+			targetProxy = AAB911C91928EFFA00900993 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5023816917EBBCE400990C9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = mac/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					GLFW_EXPOSE_NATIVE_COCOA,
+					GLFW_EXPOSE_NATIVE_NSGL,
+					CC_TARGET_OS_MAC,
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = mac/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/wp8/arm",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/wp8/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/glfw3/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/glfw3/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/sqlite3/libraries/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/wp8/arm",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/wp8/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/gles/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/icon/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/zlib/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/angle/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/angle/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/zlib/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/zlib/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/angle/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/angle/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/zlib/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/zlib/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/admob/proj.ios/Admob",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/flurry/proj.ios/FlurryAds",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/flurry/proj.ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/umeng/proj.ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/tools/bindings-generator/libclang",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_LDFLAGS = (
+					"-image_base",
+					100000000,
+					"-pagezero_size",
+					10000,
+				);
+				PRODUCT_NAME = "template Mac";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/2d/platform/mac $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/glfw3/include/mac";
+			};
+			name = Debug;
+		};
+		5023816A17EBBCE400990C9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = mac/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					CC_TARGET_OS_MAC,
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = mac/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/wp8/arm",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/wp8/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/glfw3/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/glfw3/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/sqlite3/libraries/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/wp8/arm",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/wp8/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/gles/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/icon/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/zlib/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/angle/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/angle/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/zlib/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/zlib/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/angle/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/angle/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/zlib/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/zlib/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/admob/proj.ios/Admob",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/flurry/proj.ios/FlurryAds",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/flurry/proj.ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/umeng/proj.ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/tools/bindings-generator/libclang",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_LDFLAGS = (
+					"-image_base",
+					100000000,
+					"-pagezero_size",
+					10000,
+				);
+				PRODUCT_NAME = "template Mac";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/2d/platform/mac $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/glfw3/include/mac";
+			};
+			name = Release;
+		};
+		F293B6C215EB7BEA00256477 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					"COCOS2D_DEBUG=1",
+					USE_FILE32API,
+					"CC_LUA_ENGINE_ENABLED=1",
+					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					GLFW_EXPOSE_NATIVE_COCOA,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../framework/frameworks/cocos2d-x $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/base $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/physics $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/math/kazmath $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/2d $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/ui $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/network $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/audio/include $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/editor-support $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/extensions $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/chipmunk/include/chipmunk $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/lua/luajit/include $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/lua/tolua $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../../../framework/frameworks/framework $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/curl/include/ios";
+			};
+			name = Debug;
+		};
+		F293B6C315EB7BEA00256477 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NDEBUG,
+					USE_FILE32API,
+					"CC_LUA_ENGINE_ENABLED=1",
+					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../framework/frameworks/cocos2d-x $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/base $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/physics $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/math/kazmath $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/2d $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/ui $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/network $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/audio/include $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/editor-support $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/extensions $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/chipmunk/include/chipmunk $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/lua/luajit/include $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/lua/tolua $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../../../framework/frameworks/framework $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/external/curl/include/ios";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F293B6C515EB7BEA00256477 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: wang peng (6D2VW97QQX)";
+				COMPRESS_PNG_FILES = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ios/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					CC_TARGET_OS_IPHONE,
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/wp8/arm",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/wp8/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/glfw3/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/glfw3/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/sqlite3/libraries/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/wp8/arm",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/wp8/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/gles/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/icon/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/zlib/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/angle/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/angle/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/zlib/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/zlib/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/angle/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/angle/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/zlib/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/zlib/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/admob/proj.ios/Admob",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/flurry/proj.ios/FlurryAds",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/flurry/proj.ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/umeng/proj.ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/tools/bindings-generator/libclang",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "template iOS";
+				PROVISIONING_PROFILE = "B40C3CD8-5F4B-46C9-A657-903D196ED63A";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/2d/platform/ios";
+			};
+			name = Debug;
+		};
+		F293B6C615EB7BEA00256477 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: wang peng (6D2VW97QQX)";
+				COMPRESS_PNG_FILES = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ios/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					CC_TARGET_OS_IPHONE,
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/wp8/arm",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/curl/prebuilt/wp8/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/freetype2/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/glfw3/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/glfw3/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/jpeg/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/lua/luajit/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/png/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/sqlite3/libraries/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/winrt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/winrt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/wp8/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/tiff/prebuilt/wp8/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/webp/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/armeabi",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/armeabi-v7a",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/android/x86",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/linux/32-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/linux/64-bit",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/mac",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/wp8/arm",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/websockets/prebuilt/wp8/win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/gles/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/icon/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/win32-specific/zlib/prebuilt",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/angle/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/angle/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/zlib/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/winrt-specific/zlib/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/angle/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/angle/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/zlib/prebuilt/ARM",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/external/wp8-specific/zlib/prebuilt/Win32",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/admob/proj.ios/Admob",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/flurry/proj.ios/FlurryAds",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/flurry/proj.ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/plugin/plugins/umeng/proj.ios",
+					"/Users/wangpeng/Public/develop/workspace/xcode/soyomaker/framework/frameworks/cocos2d-x/tools/bindings-generator/libclang",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "template iOS";
+				PROVISIONING_PROFILE = "B40C3CD8-5F4B-46C9-A657-903D196ED63A";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../../framework/frameworks/cocos2d-x/cocos/2d/platform/ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5023816817EBBCE400990C9B /* Build configuration list for PBXNativeTarget "template Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5023816917EBBCE400990C9B /* Debug */,
+				5023816A17EBBCE400990C9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F293B3C215EB7BE500256477 /* Build configuration list for PBXProject "template" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F293B6C215EB7BEA00256477 /* Debug */,
+				F293B6C315EB7BEA00256477 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "template iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F293B6C515EB7BEA00256477 /* Debug */,
+				F293B6C615EB7BEA00256477 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F293B3BF15EB7BE500256477 /* Project object */;
+}
