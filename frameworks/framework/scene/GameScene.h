@@ -37,7 +37,7 @@ public:
     
     void unloadAllViewController();
     
-    ViewController* getViewController(const std::string name);
+    ViewController* getViewController(const std::string& name);
     
     void showViewController(const std::string& name);
     

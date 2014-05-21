@@ -79,7 +79,7 @@ void GameScene::unloadAllViewController()
     });
 }
 
-ViewController* GameScene::getViewController(const std::string name)
+ViewController* GameScene::getViewController(const std::string &name)
 {
     return viewControllerMap.at(name);
 }
