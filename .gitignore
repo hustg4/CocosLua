@@ -1,5 +1,5 @@
 .DS_Store
 *.xcuserdatad
 xcshareddata
-
+Debug.win32
 *.xccheckout
