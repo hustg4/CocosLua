@@ -12,7 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4E6A7A0E-DDD8-4BAA-8B22-C964069364ED}</ProjectGuid>
-    <ProjectName>MyLuaGame</ProjectName>
+    <ProjectName>template</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -95,11 +95,11 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>MyLuaGame.h</HeaderFileName>
-      <InterfaceIdentifierFileName>MyLuaGame_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>MyLuaGame_p.c</ProxyFileName>
+      <HeaderFileName>template.h</HeaderFileName>
+      <InterfaceIdentifierFileName>template_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>template_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)/MyLuaGame.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)/template.tlb</TypeLibraryName>
       <DllDataFileName>
       </DllDataFileName>
     </Midl>
@@ -142,11 +142,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>MyLuaGame.h</HeaderFileName>
-      <InterfaceIdentifierFileName>MyLuaGame_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>MyLuaGame_p.c</ProxyFileName>
+      <HeaderFileName>template.h</HeaderFileName>
+      <InterfaceIdentifierFileName>template_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>template_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)/MyLuaGame.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)/template.tlb</TypeLibraryName>
       <DllDataFileName>
       </DllDataFileName>
     </Midl>
