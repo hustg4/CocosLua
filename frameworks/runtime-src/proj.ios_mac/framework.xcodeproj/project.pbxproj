@@ -530,6 +530,48 @@
 			remoteGlobalIDString = A07A4FB4178387730073F6A7;
 			remoteInfo = "CocosDenshion iOS";
 		};
+		AA65860F1939B3C80038ACD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A6FB50417854BC200CDF010;
+			remoteInfo = "luabindings Mac";
+		};
+		AA6586131939B3DB0038ACD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
+			remoteInfo = "cocos2dx Mac";
+		};
+		AA6586151939B3DB0038ACD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A03F2FC117814595006731B9;
+			remoteInfo = "cocos2dx-extensions Mac";
+		};
+		AA6586171939B3DB0038ACD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A03F2B781780BD04006731B9;
+			remoteInfo = "chipmunk Mac";
+		};
+		AA6586191939B3DB0038ACD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A03F2D5D1780BDF7006731B9;
+			remoteInfo = "box2d Mac";
+		};
+		AA65861B1939B3DB0038ACD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A03F2E9817814268006731B9;
+			remoteInfo = "CocosDenshion Mac";
+		};
 		C03781B318BF654500FE4F13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */;
@@ -1699,6 +1741,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				AA6586141939B3DB0038ACD1 /* PBXTargetDependency */,
+				AA6586161939B3DB0038ACD1 /* PBXTargetDependency */,
+				AA6586181939B3DB0038ACD1 /* PBXTargetDependency */,
+				AA65861A1939B3DB0038ACD1 /* PBXTargetDependency */,
+				AA65861C1939B3DB0038ACD1 /* PBXTargetDependency */,
+				AA6586101939B3C80038ACD1 /* PBXTargetDependency */,
 			);
 			name = cocosLuaMac;
 			productName = libCocosLuaMac;
@@ -2209,6 +2257,36 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AA6586101939B3C80038ACD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "luabindings Mac";
+			targetProxy = AA65860F1939B3C80038ACD1 /* PBXContainerItemProxy */;
+		};
+		AA6586141939B3DB0038ACD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "cocos2dx Mac";
+			targetProxy = AA6586131939B3DB0038ACD1 /* PBXContainerItemProxy */;
+		};
+		AA6586161939B3DB0038ACD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "cocos2dx-extensions Mac";
+			targetProxy = AA6586151939B3DB0038ACD1 /* PBXContainerItemProxy */;
+		};
+		AA6586181939B3DB0038ACD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "chipmunk Mac";
+			targetProxy = AA6586171939B3DB0038ACD1 /* PBXContainerItemProxy */;
+		};
+		AA65861A1939B3DB0038ACD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "box2d Mac";
+			targetProxy = AA6586191939B3DB0038ACD1 /* PBXContainerItemProxy */;
+		};
+		AA65861C1939B3DB0038ACD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CocosDenshion Mac";
+			targetProxy = AA65861B1939B3DB0038ACD1 /* PBXContainerItemProxy */;
+		};
 		C03781F418BF659D00FE4F13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "luabindings Mac";
