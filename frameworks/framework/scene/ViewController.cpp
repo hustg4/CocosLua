@@ -39,33 +39,26 @@ ViewController::~ViewController()
 void ViewController::load()
 {
     LuaUtil::executePeertableFunction(this, "load", NULL, NULL, false);
-    LuaUtil::executePeertableFunction(this, "registerEvents", NULL, NULL, false);
 }
 
 void ViewController::unload()
 {
-    LuaUtil::executePeertableFunction(this, "unregisterEvents", NULL, NULL, false);
     LuaUtil::executePeertableFunction(this, "unload", NULL, NULL, false);
 }
 
-void  ViewController::layerWillAppear()
+void  ViewController::onShow()
 {
-    LuaUtil::executePeertableFunction(this, "layerWillAppear", NULL, NULL, false);
+    LuaUtil::executePeertableFunction(this, "onShow", NULL, NULL, false);
 }
 
-void  ViewController::layerDidAppear()
+void  ViewController::onHide()
 {
-    LuaUtil::executePeertableFunction(this, "layerDidAppear", NULL, NULL, false);
+    LuaUtil::executePeertableFunction(this, "onHide", NULL, NULL, false);
 }
 
-void  ViewController::layerWillDisappear()
+const std::string& ViewController::getName()
 {
-    LuaUtil::executePeertableFunction(this, "layerWillDisappear", NULL, NULL, false);
-}
-
-void  ViewController::layerDidDisappear()
-{
-    LuaUtil::executePeertableFunction(this, "layerDidDisappear", NULL, NULL, false);
+    return this->name;
 }
 
 GameScene* ViewController::getScene()

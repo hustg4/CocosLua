@@ -9,8 +9,7 @@ require ("scene/particle/clsParticleViewController")
 class("clsParticleScene",{create=function() return GameScene:create() end})
 
 function clsParticleScene:onEnter()
-    local particleViewController = clsParticleViewController:create()
-    self:loadViewController(particleViewController)
+    self:loadViewController(clsParticleViewController)
 end
 
 function clsParticleScene:onExit()

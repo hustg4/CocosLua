@@ -24,17 +24,15 @@ public:
     
     virtual ~ViewController();
     
+    const std::string& getName();
+    
     virtual void load();
     
     virtual void unload();
     
-    virtual void  layerWillAppear();
+    virtual void  onShow();
     
-    virtual void  layerDidAppear();
-    
-    virtual void  layerWillDisappear();
-    
-    virtual void  layerDidDisappear();
+    virtual void  onHide();
     
     GameScene* getScene();
     
@@ -47,6 +45,8 @@ private:
     friend class GameScene;
     
     GameScene* scene;
+    
+    std::string name;
     
     cocos2d::Layer* rootLayerForScene;//strong,for scene use
     

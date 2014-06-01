@@ -2634,7 +2634,7 @@ int lua_framework_ViewController_setRootLayer(lua_State* tolua_S)
 
     return 0;
 }
-int lua_framework_ViewController_layerDidDisappear(lua_State* tolua_S)
+int lua_framework_ViewController_onShow(lua_State* tolua_S)
 {
     int argc = 0;
     ViewController* cobj = nullptr;
@@ -2654,7 +2654,7 @@ int lua_framework_ViewController_layerDidDisappear(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_layerDidDisappear'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_onShow'", nullptr);
         return 0;
     }
 #endif
@@ -2664,15 +2664,15 @@ int lua_framework_ViewController_layerDidDisappear(lua_State* tolua_S)
     {
         if(!ok)
             return 0;
-        cobj->layerDidDisappear();
+        cobj->onShow();
         return 0;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "layerDidDisappear",argc, 0);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "onShow",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_layerDidDisappear'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_onShow'.",&tolua_err);
 #endif
 
     return 0;
@@ -2720,7 +2720,7 @@ int lua_framework_ViewController_unload(lua_State* tolua_S)
 
     return 0;
 }
-int lua_framework_ViewController_getRootLayer(lua_State* tolua_S)
+int lua_framework_ViewController_getName(lua_State* tolua_S)
 {
     int argc = 0;
     ViewController* cobj = nullptr;
@@ -2740,7 +2740,7 @@ int lua_framework_ViewController_getRootLayer(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_getRootLayer'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_getName'", nullptr);
         return 0;
     }
 #endif
@@ -2750,21 +2750,21 @@ int lua_framework_ViewController_getRootLayer(lua_State* tolua_S)
     {
         if(!ok)
             return 0;
-        cocos2d::Layer* ret = cobj->getRootLayer();
-        object_to_luaval<cocos2d::Layer>(tolua_S, "cc.Layer",(cocos2d::Layer*)ret);
+        const std::string& ret = cobj->getName();
+        tolua_pushcppstring(tolua_S,ret);
         return 1;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "getRootLayer",argc, 0);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "getName",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_getRootLayer'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_getName'.",&tolua_err);
 #endif
 
     return 0;
 }
-int lua_framework_ViewController_layerWillDisappear(lua_State* tolua_S)
+int lua_framework_ViewController_onHide(lua_State* tolua_S)
 {
     int argc = 0;
     ViewController* cobj = nullptr;
@@ -2784,7 +2784,7 @@ int lua_framework_ViewController_layerWillDisappear(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_layerWillDisappear'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_onHide'", nullptr);
         return 0;
     }
 #endif
@@ -2794,15 +2794,15 @@ int lua_framework_ViewController_layerWillDisappear(lua_State* tolua_S)
     {
         if(!ok)
             return 0;
-        cobj->layerWillDisappear();
+        cobj->onHide();
         return 0;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "layerWillDisappear",argc, 0);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "onHide",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_layerWillDisappear'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_onHide'.",&tolua_err);
 #endif
 
     return 0;
@@ -2851,7 +2851,7 @@ int lua_framework_ViewController_getScene(lua_State* tolua_S)
 
     return 0;
 }
-int lua_framework_ViewController_layerWillAppear(lua_State* tolua_S)
+int lua_framework_ViewController_getRootLayer(lua_State* tolua_S)
 {
     int argc = 0;
     ViewController* cobj = nullptr;
@@ -2871,7 +2871,7 @@ int lua_framework_ViewController_layerWillAppear(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_layerWillAppear'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_getRootLayer'", nullptr);
         return 0;
     }
 #endif
@@ -2881,58 +2881,16 @@ int lua_framework_ViewController_layerWillAppear(lua_State* tolua_S)
     {
         if(!ok)
             return 0;
-        cobj->layerWillAppear();
-        return 0;
+        cocos2d::Layer* ret = cobj->getRootLayer();
+        object_to_luaval<cocos2d::Layer>(tolua_S, "cc.Layer",(cocos2d::Layer*)ret);
+        return 1;
     }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "layerWillAppear",argc, 0);
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "getRootLayer",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_layerWillAppear'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_framework_ViewController_layerDidAppear(lua_State* tolua_S)
-{
-    int argc = 0;
-    ViewController* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"ViewController",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (ViewController*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_framework_ViewController_layerDidAppear'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
-    {
-        if(!ok)
-            return 0;
-        cobj->layerDidAppear();
-        return 0;
-    }
-    CCLOG("%s has wrong number of arguments: %d, was expecting %d \n", "layerDidAppear",argc, 0);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_layerDidAppear'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_framework_ViewController_getRootLayer'.",&tolua_err);
 #endif
 
     return 0;
@@ -3016,13 +2974,12 @@ int lua_register_framework_ViewController(lua_State* tolua_S)
     tolua_beginmodule(tolua_S,"ViewController");
         tolua_function(tolua_S,"load",lua_framework_ViewController_load);
         tolua_function(tolua_S,"setRootLayer",lua_framework_ViewController_setRootLayer);
-        tolua_function(tolua_S,"layerDidDisappear",lua_framework_ViewController_layerDidDisappear);
+        tolua_function(tolua_S,"onShow",lua_framework_ViewController_onShow);
         tolua_function(tolua_S,"unload",lua_framework_ViewController_unload);
-        tolua_function(tolua_S,"getRootLayer",lua_framework_ViewController_getRootLayer);
-        tolua_function(tolua_S,"layerWillDisappear",lua_framework_ViewController_layerWillDisappear);
+        tolua_function(tolua_S,"getName",lua_framework_ViewController_getName);
+        tolua_function(tolua_S,"onHide",lua_framework_ViewController_onHide);
         tolua_function(tolua_S,"getScene",lua_framework_ViewController_getScene);
-        tolua_function(tolua_S,"layerWillAppear",lua_framework_ViewController_layerWillAppear);
-        tolua_function(tolua_S,"layerDidAppear",lua_framework_ViewController_layerDidAppear);
+        tolua_function(tolua_S,"getRootLayer",lua_framework_ViewController_getRootLayer);
         tolua_function(tolua_S,"new",lua_framework_ViewController_constructor);
         tolua_function(tolua_S,"create", lua_framework_ViewController_create);
     tolua_endmodule(tolua_S);

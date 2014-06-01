@@ -47,7 +47,8 @@ void GameScene::loadViewController(const std::string &name, ViewController *view
 {
     CCAssert(viewController, "viewController 不能为空");
     
-    viewControllerMap.insert(name, viewController);
+    viewController->name = name;
+    viewControllerMap.insert(viewController->getName(), viewController);
     
     viewController->scene = this;
     
@@ -96,9 +97,8 @@ void GameScene::showViewController(const std::string &name)
         }
         
         //(2) TODO 调整所有可见ViewController的ZOrder
-        viewController->layerWillAppear();
         viewController->rootLayerForScene->setVisible(true);
-        viewController->layerDidAppear();
+        viewController->onShow();
     }
 }
 
@@ -106,9 +106,8 @@ void GameScene::hideViewController(const std::string &name)
 {
     ViewController* viewController = this->getViewController(name);
     if (viewController) {
-        viewController->layerWillDisappear();
         viewController->rootLayerForScene->setVisible(false);
-        viewController->layerDidDisappear();
+        viewController->onHide();
     }
 }
 

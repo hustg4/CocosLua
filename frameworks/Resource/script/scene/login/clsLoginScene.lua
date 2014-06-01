@@ -14,10 +14,8 @@ class("clsLoginScene",clsGameScene)
 function clsLoginScene:onEnter()
 
     local loginViewController=clsLoginViewController:create()
-    self:loadViewController(loginViewController)
     
-    local registerViewController=clsRegisterViewController:create()
-    self:loadViewController(registerViewController)
+    self:loadViewController(clsRegisterViewController)
 
     self:showViewController(clsLoginViewController)
 

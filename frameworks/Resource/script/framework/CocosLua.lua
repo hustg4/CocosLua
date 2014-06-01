@@ -25,9 +25,9 @@ end
 
 cl = cl or {}
 
-function cl.showViewController(viewControllerClsOrInstance)
+function cl.showViewController(viewControllerClsOrInstance,data)
 	local scene = SceneManager:getInstance():getCurrentScene()
-	scene:showViewController(viewControllerClsOrInstance)
+	scene:showViewController(viewControllerClsOrInstance,data)
 end
 
 function cl.hideViewController(viewControllerClsOrInstance)

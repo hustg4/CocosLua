@@ -149,7 +149,6 @@ function LayoutNode(node)
      print("---------------------------------------")
      --]]
     node:setPosition(cc.p(x,y))
-    
 end
 
 --创建菜单
@@ -186,6 +185,7 @@ end
 
 --修改sprite的texture
 function ChangeSpriteTexture(sprite,imagePath)
+    print("ChangeSpriteTexture",imagePath)
     local texture = cc.Director:getInstance():getTextureCache():addImage(imagePath)
     local textureSize = texture:getContentSize()
     sprite:setTexture(texture)

@@ -13,7 +13,7 @@
 -- @param #cc.Layer layer
         
 --------------------------------
--- @function [parent=#ViewController] layerDidDisappear 
+-- @function [parent=#ViewController] onShow 
 -- @param self
         
 --------------------------------
@@ -21,12 +21,12 @@
 -- @param self
         
 --------------------------------
--- @function [parent=#ViewController] getRootLayer 
+-- @function [parent=#ViewController] getName 
 -- @param self
--- @return Layer#Layer ret (return value: cc.Layer)
+-- @return string#string ret (return value: string)
         
 --------------------------------
--- @function [parent=#ViewController] layerWillDisappear 
+-- @function [parent=#ViewController] onHide 
 -- @param self
         
 --------------------------------
@@ -35,12 +35,9 @@
 -- @return GameScene#GameScene ret (return value: GameScene)
         
 --------------------------------
--- @function [parent=#ViewController] layerWillAppear 
+-- @function [parent=#ViewController] getRootLayer 
 -- @param self
-        
---------------------------------
--- @function [parent=#ViewController] layerDidAppear 
--- @param self
+-- @return Layer#Layer ret (return value: cc.Layer)
         
 --------------------------------
 -- @function [parent=#ViewController] create 

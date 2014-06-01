@@ -11,22 +11,15 @@ local EVENT_SCALE_END = "scaleEnd"
 local EVENT_ROTATION_END = "rotationEnd"
 
 function clsCCBTestViewController:load()
-end
-
-function clsCCBTestViewController:onDidLoadFromCCB()
-    print("self.checkRootNode:"..tostring(self.checkRootNode))
-    print("self.nodeCheck:"..tostring(self.nodeCheck))
+    local ccblayer = self:loadCCB("ccb/MainScene.ccbi")
+    print("ccblayer",ccblayer)
+    self:setRootLayer(ccblayer)
 end
 
 function clsCCBTestViewController:unload()
     
 end
 
-function clsCCBTestViewController:eventNames()
-    return {    [EVENT_SCALE_END] = self.onScaleEndEvent,
-                [EVENT_ROTATION_END] = self.onRotationEndEvent 
-            }
-end
 
 function clsCCBTestViewController:onScaleEndEvent(eventName,...)
     print("onScaleEndEvent:",eventName,"params:",...)

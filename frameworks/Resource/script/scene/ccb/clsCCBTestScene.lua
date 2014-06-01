@@ -10,8 +10,7 @@ require ("scene/ccb/clsCCBTestViewController")
 class("clsCCBTestScene",clsGameScene)
 
 function clsCCBTestScene:onEnter()
-    local ccbTestViewController = clsCCBTestViewController:createWithCCB("ccb/MainScene.ccbi")
-    self:loadViewController(ccbTestViewController)
+    self:loadViewController(clsCCBTestViewController)
     self:showViewController(clsCCBTestViewController)
 end
 

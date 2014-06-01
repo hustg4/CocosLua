@@ -9,8 +9,7 @@ require ("scene/update/clsUpdateViewController")
 class("clsUpdateScene",{create=function() return GameScene:create() end})
 
 function clsUpdateScene:onEnter()
-    local updateViewController=clsUpdateViewController:create()
-    self:loadViewController(updateViewController)
+    self:loadViewController(clsUpdateViewController)
 end
 
 function clsUpdateScene:onExit()
