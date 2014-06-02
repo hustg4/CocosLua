@@ -92,11 +92,12 @@ function class(className,super)
             tolua.setpeer(self,nil)
             
             --调用原始函数
-            self[functionName](self,...)
+            local ret = self[functionName](self,...)
             
             --还原peertable
             tolua.setpeer(self,peertable)
             
+            return ret
         end
     
     end

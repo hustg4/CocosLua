@@ -78,6 +78,7 @@ void ViewController::setRootLayer(cocos2d::Layer* rootLayer)
     }
     if (this->rootLayer) {
         this->rootLayer->removeFromParent();
+        this->rootLayer = nullptr;
     }
     if (rootLayer) {
         this->rootLayer = rootLayer;
