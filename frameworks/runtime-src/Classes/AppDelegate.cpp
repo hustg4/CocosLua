@@ -2,9 +2,6 @@
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
 
-#include "framework.h"
-#include "HttpService.h"
-#include "SocketService.h"
 
 using namespace CocosDenshion;
 
@@ -38,28 +35,17 @@ bool AppDelegate::applicationDidFinishLaunching()
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
-    //框架版本号
-    CCLOG("Framework: version:%.2f",FrameworkVersion);
     
-    //配置SearchPath
-    ResourceManager::sharedResourceManager()->configSearchPath();
     
     //init network
     this->initNetwork();
 
-    Game::start();
 
     return true;
 }
 
 void AppDelegate::initNetwork()
 {
-    //添加NetService
-    NetCenter* netCenter=NetCenter::sharedNetCenter();
-    //   http
-    netCenter->addNetService("http", HttpService::create());
-    //   socket
-    netCenter->addNetService("socket", SocketService::create());
 }
 
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
