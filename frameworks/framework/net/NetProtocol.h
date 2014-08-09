@@ -22,6 +22,8 @@ class NetProtocol : public cocos2d::Ref{
 public:
     
     bool init();
+
+	NetProtocol();
     
     ~NetProtocol();
     

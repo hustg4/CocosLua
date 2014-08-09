@@ -4,10 +4,10 @@
 #include "cocos2d.h"
 
 #include "framework.h"
-#include "HttpService.h"
-#include "SocketService.h"
+//#include "HttpService.h"
+//#include "SocketService.h"
 
-#include "lua_framework_auto.hpp"
+#include "../../framework/lua-bindings/lua_framework_auto.hpp"
 
 using namespace CocosDenshion;
 
@@ -68,11 +68,11 @@ bool AppDelegate::applicationDidFinishLaunching()
 void AppDelegate::initNetwork()
 {
     //添加NetService
-    NetCenter* netCenter=NetCenter::sharedNetCenter();
+    //NetCenter* netCenter=NetCenter::sharedNetCenter();
     //   http
-    netCenter->addNetService("http", HttpService::create());
+    //netCenter->addNetService("http", HttpService::create());
     //   socket
-    netCenter->addNetService("socket", SocketService::create());
+    //netCenter->addNetService("socket", SocketService::create());
 }
 
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too

@@ -8,6 +8,11 @@
 
 #include "NetProtocol.h"
 
+NetProtocol::NetProtocol()
+	: handler(NULL)
+{
+}
+
 bool NetProtocol::init()
 {
     return true;
