@@ -7,7 +7,7 @@
 //
 
 #include "NetHandler.h"
-#include "LuaUtil.h"
+#include "../utils/LuaUtil.h"
 
 using namespace cocos2d;
 

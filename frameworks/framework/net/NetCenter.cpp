@@ -92,9 +92,9 @@ void NetCenter::removeAllNetFilters()
 void NetCenter::sendMessage(NetRequest *request)
 {
     NetProtocol* protocol=(NetProtocol*)netProtocolDict->objectForKey(request->getProtocolID());
-    CCAssert(protocol!=NULL, "未知协议的消息");
+    CCAssert(protocol!=NULL, "unknown protocol");
     NetService* service=(NetService*)netServiceDict->objectForKey(protocol->getServiceID());
-    CCAssert(service!=NULL, "此协议无服务");
+    CCAssert(service!=NULL, "no service for protocol");
     service->sendMessage(request);
 }
 
@@ -102,10 +102,9 @@ void NetCenter::dispatchSuccessfulMessage(NetResponse *response)
 {
     NetProtocol* protocol=(NetProtocol*)netProtocolDict->objectForKey(response->getProtocolID());
     if (protocol == NULL) {
-        CCLog("未知协议的消息");
+        CCLog("unknown protocol");
         return;
     }
-//    CCAssert(protocol!=NULL, "未知协议的消息");
     //(1)过滤
     int count = this->netFilterChain->count();
     for (int i = 0; i < count; i++) {
@@ -122,7 +121,7 @@ void NetCenter::dispatchSuccessfulMessage(NetResponse *response)
     }
     //(2)处理
     NetHandler* handler=(NetHandler*)protocol->getHandler();
-    CCAssert(handler!=NULL, "此协议无处理器");
+    CCAssert(handler!=NULL, "no handler for protocol");
     handler->handleSuccessfulMessage(response);
 }
 
@@ -144,9 +143,9 @@ void NetCenter::dispatchFailedMessage(NetResponse *response)
     }
     //(2)处理
     NetProtocol* protocol=(NetProtocol*)netProtocolDict->objectForKey(response->getProtocolID());
-    CCAssert(protocol!=NULL, "未知协议的消息");
+    CCAssert(protocol!=NULL, "unknown protocol");
     NetHandler* handler=(NetHandler*)protocol->getHandler();
-    CCAssert(handler!=NULL, "此协议无处理器");
+    CCAssert(handler!=NULL, "no handler for protocol");
     handler->handleFailedMessage(response);
 }
 

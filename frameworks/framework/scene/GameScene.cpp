@@ -7,7 +7,7 @@
 //
 
 #include "GameScene.h"
-#include "LuaUtil.h"
+#include "../utils/LuaUtil.h"
 #include "UIManager.h"
 
 using namespace cocos2d;

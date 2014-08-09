@@ -21,7 +21,7 @@
 #include "net/NetResponse.h"
 #include "net/NetService.h"
 
-#include "net/utils/Socket.h"
+//#include "net/utils/Socket.h"
 #include "net/utils/HttpForm.h"
 #include "net/utils/HttpDownloader.h"
 
@@ -46,7 +46,7 @@
 
 #include "utils/NetStatus/NetStatusUtil.h"
 
-#include "utils/RegexUtil.h"
+//#include "utils/RegexUtil.h"
 #include "utils/ResourceManager.h"
 
 #include "utils/uuid/UUIDGenerator.h"

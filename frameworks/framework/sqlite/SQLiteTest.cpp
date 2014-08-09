@@ -38,12 +38,12 @@ void SQLiteTest::testCreate()
         valueVector.push_back(Value("age"));
         bool res = sqlite->createTable("people", valueVector);
         if (res) {
-            CCLOG("创建表成功");
+            CCLOG("successful");
         }else{
-            CCLOG("创建表失败");
+            CCLOG("failure");
         }
     }else{
-        CCLOG("打开数据库失败");
+        CCLOG("failure");
     }
 }
 
@@ -53,12 +53,12 @@ void SQLiteTest::testDrop()
     if (sqlite) {
         bool res = sqlite->dropTable("people");
         if (res) {
-            CCLOG("删除表成功");
+            CCLOG("successful");
         }else{
-            CCLOG("删除表失败");
+            CCLOG("failure");
         }
     }else{
-        CCLOG("打开数据库失败");
+        CCLOG("failure");
     }
 }
 

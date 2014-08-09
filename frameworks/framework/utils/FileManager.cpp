@@ -6,13 +6,15 @@
 //
 //
 
-//#if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <errno.h>
-//#endif
 
-#include "external/unzip/unzip.h"
+#ifdef _WIN32 
+#include <io.h>
+#endif
+
+#include "unzip.h"
 
 #include "FileManager.h"
 
@@ -43,7 +45,11 @@ const char* FileManager::splicePath(const std::string &parentPath, const std::st
 
 bool FileManager::fileExists(const std::string& filePath)
 {
-    return (0 == access(filePath.c_str(), F_OK));
+#ifdef _WIN32 
+	return ( _access(filePath.c_str(), 0) == 0 ); 
+#else 
+	return (0 == access(filePath.c_str(), F_OK)); 
+#endif 
 }
 
 bool FileManager::renameFile(const std::string& oldFilePath, const std::string& newFilePath)
@@ -67,7 +73,7 @@ bool FileManager::createDirectory(const string& directoryPath)
     do {
         int pos = fullPath.find_last_of('/');
         directorySubPath = fullPath.substr(0, pos);
-        if(0 != access(directorySubPath.c_str(), F_OK)) // 目录不存在
+        if(!FileManager::fileExists(directorySubPath.c_str())) // 目录不存在
         {
             directoryPathArray.insert(directoryPathArray.begin(), directorySubPath);
             fullPath = directorySubPath.c_str();
@@ -93,7 +99,7 @@ bool FileManager::createDirectory(const string& directoryPath)
 
 bool FileManager::doCreateDirectory(const string& directoryPath)
 {
-    //#if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
+    #if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
     mode_t processMask = umask(0);
     int ret = mkdir(directoryPath.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
     umask(processMask);
@@ -103,14 +109,14 @@ bool FileManager::doCreateDirectory(const string& directoryPath)
     }
     
     return true;
-    //#else
-    //    BOOL ret = CreateDirectoryA(path, NULL);
-    //	if (!ret && ERROR_ALREADY_EXISTS != GetLastError())
-    //	{
-    //		return false;
-    //	}
-    //    return true;
-    //#endif
+    #else
+	BOOL ret = CreateDirectoryA(directoryPath.c_str(), NULL);
+    	if (!ret && ERROR_ALREADY_EXISTS != GetLastError())
+    	{
+    		return false;
+    	}
+        return true;
+    #endif
 }
 
 

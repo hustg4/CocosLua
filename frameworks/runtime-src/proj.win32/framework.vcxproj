@@ -66,7 +66,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(EngineRoot)cocos\scripting\lua-bindings\auto;$(EngineRoot)cocos\scripting\lua-bindings\manual;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\lua\lua;$(EngineRoot)external\lua\tolua;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(EngineRoot)cocos\scripting\lua-bindings\auto;$(EngineRoot)cocos\scripting\lua-bindings\manual;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\lua\lua;$(EngineRoot)external\lua\tolua;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot);$(EngineRoot)external\curl\include\win32;$(EngineRoot)external\unzip;$(EngineRoot)external\win32-specific\zlib\include;$(ProjectDir)..\..\framework;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -160,11 +160,124 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\framework\framework.h" />
+    <ClInclude Include="..\..\framework\Game.h" />
+    <ClInclude Include="..\..\framework\json\JSONElement.h" />
+    <ClInclude Include="..\..\framework\json\JSONFormatter.h" />
+    <ClInclude Include="..\..\framework\json\JSONParser.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Dependencies\libbase64++\libbase64++.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Dependencies\mempool++\mempool.h" />
+    <ClInclude Include="..\..\framework\json\libjson\JSONOptions.h" />
+    <ClInclude Include="..\..\framework\json\libjson\libjson.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\internalJSONNode.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONAllocator.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONChildren.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDebug.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs\GNU_C.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs\Strings_Defs.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs\Unknown_C.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs\Visual_C.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONGlobals.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONMemory.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONMemoryPool.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONNode.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONPreparse.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONSharedString.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONSingleton.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONStats.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONStream.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONValidator.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONWorker.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSON_Base64.h" />
+    <ClInclude Include="..\..\framework\json\libjson\Source\NumberToString.h" />
+    <ClInclude Include="..\..\framework\json\samples\JSONFormatTest.h" />
+    <ClInclude Include="..\..\framework\json\samples\JSONParserTest.h" />
+    <ClInclude Include="..\..\framework\lua-bindings\lua_framework_auto.hpp" />
+    <ClInclude Include="..\..\framework\net\NetCenter.h" />
+    <ClInclude Include="..\..\framework\net\NetFilter.h" />
+    <ClInclude Include="..\..\framework\net\NetHandler.h" />
+    <ClInclude Include="..\..\framework\net\NetProtocol.h" />
+    <ClInclude Include="..\..\framework\net\NetRequest.h" />
+    <ClInclude Include="..\..\framework\net\NetResponse.h" />
+    <ClInclude Include="..\..\framework\net\NetService.h" />
+    <ClInclude Include="..\..\framework\net\utils\HttpDownloader.h" />
+    <ClInclude Include="..\..\framework\net\utils\HttpForm.h" />
+    <ClInclude Include="..\..\framework\net\utils\ODSocket.h" />
+    <ClInclude Include="..\..\framework\notification\notification.h" />
+    <ClInclude Include="..\..\framework\scene\GameScene.h" />
+    <ClInclude Include="..\..\framework\scene\SceneManager.h" />
+    <ClInclude Include="..\..\framework\scene\UIManager.h" />
+    <ClInclude Include="..\..\framework\scene\ViewController.h" />
+    <ClInclude Include="..\..\framework\sqlite\libsqlite\sqlite3.h" />
+    <ClInclude Include="..\..\framework\sqlite\libsqlite\sqlite3ext.h" />
+    <ClInclude Include="..\..\framework\sqlite\SQLite.h" />
+    <ClInclude Include="..\..\framework\sqlite\SQLiteTest.h" />
+    <ClInclude Include="..\..\framework\utils\base64\Base64.h" />
+    <ClInclude Include="..\..\framework\utils\base64\Base64Util.h" />
+    <ClInclude Include="..\..\framework\utils\encrypt\DBDecryptUtil.h" />
+    <ClInclude Include="..\..\framework\utils\encrypt\des.h" />
+    <ClInclude Include="..\..\framework\utils\encrypt\DESUtil.h" />
+    <ClInclude Include="..\..\framework\utils\encrypt\FileDecryptUtil.h" />
+    <ClInclude Include="..\..\framework\utils\FileManager.h" />
+    <ClInclude Include="..\..\framework\utils\LuaUtil.h" />
+    <ClInclude Include="..\..\framework\utils\md5.h" />
+    <ClInclude Include="..\..\framework\utils\NetStatus\ios_mac\Reachability.h" />
+    <ClInclude Include="..\..\framework\utils\NetStatus\NetStatusUtil.h" />
+    <ClInclude Include="..\..\framework\utils\ResourceManager.h" />
+    <ClInclude Include="..\..\framework\utils\uuid\UUIDGenerator.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\framework\Game.cpp" />
+    <ClCompile Include="..\..\framework\json\JSONElement.cpp" />
+    <ClCompile Include="..\..\framework\json\JSONFormatter.cpp" />
+    <ClCompile Include="..\..\framework\json\JSONParser.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\internalJSONNode.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONAllocator.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONChildren.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONDebug.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONIterators.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONMemory.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONNode.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONNode_Mutex.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONPreparse.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONStream.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONValidator.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONWorker.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONWriter.cpp" />
+    <ClCompile Include="..\..\framework\json\libjson\Source\libjson.cpp" />
+    <ClCompile Include="..\..\framework\json\samples\JSONFormatTest.cpp" />
+    <ClCompile Include="..\..\framework\json\samples\JSONParserTest.cpp" />
+    <ClCompile Include="..\..\framework\lua-bindings\lua_framework_auto.cpp" />
+    <ClCompile Include="..\..\framework\net\NetCenter.cpp" />
+    <ClCompile Include="..\..\framework\net\NetFilter.cpp" />
+    <ClCompile Include="..\..\framework\net\NetHandler.cpp" />
+    <ClCompile Include="..\..\framework\net\NetProtocol.cpp" />
+    <ClCompile Include="..\..\framework\net\NetRequest.cpp" />
+    <ClCompile Include="..\..\framework\net\NetResponse.cpp" />
+    <ClCompile Include="..\..\framework\net\utils\HttpDownloader.cpp" />
+    <ClCompile Include="..\..\framework\net\utils\HttpForm.cpp" />
+    <ClCompile Include="..\..\framework\net\utils\ODSocket.cpp" />
+    <ClCompile Include="..\..\framework\scene\GameScene.cpp" />
+    <ClCompile Include="..\..\framework\scene\SceneManager.cpp" />
+    <ClCompile Include="..\..\framework\scene\UIManager.cpp" />
+    <ClCompile Include="..\..\framework\scene\ViewController.cpp" />
+    <ClCompile Include="..\..\framework\sqlite\libsqlite\sqlite3.c" />
+    <ClCompile Include="..\..\framework\sqlite\SQLite.cpp" />
+    <ClCompile Include="..\..\framework\sqlite\SQLiteTest.cpp" />
+    <ClCompile Include="..\..\framework\utils\base64\Base64.cpp" />
+    <ClCompile Include="..\..\framework\utils\base64\Base64Util.cpp" />
+    <ClCompile Include="..\..\framework\utils\encrypt\DBDecryptUtil.cpp" />
+    <ClCompile Include="..\..\framework\utils\encrypt\des.cpp" />
+    <ClCompile Include="..\..\framework\utils\encrypt\DESUtil.cpp" />
+    <ClCompile Include="..\..\framework\utils\encrypt\FileDecryptUtil.cpp" />
+    <ClCompile Include="..\..\framework\utils\FileManager.cpp" />
+    <ClCompile Include="..\..\framework\utils\LuaUtil.cpp" />
+    <ClCompile Include="..\..\framework\utils\md5.cpp" />
+    <ClCompile Include="..\..\framework\utils\ResourceManager.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
