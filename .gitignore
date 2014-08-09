@@ -3,3 +3,5 @@
 xcshareddata
 Debug.win32
 *.xccheckout
+*.sdf
+*.opensdf
