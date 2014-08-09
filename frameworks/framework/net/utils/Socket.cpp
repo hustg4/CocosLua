@@ -53,28 +53,6 @@ SocketEvent::~SocketEvent()
 
 /******************Socket******************/
 
-void* senderThreadFunc(void *data)
-{
-    Socket* socket = (Socket*)data;
-    while (true) {
-        int res = sem_wait(socket->pSem);
-        if (res < 0) {
-            CCLog("socket async thread semaphore error: %s\n", strerror(errno));
-            break;
-        }
-        socket->processOperationQueue();
-    }
-    return NULL;
-}
-
-void* receiverThreadFunc(void *data)
-{
-    Socket* socket = (Socket*)data;
-    while (true) {
-        socket->readData();
-    }
-}
-
 Socket::Socket(const std::string& host, int port)
 :delegate(NULL),
 connecting(false),
@@ -143,18 +121,6 @@ void Socket::send(const std::string &data)
 void Socket::destroy()
 {
     CCDirector::getInstance()->getScheduler()->unscheduleAllForTarget(this);
-    if (pSem != NULL) {
-#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-        sem_unlink(SOCKET_SEMAPHORE);
-        sem_close(pSem);
-#else
-        sem_destroy(pSem);
-#endif
-        
-        pSem = NULL;
-    }
-    //    pthread_cancel(senderThread);
-    //    pthread_cancel(recevierThread);
     this->release();
 }
 
@@ -163,7 +129,7 @@ void Socket::addOperation(SocketOperation *operation)
     if (!isThreadStarted) {
         this->startNetThread();
     }
-    pthread_mutex_lock(&operationQueueMutex);
+    operationQueueMutex.lock();
     //将操作添加到队列，并通知网络线程处理
     if (operation->getType() == SocketOperationTypeConnect) {
         
@@ -178,57 +144,58 @@ void Socket::addOperation(SocketOperation *operation)
         this->operationQueue->removeAllObjects();
         this->operationQueue->addObject(operation);
     }
-    sem_post(pSem);
-    pthread_mutex_unlock(&operationQueueMutex);
+    waitCondition.notify_one();
+    operationQueueMutex.unlock();
 }
 
 void Socket::addEvent(SocketEvent *event)
 {
-    pthread_mutex_lock(&eventQueueMutex);
+    eventQueueMutex.lock();
     this->eventQueue->addObject(event);
-    pthread_mutex_unlock(&eventQueueMutex);
+    eventQueueMutex.unlock();
 }
 
 void Socket::startNetThread()
 {
-    pthread_mutex_init(&operationQueueMutex, NULL);
-    pthread_mutex_init(&eventQueueMutex, NULL);
-#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC
-    pSem = sem_open(SOCKET_SEMAPHORE, O_CREAT, 0644, 0);
-    if (pSem == SEM_FAILED) {
-        CCLog("Open Socket Semaphore failed");
-        pSem = NULL;
-        return;
-    }
-#else
-    int semRet = sem_init(&sem, 0, 0);
-    if (semRet < 0) {
-        CCLog("Init Socket Semaphore failed");
-        return;
-    }
+    auto t = std::thread(CC_CALLBACK_0(Socket::senderThreadFunc, this));
+    t.detach();
     
-    pSem = &sem;
-#endif
+    t = std::thread(CC_CALLBACK_0(Socket::receiverThreadFunc, this));
+    t.detach();
     
-    pthread_create(&senderThread, NULL, senderThreadFunc, this);
-    pthread_detach(senderThread);
-    
-    pthread_create(&recevierThread, NULL, receiverThreadFunc, this);
-    pthread_detach(recevierThread);
     
     isThreadStarted = true;
+}
+
+void Socket::senderThreadFunc()
+{
+    while (true) {
+        
+        std::unique_lock<std::mutex> lk(waitMutex);
+        waitCondition.wait(lk);
+        
+        this->processOperationQueue();
+    }
+}
+
+void Socket::receiverThreadFunc()
+{
+    while (true) {
+        this->readData();
+    }
 }
 
 //run in sender thread
 void Socket::processOperationQueue()
 {
-    pthread_mutex_lock(&operationQueueMutex);
+    operationQueueMutex.lock();
     //剪切操作队列（多线程环境下，减少线程对操作队列的持有时间）
     __Array* tempArray = new __Array();
     tempArray->init();
     tempArray->addObjectsFromArray(this->operationQueue);
     this->operationQueue->removeAllObjects();
-    pthread_mutex_unlock(&operationQueueMutex);
+    operationQueueMutex.unlock();
+    
     //处理操作
     for (int i = 0; i < tempArray->count(); i++) {
         
@@ -295,12 +262,12 @@ void Socket::readData()
 //run in main thread
 void Socket::processEventQueue(float delta)
 {
-    pthread_mutex_lock(&eventQueueMutex);
+    eventQueueMutex.lock();
     //剪切事件队列（多线程环境下，减少线程对事件队列的持有时间）
     __Array* tempArray = __Array::create();
     tempArray->addObjectsFromArray(this->eventQueue);
     this->eventQueue->removeAllObjects();
-    pthread_mutex_unlock(&eventQueueMutex);
+    eventQueueMutex.unlock();
     
     //处理事件
     for (int i = 0; i < tempArray->count(); i++) {

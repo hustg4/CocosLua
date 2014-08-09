@@ -12,8 +12,6 @@
 #include <iostream>
 #include "cocos2d.h"
 
-#include <pthread.h>
-#include <semaphore.h>
 #include "ODSocket.h"
 
 /******************SocketDelegate******************/
@@ -160,17 +158,13 @@ private:
     
     bool connected;
     
-    pthread_t senderThread;                         //发送者线程
+    std::mutex  operationQueueMutex;                //操作队列互斥锁
     
-    pthread_t recevierThread;                       //接收者线程
+    std::mutex  eventQueueMutex;                    //事件队列互斥锁
     
-    sem_t *          pSem;
+    std::mutex  waitMutex;                           //线程等待锁
     
-    sem_t            sem;
-    
-    pthread_mutex_t  operationQueueMutex;           //操作队列互斥锁
-    
-    pthread_mutex_t  eventQueueMutex;               //事件队列互斥锁
+    std::condition_variable     waitCondition;      //等待条件
     
     bool isThreadStarted;                           //线程是否创建并启动
     
@@ -183,6 +177,10 @@ private:
     void addEvent(SocketEvent* event);              //添加网络事件，主线程处理
     
     void startNetThread();                          //启动网络线程
+    
+    void senderThreadFunc();
+    
+    void receiverThreadFunc();
     
 };
 
