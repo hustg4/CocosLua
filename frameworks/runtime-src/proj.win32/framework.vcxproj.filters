@@ -10,6 +10,9 @@
     <Filter Include="resource">
       <UniqueIdentifier>{2d1d0979-58cd-4ab6-b91c-13650158f1fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="framework">
+      <UniqueIdentifier>{a86260e6-9b94-4198-b6bf-239f98910b39}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">
@@ -19,6 +22,210 @@
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="..\..\framework\framework.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\Game.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\JSONElement.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\JSONFormatter.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\JSONParser.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Dependencies\libbase64++\libbase64++.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Dependencies\mempool++\mempool.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\JSONOptions.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\libjson.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\internalJSONNode.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONAllocator.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONChildren.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDebug.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs\GNU_C.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs\Strings_Defs.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs\Unknown_C.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs\Visual_C.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONDefs.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONGlobals.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONMemory.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONMemoryPool.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONNode.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONPreparse.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONSharedString.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONSingleton.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONStats.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONStream.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONValidator.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSONWorker.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\JSON_Base64.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\libjson\Source\NumberToString.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\samples\JSONFormatTest.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\json\samples\JSONParserTest.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\lua-bindings\lua_framework_auto.hpp">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\NetCenter.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\NetFilter.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\NetHandler.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\NetProtocol.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\NetRequest.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\NetResponse.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\NetService.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\utils\HttpDownloader.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\utils\HttpForm.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\utils\ODSocket.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\net\utils\Socket.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\notification\notification.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\scene\GameScene.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\scene\SceneManager.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\scene\UIManager.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\scene\ViewController.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\sqlite\libsqlite\sqlite3.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\sqlite\libsqlite\sqlite3ext.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\sqlite\SQLite.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\sqlite\SQLiteTest.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\base64\Base64.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\base64\Base64Util.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\encrypt\DBDecryptUtil.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\encrypt\des.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\encrypt\DESUtil.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\encrypt\FileDecryptUtil.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\FileManager.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\LuaUtil.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\md5.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\NetStatus\ios_mac\Reachability.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\NetStatus\NetStatusUtil.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\RegexUtil.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\ResourceManager.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\utils\uuid\UUIDGenerator.h">
+      <Filter>framework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
@@ -26,6 +233,153 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\Game.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\JSONElement.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\JSONFormatter.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\JSONParser.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\internalJSONNode.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONAllocator.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONChildren.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONDebug.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONIterators.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONMemory.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONNode.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONNode_Mutex.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONPreparse.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONStream.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONValidator.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONWorker.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\JSONWriter.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\libjson\Source\libjson.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\samples\JSONFormatTest.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\json\samples\JSONParserTest.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\lua-bindings\lua_framework_auto.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\NetCenter.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\NetFilter.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\NetHandler.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\NetProtocol.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\NetRequest.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\NetResponse.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\utils\HttpDownloader.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\utils\HttpForm.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\utils\ODSocket.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\utils\Socket.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\scene\GameScene.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\scene\SceneManager.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\scene\UIManager.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\scene\ViewController.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\sqlite\libsqlite\sqlite3.c">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\sqlite\SQLite.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\sqlite\SQLiteTest.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\base64\Base64.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\base64\Base64Util.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\encrypt\DBDecryptUtil.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\encrypt\des.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\encrypt\DESUtil.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\encrypt\FileDecryptUtil.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\FileManager.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\LuaUtil.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\md5.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\RegexUtil.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\utils\ResourceManager.cpp">
+      <Filter>framework</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -28,7 +28,7 @@
  *  it simply tells you about them, which is nice for debugging, but not preferable
  *  for release candidates
  */
-//#define JSON_DEBUG
+#define JSON_DEBUG
 
 
 /*
@@ -322,7 +322,7 @@
  *  compatibility between major releases.  It is highly recommended that you move your functions
  *  over to the new equivalents
  */
-#define JSON_DEPRECATED_FUNCTIONS
+//#define JSON_DEPRECATED_FUNCTIONS
 
 
 /*
