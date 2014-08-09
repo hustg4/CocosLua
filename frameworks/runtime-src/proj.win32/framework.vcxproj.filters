@@ -154,9 +154,6 @@
     <ClInclude Include="..\..\framework\net\utils\ODSocket.h">
       <Filter>framework</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\framework\net\utils\Socket.h">
-      <Filter>framework</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\framework\notification\notification.h">
       <Filter>framework</Filter>
     </ClInclude>
@@ -215,9 +212,6 @@
       <Filter>framework</Filter>
     </ClInclude>
     <ClInclude Include="..\..\framework\utils\NetStatus\NetStatusUtil.h">
-      <Filter>framework</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\framework\utils\RegexUtil.h">
       <Filter>framework</Filter>
     </ClInclude>
     <ClInclude Include="..\..\framework\utils\ResourceManager.h">
@@ -324,9 +318,6 @@
     <ClCompile Include="..\..\framework\net\utils\ODSocket.cpp">
       <Filter>framework</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\net\utils\Socket.cpp">
-      <Filter>framework</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\framework\scene\GameScene.cpp">
       <Filter>framework</Filter>
     </ClCompile>
@@ -373,9 +364,6 @@
       <Filter>framework</Filter>
     </ClCompile>
     <ClCompile Include="..\..\framework\utils\md5.cpp">
-      <Filter>framework</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\framework\utils\RegexUtil.cpp">
       <Filter>framework</Filter>
     </ClCompile>
     <ClCompile Include="..\..\framework\utils\ResourceManager.cpp">

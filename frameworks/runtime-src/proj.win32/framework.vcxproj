@@ -66,7 +66,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(EngineRoot)cocos\scripting\lua-bindings\auto;$(EngineRoot)cocos\scripting\lua-bindings\manual;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\lua\lua;$(EngineRoot)external\lua\tolua;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot);$(EngineRoot)external\curl\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(EngineRoot)cocos\scripting\lua-bindings\auto;$(EngineRoot)cocos\scripting\lua-bindings\manual;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\lua\lua;$(EngineRoot)external\lua\tolua;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot);$(EngineRoot)external\curl\include\win32;$(EngineRoot)external\unzip;$(EngineRoot)external\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -204,7 +204,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\..\framework\net\utils\HttpDownloader.h" />
     <ClInclude Include="..\..\framework\net\utils\HttpForm.h" />
     <ClInclude Include="..\..\framework\net\utils\ODSocket.h" />
-    <ClInclude Include="..\..\framework\net\utils\Socket.h" />
     <ClInclude Include="..\..\framework\notification\notification.h" />
     <ClInclude Include="..\..\framework\scene\GameScene.h" />
     <ClInclude Include="..\..\framework\scene\SceneManager.h" />
@@ -225,7 +224,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\..\framework\utils\md5.h" />
     <ClInclude Include="..\..\framework\utils\NetStatus\ios_mac\Reachability.h" />
     <ClInclude Include="..\..\framework\utils\NetStatus\NetStatusUtil.h" />
-    <ClInclude Include="..\..\framework\utils\RegexUtil.h" />
     <ClInclude Include="..\..\framework\utils\ResourceManager.h" />
     <ClInclude Include="..\..\framework\utils\uuid\UUIDGenerator.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -263,7 +261,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\..\framework\net\utils\HttpDownloader.cpp" />
     <ClCompile Include="..\..\framework\net\utils\HttpForm.cpp" />
     <ClCompile Include="..\..\framework\net\utils\ODSocket.cpp" />
-    <ClCompile Include="..\..\framework\net\utils\Socket.cpp" />
     <ClCompile Include="..\..\framework\scene\GameScene.cpp" />
     <ClCompile Include="..\..\framework\scene\SceneManager.cpp" />
     <ClCompile Include="..\..\framework\scene\UIManager.cpp" />
@@ -280,7 +277,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\..\framework\utils\FileManager.cpp" />
     <ClCompile Include="..\..\framework\utils\LuaUtil.cpp" />
     <ClCompile Include="..\..\framework\utils\md5.cpp" />
-    <ClCompile Include="..\..\framework\utils\RegexUtil.cpp" />
     <ClCompile Include="..\..\framework\utils\ResourceManager.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="main.cpp" />

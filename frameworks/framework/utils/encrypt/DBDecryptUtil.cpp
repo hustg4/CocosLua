@@ -7,7 +7,7 @@
 //
 
 #include "DBDecryptUtil.h"
-#include "Base64Util.h"
+#include "../base64/Base64Util.h"
 #include "DESUtil.h"
 #include "cocos2d.h"
 

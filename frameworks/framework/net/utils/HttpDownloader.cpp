@@ -6,7 +6,7 @@
 //
 
 #include "HttpDownloader.h"
-#include "FileManager.h"
+#include "../../utils/FileManager.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -251,7 +251,7 @@ bool HttpDownloader::download(const std::string &url, const std::string &savePat
     if (!isThreadInited) {
         isThreadInited = this->initThread();
         if (!isThreadInited) {
-            CCLOG("HttpDownloader 线程初始化失败");
+            CCLOG("HttpDownloader init error");
             return false;
         }
     }
@@ -367,14 +367,14 @@ bool HttpDownloader::initTask()
     
     if(tempStdFullPath[tempStdFullPath.size() - 1] == '/') // 需要指定文件而不是路径
     {
-        CCLOG("需要指定文件而不是目录");
+        CCLOG("need folder");
         return false;
     }
     
     //创建目录
     if(!FileManager::createDirectory(tempStdFullPath))
     {
-        CCLOG("创建目录错误");
+        CCLOG("mkdir error");
         return false;
     }
     

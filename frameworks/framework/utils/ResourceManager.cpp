@@ -242,14 +242,14 @@ void ResourceManager::mergeMD5File()
 void ResourceManager::updateVersion()
 {
     if (versionLatest) {
-        std::string errorMsg = "版本已是最新,不需要更新";
+        std::string errorMsg = "version is lastest";
         this->reportError(RMMainModuleName, kResourceManagerErrorTypeVersionIsLatest,errorMsg);
         return;
     }
     
     if (compareVersion(minProgramVersion,this->programVersion) == 1) {
         
-        std::string errorMsg = "程序版本太低，请先更新程序";
+        std::string errorMsg = "update program first";
         this->reportError(RMMainModuleName, kResourceManagerErrorTypeVersionIsLatest,errorMsg);
         return;
     }
@@ -263,7 +263,7 @@ int ResourceManager::checkModule(const std::string &moduleName)
     JSONObject* objModules = jsonObjConfig->getJSONObject("modules");
     
     if (!objModules->has(moduleName)) {
-        __String* errorMsg = __String::createWithFormat("模块[%s]不存在",moduleName.c_str());
+        __String* errorMsg = __String::createWithFormat("module[%s]not exist",moduleName.c_str());
         this->reportError(moduleName, kResourceManagerErrorTypeNoSuchModule,errorMsg->getCString());
         return -1;
     }
