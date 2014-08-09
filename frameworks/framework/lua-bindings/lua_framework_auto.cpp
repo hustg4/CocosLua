@@ -1,10 +1,4 @@
 #include "lua_framework_auto.hpp"
-#include "JSONElement.h"
-#include "GameScene.h"
-#include "NetCenter.h"
-#include "SQLite.h"
-#include "Game.h"
-#include "SceneManager.h"
 #include "tolua_fix.h"
 #include "LuaBasicConversions.h"
 

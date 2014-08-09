@@ -9,6 +9,8 @@ extern "C" {
 }
 #endif
 
+#include "../framework.h"
+
 int register_all_framework(lua_State* tolua_S);
 
 
