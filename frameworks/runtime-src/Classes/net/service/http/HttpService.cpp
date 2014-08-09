@@ -83,7 +83,7 @@ void HttpService::onHttpRequestCompleted(cocos2d::network::HttpClient *client, c
     str.clear();
     str.assign(buffer->begin(), buffer->end());
     //unicode反编码
-    RegexUtil::replaceAll(str, "\\\\u[0-9a-fA-F]{4}", this, RegexUtilReplaceCallBack(&HttpService::replaceCallback));
+//    RegexUtil::replaceAll(str, "\\\\u[0-9a-fA-F]{4}", this, RegexUtilReplaceCallBack(&HttpService::replaceCallback));
     JSONObject* jsonObj=JSONObject::createWithString(str);
     log("HttpService收到:%s\n",jsonObj->toPrettyString());
     NetRequest* netRequest=(NetRequest*)request->getUserData();

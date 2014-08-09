@@ -5,7 +5,7 @@
 
 #include "framework.h"
 
-#include "lua-bindings/lua_framework_auto.hpp"
+#include "../framework/lua-bindings/lua_framework_auto.hpp"
 
 using namespace CocosDenshion;
 
@@ -57,6 +57,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     // run main lua file
     engine->executeScriptFile("main.lua");
+
     
     return true;
 }
