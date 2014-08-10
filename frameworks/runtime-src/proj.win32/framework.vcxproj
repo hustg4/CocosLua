@@ -204,6 +204,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\..\framework\net\utils\HttpDownloader.h" />
     <ClInclude Include="..\..\framework\net\utils\HttpForm.h" />
     <ClInclude Include="..\..\framework\net\utils\ODSocket.h" />
+    <ClInclude Include="..\..\framework\net\utils\Socket.h" />
     <ClInclude Include="..\..\framework\notification\notification.h" />
     <ClInclude Include="..\..\framework\scene\GameScene.h" />
     <ClInclude Include="..\..\framework\scene\SceneManager.h" />
@@ -261,6 +262,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\..\framework\net\utils\HttpDownloader.cpp" />
     <ClCompile Include="..\..\framework\net\utils\HttpForm.cpp" />
     <ClCompile Include="..\..\framework\net\utils\ODSocket.cpp" />
+    <ClCompile Include="..\..\framework\net\utils\Socket.cpp" />
     <ClCompile Include="..\..\framework\scene\GameScene.cpp" />
     <ClCompile Include="..\..\framework\scene\SceneManager.cpp" />
     <ClCompile Include="..\..\framework\scene\UIManager.cpp" />

@@ -220,6 +220,9 @@
     <ClInclude Include="..\..\framework\utils\uuid\UUIDGenerator.h">
       <Filter>framework</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\framework\net\utils\Socket.h">
+      <Filter>framework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
@@ -367,6 +370,9 @@
       <Filter>framework</Filter>
     </ClCompile>
     <ClCompile Include="..\..\framework\utils\ResourceManager.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\net\utils\Socket.cpp">
       <Filter>framework</Filter>
     </ClCompile>
   </ItemGroup>
