@@ -20,6 +20,8 @@
 class NetResponse : public cocos2d::Ref{
     
 public:
+
+	NetResponse();
     
     virtual bool init();
     

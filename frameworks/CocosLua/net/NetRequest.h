@@ -22,6 +22,8 @@ class NetRequest : public cocos2d::Ref{
 public:
     
     virtual bool init();
+
+	NetRequest();
     
     virtual ~NetRequest();
     

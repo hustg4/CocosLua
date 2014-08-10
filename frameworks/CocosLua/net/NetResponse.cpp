@@ -8,6 +8,12 @@
 
 #include "NetResponse.h"
 
+NetResponse::NetResponse()
+	: body(NULL)
+	, request(NULL)
+{
+}
+
 bool NetResponse::init()
 {
     return true;

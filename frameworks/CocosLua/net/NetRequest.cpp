@@ -8,6 +8,12 @@
 
 #include "NetRequest.h"
 
+NetRequest::NetRequest()
+	: body(NULL)
+	, configInfo(NULL)
+{
+}
+
 bool NetRequest::init()
 {
     return true;
