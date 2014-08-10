@@ -1,0 +1,99 @@
+﻿生成启动时间为 2014/8/10 10:43:51。
+     1>项目“D:\WorkSpace\soyomaker\CocosLua\frameworks\libProj\win32\libCocosLua\libCocosLua.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\WorkSpace\soyomaker\CocosLua\frameworks\libProj\win32\libCocosLua\..\Classes /I"cocos\scripting\lua-bindings\auto" /I"cocos\scripting\lua-bindings\manual" /Icocos\audio\include /Iexternal\lua\lua /Iexternal\lua\tolua /Iexternal\chipmunk\include\chipmunk /Iextensions /Iexternal\curl\include\win32 /Iexternal\unzip /I"external\win32-specific\zlib\include" /ID:\WorkSpace\soyomaker\CocosLua\frameworks\libProj\win32\libCocosLua\..\..\CocosLua /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\CocosLua\Game.cpp ..\..\..\CocosLua\json\JSONElement.cpp ..\..\..\CocosLua\json\JSONFormatter.cpp ..\..\..\CocosLua\json\JSONParser.cpp ..\..\..\CocosLua\json\samples\JSONFormatTest.cpp ..\..\..\CocosLua\json\samples\JSONParserTest.cpp "..\..\..\CocosLua\lua-bindings\lua_framework_auto.cpp" ..\..\..\CocosLua\net\NetCenter.cpp ..\..\..\CocosLua\net\NetFilter.cpp ..\..\..\CocosLua\net\NetHandler.cpp ..\..\..\CocosLua\net\NetProtocol.cpp ..\..\..\CocosLua\net\NetRequest.cpp ..\..\..\CocosLua\net\NetResponse.cpp ..\..\..\CocosLua\net\utils\HttpDownloader.cpp ..\..\..\CocosLua\net\utils\HttpForm.cpp ..\..\..\CocosLua\net\utils\Socket.cpp ..\..\..\CocosLua\scene\GameScene.cpp ..\..\..\CocosLua\scene\SceneManager.cpp ..\..\..\CocosLua\scene\UIManager.cpp ..\..\..\CocosLua\scene\ViewController.cpp ..\..\..\CocosLua\sqlite\SQLite.cpp ..\..\..\CocosLua\sqlite\SQLiteTest.cpp ..\..\..\CocosLua\utils\FileManager.cpp ..\..\..\CocosLua\utils\LuaUtil.cpp ..\..\..\CocosLua\utils\ResourceManager.cpp ..\..\..\CocosLua\utils\base64\Base64Util.cpp ..\..\..\CocosLua\utils\encrypt\DBDecryptUtil.cpp ..\..\..\CocosLua\utils\encrypt\FileDecryptUtil.cpp
+         FileDecryptUtil.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\encrypt\filedecryptutil.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\encrypt\filedecryptutil.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\encrypt\filedecryptutil.cpp(10): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         DBDecryptUtil.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\encrypt\dbdecryptutil.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\encrypt\dbdecryptutil.cpp(12): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         Base64Util.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\base64\base64.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\base64\base64util.cpp(11): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         ResourceManager.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\resourcemanager.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\resourcemanager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\resourcemanager.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         LuaUtil.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\luautil.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\luautil.cpp(10): fatal error C1083: 无法打开包括文件:“tolua++.h”: No such file or directory
+         FileManager.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\filemanager.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\utils\filemanager.cpp(17): fatal error C1083: 无法打开包括文件:“unzip.h”: No such file or directory
+         SQLiteTest.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\sqlite\sqlitetest.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\sqlite\sqlitetest.cpp(11): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         SQLite.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\sqlite\sqlite.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\sqlite\sqlite.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\sqlite\sqlite.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         ViewController.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\scene\viewcontroller.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         UIManager.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\scene\uimanager.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         SceneManager.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\scene\gamescene.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         GameScene.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\scene\gamescene.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         Socket.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\utils\socket.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\utils\socket.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\utils\socket.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         HttpForm.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\utils\httpform.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         HttpDownloader.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\utils\httpdownloader.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\utils\httpdownloader.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\utils\httpdownloader.h(11): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         NetResponse.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netresponse.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netresponse.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         NetRequest.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netrequest.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netrequest.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         NetProtocol.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netprotocol.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netprotocol.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         NetHandler.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\nethandler.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\nethandler.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         NetFilter.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netfilter.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netfilter.h(12): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         正在生成代码...
+         正在编译...
+         NetCenter.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netcenter.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\net\netcenter.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         lua_framework_auto.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\lua-bindings\lua_framework_auto.hpp(7): fatal error C1083: 无法打开包括文件:“tolua++.h”: No such file or directory
+         JSONParserTest.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\samples\jsonparsertest.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         JSONFormatTest.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\samples\jsonformattest.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         JSONParser.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonparser.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         JSONFormatter.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         JSONElement.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\json\jsonelement.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         Game.cpp
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\game.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\workspace\soyomaker\cocoslua\frameworks\cocoslua\game.h(13): fatal error C1083: 无法打开包括文件:“cocos2d.h”: No such file or directory
+         正在生成代码...
+     1>已完成生成项目“D:\WorkSpace\soyomaker\CocosLua\frameworks\libProj\win32\libCocosLua\libCocosLua.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:24.05

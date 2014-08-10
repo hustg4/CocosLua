@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1CF59481-95DF-4181-9126-3B3FAC4A5BB6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libCocosLua</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(EngineRoot)cocos\scripting\lua-bindings\auto;$(EngineRoot)cocos\scripting\lua-bindings\manual;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\lua\lua;$(EngineRoot)external\lua\tolua;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot);$(EngineRoot)external\curl\include\win32;$(EngineRoot)external\unzip;$(EngineRoot)external\win32-specific\zlib\include;$(ProjectDir)..\..\CocosLua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\CocosLua\Game.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\JSONElement.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\JSONFormatter.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\JSONParser.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\internalJSONNode.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONAllocator.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONChildren.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONDebug.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONIterators.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONMemory.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONNode.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONNode_Mutex.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONPreparse.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONStream.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONValidator.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONWorker.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\JSONWriter.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\libjson\Source\libjson.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\samples\JSONFormatTest.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\json\samples\JSONParserTest.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\lua-bindings\lua_framework_auto.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\NetCenter.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\NetFilter.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\NetHandler.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\NetProtocol.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\NetRequest.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\NetResponse.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\utils\HttpDownloader.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\utils\HttpForm.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\utils\ODSocket.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\net\utils\Socket.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\scene\GameScene.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\scene\SceneManager.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\scene\UIManager.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\scene\ViewController.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\sqlite\libsqlite\sqlite3.c" />
+    <ClCompile Include="..\..\..\CocosLua\sqlite\SQLite.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\sqlite\SQLiteTest.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\base64\Base64.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\base64\Base64Util.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\encrypt\DBDecryptUtil.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\encrypt\des.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\encrypt\DESUtil.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\encrypt\FileDecryptUtil.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\FileManager.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\LuaUtil.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\md5.cpp" />
+    <ClCompile Include="..\..\..\CocosLua\utils\ResourceManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\CocosLua\framework.h" />
+    <ClInclude Include="..\..\..\CocosLua\Game.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\JSONElement.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\JSONFormatter.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\JSONParser.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Dependencies\libbase64++\libbase64++.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Dependencies\mempool++\mempool.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\JSONOptions.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\libjson.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\internalJSONNode.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONAllocator.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONChildren.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONDebug.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONDefs.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONDefs\GNU_C.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONDefs\Strings_Defs.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONDefs\Unknown_C.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONDefs\Visual_C.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONGlobals.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONMemory.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONMemoryPool.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONNode.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONPreparse.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONSharedString.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONSingleton.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONStats.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONStream.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONValidator.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSONWorker.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\JSON_Base64.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\libjson\Source\NumberToString.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\samples\JSONFormatTest.h" />
+    <ClInclude Include="..\..\..\CocosLua\json\samples\JSONParserTest.h" />
+    <ClInclude Include="..\..\..\CocosLua\lua-bindings\lua_framework_auto.hpp" />
+    <ClInclude Include="..\..\..\CocosLua\net\NetCenter.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\NetFilter.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\NetHandler.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\NetProtocol.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\NetRequest.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\NetResponse.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\NetService.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\utils\HttpDownloader.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\utils\HttpForm.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\utils\ODSocket.h" />
+    <ClInclude Include="..\..\..\CocosLua\net\utils\Socket.h" />
+    <ClInclude Include="..\..\..\CocosLua\notification\notification.h" />
+    <ClInclude Include="..\..\..\CocosLua\scene\GameScene.h" />
+    <ClInclude Include="..\..\..\CocosLua\scene\SceneManager.h" />
+    <ClInclude Include="..\..\..\CocosLua\scene\UIManager.h" />
+    <ClInclude Include="..\..\..\CocosLua\scene\ViewController.h" />
+    <ClInclude Include="..\..\..\CocosLua\sqlite\libsqlite\sqlite3.h" />
+    <ClInclude Include="..\..\..\CocosLua\sqlite\libsqlite\sqlite3ext.h" />
+    <ClInclude Include="..\..\..\CocosLua\sqlite\SQLite.h" />
+    <ClInclude Include="..\..\..\CocosLua\sqlite\SQLiteTest.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\base64\Base64.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\base64\Base64Util.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\encrypt\DBDecryptUtil.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\encrypt\des.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\encrypt\DESUtil.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\encrypt\FileDecryptUtil.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\FileManager.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\LuaUtil.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\md5.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\NetStatus\ios_mac\Reachability.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\NetStatus\NetStatusUtil.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\ResourceManager.h" />
+    <ClInclude Include="..\..\..\CocosLua\utils\uuid\UUIDGenerator.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
