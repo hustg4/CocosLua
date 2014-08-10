@@ -2,6 +2,7 @@
 *.xcuserdatad
 xcshareddata
 Debug.win32
+Debug
 *.xccheckout
 *.sdf
 *.opensdf
