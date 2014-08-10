@@ -7,7 +7,7 @@
 //#include "HttpService.h"
 //#include "SocketService.h"
 
-#include "../../framework/lua-bindings/lua_framework_auto.hpp"
+#include "lua-bindings/lua_framework_auto.hpp"
 
 using namespace CocosDenshion;
 
