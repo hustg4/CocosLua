@@ -2,6 +2,7 @@
 --------------------------------
 -- @module ControlStepper
 -- @extend Control
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#ControlStepper] setMinusSprite 
@@ -31,7 +32,7 @@
 --------------------------------
 -- @function [parent=#ControlStepper] updateLayoutUsingTouchLocation 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#ControlStepper] setValueWithSendingEvent 

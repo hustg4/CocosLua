@@ -2,11 +2,12 @@
 --------------------------------
 -- @module Lens3D
 -- @extend Grid3DAction
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#Lens3D] setPosition 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#Lens3D] setConcave 
@@ -21,7 +22,7 @@
 --------------------------------
 -- @function [parent=#Lens3D] getPosition 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Lens3D] getLensEffect 
@@ -33,7 +34,7 @@
 -- @param self
 -- @param #float float
 -- @param #size_table size
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @param #float float
 -- @return Lens3D#Lens3D ret (return value: cc.Lens3D)
         

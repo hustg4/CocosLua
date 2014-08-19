@@ -2,6 +2,7 @@
 --------------------------------
 -- @module ControlHuePicker
 -- @extend Control
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#ControlHuePicker] setEnabled 
@@ -12,7 +13,7 @@
 -- @function [parent=#ControlHuePicker] initWithTargetAndPos 
 -- @param self
 -- @param #cc.Node node
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
@@ -23,7 +24,7 @@
 --------------------------------
 -- @function [parent=#ControlHuePicker] getStartPos 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#ControlHuePicker] getHue 
@@ -64,7 +65,7 @@
 -- @function [parent=#ControlHuePicker] create 
 -- @param self
 -- @param #cc.Node node
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @return ControlHuePicker#ControlHuePicker ret (return value: cc.ControlHuePicker)
         
 --------------------------------

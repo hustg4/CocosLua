@@ -2,16 +2,17 @@
 --------------------------------
 -- @module PhysicsJointLimit
 -- @extend PhysicsJoint
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#PhysicsJointLimit] setAnchr2 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#PhysicsJointLimit] setAnchr1 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#PhysicsJointLimit] setMax 
@@ -21,12 +22,12 @@
 --------------------------------
 -- @function [parent=#PhysicsJointLimit] getAnchr2 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#PhysicsJointLimit] getAnchr1 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#PhysicsJointLimit] getMin 
@@ -44,16 +45,14 @@
 -- @param #float float
         
 --------------------------------
--- overload function: construct(cc.PhysicsBody, cc.PhysicsBody, point_table, point_table, float, float)
---          
--- overload function: construct(cc.PhysicsBody, cc.PhysicsBody, point_table, point_table)
---          
+-- @overload self, cc.PhysicsBody, cc.PhysicsBody, vec2_table, vec2_table, float, float         
+-- @overload self, cc.PhysicsBody, cc.PhysicsBody, vec2_table, vec2_table         
 -- @function [parent=#PhysicsJointLimit] construct
 -- @param self
 -- @param #cc.PhysicsBody physicsbody
 -- @param #cc.PhysicsBody physicsbody
--- @param #point_table point
--- @param #point_table point
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
 -- @param #float float
 -- @param #float float
 -- @return PhysicsJointLimit#PhysicsJointLimit ret (retunr value: cc.PhysicsJointLimit)

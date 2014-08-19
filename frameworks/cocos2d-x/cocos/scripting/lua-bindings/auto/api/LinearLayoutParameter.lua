@@ -2,16 +2,17 @@
 --------------------------------
 -- @module LinearLayoutParameter
 -- @extend LayoutParameter
+-- @parent_module ccui
 
 --------------------------------
 -- @function [parent=#LinearLayoutParameter] setGravity 
 -- @param self
--- @param #ccui.LinearGravity lineargravity
+-- @param #int lineargravity
         
 --------------------------------
 -- @function [parent=#LinearLayoutParameter] getGravity 
 -- @param self
--- @return LinearGravity#LinearGravity ret (return value: ccui.LinearGravity)
+-- @return int#int ret (return value: int)
         
 --------------------------------
 -- @function [parent=#LinearLayoutParameter] create 

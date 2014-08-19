@@ -2,11 +2,12 @@
 --------------------------------
 -- @module LayerGradient
 -- @extend LayerColor
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#LayerGradient] getStartColor 
 -- @param self
--- @return color3B_table#color3B_table ret (return value: color3B_table)
+-- @return color3b_table#color3b_table ret (return value: color3b_table)
         
 --------------------------------
 -- @function [parent=#LayerGradient] isCompressedInterpolation 
@@ -21,7 +22,7 @@
 --------------------------------
 -- @function [parent=#LayerGradient] setVector 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#LayerGradient] setStartOpacity 
@@ -41,17 +42,17 @@
 --------------------------------
 -- @function [parent=#LayerGradient] getVector 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#LayerGradient] setEndColor 
 -- @param self
--- @param #color3B_table color3b
+-- @param #color3b_table color3b
         
 --------------------------------
 -- @function [parent=#LayerGradient] getEndColor 
 -- @param self
--- @return color3B_table#color3B_table ret (return value: color3B_table)
+-- @return color3b_table#color3b_table ret (return value: color3b_table)
         
 --------------------------------
 -- @function [parent=#LayerGradient] getEndOpacity 
@@ -61,20 +62,17 @@
 --------------------------------
 -- @function [parent=#LayerGradient] setStartColor 
 -- @param self
--- @param #color3B_table color3b
+-- @param #color3b_table color3b
         
 --------------------------------
--- overload function: create(color4B_table, color4B_table)
---          
--- overload function: create()
---          
--- overload function: create(color4B_table, color4B_table, point_table)
---          
+-- @overload self, color4b_table, color4b_table         
+-- @overload self         
+-- @overload self, color4b_table, color4b_table, vec2_table         
 -- @function [parent=#LayerGradient] create
 -- @param self
--- @param #color4B_table color4b
--- @param #color4B_table color4b
--- @param #point_table point
+-- @param #color4b_table color4b
+-- @param #color4b_table color4b
+-- @param #vec2_table vec2
 -- @return LayerGradient#LayerGradient ret (retunr value: cc.LayerGradient)
 
 --------------------------------

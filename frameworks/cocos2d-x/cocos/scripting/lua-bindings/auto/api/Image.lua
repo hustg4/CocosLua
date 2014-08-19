@@ -2,16 +2,12 @@
 --------------------------------
 -- @module Image
 -- @extend Ref
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#Image] hasPremultipliedAlpha 
 -- @param self
 -- @return bool#bool ret (return value: bool)
-        
---------------------------------
--- @function [parent=#Image] getDataLen 
--- @param self
--- @return long#long ret (return value: long)
         
 --------------------------------
 -- @function [parent=#Image] saveToFile 
@@ -59,7 +55,7 @@
 --------------------------------
 -- @function [parent=#Image] getFileType 
 -- @param self
--- @return Image::Format#Image::Format ret (return value: cc.Image::Format)
+-- @return int#int ret (return value: int)
         
 --------------------------------
 -- @function [parent=#Image] getNumberOfMipmaps 
@@ -69,17 +65,7 @@
 --------------------------------
 -- @function [parent=#Image] getRenderFormat 
 -- @param self
--- @return Texture2D::PixelFormat#Texture2D::PixelFormat ret (return value: cc.Texture2D::PixelFormat)
-        
---------------------------------
--- @function [parent=#Image] getData 
--- @param self
--- @return unsigned char#unsigned char ret (return value: unsigned char)
-        
---------------------------------
--- @function [parent=#Image] getMipmaps 
--- @param self
--- @return _MipmapInfo#_MipmapInfo ret (return value: cc._MipmapInfo)
+-- @return int#int ret (return value: int)
         
 --------------------------------
 -- @function [parent=#Image] Image 

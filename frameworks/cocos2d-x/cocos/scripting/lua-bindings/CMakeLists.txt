@@ -5,6 +5,7 @@ set(LUABINDING_SRC
   auto/lua_cocos2dx_ui_auto.cpp
   auto/lua_cocos2dx_spine_auto.cpp
   auto/lua_cocos2dx_physics_auto.cpp
+  auto/lua_cocos2dx_experimental_auto.cpp
   manual/tolua_fix.cpp
   manual/CCLuaBridge.cpp
   manual/CCLuaEngine.cpp
@@ -24,6 +25,7 @@ set(LUABINDING_SRC
   manual/lua_cocos2dx_deprecated.cpp
   manual/lua_xml_http_request.cpp
   manual/LuaSkeletonAnimation.cpp
+  manual/lua_cocos2dx_experimental_manual.cpp
 )
 
 include_directories(
@@ -33,8 +35,11 @@ include_directories(
   ../../editor-support/cocostudio
   ../../editor-support/spine
   ../../ui
+  ../../2d
+  ../../3d
   ../../../external/lua/lua
   ../../../external/lua/tolua
+  ../../../external/xxtea
 )
 
 
@@ -46,6 +51,7 @@ target_link_libraries(luabinding
   tolua
   lua
   spine
+  xxtea
 )
 
 set_target_properties(luabinding

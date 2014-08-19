@@ -2,23 +2,15 @@
 --------------------------------
 -- @module ParallaxNode
 -- @extend Node
-
---------------------------------
--- overload function: getParallaxArray()
---          
--- overload function: getParallaxArray()
---          
--- @function [parent=#ParallaxNode] getParallaxArray
--- @param self
--- @return _ccArray#_ccArray ret (retunr value: cc._ccArray)
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#ParallaxNode] addChild 
 -- @param self
 -- @param #cc.Node node
 -- @param #int int
--- @param #point_table point
--- @param #point_table point
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#ParallaxNode] removeAllChildrenWithCleanup 
@@ -26,28 +18,25 @@
 -- @param #bool bool
         
 --------------------------------
--- @function [parent=#ParallaxNode] setParallaxArray 
--- @param self
--- @param #cc._ccArray _ccarray
-        
---------------------------------
 -- @function [parent=#ParallaxNode] create 
 -- @param self
 -- @return ParallaxNode#ParallaxNode ret (return value: cc.ParallaxNode)
         
 --------------------------------
--- @function [parent=#ParallaxNode] addChild 
+-- @overload self, cc.Node, int, string         
+-- @overload self, cc.Node, int, int         
+-- @function [parent=#ParallaxNode] addChild
 -- @param self
 -- @param #cc.Node node
 -- @param #int int
 -- @param #int int
-        
+
 --------------------------------
 -- @function [parent=#ParallaxNode] visit 
 -- @param self
 -- @param #cc.Renderer renderer
--- @param #kmMat4 kmmat4
--- @param #bool bool
+-- @param #mat4_table mat4
+-- @param #unsigned int int
         
 --------------------------------
 -- @function [parent=#ParallaxNode] removeChild 

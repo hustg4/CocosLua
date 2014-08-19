@@ -2,6 +2,7 @@
 --------------------------------
 -- @module EditBox
 -- @extend ControlButton,IMEDelegate
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#EditBox] getText 
@@ -31,17 +32,17 @@
 --------------------------------
 -- @function [parent=#EditBox] setInputMode 
 -- @param self
--- @param #cc.EditBox::InputMode inputmode
+-- @param #int inputmode
         
 --------------------------------
 -- @function [parent=#EditBox] setPlaceholderFontColor 
 -- @param self
--- @param #color3B_table color3b
+-- @param #color3b_table color3b
         
 --------------------------------
 -- @function [parent=#EditBox] setFontColor 
 -- @param self
--- @param #color3B_table color3b
+-- @param #color3b_table color3b
         
 --------------------------------
 -- @function [parent=#EditBox] setPlaceholderFont 
@@ -69,12 +70,12 @@
 --------------------------------
 -- @function [parent=#EditBox] setReturnType 
 -- @param self
--- @param #cc.EditBox::KeyboardReturnType keyboardreturntype
+-- @param #int keyboardreturntype
         
 --------------------------------
 -- @function [parent=#EditBox] setInputFlag 
 -- @param self
--- @param #cc.EditBox::InputFlag inputflag
+-- @param #int inputflag
         
 --------------------------------
 -- @function [parent=#EditBox] getMaxLength 
@@ -109,12 +110,12 @@
 --------------------------------
 -- @function [parent=#EditBox] setAnchorPoint 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#EditBox] setPosition 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#EditBox] setVisible 

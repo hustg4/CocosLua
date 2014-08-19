@@ -38,14 +38,14 @@ using namespace cocos2d::extension;
 
 
     
-void GLNode::draw(Renderer *renderer, const kmMat4& transform, bool transformUpdated)
+void GLNode::draw(Renderer *renderer, const cocos2d::Mat4& transform, uint32_t flags)
 {
     _renderCmd.init(_globalZOrder);
-    _renderCmd.func = CC_CALLBACK_0(GLNode::onDraw, this, transform, transformUpdated);
+    _renderCmd.func = CC_CALLBACK_0(GLNode::onDraw, this, transform, flags);
     renderer->addCommand(&_renderCmd);
 }
 
-void GLNode::onDraw(const kmMat4 &transform, bool transformUpdated)
+void GLNode::onDraw(const cocos2d::Mat4 &transform, uint32_t flags)
 {
     int handler = ScriptHandlerMgr::getInstance()->getObjectHandler((void*)this, ScriptHandlerMgr::HandlerType::GL_NODE_DRAW);
     if (0 != handler)
@@ -57,10 +57,10 @@ void GLNode::onDraw(const kmMat4 &transform, bool transformUpdated)
         lua_newtable(L);
         for (int i =0; i < 16; i++)
         {
-            stack->pushFloat(transform.mat[i]);
+            stack->pushFloat(transform.m[i]);
             lua_rawseti(L, -2, i + 1);
         }
-        stack->pushBoolean(transformUpdated);
+        stack->pushInt(flags);
         stack->executeFunctionByHandler(handler, 2);
         stack->clean();
     }
@@ -137,7 +137,7 @@ static int tolua_Cocos2d_GLNode_setShaderProgram00(lua_State* tolua_S)
         if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setShaderProgram'", NULL);
 #endif
         if(NULL != self)
-            self->setShaderProgram(pShaderProgram);
+            self->setGLProgram(pShaderProgram);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -1447,7 +1447,7 @@ static int tolua_Cocos2d_glDrawElements00(lua_State* tolua_S)
         !tolua_isnumber(tolua_S,2,0,&tolua_err)            ||
         !tolua_isnumber(tolua_S,3,0,&tolua_err)            ||
         !tolua_isnumber(tolua_S,4,0,&tolua_err)            ||
-        !tolua_istable(tolua_S,5,0,&tolua_err)             ||
+        !tolua_istable(tolua_S,5,1,&tolua_err)             ||
         !tolua_isnoobj(tolua_S,6, &tolua_err)
         )
         goto tolua_lerror;
@@ -1460,45 +1460,70 @@ static int tolua_Cocos2d_glDrawElements00(lua_State* tolua_S)
         unsigned int arg3  = (unsigned int)tolua_tonumber(tolua_S, 4, 0);
         if (GL_UNSIGNED_BYTE == arg2)
         {
-            unsigned char* unit8Array     = new unsigned char[arg3];
-            if (NULL == unit8Array)
+            if (arg3 > 0)
             {
-                return 0;
+                unsigned char* unit8Array     = new unsigned char[arg3];
+                if (NULL == unit8Array)
+                {
+                    return 0;
+                }
+                for (unsigned int i = 1; i <= arg3; i++)
+                {
+                    unit8Array[i-1] = (unsigned char)tolua_tofieldnumber(tolua_S, 5, i, 0);
+                }
+                glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , (GLvoid*)unit8Array);
+                CC_SAFE_DELETE_ARRAY(unit8Array);
+                
             }
-            for (unsigned int i = 1; i <= arg3; i++)
+            else
             {
-                unit8Array[i-1] = (unsigned char)tolua_tofieldnumber(tolua_S, 5, i, 0);
+                glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , nullptr);
             }
-            glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , (GLvoid*)unit8Array);
-            CC_SAFE_DELETE_ARRAY(unit8Array);
         }
         else if(GL_UNSIGNED_SHORT == arg2)
         {
-            unsigned short* shortArray     = new unsigned short[arg3];
-            if (NULL == shortArray)
+            if (arg3 > 0)
             {
-                return 0;
+                unsigned short* shortArray     = new unsigned short[arg3];
+                if (NULL == shortArray)
+                {
+                    return 0;
+                }
+                for (unsigned int i = 1; i <= arg3; i++)
+                {
+                    shortArray[i-1] = (unsigned short)tolua_tofieldnumber(tolua_S, 5, i, 0);
+                }
+                
+                glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , (GLvoid*)shortArray);
+                
+                CC_SAFE_DELETE_ARRAY(shortArray);
             }
-            for (unsigned int i = 1; i <= arg3; i++)
+            else
             {
-                shortArray[i-1] = (unsigned short)tolua_tofieldnumber(tolua_S, 5, i, 0);
+                glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , nullptr);
             }
-            glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , (GLvoid*)shortArray);
-            CC_SAFE_DELETE_ARRAY(shortArray);
         }
         else if(GL_UNSIGNED_INT == arg2)
         {
-            unsigned int* intArray     = new unsigned int[arg3];
-            if (NULL == intArray)
+            if (arg3 > 0)
             {
-                return 0;
+                unsigned int* intArray     = new unsigned int[arg3];
+                if (NULL == intArray)
+                {
+                    return 0;
+                }
+                for (unsigned int i = 1; i <= arg3; i++)
+                {
+                    intArray[i-1] = (unsigned int)tolua_tofieldnumber(tolua_S, 5, i, 0);
+                }
+                glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , (GLvoid*)intArray);
+                CC_SAFE_DELETE_ARRAY(intArray);
             }
-            for (unsigned int i = 1; i <= arg3; i++)
+            else
             {
-                intArray[i-1] = (unsigned int)tolua_tofieldnumber(tolua_S, 5, i, 0);
+                glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , nullptr);
+
             }
-            glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , (GLvoid*)intArray);
-            CC_SAFE_DELETE_ARRAY(intArray);
         }
     }
     return 0;
@@ -2579,7 +2604,7 @@ static int tolua_Cocos2d_glLineWidth00(lua_State* tolua_S)
 #endif
     {
         float arg0  = (float)tolua_tonumber(tolua_S, 1, 0);
-        glLineWidth((GLfloat)arg0  );
+        glLineWidth(arg0);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -2659,9 +2684,9 @@ static int tolua_Cocos2d_glPolygonOffset00(lua_State* tolua_S)
     else
 #endif
     {
-        int arg0  = (int)tolua_tonumber(tolua_S, 1, 0);
-        int arg1  = (int)tolua_tonumber(tolua_S, 2, 0);
-        glPolygonOffset((GLfloat)arg0 , (GLfloat)arg1  );
+        float arg0  = (float)tolua_tonumber(tolua_S, 1, 0);
+        float arg1  = (float)tolua_tonumber(tolua_S, 2, 0);
+        glPolygonOffset(arg0, arg1);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -3140,7 +3165,7 @@ static int tolua_Cocos2d_glTexParameterf00(lua_State* tolua_S)
     {
         unsigned int arg0 = (unsigned int)tolua_tonumber(tolua_S, 1, 0);
         unsigned int arg1 = (unsigned int)tolua_tonumber(tolua_S, 2, 0);
-        int arg2 = (int)tolua_tonumber(tolua_S, 3, 0);
+        float arg2 = (float)tolua_tonumber(tolua_S, 3, 0);
         glTexParameterf((GLenum)arg0 , (GLenum)arg1 , (GLfloat)arg2  );
     }
     return 0;
@@ -3262,8 +3287,8 @@ static int tolua_Cocos2d_glUniform1f00(lua_State* tolua_S)
 #endif
     {
         int arg0 = (int)tolua_tonumber(tolua_S, 1, 0);
-        int arg1 = (int)tolua_tonumber(tolua_S, 2, 0);
-        glUniform1f((GLint)arg0 , (GLfloat)arg1  );
+        float arg1 = (float)tolua_tonumber(tolua_S, 2, 0);
+        glUniform1f(arg0,arg1);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -3401,9 +3426,9 @@ static int tolua_Cocos2d_glUniform2f00(lua_State* tolua_S)
 #endif
     {
         int arg0 = (int)tolua_tonumber(tolua_S, 1, 0);
-        int arg1 = (int)tolua_tonumber(tolua_S, 2, 0);
-        int arg2 = (int)tolua_tonumber(tolua_S, 3, 0);
-        glUniform2f((GLint)arg0 , (GLfloat)arg1 , (GLfloat)arg2);
+        float arg1 = (int)tolua_tonumber(tolua_S, 2, 0);
+        float arg2 = (int)tolua_tonumber(tolua_S, 3, 0);
+        glUniform2f(arg0, arg1, arg2);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -3544,10 +3569,10 @@ static int tolua_Cocos2d_glUniform3f00(lua_State* tolua_S)
 #endif
     {
         int arg0 = (int)tolua_tonumber(tolua_S, 1, 0);
-        int arg1 = (int)tolua_tonumber(tolua_S, 2, 0);
-        int arg2 = (int)tolua_tonumber(tolua_S, 3, 0);
-        int arg3 = (int)tolua_tonumber(tolua_S, 4, 0);
-        glUniform3f((GLint)arg0 , (GLfloat)arg1 , (GLfloat)arg2 , (GLfloat)arg3  );
+        float arg1 = (float)tolua_tonumber(tolua_S, 2, 0);
+        float arg2 = (float)tolua_tonumber(tolua_S, 3, 0);
+        float arg3 = (float)tolua_tonumber(tolua_S, 4, 0);
+        glUniform3f(arg0, arg1, arg2, arg3);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -3691,11 +3716,11 @@ static int tolua_Cocos2d_glUniform4f00(lua_State* tolua_S)
 #endif
     {
         int arg0 = (int)tolua_tonumber(tolua_S, 1, 0);
-        int arg1 = (int)tolua_tonumber(tolua_S, 2, 0);
-        int arg2 = (int)tolua_tonumber(tolua_S, 3, 0);
-        int arg3 = (int)tolua_tonumber(tolua_S, 4, 0);
-        int arg4 = (int)tolua_tonumber(tolua_S, 5, 0);
-        glUniform4f((GLint)arg0 , (GLfloat)arg1 , (GLfloat)arg2 , (GLfloat)arg3 , (GLfloat)arg4  );
+        float arg1 = (float)tolua_tonumber(tolua_S, 2, 0);
+        float arg2 = (float)tolua_tonumber(tolua_S, 3, 0);
+        float arg3 = (float)tolua_tonumber(tolua_S, 4, 0);
+        float arg4 = (float)tolua_tonumber(tolua_S, 5, 0);
+        glUniform4f(arg0 , arg1, arg2, arg3, arg4);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -4017,8 +4042,8 @@ static int tolua_Cocos2d_glVertexAttrib1f00(lua_State* tolua_S)
 #endif
     {
         unsigned int arg0 = (unsigned int)tolua_tonumber(tolua_S, 1, 0);
-        int arg1          = (int)tolua_tonumber(tolua_S, 2, 0);
-        glVertexAttrib1f((GLuint)arg0 , (GLfloat)arg1  );
+        float arg1          = (float)tolua_tonumber(tolua_S, 2, 0);
+        glVertexAttrib1f(arg0 , arg1);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -4088,9 +4113,9 @@ static int tolua_Cocos2d_glVertexAttrib2f00(lua_State* tolua_S)
 #endif
     {
         unsigned int arg0 = (unsigned int)tolua_tonumber(tolua_S, 1, 0);
-        int arg1          = (int)tolua_tonumber(tolua_S, 2, 0);
-        int arg2          = (int)tolua_tonumber(tolua_S, 3, 0);
-        glVertexAttrib2f((GLuint)arg0 , (GLfloat)arg1 , (GLfloat)arg2  );
+        float arg1          = (float)tolua_tonumber(tolua_S, 2, 0);
+        float arg2          = (float)tolua_tonumber(tolua_S, 3, 0);
+        glVertexAttrib2f(arg0, arg1, arg2);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -4161,10 +4186,10 @@ static int tolua_Cocos2d_glVertexAttrib3f00(lua_State* tolua_S)
 #endif
     {
         unsigned int arg0 = (unsigned int)tolua_tonumber(tolua_S, 1, 0);
-        int arg1          = (int)tolua_tonumber(tolua_S, 2, 0);
-        int arg2          = (int)tolua_tonumber(tolua_S, 3, 0);
-        int arg3          = (int)tolua_tonumber(tolua_S, 4, 0);
-        glVertexAttrib3f((GLuint)arg0 , (GLfloat)arg1 , (GLfloat)arg2 , (GLfloat)arg3  );
+        float arg1          = (float)tolua_tonumber(tolua_S, 2, 0);
+        float arg2          = (float)tolua_tonumber(tolua_S, 3, 0);
+        float arg3          = (float)tolua_tonumber(tolua_S, 4, 0);
+        glVertexAttrib3f(arg0 , arg1, arg2, arg3);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -4236,11 +4261,11 @@ static int tolua_Cocos2d_glVertexAttrib4f00(lua_State* tolua_S)
 #endif
     {
         unsigned int arg0 = (unsigned int)tolua_tonumber(tolua_S, 1, 0);
-        int arg1          = (int)tolua_tonumber(tolua_S, 2, 0);
-        int arg2          = (int)tolua_tonumber(tolua_S, 3, 0);
-        int arg3          = (int)tolua_tonumber(tolua_S, 4, 0);
-        int arg4          = (int)tolua_tonumber(tolua_S, 5, 0);
-        glVertexAttrib4f((GLuint)arg0 , (GLfloat)arg1 , (GLfloat)arg2 , (GLfloat)arg3 , (GLfloat)arg4  );
+        float arg1          = (float)tolua_tonumber(tolua_S, 2, 0);
+        float arg2          = (float)tolua_tonumber(tolua_S, 3, 0);
+        float arg3          = (float)tolua_tonumber(tolua_S, 4, 0);
+        float arg4          = (float)tolua_tonumber(tolua_S, 5, 0);
+        glVertexAttrib4f(arg0, arg1, arg2, arg3, arg4);
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -4403,10 +4428,10 @@ static int tolua_cocos2d_DrawPrimitives_drawPoint00(lua_State* tolua_S)
     else
 #endif
     {
-        Point point;
-        if(luaval_to_point(tolua_S, 1, &point))
+        cocos2d::Vec2 vec2;
+        if(luaval_to_vec2(tolua_S, 1, &vec2))
         {
-            DrawPrimitives::drawPoint(point);
+            DrawPrimitives::drawPoint(vec2);
         }        
     }
     return 0;
@@ -4437,7 +4462,7 @@ static int tolua_cocos2d_DrawPrimitives_drawPoints00(lua_State* tolua_S)
         
         if (numberOfPoints > 0)
         {
-            Point* points = new Point[numberOfPoints];
+            cocos2d::Vec2* points = new cocos2d::Vec2[numberOfPoints];
             if (NULL == points)
                 return 0;
             
@@ -4451,7 +4476,7 @@ static int tolua_cocos2d_DrawPrimitives_drawPoints00(lua_State* tolua_S)
                     goto tolua_lerror;
                 }
                 
-                if(!luaval_to_point(tolua_S, lua_gettop(tolua_S), &points[i]))
+                if(!luaval_to_vec2(tolua_S, lua_gettop(tolua_S), &points[i]))
                 {
                     lua_pop(tolua_S, 1);
                     CC_SAFE_DELETE_ARRAY(points);
@@ -4486,12 +4511,12 @@ static int tolua_cocos2d_DrawPrimitives_drawLine00(lua_State* tolua_S)
     else
 #endif
     {
-        Point origin;
-        if (!luaval_to_point(tolua_S, 1, &origin))
+        cocos2d::Vec2 origin;
+        if (!luaval_to_vec2(tolua_S, 1, &origin))
             return 0;
         
-        Point destination;
-        if (!luaval_to_point(tolua_S, 2, &destination))
+        cocos2d::Vec2  destination;
+        if (!luaval_to_vec2(tolua_S, 2, &destination))
             return 0;
         
         DrawPrimitives::drawLine(origin,destination);
@@ -4519,12 +4544,12 @@ static int tolua_cocos2d_DrawPrimitives_drawRect00(lua_State* tolua_S)
     else
 #endif
     {
-        Point origin;
-        if (!luaval_to_point(tolua_S, 1, &origin))
+        cocos2d::Vec2 origin;
+        if (!luaval_to_vec2(tolua_S, 1, &origin))
             return 0;
 
-        Point destination;
-        if (!luaval_to_point(tolua_S, 2, &destination))
+        cocos2d::Vec2 destination;
+        if (!luaval_to_vec2(tolua_S, 2, &destination))
             return 0;
 
         DrawPrimitives::drawRect(origin,destination);
@@ -4554,12 +4579,12 @@ static int tolua_cocos2d_DrawPrimitives_drawSolidRect00(lua_State* tolua_S)
     else
 #endif
     {
-        Point origin;
-        if (!luaval_to_point(tolua_S, 1, &origin))
+        cocos2d::Vec2  origin;
+        if (!luaval_to_vec2(tolua_S, 1, &origin))
             return 0;
         
-        Point destination;
-        if (!luaval_to_point(tolua_S, 2, &destination)) 
+        cocos2d::Vec2  destination;
+        if (!luaval_to_vec2(tolua_S, 2, &destination))
             return 0;
         
         Color4F color;
@@ -4599,7 +4624,7 @@ static int tolua_cocos2d_DrawPrimitives_drawPoly00(lua_State* tolua_S)
 
         if (numOfVertices > 0)
         {
-            Point* points = new Point[numOfVertices];
+            cocos2d::Vec2* points = new cocos2d::Vec2[numOfVertices];
             if (NULL == points)
                 return 0;
 
@@ -4613,7 +4638,7 @@ static int tolua_cocos2d_DrawPrimitives_drawPoly00(lua_State* tolua_S)
                     goto tolua_lerror;
                 }
                 
-                if(!luaval_to_point(tolua_S, lua_gettop(tolua_S), &points[i]))
+                if(!luaval_to_vec2(tolua_S, lua_gettop(tolua_S), &points[i]))
                 {
                     lua_pop(tolua_S, 1);
                     CC_SAFE_DELETE_ARRAY(points);
@@ -4653,7 +4678,7 @@ static int tolua_cocos2d_DrawPrimitives_drawSolidPoly00(lua_State* tolua_S)
         unsigned int numberOfPoints = ((unsigned int)  tolua_tonumber(tolua_S,2,0));
         if (numberOfPoints > 0)
         {
-            Point* points = new Point[numberOfPoints];
+            cocos2d::Vec2* points = new cocos2d::Vec2[numberOfPoints];
             if (NULL == points)
                 return 0;
 
@@ -4667,7 +4692,7 @@ static int tolua_cocos2d_DrawPrimitives_drawSolidPoly00(lua_State* tolua_S)
                     goto tolua_lerror;
                 }
                 
-                if(!luaval_to_point(tolua_S, lua_gettop(tolua_S), &points[i]))
+                if(!luaval_to_vec2(tolua_S, lua_gettop(tolua_S), &points[i]))
                 {
                     lua_pop(tolua_S, 1);
                     CC_SAFE_DELETE_ARRAY(points);
@@ -4716,8 +4741,8 @@ static int tolua_cocos2d_DrawPrimitives_drawCircle00(lua_State* tolua_S)
     else
 #endif
     {
-        Point center;
-        if (!luaval_to_point(tolua_S, 1, &center))
+        cocos2d::Vec2 center;
+        if (!luaval_to_vec2(tolua_S, 1, &center))
             return 0;
         
         float radius = ((float)  tolua_tonumber(tolua_S,2,0));
@@ -4757,8 +4782,8 @@ static int tolua_cocos2d_DrawPrimitives_drawSolidCircle00(lua_State* tolua_S)
     else
 #endif
     {
-        Point center;
-        if (!luaval_to_point(tolua_S, 1, &center))
+        cocos2d::Vec2 center;
+        if (!luaval_to_vec2(tolua_S, 1, &center))
             return 0;
         float radius = ((float)  tolua_tonumber(tolua_S,2,0));
         float angle = ((float)  tolua_tonumber(tolua_S,3,0));
@@ -4794,16 +4819,16 @@ static int tolua_cocos2d_DrawPrimitives_drawQuadBezier00(lua_State* tolua_S)
     else
 #endif
     {
-        Point origin;
-        if (!luaval_to_point(tolua_S, 1, &origin))
+        cocos2d::Vec2 origin;
+        if (!luaval_to_vec2(tolua_S, 1, &origin))
             return 0;
         
-        Point control;
-        if (!luaval_to_point(tolua_S, 2, &control))
+        cocos2d::Vec2 control;
+        if (!luaval_to_vec2(tolua_S, 2, &control))
             return 0;
         
-        Point destination;
-        if (!luaval_to_point(tolua_S, 3, &destination))
+        cocos2d::Vec2 destination;
+        if (!luaval_to_vec2(tolua_S, 3, &destination))
             return 0;
         
         unsigned int segments = ((unsigned int)  tolua_tonumber(tolua_S,4,0));
@@ -4837,20 +4862,20 @@ static int tolua_cocos2d_DrawPrimitives_drawCubicBezier00(lua_State* tolua_S)
 #endif
     {
         
-        Point origin;
-        if (!luaval_to_point(tolua_S, 1, &origin))
+        cocos2d::Vec2 origin;
+        if (!luaval_to_vec2(tolua_S, 1, &origin))
             return 0;
         
-        Point control1;
-        if (!luaval_to_point(tolua_S, 2, &control1))
+        cocos2d::Vec2 control1;
+        if (!luaval_to_vec2(tolua_S, 2, &control1))
             return 0;
         
-        Point control2;
-        if (!luaval_to_point(tolua_S, 3, &control2))
+        cocos2d::Vec2 control2;
+        if (!luaval_to_vec2(tolua_S, 3, &control2))
             return 0;
         
-        Point destination;
-        if (!luaval_to_point(tolua_S, 4, &destination))
+        cocos2d::Vec2 destination;
+        if (!luaval_to_vec2(tolua_S, 4, &destination))
             return 0;
         
         unsigned int segments = ((unsigned int)  tolua_tonumber(tolua_S,5,0));
@@ -4881,22 +4906,22 @@ int tolua_cocos2d_DrawPrimitives_drawCatmullRom00(lua_State* tolua_S)
 #endif
     {
         int num = 0;
-        Point *arr = NULL;
-        if (!luaval_to_array_of_Point(tolua_S, 1, &arr, &num))
+        cocos2d::Vec2 *arr = NULL;
+        if (!luaval_to_array_of_vec2(tolua_S, 1, &arr, &num))
             return 0;
         
         
         PointArray* points = PointArray::create(num);        
         if (NULL == points)
         {
-            free(arr);
+            CC_SAFE_DELETE_ARRAY(arr);
             return 0;
         }
         
         for( int i = 0; i < num; i++) {
             points->addControlPoint(arr[i]);
         }
-        free(arr);
+        CC_SAFE_DELETE_ARRAY(arr);
         
         unsigned int segments = ((unsigned int)  tolua_tonumber(tolua_S,2,0));
         
@@ -4928,22 +4953,22 @@ int tolua_cocos2d_DrawPrimitives_drawCardinalSpline00(lua_State* tolua_S)
 #endif
     {
         int num = 0;
-        Point *arr = NULL;
-        if (!luaval_to_array_of_Point(tolua_S, 1, &arr, &num))
+        cocos2d::Vec2 *arr = NULL;
+        if (!luaval_to_array_of_vec2(tolua_S, 1, &arr, &num))
             return 0;
         
         
         PointArray* config = PointArray::create(num);
         if (NULL == config)
         {
-            free(arr);
+            CC_SAFE_DELETE_ARRAY(arr);
             return 0;
         }
         
         for( int i = 0; i < num; i++) {
             config->addControlPoint(arr[i]);
         }
-        free(arr);
+        CC_SAFE_DELETE_ARRAY(arr);
         float tension = ((float)  tolua_tonumber(tolua_S,2,0));
         unsigned int segments = ((unsigned int)  tolua_tonumber(tolua_S,3,0));
         DrawPrimitives::drawCardinalSpline(config,tension,segments);
@@ -5006,10 +5031,10 @@ static int tolua_cocos2d_DrawPrimitives_drawColor4F00(lua_State* tolua_S)
     else
 #endif
     {
-        unsigned char r = (( unsigned char)  tolua_tonumber(tolua_S,1,0));
-        unsigned char g = (( unsigned char)  tolua_tonumber(tolua_S,2,0));
-        unsigned char b = (( unsigned char)  tolua_tonumber(tolua_S,3,0));
-        unsigned char a = (( unsigned char)  tolua_tonumber(tolua_S,4,0));
+        float r = (float)tolua_tonumber(tolua_S,1,0);
+        float g = (float)tolua_tonumber(tolua_S,2,0);
+        float b = (float)tolua_tonumber(tolua_S,3,0);
+        float a = (float)tolua_tonumber(tolua_S,4,0);
         DrawPrimitives::setDrawColor4F(r,g,b,a);
     }
     return 0;

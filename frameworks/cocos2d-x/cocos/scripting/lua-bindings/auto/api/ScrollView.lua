@@ -1,7 +1,8 @@
 
 --------------------------------
 -- @module ScrollView
--- @extend Layout,UIScrollInterface
+-- @extend Layout
+-- @parent_module ccui
 
 --------------------------------
 -- @function [parent=#ScrollView] scrollToTop 
@@ -24,14 +25,14 @@
 --------------------------------
 -- @function [parent=#ScrollView] scrollToPercentBothDirection 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @param #float float
 -- @param #bool bool
         
 --------------------------------
 -- @function [parent=#ScrollView] getDirection 
 -- @param self
--- @return SCROLLVIEW_DIR#SCROLLVIEW_DIR ret (return value: ccui.SCROLLVIEW_DIR)
+-- @return int#int ret (return value: int)
         
 --------------------------------
 -- @function [parent=#ScrollView] scrollToBottomLeft 
@@ -51,7 +52,7 @@
 --------------------------------
 -- @function [parent=#ScrollView] setDirection 
 -- @param self
--- @param #ccui.SCROLLVIEW_DIR scrollview_dir
+-- @param #int direction
         
 --------------------------------
 -- @function [parent=#ScrollView] scrollToTopLeft 
@@ -86,6 +87,11 @@
 -- @function [parent=#ScrollView] jumpToPercentVertical 
 -- @param self
 -- @param #float float
+        
+--------------------------------
+-- @function [parent=#ScrollView] addEventListener 
+-- @param self
+-- @param #function func
         
 --------------------------------
 -- @function [parent=#ScrollView] setInertiaScrollEnabled 
@@ -123,7 +129,7 @@
 --------------------------------
 -- @function [parent=#ScrollView] jumpToPercentBothDirection 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#ScrollView] scrollToPercentVertical 
@@ -175,23 +181,21 @@
 -- @return Ref#Ref ret (return value: cc.Ref)
         
 --------------------------------
--- overload function: addChild(cc.Node, int)
---          
--- overload function: addChild(cc.Node)
---          
--- overload function: addChild(cc.Node, int, int)
---          
+-- @overload self, cc.Node, int         
+-- @overload self, cc.Node         
+-- @overload self, cc.Node, int, int         
+-- @overload self, cc.Node, int, string         
 -- @function [parent=#ScrollView] addChild
 -- @param self
 -- @param #cc.Node node
 -- @param #int int
--- @param #int int
+-- @param #string str
 
 --------------------------------
 -- @function [parent=#ScrollView] getChildByName 
 -- @param self
--- @param #char char
--- @return Widget#Widget ret (return value: ccui.Widget)
+-- @param #string str
+-- @return Node#Node ret (return value: cc.Node)
         
 --------------------------------
 -- @function [parent=#ScrollView] getDescription 
@@ -206,7 +210,7 @@
 --------------------------------
 -- @function [parent=#ScrollView] getLayoutType 
 -- @param self
--- @return LayoutType#LayoutType ret (return value: ccui.LayoutType)
+-- @return int#int ret (return value: int)
         
 --------------------------------
 -- @function [parent=#ScrollView] removeAllChildrenWithCleanup 
@@ -218,16 +222,21 @@
 -- @param self
         
 --------------------------------
+-- @function [parent=#ScrollView] findNextFocusedWidget 
+-- @param self
+-- @param #int focusdirection
+-- @param #ccui.Widget widget
+-- @return Widget#Widget ret (return value: ccui.Widget)
+        
+--------------------------------
 -- @function [parent=#ScrollView] removeChild 
 -- @param self
 -- @param #cc.Node node
 -- @param #bool bool
         
 --------------------------------
--- overload function: getChildren()
---          
--- overload function: getChildren()
---          
+-- @overload self         
+-- @overload self         
 -- @function [parent=#ScrollView] getChildren
 -- @param self
 -- @return array_table#array_table ret (retunr value: array_table)
@@ -246,7 +255,7 @@
 --------------------------------
 -- @function [parent=#ScrollView] setLayoutType 
 -- @param self
--- @param #ccui.LayoutType layouttype
+-- @param #int type
         
 --------------------------------
 -- @function [parent=#ScrollView] ScrollView 

@@ -2,6 +2,7 @@
 --------------------------------
 -- @module TextBMFont
 -- @extend Widget
+-- @parent_module ccui
 
 --------------------------------
 -- @function [parent=#TextBMFont] setFntFile 
@@ -9,20 +10,23 @@
 -- @param #string str
         
 --------------------------------
--- @function [parent=#TextBMFont] getStringValue 
+-- @function [parent=#TextBMFont] getStringLength 
 -- @param self
--- @return string#string ret (return value: string)
+-- @return long#long ret (return value: long)
         
 --------------------------------
--- @function [parent=#TextBMFont] setText 
+-- @function [parent=#TextBMFont] setString 
 -- @param self
 -- @param #string str
         
 --------------------------------
--- overload function: create(string, string)
---          
--- overload function: create()
---          
+-- @function [parent=#TextBMFont] getString 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- @overload self, string, string         
+-- @overload self         
 -- @function [parent=#TextBMFont] create
 -- @param self
 -- @param #string str

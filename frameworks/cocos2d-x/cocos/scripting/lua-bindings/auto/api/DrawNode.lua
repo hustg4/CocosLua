@@ -2,21 +2,22 @@
 --------------------------------
 -- @module DrawNode
 -- @extend Node
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#DrawNode] drawQuadraticBezier 
 -- @param self
--- @param #point_table point
--- @param #point_table point
--- @param #point_table point
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
 -- @param #unsigned int int
--- @param #color4F_table color4f
+-- @param #color4f_table color4f
         
 --------------------------------
 -- @function [parent=#DrawNode] onDraw 
 -- @param self
--- @param #kmMat4 kmmat4
--- @param #bool bool
+-- @param #mat4_table mat4
+-- @param #unsigned int int
         
 --------------------------------
 -- @function [parent=#DrawNode] clear 
@@ -25,35 +26,35 @@
 --------------------------------
 -- @function [parent=#DrawNode] drawTriangle 
 -- @param self
--- @param #point_table point
--- @param #point_table point
--- @param #point_table point
--- @param #color4F_table color4f
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
+-- @param #color4f_table color4f
         
 --------------------------------
 -- @function [parent=#DrawNode] drawDot 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @param #float float
--- @param #color4F_table color4f
+-- @param #color4f_table color4f
         
 --------------------------------
 -- @function [parent=#DrawNode] drawCubicBezier 
 -- @param self
--- @param #point_table point
--- @param #point_table point
--- @param #point_table point
--- @param #point_table point
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
 -- @param #unsigned int int
--- @param #color4F_table color4f
+-- @param #color4f_table color4f
         
 --------------------------------
 -- @function [parent=#DrawNode] drawSegment 
 -- @param self
--- @param #point_table point
--- @param #point_table point
+-- @param #vec2_table vec2
+-- @param #vec2_table vec2
 -- @param #float float
--- @param #color4F_table color4f
+-- @param #color4f_table color4f
         
 --------------------------------
 -- @function [parent=#DrawNode] create 
@@ -64,7 +65,7 @@
 -- @function [parent=#DrawNode] draw 
 -- @param self
 -- @param #cc.Renderer renderer
--- @param #kmMat4 kmmat4
--- @param #bool bool
+-- @param #mat4_table mat4
+-- @param #unsigned int int
         
 return nil

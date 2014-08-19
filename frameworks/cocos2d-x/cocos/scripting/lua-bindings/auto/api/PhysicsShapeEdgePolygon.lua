@@ -2,6 +2,7 @@
 --------------------------------
 -- @module PhysicsShapeEdgePolygon
 -- @extend PhysicsShape
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#PhysicsShapeEdgePolygon] getPointsCount 
@@ -11,6 +12,6 @@
 --------------------------------
 -- @function [parent=#PhysicsShapeEdgePolygon] getCenter 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 return nil

@@ -2,7 +2,23 @@
 --------------------------------
 -- @module TextAtlas
 -- @extend Widget
+-- @parent_module ccui
 
+--------------------------------
+-- @function [parent=#TextAtlas] getStringLength 
+-- @param self
+-- @return long#long ret (return value: long)
+        
+--------------------------------
+-- @function [parent=#TextAtlas] getString 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- @function [parent=#TextAtlas] setString 
+-- @param self
+-- @param #string str
+        
 --------------------------------
 -- @function [parent=#TextAtlas] setProperty 
 -- @param self
@@ -13,24 +29,12 @@
 -- @param #string str
         
 --------------------------------
--- @function [parent=#TextAtlas] getStringValue 
--- @param self
--- @return string#string ret (return value: string)
-        
---------------------------------
 -- @function [parent=#TextAtlas] adaptRenderers 
 -- @param self
         
 --------------------------------
--- @function [parent=#TextAtlas] setStringValue 
--- @param self
--- @param #string str
-        
---------------------------------
--- overload function: create(string, string, int, int, string)
---          
--- overload function: create()
---          
+-- @overload self, string, string, int, int, string         
+-- @overload self         
 -- @function [parent=#TextAtlas] create
 -- @param self
 -- @param #string str

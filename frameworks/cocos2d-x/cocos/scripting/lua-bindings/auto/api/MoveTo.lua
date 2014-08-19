@@ -2,12 +2,13 @@
 --------------------------------
 -- @module MoveTo
 -- @extend MoveBy
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#MoveTo] create 
 -- @param self
 -- @param #float float
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @return MoveTo#MoveTo ret (return value: cc.MoveTo)
         
 --------------------------------

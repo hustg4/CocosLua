@@ -30,9 +30,9 @@ extern "C" {
 }
 
 
-#include "CCRef.h"
-#include "ccMacros.h"
-#include "CCActionInstant.h"
+#include "base/CCRef.h"
+#include "base/ccMacros.h"
+#include "2d/CCActionInstant.h"
 #include <vector>
 #include <map>
 
@@ -160,6 +160,15 @@ public:
         EVENT_PHYSICS_CONTACT_PRESOLVE,
         EVENT_PHYSICS_CONTACT_POSTSOLVE,
         EVENT_PHYSICS_CONTACT_SEPERATE,
+        
+        EVENT_FOCUS,
+        
+        EVENT_CONTROLLER_CONNECTED,
+        EVENT_CONTROLLER_DISCONNECTED,
+        EVENT_CONTROLLER_KEYDOWN,
+        EVENT_CONTROLLER_KEYUP,
+        EVENT_CONTROLLER_KEYREPEAT,
+        EVENT_CONTROLLER_AXIS,
         
         EVENT_CUSTOM_BEGAN = 10000,
         EVENT_CUSTOM_ENDED = 11000,

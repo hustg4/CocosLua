@@ -2,6 +2,7 @@
 --------------------------------
 -- @module CheckBox
 -- @extend Widget
+-- @parent_module ccui
 
 --------------------------------
 -- @function [parent=#CheckBox] getSelectedState 
@@ -12,19 +13,24 @@
 -- @function [parent=#CheckBox] loadTextureBackGroundSelected 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#CheckBox] loadTextureBackGroundDisabled 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
+        
+--------------------------------
+-- @function [parent=#CheckBox] addEventListener 
+-- @param self
+-- @param #function func
         
 --------------------------------
 -- @function [parent=#CheckBox] loadTextureFrontCross 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#CheckBox] loadTextures 
@@ -34,13 +40,13 @@
 -- @param #string str
 -- @param #string str
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#CheckBox] loadTextureBackGround 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#CheckBox] setSelectedState 
@@ -51,13 +57,11 @@
 -- @function [parent=#CheckBox] loadTextureFrontCrossDisabled 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
--- overload function: create(string, string, string, string, string, ccui.TextureResType)
---          
--- overload function: create()
---          
+-- @overload self, string, string, string, string, string, int         
+-- @overload self         
 -- @function [parent=#CheckBox] create
 -- @param self
 -- @param #string str
@@ -65,7 +69,7 @@
 -- @param #string str
 -- @param #string str
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
 -- @return CheckBox#CheckBox ret (retunr value: ccui.CheckBox)
 
 --------------------------------
