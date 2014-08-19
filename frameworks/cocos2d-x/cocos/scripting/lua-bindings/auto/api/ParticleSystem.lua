@@ -2,6 +2,7 @@
 --------------------------------
 -- @module ParticleSystem
 -- @extend Node,TextureProtocol
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#ParticleSystem] getStartSizeVar 
@@ -26,17 +27,17 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] getStartColor 
 -- @param self
--- @return color4F_table#color4F_table ret (return value: color4F_table)
+-- @return color4f_table#color4f_table ret (return value: color4f_table)
         
 --------------------------------
 -- @function [parent=#ParticleSystem] getPositionType 
 -- @param self
--- @return ParticleSystem::PositionType#ParticleSystem::PositionType ret (return value: cc.ParticleSystem::PositionType)
+-- @return int#int ret (return value: int)
         
 --------------------------------
 -- @function [parent=#ParticleSystem] setPosVar 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#ParticleSystem] getEndSpin 
@@ -106,7 +107,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] getGravity 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#ParticleSystem] getTangentialAccel 
@@ -131,7 +132,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] setEndColor 
 -- @param self
--- @param #color4F_table color4f
+-- @param #color4f_table color4f
         
 --------------------------------
 -- @function [parent=#ParticleSystem] setStartSpin 
@@ -151,7 +152,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] getPosVar 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#ParticleSystem] updateWithNoTime 
@@ -170,7 +171,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] setPositionType 
 -- @param self
--- @param #cc.ParticleSystem::PositionType positiontype
+-- @param #int positiontype
         
 --------------------------------
 -- @function [parent=#ParticleSystem] stopSystem 
@@ -179,7 +180,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] getSourcePosition 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#ParticleSystem] setLifeVar 
@@ -194,13 +195,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] setEndColorVar 
 -- @param self
--- @param #color4F_table color4f
-        
---------------------------------
--- @function [parent=#ParticleSystem] updateQuadWithParticle 
--- @param self
--- @param #cc.sParticle sparticle
--- @param #point_table point
+-- @param #color4f_table color4f
         
 --------------------------------
 -- @function [parent=#ParticleSystem] getAtlasIndex 
@@ -277,14 +272,9 @@
 -- @return float#float ret (return value: float)
         
 --------------------------------
--- @function [parent=#ParticleSystem] initParticle 
--- @param self
--- @param #cc.sParticle sparticle
-        
---------------------------------
 -- @function [parent=#ParticleSystem] setEmitterMode 
 -- @param self
--- @param #cc.ParticleSystem::Mode mode
+-- @param #int mode
         
 --------------------------------
 -- @function [parent=#ParticleSystem] getDuration 
@@ -294,7 +284,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] setSourcePosition 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#ParticleSystem] getEndSpinVar 
@@ -344,7 +334,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] getEmitterMode 
 -- @param self
--- @return ParticleSystem::Mode#ParticleSystem::Mode ret (return value: cc.ParticleSystem::Mode)
+-- @return int#int ret (return value: int)
         
 --------------------------------
 -- @function [parent=#ParticleSystem] setEndSpinVar 
@@ -359,7 +349,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] setStartColor 
 -- @param self
--- @param #color4F_table color4f
+-- @param #color4f_table color4f
         
 --------------------------------
 -- @function [parent=#ParticleSystem] getRotatePerSecondVar 
@@ -389,7 +379,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] setGravity 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#ParticleSystem] postStep 
@@ -403,7 +393,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] getEndColorVar 
 -- @param self
--- @return color4F_table#color4F_table ret (return value: color4F_table)
+-- @return color4f_table#color4f_table ret (return value: color4f_table)
         
 --------------------------------
 -- @function [parent=#ParticleSystem] getRotationIsDir 
@@ -423,7 +413,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] getEndColor 
 -- @param self
--- @return color4F_table#color4F_table ret (return value: color4F_table)
+-- @return color4f_table#color4f_table ret (return value: color4f_table)
         
 --------------------------------
 -- @function [parent=#ParticleSystem] getLifeVar 
@@ -463,7 +453,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] setStartColorVar 
 -- @param self
--- @param #color4F_table color4f
+-- @param #color4f_table color4f
         
 --------------------------------
 -- @function [parent=#ParticleSystem] setEndSpin 
@@ -498,7 +488,7 @@
 --------------------------------
 -- @function [parent=#ParticleSystem] getStartColorVar 
 -- @param self
--- @return color4F_table#color4F_table ret (return value: color4F_table)
+-- @return color4f_table#color4f_table ret (return value: color4f_table)
         
 --------------------------------
 -- @function [parent=#ParticleSystem] create 

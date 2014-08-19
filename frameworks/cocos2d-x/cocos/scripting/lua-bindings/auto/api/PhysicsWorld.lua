@@ -1,11 +1,12 @@
 
 --------------------------------
 -- @module PhysicsWorld
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#PhysicsWorld] getGravity 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#PhysicsWorld] getAllBodies 
@@ -15,7 +16,7 @@
 --------------------------------
 -- @function [parent=#PhysicsWorld] setGravity 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#PhysicsWorld] getSpeed 
@@ -23,10 +24,8 @@
 -- @return float#float ret (return value: float)
         
 --------------------------------
--- overload function: removeBody(int)
---          
--- overload function: removeBody(cc.PhysicsBody)
---          
+-- @overload self, int         
+-- @overload self, cc.PhysicsBody         
 -- @function [parent=#PhysicsWorld] removeBody
 -- @param self
 -- @param #cc.PhysicsBody physicsbody
@@ -50,7 +49,7 @@
 --------------------------------
 -- @function [parent=#PhysicsWorld] getShapes 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @return array_table#array_table ret (return value: array_table)
         
 --------------------------------
@@ -60,7 +59,7 @@
 --------------------------------
 -- @function [parent=#PhysicsWorld] getShape 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @return PhysicsShape#PhysicsShape ret (return value: cc.PhysicsShape)
         
 --------------------------------

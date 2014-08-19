@@ -2,6 +2,7 @@
 --------------------------------
 -- @module TransitionScene
 -- @extend Scene
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#TransitionScene] finish 
@@ -22,8 +23,8 @@
 -- @function [parent=#TransitionScene] draw 
 -- @param self
 -- @param #cc.Renderer renderer
--- @param #kmMat4 kmmat4
--- @param #bool bool
+-- @param #mat4_table mat4
+-- @param #unsigned int int
         
 --------------------------------
 -- @function [parent=#TransitionScene] cleanup 

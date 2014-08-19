@@ -1,12 +1,13 @@
 
 --------------------------------
 -- @module Widget
--- @extend ProtectedNode
+-- @extend ProtectedNode,LayoutParameterProtocol
+-- @parent_module ccui
 
 --------------------------------
 -- @function [parent=#Widget] setSizePercent 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#Widget] getCustomSize 
@@ -24,19 +25,19 @@
 -- @param #bool bool
         
 --------------------------------
--- @function [parent=#Widget] getLeftInParent 
+-- @function [parent=#Widget] getVirtualRenderer 
 -- @param self
--- @return float#float ret (return value: float)
+-- @return Node#Node ret (return value: cc.Node)
         
 --------------------------------
--- @function [parent=#Widget] getTouchEndPos 
+-- @function [parent=#Widget] getSizePercent 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Widget] setPositionPercent 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#Widget] getLayoutSize 
@@ -44,14 +45,14 @@
 -- @return size_table#size_table ret (return value: size_table)
         
 --------------------------------
--- @function [parent=#Widget] setPositionType 
+-- @function [parent=#Widget] setHighlighted 
 -- @param self
--- @param #ccui.PositionType positiontype
+-- @param #bool bool
         
 --------------------------------
--- @function [parent=#Widget] getName 
+-- @function [parent=#Widget] setPositionType 
 -- @param self
--- @return char#char ret (return value: char)
+-- @param #int positiontype
         
 --------------------------------
 -- @function [parent=#Widget] isIgnoreContentAdaptWithSize 
@@ -59,31 +60,41 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
--- @function [parent=#Widget] getBottomInParent 
+-- @function [parent=#Widget] getVirtualRendererSize 
 -- @param self
--- @return float#float ret (return value: float)
+-- @return size_table#size_table ret (return value: size_table)
+        
+--------------------------------
+-- @function [parent=#Widget] isHighlighted 
+-- @param self
+-- @return bool#bool ret (return value: bool)
         
 --------------------------------
 -- @function [parent=#Widget] getLayoutParameter 
 -- @param self
--- @param #ccui.LayoutParameterType layoutparametertype
 -- @return LayoutParameter#LayoutParameter ret (return value: ccui.LayoutParameter)
+        
+--------------------------------
+-- @function [parent=#Widget] findNextFocusedWidget 
+-- @param self
+-- @param #int focusdirection
+-- @param #ccui.Widget widget
+-- @return Widget#Widget ret (return value: ccui.Widget)
         
 --------------------------------
 -- @function [parent=#Widget] getPositionType 
 -- @param self
--- @return PositionType#PositionType ret (return value: ccui.PositionType)
+-- @return int#int ret (return value: int)
         
 --------------------------------
--- @function [parent=#Widget] getWidgetType 
+-- @function [parent=#Widget] getTopBoundary 
 -- @param self
--- @return WidgetType#WidgetType ret (return value: ccui.WidgetType)
+-- @return float#float ret (return value: float)
         
 --------------------------------
--- @function [parent=#Widget] getChildByName 
+-- @function [parent=#Widget] ignoreContentAdaptWithSize 
 -- @param self
--- @param #char char
--- @return Widget#Widget ret (return value: ccui.Widget)
+-- @param #bool bool
         
 --------------------------------
 -- @function [parent=#Widget] isEnabled 
@@ -96,9 +107,9 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
--- @function [parent=#Widget] getVirtualRendererSize 
+-- @function [parent=#Widget] getTouchBeganPosition 
 -- @param self
--- @return size_table#size_table ret (return value: size_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Widget] isTouchEnabled 
@@ -113,11 +124,7 @@
 --------------------------------
 -- @function [parent=#Widget] getWorldPosition 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
-        
---------------------------------
--- @function [parent=#Widget] didNotSelectSelf 
--- @param self
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Widget] setFocused 
@@ -125,19 +132,19 @@
 -- @param #bool bool
         
 --------------------------------
+-- @function [parent=#Widget] setActionTag 
+-- @param self
+-- @param #int int
+        
+--------------------------------
 -- @function [parent=#Widget] setTouchEnabled 
 -- @param self
 -- @param #bool bool
         
 --------------------------------
--- @function [parent=#Widget] clone 
+-- @function [parent=#Widget] getLeftBoundary 
 -- @param self
--- @return Widget#Widget ret (return value: ccui.Widget)
-        
---------------------------------
--- @function [parent=#Widget] getTouchMovePos 
--- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return float#float ret (return value: float)
         
 --------------------------------
 -- @function [parent=#Widget] setEnabled 
@@ -145,19 +152,14 @@
 -- @param #bool bool
         
 --------------------------------
--- @function [parent=#Widget] getVirtualRenderer 
+-- @function [parent=#Widget] getRightBoundary 
 -- @param self
--- @return Node#Node ret (return value: cc.Node)
+-- @return float#float ret (return value: float)
         
 --------------------------------
 -- @function [parent=#Widget] setBrightStyle 
 -- @param self
--- @param #ccui.BrightStyle brightstyle
-        
---------------------------------
--- @function [parent=#Widget] setName 
--- @param self
--- @param #char char
+-- @param #int brightstyle
         
 --------------------------------
 -- @function [parent=#Widget] setLayoutParameter 
@@ -165,19 +167,19 @@
 -- @param #ccui.LayoutParameter layoutparameter
         
 --------------------------------
--- @function [parent=#Widget] getSizePercent 
+-- @function [parent=#Widget] clone 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return Widget#Widget ret (return value: ccui.Widget)
         
 --------------------------------
--- @function [parent=#Widget] getTouchStartPos 
+-- @function [parent=#Widget] setFocusEnabled 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @param #bool bool
         
 --------------------------------
--- @function [parent=#Widget] setActionTag 
+-- @function [parent=#Widget] getBottomBoundary 
 -- @param self
--- @param #int int
+-- @return float#float ret (return value: float)
         
 --------------------------------
 -- @function [parent=#Widget] isBright 
@@ -185,54 +187,50 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
--- @function [parent=#Widget] clippingParentAreaContainPoint 
+-- @function [parent=#Widget] getCurrentFocusedWidget 
 -- @param self
--- @param #point_table point
--- @return bool#bool ret (return value: bool)
+-- @return Widget#Widget ret (return value: ccui.Widget)
         
 --------------------------------
--- @function [parent=#Widget] getTopInParent 
+-- @function [parent=#Widget] requestFocus 
 -- @param self
--- @return float#float ret (return value: float)
         
 --------------------------------
--- overload function: updateSizeAndPosition(size_table)
---          
--- overload function: updateSizeAndPosition()
---          
+-- @overload self, size_table         
+-- @overload self         
 -- @function [parent=#Widget] updateSizeAndPosition
 -- @param self
 -- @param #size_table size
 
 --------------------------------
--- @function [parent=#Widget] getSize 
+-- @function [parent=#Widget] getTouchMovePosition 
 -- @param self
--- @return size_table#size_table ret (return value: size_table)
-        
---------------------------------
--- @function [parent=#Widget] getRightInParent 
--- @param self
--- @return float#float ret (return value: float)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Widget] getSizeType 
 -- @param self
--- @return SizeType#SizeType ret (return value: ccui.SizeType)
+-- @return int#int ret (return value: int)
         
 --------------------------------
--- @function [parent=#Widget] ignoreContentAdaptWithSize 
+-- @function [parent=#Widget] addTouchEventListener 
 -- @param self
--- @param #bool bool
+-- @param #function func
+        
+--------------------------------
+-- @function [parent=#Widget] getTouchEndPosition 
+-- @param self
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Widget] getPositionPercent 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Widget] hitTest 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
@@ -246,24 +244,28 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
+-- @function [parent=#Widget] isClippingParentContainsPoint 
+-- @param self
+-- @param #vec2_table vec2
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
 -- @function [parent=#Widget] setSizeType 
 -- @param self
--- @param #ccui.SizeType sizetype
-        
---------------------------------
--- @function [parent=#Widget] checkChildInfo 
--- @param self
--- @param #int int
--- @param #ccui.Widget widget
--- @param #point_table point
-        
---------------------------------
--- @function [parent=#Widget] setSize 
--- @param self
--- @param #size_table size
+-- @param #int sizetype
         
 --------------------------------
 -- @function [parent=#Widget] setBright 
+-- @param self
+-- @param #bool bool
+        
+--------------------------------
+-- @function [parent=#Widget] isFocusEnabled 
+-- @param self
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- @function [parent=#Widget] enableDpadNavigation 
 -- @param self
 -- @param #bool bool
         
@@ -273,34 +275,19 @@
 -- @return Widget#Widget ret (return value: ccui.Widget)
         
 --------------------------------
--- @function [parent=#Widget] setColor 
+-- @function [parent=#Widget] getDescription 
 -- @param self
--- @param #color3B_table color3b
-        
---------------------------------
--- @function [parent=#Widget] getColor 
--- @param self
--- @return color3B_table#color3B_table ret (return value: color3B_table)
-        
---------------------------------
--- @function [parent=#Widget] setOpacity 
--- @param self
--- @param #unsigned char char
-        
---------------------------------
--- @function [parent=#Widget] getOpacity 
--- @param self
--- @return unsigned char#unsigned char ret (return value: unsigned char)
+-- @return string#string ret (return value: string)
         
 --------------------------------
 -- @function [parent=#Widget] setPosition 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
--- @function [parent=#Widget] getDescription 
+-- @function [parent=#Widget] setContentSize 
 -- @param self
--- @return string#string ret (return value: string)
+-- @param #size_table size
         
 --------------------------------
 -- @function [parent=#Widget] Widget 

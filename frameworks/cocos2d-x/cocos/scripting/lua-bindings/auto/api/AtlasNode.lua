@@ -2,6 +2,7 @@
 --------------------------------
 -- @module AtlasNode
 -- @extend Node,TextureProtocol
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#AtlasNode] updateAtlasValues 
@@ -50,8 +51,8 @@
 -- @function [parent=#AtlasNode] draw 
 -- @param self
 -- @param #cc.Renderer renderer
--- @param #kmMat4 kmmat4
--- @param #bool bool
+-- @param #mat4_table mat4
+-- @param #unsigned int int
         
 --------------------------------
 -- @function [parent=#AtlasNode] isOpacityModifyRGB 
@@ -61,12 +62,12 @@
 --------------------------------
 -- @function [parent=#AtlasNode] setColor 
 -- @param self
--- @param #color3B_table color3b
+-- @param #color3b_table color3b
         
 --------------------------------
 -- @function [parent=#AtlasNode] getColor 
 -- @param self
--- @return color3B_table#color3B_table ret (return value: color3B_table)
+-- @return color3b_table#color3b_table ret (return value: color3b_table)
         
 --------------------------------
 -- @function [parent=#AtlasNode] setOpacityModifyRGB 

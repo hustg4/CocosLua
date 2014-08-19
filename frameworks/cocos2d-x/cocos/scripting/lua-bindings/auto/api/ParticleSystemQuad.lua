@@ -2,6 +2,7 @@
 --------------------------------
 -- @module ParticleSystemQuad
 -- @extend ParticleSystem
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#ParticleSystemQuad] setDisplayFrame 
@@ -15,13 +16,17 @@
 -- @param #rect_table rect
         
 --------------------------------
--- overload function: create(string)
---          
--- overload function: create()
---          
+-- @function [parent=#ParticleSystemQuad] listenRendererRecreated 
+-- @param self
+-- @param #cc.EventCustom eventcustom
+        
+--------------------------------
+-- @overload self, string         
+-- @overload self         
+-- @overload self, map_table         
 -- @function [parent=#ParticleSystemQuad] create
 -- @param self
--- @param #string str
+-- @param #map_table map
 -- @return ParticleSystemQuad#ParticleSystemQuad ret (retunr value: cc.ParticleSystemQuad)
 
 --------------------------------

@@ -2,11 +2,12 @@
 --------------------------------
 -- @module FadeOutUpTiles
 -- @extend FadeOutTRTiles
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#FadeOutUpTiles] transformTile 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @param #float float
         
 --------------------------------

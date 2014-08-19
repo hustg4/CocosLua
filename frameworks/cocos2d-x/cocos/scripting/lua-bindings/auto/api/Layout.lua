@@ -1,37 +1,48 @@
 
 --------------------------------
 -- @module Layout
--- @extend Widget
+-- @extend Widget,LayoutProtocol
+-- @parent_module ccui
 
 --------------------------------
 -- @function [parent=#Layout] setBackGroundColorVector 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
         
 --------------------------------
 -- @function [parent=#Layout] setClippingType 
 -- @param self
--- @param #ccui.LayoutClippingType layoutclippingtype
+-- @param #int clippingtype
         
 --------------------------------
 -- @function [parent=#Layout] setBackGroundColorType 
 -- @param self
--- @param #ccui.LayoutBackGroundColorType layoutbackgroundcolortype
+-- @param #int backgroundcolortype
+        
+--------------------------------
+-- @function [parent=#Layout] setLoopFocus 
+-- @param self
+-- @param #bool bool
         
 --------------------------------
 -- @function [parent=#Layout] setBackGroundImageColor 
 -- @param self
--- @param #color3B_table color3b
+-- @param #color3b_table color3b
         
 --------------------------------
 -- @function [parent=#Layout] getBackGroundColorVector 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Layout] getClippingType 
 -- @param self
--- @return LayoutClippingType#LayoutClippingType ret (return value: ccui.LayoutClippingType)
+-- @return int#int ret (return value: int)
+        
+--------------------------------
+-- @function [parent=#Layout] isLoopFocus 
+-- @param self
+-- @return bool#bool ret (return value: bool)
         
 --------------------------------
 -- @function [parent=#Layout] removeBackGroundImage 
@@ -56,17 +67,15 @@
 -- @function [parent=#Layout] setBackGroundImage 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
--- overload function: setBackGroundColor(color3B_table, color3B_table)
---          
--- overload function: setBackGroundColor(color3B_table)
---          
+-- @overload self, color3b_table, color3b_table         
+-- @overload self, color3b_table         
 -- @function [parent=#Layout] setBackGroundColor
 -- @param self
--- @param #color3B_table color3b
--- @param #color3B_table color3b
+-- @param #color3b_table color3b
+-- @param #color3b_table color3b
 
 --------------------------------
 -- @function [parent=#Layout] requestDoLayout 
@@ -80,7 +89,7 @@
 --------------------------------
 -- @function [parent=#Layout] getBackGroundColor 
 -- @param self
--- @return color3B_table#color3B_table ret (return value: color3B_table)
+-- @return color3b_table#color3b_table ret (return value: color3b_table)
         
 --------------------------------
 -- @function [parent=#Layout] setClippingEnabled 
@@ -90,7 +99,7 @@
 --------------------------------
 -- @function [parent=#Layout] getBackGroundImageColor 
 -- @param self
--- @return color3B_table#color3B_table ret (return value: color3B_table)
+-- @return color3b_table#color3b_table ret (return value: color3b_table)
         
 --------------------------------
 -- @function [parent=#Layout] isBackGroundImageScale9Enabled 
@@ -100,12 +109,12 @@
 --------------------------------
 -- @function [parent=#Layout] getBackGroundColorType 
 -- @param self
--- @return LayoutBackGroundColorType#LayoutBackGroundColorType ret (return value: ccui.LayoutBackGroundColorType)
+-- @return int#int ret (return value: int)
         
 --------------------------------
 -- @function [parent=#Layout] getBackGroundEndColor 
 -- @param self
--- @return color3B_table#color3B_table ret (return value: color3B_table)
+-- @return color3b_table#color3b_table ret (return value: color3b_table)
         
 --------------------------------
 -- @function [parent=#Layout] setBackGroundColorOpacity 
@@ -116,6 +125,11 @@
 -- @function [parent=#Layout] getBackGroundImageOpacity 
 -- @param self
 -- @return unsigned char#unsigned char ret (return value: unsigned char)
+        
+--------------------------------
+-- @function [parent=#Layout] isPassFocusToChild 
+-- @param self
+-- @return bool#bool ret (return value: bool)
         
 --------------------------------
 -- @function [parent=#Layout] setBackGroundImageCapInsets 
@@ -130,12 +144,17 @@
 --------------------------------
 -- @function [parent=#Layout] getLayoutType 
 -- @param self
--- @return LayoutType#LayoutType ret (return value: ccui.LayoutType)
+-- @return int#int ret (return value: int)
+        
+--------------------------------
+-- @function [parent=#Layout] setPassFocusToChild 
+-- @param self
+-- @param #bool bool
         
 --------------------------------
 -- @function [parent=#Layout] getBackGroundStartColor 
 -- @param self
--- @return color3B_table#color3B_table ret (return value: color3B_table)
+-- @return color3b_table#color3b_table ret (return value: color3b_table)
         
 --------------------------------
 -- @function [parent=#Layout] setBackGroundImageScale9Enabled 
@@ -145,7 +164,7 @@
 --------------------------------
 -- @function [parent=#Layout] setLayoutType 
 -- @param self
--- @param #ccui.LayoutType layouttype
+-- @param #int type
         
 --------------------------------
 -- @function [parent=#Layout] create 
@@ -158,17 +177,15 @@
 -- @return Ref#Ref ret (return value: cc.Ref)
         
 --------------------------------
--- overload function: addChild(cc.Node, int)
---          
--- overload function: addChild(cc.Node)
---          
--- overload function: addChild(cc.Node, int, int)
---          
+-- @overload self, cc.Node, int         
+-- @overload self, cc.Node         
+-- @overload self, cc.Node, int, int         
+-- @overload self, cc.Node, int, string         
 -- @function [parent=#Layout] addChild
 -- @param self
 -- @param #cc.Node node
 -- @param #int int
--- @param #int int
+-- @param #string str
 
 --------------------------------
 -- @function [parent=#Layout] getDescription 
@@ -185,8 +202,11 @@
 -- @param self
         
 --------------------------------
--- @function [parent=#Layout] sortAllChildren 
+-- @function [parent=#Layout] findNextFocusedWidget 
 -- @param self
+-- @param #int focusdirection
+-- @param #ccui.Widget widget
+-- @return Widget#Widget ret (return value: ccui.Widget)
         
 --------------------------------
 -- @function [parent=#Layout] removeChild 

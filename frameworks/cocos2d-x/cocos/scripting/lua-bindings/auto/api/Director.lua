@@ -1,15 +1,26 @@
 
 --------------------------------
 -- @module Director
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#Director] pause 
 -- @param self
         
 --------------------------------
--- @function [parent=#Director] setContentScaleFactor 
+-- @function [parent=#Director] setEventDispatcher 
 -- @param self
--- @param #float float
+-- @param #cc.EventDispatcher eventdispatcher
+        
+--------------------------------
+-- @function [parent=#Director] pushScene 
+-- @param self
+-- @param #cc.Scene scene
+        
+--------------------------------
+-- @function [parent=#Director] getDeltaTime 
+-- @param self
+-- @return float#float ret (return value: float)
         
 --------------------------------
 -- @function [parent=#Director] getContentScaleFactor 
@@ -22,9 +33,14 @@
 -- @return size_table#size_table ret (return value: size_table)
         
 --------------------------------
--- @function [parent=#Director] getDeltaTime 
+-- @function [parent=#Director] getConsole 
 -- @param self
--- @return float#float ret (return value: float)
+-- @return Console#Console ret (return value: cc.Console)
+        
+--------------------------------
+-- @function [parent=#Director] pushMatrix 
+-- @param self
+-- @param #int matrix_stack_type
         
 --------------------------------
 -- @function [parent=#Director] setGLDefaultValues 
@@ -43,6 +59,12 @@
 --------------------------------
 -- @function [parent=#Director] popToRootScene 
 -- @param self
+        
+--------------------------------
+-- @function [parent=#Director] loadMatrix 
+-- @param self
+-- @param #int matrix_stack_type
+-- @param #mat4_table mat4
         
 --------------------------------
 -- @function [parent=#Director] getNotificationNode 
@@ -67,7 +89,7 @@
 --------------------------------
 -- @function [parent=#Director] getVisibleOrigin 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Director] mainLoop 
@@ -91,8 +113,8 @@
 --------------------------------
 -- @function [parent=#Director] convertToUI 
 -- @param self
--- @param #point_table point
--- @return point_table#point_table ret (return value: point_table)
+-- @param #vec2_table vec2
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Director] setDefaultValues 
@@ -131,6 +153,11 @@
 -- @param self
         
 --------------------------------
+-- @function [parent=#Director] setContentScaleFactor 
+-- @param self
+-- @param #float float
+        
+--------------------------------
 -- @function [parent=#Director] popToSceneStackLevel 
 -- @param self
 -- @param #int int
@@ -156,8 +183,8 @@
 --------------------------------
 -- @function [parent=#Director] convertToGL 
 -- @param self
--- @param #point_table point
--- @return point_table#point_table ret (return value: point_table)
+-- @param #vec2_table vec2
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#Director] purgeCachedData 
@@ -183,6 +210,17 @@
 -- @param self
         
 --------------------------------
+-- @function [parent=#Director] getZEye 
+-- @param self
+-- @return float#float ret (return value: float)
+        
+--------------------------------
+-- @function [parent=#Director] getMatrix 
+-- @param self
+-- @param #int matrix_stack_type
+-- @return mat4_table#mat4_table ret (return value: mat4_table)
+        
+--------------------------------
 -- @function [parent=#Director] popScene 
 -- @param self
         
@@ -194,22 +232,26 @@
 --------------------------------
 -- @function [parent=#Director] setProjection 
 -- @param self
--- @param #cc.Director::Projection projection
+-- @param #int projection
         
 --------------------------------
--- @function [parent=#Director] getConsole 
+-- @function [parent=#Director] loadIdentityMatrix 
 -- @param self
--- @return Console#Console ret (return value: cc.Console)
-        
---------------------------------
--- @function [parent=#Director] getZEye 
--- @param self
--- @return float#float ret (return value: float)
+-- @param #int matrix_stack_type
         
 --------------------------------
 -- @function [parent=#Director] setNextDeltaTimeZero 
 -- @param self
 -- @param #bool bool
+        
+--------------------------------
+-- @function [parent=#Director] resetMatrixStack 
+-- @param self
+        
+--------------------------------
+-- @function [parent=#Director] popMatrix 
+-- @param self
+-- @param #int matrix_stack_type
         
 --------------------------------
 -- @function [parent=#Director] getVisibleSize 
@@ -222,9 +264,9 @@
 -- @return Scheduler#Scheduler ret (return value: cc.Scheduler)
         
 --------------------------------
--- @function [parent=#Director] pushScene 
+-- @function [parent=#Director] setAnimationInterval 
 -- @param self
--- @param #cc.Scene scene
+-- @param #double double
         
 --------------------------------
 -- @function [parent=#Director] getAnimationInterval 
@@ -242,14 +284,20 @@
 -- @param #bool bool
         
 --------------------------------
+-- @function [parent=#Director] getEventDispatcher 
+-- @param self
+-- @return EventDispatcher#EventDispatcher ret (return value: cc.EventDispatcher)
+        
+--------------------------------
 -- @function [parent=#Director] replaceScene 
 -- @param self
 -- @param #cc.Scene scene
         
 --------------------------------
--- @function [parent=#Director] setAnimationInterval 
+-- @function [parent=#Director] multiplyMatrix 
 -- @param self
--- @param #double double
+-- @param #int matrix_stack_type
+-- @param #mat4_table mat4
         
 --------------------------------
 -- @function [parent=#Director] getActionManager 

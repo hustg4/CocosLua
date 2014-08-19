@@ -2,6 +2,7 @@
 --------------------------------
 -- @module Slider
 -- @extend Widget
+-- @parent_module ccui
 
 --------------------------------
 -- @function [parent=#Slider] setPercent 
@@ -12,25 +13,25 @@
 -- @function [parent=#Slider] loadSlidBallTextureDisabled 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#Slider] loadSlidBallTextureNormal 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#Slider] loadBarTexture 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#Slider] loadProgressBarTexture 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#Slider] loadSlidBallTextures 
@@ -38,7 +39,7 @@
 -- @param #string str
 -- @param #string str
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#Slider] setCapInsetProgressBarRebderer 
@@ -66,10 +67,15 @@
 -- @param #rect_table rect
         
 --------------------------------
+-- @function [parent=#Slider] addEventListener 
+-- @param self
+-- @param #function func
+        
+--------------------------------
 -- @function [parent=#Slider] loadSlidBallTexturePressed 
 -- @param self
 -- @param #string str
--- @param #ccui.TextureResType texturerestype
+-- @param #int texturerestype
         
 --------------------------------
 -- @function [parent=#Slider] isScale9Enabled 
@@ -114,7 +120,7 @@
 --------------------------------
 -- @function [parent=#Slider] hitTest 
 -- @param self
--- @param #point_table point
+-- @param #vec2_table vec2
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------

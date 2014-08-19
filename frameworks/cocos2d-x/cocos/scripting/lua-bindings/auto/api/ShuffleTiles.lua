@@ -2,19 +2,8 @@
 --------------------------------
 -- @module ShuffleTiles
 -- @extend TiledGrid3DAction
+-- @parent_module cc
 
---------------------------------
--- @function [parent=#ShuffleTiles] placeTile 
--- @param self
--- @param #point_table point
--- @param #cc.Tile tile
-        
---------------------------------
--- @function [parent=#ShuffleTiles] shuffle 
--- @param self
--- @param #unsigned int int
--- @param #unsigned int int
-        
 --------------------------------
 -- @function [parent=#ShuffleTiles] getDelta 
 -- @param self

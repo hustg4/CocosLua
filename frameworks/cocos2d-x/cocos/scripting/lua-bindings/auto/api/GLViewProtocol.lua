@@ -1,6 +1,7 @@
 
 --------------------------------
 -- @module GLViewProtocol
+-- @parent_module cc
 
 --------------------------------
 -- @function [parent=#GLViewProtocol] setFrameSize 
@@ -53,7 +54,7 @@
 --------------------------------
 -- @function [parent=#GLViewProtocol] getVisibleOrigin 
 -- @param self
--- @return point_table#point_table ret (return value: point_table)
+-- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
 -- @function [parent=#GLViewProtocol] getFrameSize 
@@ -78,12 +79,12 @@
 -- @param self
 -- @param #float float
 -- @param #float float
--- @param #ResolutionPolicy resolutionpolicy
+-- @param #int resolutionpolicy
         
 --------------------------------
 -- @function [parent=#GLViewProtocol] getResolutionPolicy 
 -- @param self
--- @return ResolutionPolicy#ResolutionPolicy ret (return value: ResolutionPolicy)
+-- @return int#int ret (return value: int)
         
 --------------------------------
 -- @function [parent=#GLViewProtocol] setViewPortInPoints 
