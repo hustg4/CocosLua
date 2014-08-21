@@ -966,6 +966,7 @@ Node * NodeLoader::parsePropTypeCCBFile(Node * pNode, Node * pParent, CCBReader 
         //set callback
         auto ownerCallbackNames = reader->getOwnerCallbackNames();
         auto& ownerCallbackNodes = reader->getOwnerCallbackNodes();
+        auto& ownerCallbackControlEvents = reader->getOwnerCallbackControlEvents();//add by g4 @20140821
         if (!ownerCallbackNames.empty() && !ownerCallbackNodes.empty())
         {
             CCASSERT(ownerCallbackNames.size() == ownerCallbackNodes.size(), "");
@@ -975,6 +976,7 @@ Node * NodeLoader::parsePropTypeCCBFile(Node * pNode, Node * pParent, CCBReader 
             {
                 pCCBReader->addOwnerCallbackName(ownerCallbackNames[i].asString());
                 pCCBReader->addOwnerCallbackNode(ownerCallbackNodes.at(i));
+                pCCBReader->addOwnerCallbackControlEvents((Control::EventType)ownerCallbackControlEvents.at(i).asInt());//add by g4 @20140821
             }
         }
         //set variables

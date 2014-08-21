@@ -122,6 +122,7 @@ end
 end
 
 function cl.loadCCB(ccbFile,owner)
+    print("ccbFile:"..ccbFile)
     local proxy = cc.CCBProxy:create()
     local ccbReader = proxy:createCCBReader()
     local node = ccbReader:load(ccbFile)
@@ -130,6 +131,9 @@ function cl.loadCCB(ccbFile,owner)
     local ownerCallbackNames = ccbReader:getOwnerCallbackNames() 
     local ownerCallbackNodes = ccbReader:getOwnerCallbackNodes()
     local ownerCallbackControlEvents = ccbReader:getOwnerCallbackControlEvents()
+    print("====:"..#ownerCallbackNames)
+    print("====:"..#ownerCallbackNodes)
+    print("====:"..#ownerCallbackControlEvents)
     local i = 1
     for i = 1,table.getn(ownerCallbackNames) do
         local callbackName =  ownerCallbackNames[i]
