@@ -6,3 +6,7 @@ Debug
 *.xccheckout
 *.sdf
 *.opensdf
+frameworks/runtime-src/proj.android/bin/
+frameworks/runtime-src/proj.android/gen/
+frameworks/runtime-src/proj.android/libs/
+frameworks/runtime-src/proj.android/obj/

@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include "framework.h"
-#include "HttpClient.h"
+#include "network/HttpClient.h"
 
 class HttpService : public NetService {
     

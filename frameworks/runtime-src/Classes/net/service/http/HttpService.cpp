@@ -7,7 +7,6 @@
 //
 
 #include "HttpService.h"
-#include "HttpClient.h"
 #include "NetConfig.h"
 
 using namespace cocos2d;

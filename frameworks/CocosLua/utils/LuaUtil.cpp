@@ -49,7 +49,7 @@ void LuaUtil::executeScriptFile(const std::string &filePath)
     LuaEngine* pEngine = LuaEngine::getInstance();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     
-    unsigned long size = 0;
+    ssize_t size = 0;
     unsigned char* buffer = CCFileUtils::getInstance()->getFileData(filePath.c_str(), "rb", &size);
     if (buffer) {
         tolua_dobuffer(pEngine->getLuaStack()->getLuaState(), (char*)buffer, size, (char*)buffer);

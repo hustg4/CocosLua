@@ -29,7 +29,7 @@ const char* FileDecryptUtil::decrypt(const std::string &filePath)
     }
     
     //取数据
-    long size = 0;
+    ssize_t size = 0;
     //为兼容android  此处必须先获取全路径
     std::string fullPath = CCFileUtils::getInstance()->fullPathForFilename(filePath.c_str());
     unsigned char* data = CCFileUtils::getInstance()->getFileData(fullPath.c_str(), "rb", &size);

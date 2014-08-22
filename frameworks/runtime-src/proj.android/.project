@@ -1,10 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>MyLuaGame</name>
+	<name>CocosLua</name>
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>?children?</key>
+					<value>?name?=outputEntries\|?children?=?name?=entry\\\\\\\|\\\|?name?=entry\\\\\\\|\\\|\||</value>
+				</dictionary>
+				<dictionary>
+					<key>?name?</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildCommand</key>
+					<value>ndk-build</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>true</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
 		<buildCommand>
 			<name>com.android.ide.eclipse.adt.ResourceManagerBuilder</name>
 			<arguments>
@@ -25,9 +79,116 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>CocosLua</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/CocosLua</locationURI>
+		</link>
+		<link>
+			<name>cocos2d-x</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/cocos2d-x</locationURI>
+		</link>
+		<link>
+			<name>jni/.DS_Store</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/.DS_Store</locationURI>
+		</link>
+		<link>
+			<name>jni/AppDelegate.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/AppDelegate.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/AppDelegate.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/AppDelegate.h</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/.DS_Store</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/.DS_Store</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/AppDelegate.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/AppDelegate.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/AppDelegate.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/AppDelegate.h</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/const</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/net</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/const/NetConfig.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/const/NetConfig.h</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/net/service</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/net/service/http</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/net/service/socket</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/net/service/http/HttpService.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/net/service/http/HttpService.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/net/service/http/HttpService.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/net/service/http/HttpService.h</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/net/service/socket/SocketService.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/net/service/socket/SocketService.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/Classes/net/service/socket/SocketService.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Classes/net/service/socket/SocketService.h</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

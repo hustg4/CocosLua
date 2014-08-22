@@ -21,7 +21,7 @@ Ref* JSONParser::parseString(const std::string &jsonStr)
 Ref* JSONParser::parseFile(const std::string &jsonFile)
 {
     std::string stringBuffer;
-    long fileDataSize = 0;
+    ssize_t fileDataSize = 0;
     unsigned char* fileData=CCFileUtils::getInstance()->getFileData(jsonFile.c_str(), "rb", &fileDataSize);
     if (fileData!=NULL) {
         stringBuffer.append(fileData, fileData+fileDataSize);

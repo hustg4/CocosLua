@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <errno.h>
+#include <unistd.h>
 
 #ifdef _WIN32 
 #include <io.h>
@@ -28,15 +29,15 @@ const char* FileManager::splicePath(const std::string &parentPath, const std::st
 {
     std::string tempPath1 = parentPath;
     std::string tempPath2 = childPath;
-    //去掉path1末尾的'/'
+    //��绘��path1���灏剧��'/'
     if (tempPath1.size()>0 && tempPath1.at(tempPath1.size()-1)=='/') {
         tempPath1.erase(tempPath1.size()-1);
     }
-    //去掉path2开头的'/'
+    //��绘��path2寮�澶寸��'/'
     if (tempPath2.size()>0 && tempPath2.at(0)=='/') {
         tempPath2.erase(0);
     }
-    //拼接
+    //��兼��
     std::string path=tempPath1;
     path.append("/");
     path.append(tempPath2);
@@ -64,16 +65,16 @@ bool FileManager::removeFile(const std::string& filePath)
 
 bool FileManager::createDirectory(const string& directoryPath)
 {
-    vector<string> directoryPathArray; // 需要创建目录的路径数组
+    vector<string> directoryPathArray; // ���瑕����寤虹��褰����璺�寰���扮��
     
     string fullPath = directoryPath.c_str();
     
-    //找到不存在目录，放入数组
+    //��惧�颁��瀛���ㄧ��褰�锛���惧�ユ�扮��
     string directorySubPath;
     do {
         int pos = fullPath.find_last_of('/');
         directorySubPath = fullPath.substr(0, pos);
-        if(!FileManager::fileExists(directorySubPath.c_str())) // 目录不存在
+        if(!FileManager::fileExists(directorySubPath.c_str())) // ���褰�涓�瀛����
         {
             directoryPathArray.insert(directoryPathArray.begin(), directorySubPath);
             fullPath = directorySubPath.c_str();
@@ -83,7 +84,7 @@ bool FileManager::createDirectory(const string& directoryPath)
         }
     } while (true);
     
-    // 从父到子逐层创建目录
+    // 浠���跺�板�����灞����寤虹��褰�
     bool result = true;
     vector<string>::iterator it = directoryPathArray.begin();
     while (it != directoryPathArray.end()) {
@@ -164,7 +165,7 @@ bool FileManager::uncompressZipFile(const string &zipFileName, const string &dir
             return false;
         }
         
-        // 检查是否带'/'结尾
+        // 妫���ユ�����甯�'/'缁�灏�
         string saveToDirectory = directory.c_str();
         if (saveToDirectory[saveToDirectory.size() - 1] != '/') {
             saveToDirectory.append("/");
@@ -253,7 +254,7 @@ bool FileManager::writeDataToFile(const unsigned char *content, unsigned long le
     FILE *fp = fopen(filePath.c_str(), mode); //
     if (! fp)
     {
-        CCLOG("创建文件错误，errno=%d", errno);
+        CCLOG("���寤烘��浠堕��璇�锛�errno=%d", errno);
         return false;
     }
 

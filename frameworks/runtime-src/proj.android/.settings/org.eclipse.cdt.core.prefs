@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/com.android.toolchain.gcc.1896766095/NDK_MODULE_PATH/delimiter=\:
+environment/project/com.android.toolchain.gcc.1896766095/NDK_MODULE_PATH/operation=replace
+environment/project/com.android.toolchain.gcc.1896766095/NDK_MODULE_PATH/value=${CWD}/../../cocos2d-x\:${CWD}/../../cocos2d-x/cocos\:${CWD}/../../cocos2d-x/external
+environment/project/com.android.toolchain.gcc.1896766095/append=true
+environment/project/com.android.toolchain.gcc.1896766095/appendContributed=true

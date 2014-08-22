@@ -674,7 +674,7 @@ void ResourceManager::copyFiles(const cocos2d::ValueVector &copyFileList)
     CCLOG("copyFiles:%ld",copyFileList.size());
     for (int i = 0; i < copyFileList.size(); i++) {
         std::string filePath = copyFileList[i].asString();
-        long len = 0;
+        ssize_t len = 0;
         //为兼容android  此处必须先获取全路径
         std::string fullPath = CCFileUtils::getInstance()->fullPathForFilename(filePath);
         unsigned char* fileData = CCFileUtils::getInstance()->getFileData(fullPath.c_str(), "rb", &len);
