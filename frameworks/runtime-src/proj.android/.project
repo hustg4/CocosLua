@@ -96,11 +96,6 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>CocosLua</name>
-			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/CocosLua</locationURI>
-		</link>
-		<link>
 			<name>cocos2d-x</name>
 			<type>2</type>
 			<locationURI>PARENT-2-PROJECT_LOC/cocos2d-x</locationURI>
