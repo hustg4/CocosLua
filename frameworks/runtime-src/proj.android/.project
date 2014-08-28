@@ -111,16 +111,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Classes/.DS_Store</locationURI>
 		</link>
 		<link>
-			<name>jni/AppDelegate.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Classes/AppDelegate.cpp</locationURI>
-		</link>
-		<link>
-			<name>jni/AppDelegate.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Classes/AppDelegate.h</locationURI>
-		</link>
-		<link>
 			<name>jni/Classes</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>

@@ -1,0 +1,2 @@
+module/welcome
+module/loading/dialog.png

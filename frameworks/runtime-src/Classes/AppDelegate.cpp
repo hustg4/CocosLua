@@ -26,6 +26,7 @@ AppDelegate::~AppDelegate()
 bool AppDelegate::applicationDidFinishLaunching()
 {
     // initialize director
+	CCLOG("AppDelegate-applicationDidFinishLaunching");
     auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();
 	if(!glview) {
