@@ -1691,7 +1691,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5023816817EBBCE400990C9B /* Build configuration list for PBXNativeTarget "framework Mac" */;
 			buildPhases = (
-				AAB911331928548900900993 /* Run Script-CleanAndCopyCCBI */,
+				AAB911331928548900900993 /* Run Script<Clean-CopyCCBI-CompileLua> */,
 				5023813117EBBCE400990C9B /* Sources */,
 				5023813617EBBCE400990C9B /* Frameworks */,
 				5023814617EBBCE400990C9B /* Resources */,
@@ -1755,6 +1755,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "framework iOS" */;
 			buildPhases = (
+				AA3C45A019C2C5CB00F8A143 /* Run Script<Clean-CopyCCBI-CompileLua> */,
 				F293B3C415EB7BE500256477 /* Sources */,
 				F293B3C515EB7BE500256477 /* Frameworks */,
 				F293B3C615EB7BE500256477 /* Resources */,
@@ -1997,19 +1998,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AAB911331928548900900993 /* Run Script-CleanAndCopyCCBI */ = {
+		AA3C45A019C2C5CB00F8A143 /* Run Script<Clean-CopyCCBI-CompileLua> */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Script-CleanAndCopyCCBI";
+			name = "Run Script<Clean-CopyCCBI-CompileLua>";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -rf \"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app\"\ncd ../../\ncp -r \"./CCBProject/Publish/ccb\" \"./Resource\"";
+			shellScript = "#rm -rf \"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app\"\n#rm -rf \"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app.dSYM\"\ncd ../../\ncp -r \"./CCBProject/Publish/ccb\" \"./Resource\"\ncd ../tools/lua_compiler\n./complie_script.sh";
+		};
+		AAB911331928548900900993 /* Run Script<Clean-CopyCCBI-CompileLua> */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script<Clean-CopyCCBI-CompileLua>";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf \"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app\"\ncd ../../\ncp -r \"./CCBProject/Publish/ccb\" \"./Resource\"\ncd ../tools/lua_compiler\n./complie_script.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
