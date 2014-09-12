@@ -757,6 +757,7 @@ int LuaStack::luaLoadBuffer(lua_State *L, const char *chunk, int chunkSize, cons
 #if defined(COCOS2D_DEBUG) && COCOS2D_DEBUG > 0
     if (r)
     {
+        const char* error = lua_tostring(L, -1);//打印错误结果
         switch (r)
         {
             case LUA_ERRSYNTAX:
